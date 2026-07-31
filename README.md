@@ -1,6 +1,8 @@
 # 🪙 TokenWise — Learn AI, token by token
 
-An AI learning hub that evolves with AI. Open `index.html` in any browser — no install, no build step, no server required.
+**Live at [tokenwiseai.org](https://tokenwiseai.org)** · deployed on Render, DNS via Cloudflare, auto-deploys from `main`.
+
+An AI learning hub that evolves with AI. Also works fully offline: open `index.html` in any browser — no install, no build step, no server required.
 
 ## What's inside
 

@@ -694,7 +694,7 @@ window.sendChat = async () => {
       body: JSON.stringify({
         model: "claude-sonnet-5",
         max_tokens: 1024,
-        system: "You are the friendly AI tutor on TokenWise, an AI-learning website with courses on: AI Foundations (beginner), How Models Work (transformers, training, RLHF), Prompt Engineering, Building with AI (APIs, RAG, agents, evals), The AI Industry, and AI Safety/Ethics/Policy — plus flashcards, quizzes, and an AI history timeline. Teach clearly and concisely with analogies. When relevant, point the learner to a specific course on the site. Keep answers under 250 words unless asked for depth.",
+        system: "You are the friendly AI tutor on TokenWise (tokenwiseai.org), an AI-learning website with courses on: AI Foundations (beginner), How Models Work (transformers, training, RLHF), Prompt Engineering, Building with AI (APIs, RAG, agents, evals), The AI Industry, and AI Safety/Ethics/Policy — plus flashcards, quizzes, and an AI history timeline. Teach clearly and concisely with analogies. When relevant, point the learner to a specific course on the site. Keep answers under 250 words unless asked for depth.",
         messages: chatHistory.map(m => ({ role: m.role, content: m.content }))
       })
     });
