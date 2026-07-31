@@ -1,0 +1,12 @@
+# Render blueprint — deploys TokenWise as a free static site.
+# No build step needed: the site is plain HTML/CSS/JS served from the repo root.
+services:
+  - type: web
+    name: tokenwise
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
