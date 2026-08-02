@@ -272,6 +272,29 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
 }
 .term-box .term { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
 
+.archive-card {
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+  display: block;
+}
+.archive-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.archive-card .ac-date {
+  font-size: 0.72rem; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--accent-3); font-weight: 700; margin-bottom: 6px;
+}
+.archive-card h3 { font-size: 1.12rem; letter-spacing: -0.2px; margin-bottom: 6px; }
+.archive-card p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 10px; }
+.archive-card .ac-foot {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  font-size: 0.78rem; color: var(--text-faint);
+}
+.ac-latest {
+  display: inline-block; padding: 2px 9px; border-radius: 999px;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase;
+  background: rgba(67, 214, 181, 0.14); color: var(--accent-3);
+  border: 1px solid rgba(67, 214, 181, 0.4);
+}
+
 .archive-item {
   display: flex; justify-content: space-between; align-items: center;
   padding: 13px 4px; border-bottom: 1px solid var(--border);

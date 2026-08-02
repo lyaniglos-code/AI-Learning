@@ -8,6 +8,7 @@ An AI learning hub that evolves with AI. Also works fully offline: open `index.h
 
 | Section | What it does |
 |---|---|
+| **🗓️ Archive** | Every past edition, permanently browsable and searchable (search runs across headlines, story text, and terms of the day). Each edition has a permanent link at `#/edition/N` with older/newer navigation |
 | **🪙 The Daily Token** | The homepage: a daily AI newsletter with top stories, "why it matters" learning notes, sources, a term of the day, and a hands-on "try this" |
 | **🧭 Learning Paths** | Three curated routes: Newcomer (never used AI), Practitioner, Engineer |
 | **🎓 Courses** | 7 courses / 33 lessons: AI Foundations, How Models Work, Prompt Engineering, Building with AI, The AI Industry, Safety & Policy, and **The AI Toolbox** — a *living course* on ChatGPT, Claude, Gemini, NotebookLM, Perplexity, and the copilots, with per-lesson "last updated" stamps |
@@ -40,7 +41,7 @@ To publish a new daily edition, ask Claude Code:
 
 > "Research today's AI news and add a new edition to data/news.js following the existing format."
 
-This can also be fully automated as a scheduled daily task in Claude Code.
+**This is automated.** A scheduled Claude Code cloud routine ("TokenWise Daily Token publisher") runs daily at 12:00 UTC: it researches the news, writes the edition, refreshes the living Toolbox course, bumps cache versions, and pushes to `main` — Render then auto-deploys. Old editions are never modified, so the Archive page grows on its own. The routine requires the cloud environment to have **GitHub write access** to this repo; if a run reports `PUSH FAILED`, reconnect GitHub at [claude.ai/code](https://claude.ai/code).
 
 ### Keeping The AI Toolbox course current (living course)
 

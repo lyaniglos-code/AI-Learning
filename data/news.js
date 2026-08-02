@@ -13,6 +13,101 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-02",
+    displayDate: "Sunday, August 2, 2026 · Edition #2",
+    headline: "The day AI had to introduce itself: EU transparency rules take effect, California's provenance law lands the same morning",
+    summary:
+      "August 2 was circled on every AI compliance calendar, and it arrived: the EU began enforcing the AI Act's transparency obligations, while California's provenance law became operative the same day. Meanwhile, security researchers published a case study of an open-source model wired into an attack agent — a reminder that the agent pattern cuts both ways.",
+    stories: [
+      {
+        title: "EU begins enforcing AI Act transparency rules",
+        body: "From today, the European Commission's AI Office and national authorities are enforcing the AI Act's transparency obligations. Systems that interact with people must disclose that they are AI, deepfakes must be labelled, and AI-generated or altered content must carry machine-readable marks so it can be detected automatically. Non-compliance can draw fines of up to 15 million euros or 3% of worldwide annual turnover. Generative systems already on the market before today get until December 2, 2026 to meet the machine-readable marking requirement, under a grace period agreed in the AI Omnibus package.",
+        why: "This is the first time 'you must tell people they are talking to AI' is enforceable law across a major market. It is the clearest example yet of regulation directly shaping how AI products are built.",
+        sources: [
+          { label: "European Commission", url: "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august" },
+          { label: "Sidley — compliance guide", url: "https://datamatters.sidley.com/2026/06/24/eu-ai-act-transparency-obligations-preparing-for-compliance-by-2-august-2026/" }
+        ]
+      },
+      {
+        title: "What Article 50 actually covers — the four buckets",
+        body: "The obligations that kicked in today live in Article 50 of Regulation (EU) 2024/1689, and they apply to four situations: AI systems that interact directly with people, AI-generated content, emotion recognition and biometric categorisation systems, and deepfakes or AI-generated text published on matters of public interest. Notably, these duties reach beyond the Act's 'high-risk' category into ordinary limited-risk systems — an everyday chatbot is in scope. The Commission has published guidelines and a Code of Practice on transparency of AI-generated content to spell out what compliance looks like in practice.",
+        why: "Knowing these four buckets tells you exactly which AI features now carry legal disclosure duties — useful whether you are building products or just want to understand the labels you will start seeing everywhere.",
+        sources: [
+          { label: "Article 50 explained", url: "https://artificialintelligenceact.eu/transparency-rules-article-50/" },
+          { label: "EU — transparency quick facts", url: "https://digital-strategy.ec.europa.eu/en/factpages/quick-facts-transparency-rules-ai-systems" },
+          { label: "EU — Code of Practice", url: "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content" }
+        ]
+      },
+      {
+        title: "California's AI Transparency Act becomes operative on the same day",
+        body: "California SB 942 took effect August 2 as well, requiring generative-AI providers with more than one million monthly California users to embed C2PA-compatible provenance data into the images, video, and audio they generate, and to offer a free public detection tool so anyone can check whether content came from their system. Two of the world's largest markets therefore began requiring content provenance on the very same morning.",
+        why: "When Brussels and Sacramento converge on the same technical standard, that standard effectively becomes global — this is how C2PA provenance quietly becomes a default feature of AI tools everywhere.",
+        sources: [
+          { label: "AI Weekly", url: "https://aiweekly.co/ai-news-today" }
+        ]
+      },
+      {
+        title: "Researchers document an open model wired into an attack agent",
+        body: "Palo Alto Networks' Unit 42 published details of an actor who connected DeepSeek to the open-source Hermes Agent framework and drove it through Telegram to enumerate targets, pull public exploits, and attack more than 460 internet-facing systems. The setup is unremarkable technically — a model, a tool loop, and a chat interface — which is precisely what makes it notable.",
+        why: "This is the agent pattern from the Toolbox and engineering courses (model plus tools plus a loop) pointed at offense. It is a concrete reminder that open capability is neutral, but deployment never is.",
+        sources: [
+          { label: "AI Weekly", url: "https://aiweekly.co/ai-news-today" }
+        ]
+      },
+      {
+        title: "Google cancels its AI Studio mobile app despite 800,000 preorders",
+        body: "Google scrapped the standalone AI Studio app it had announced for iOS and Android at I/O 2026, even though more than 800,000 people had preordered it, and is folding app-creation features into existing surfaces instead.",
+        why: "Product churn at this speed is normal right now: features migrate between apps, get renamed, or vanish within a quarter. It is exactly why the Toolbox lessons on this site carry 'last updated' stamps rather than pretending to be permanent.",
+        sources: [
+          { label: "AI Weekly", url: "https://aiweekly.co/ai-news-today" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day analysis; expect a clear breakdown of what AI Act enforcement means for builders and users.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — weekend roundup",
+        source: "Researcher-hosted · weekly",
+        why: "A calm, technically grounded recap of the week — a good antidote to compliance-deadline noise.",
+        url: "https://lastweekin.ai/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "YouTube · sourced release and policy analysis",
+        why: "Careful, benchmark-literate coverage; useful for separating what the AI Act actually requires from what commentary claims.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "The most listenable take on regulation and deepfake labelling if you want the story conversationally.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Content provenance (C2PA)",
+      definition:
+        "Cryptographically signed metadata attached to a piece of media recording how it was made — which tool generated or edited it, and when. C2PA is the open standard behind it, and today's EU and California rules are what turn it from a nice idea into a legal requirement. It is the infrastructure meant to answer 'is this real?' at internet scale.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Ask any chatbot: 'Are you an AI, and what must you disclose to me under the EU AI Act?' Then generate an image with any AI tool and look for provenance or 'content credentials' information on it. You are watching today's rules take effect in real time.",
+    learnLinks: [
+      { label: "Who governs AI → Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How agents work (and get misused) → The AI Toolbox", href: "#/course/tools" },
+      { label: "The companies behind the compliance scramble → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-07-31",
     displayDate: "Friday, July 31, 2026 · Edition #1",
     headline: "Big Tech doubles down: Meta commits $130B+ to AI while Anthropic's Opus 5 tops the charts",

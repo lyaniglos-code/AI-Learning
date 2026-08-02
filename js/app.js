@@ -108,7 +108,7 @@ function viewHome() {
       <div class="src">Sources: ${s.sources.map(x => `<a href="${x.url}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join(" · ")}</div>
     </div>`).join("");
 
-  const archive = EDITIONS.slice(1).map((e, i) => `
+  const archive = EDITIONS.slice(1, 6).map((e, i) => `
     <div class="archive-item" onclick="location.hash='#/edition/${i + 1}'">
       <span>${esc(e.headline)}</span><span>${esc(e.displayDate.split("·")[0].trim())}</span>
     </div>`).join("");
@@ -154,18 +154,80 @@ function viewHome() {
       ${EDITIONS.length > 1 ? `
       <div class="card" style="margin-top:16px">
         <div class="eyebrow">Past editions</div>${archive}
+        <div style="margin-top:12px"><a href="#/archive" style="font-size:0.88rem;font-weight:700">🗓️ Browse all ${EDITIONS.length} editions →</a></div>
       </div>` : `
       <div class="card" style="margin-top:16px">
         <div class="eyebrow">About the Daily Token</div>
-        <p style="color:var(--text-dim);font-size:0.9rem">A new edition is published each day, summarizing the most important AI developments with a learner's lens: every story links to its sources and to the course that explains the concepts behind it. This is Edition #1 — the archive builds from here.</p>
+        <p style="color:var(--text-dim);font-size:0.9rem">A new edition is published each day, summarizing the most important AI developments with a learner's lens: every story links to its sources and to the course that explains the concepts behind it. This is Edition #1 — the <a href="#/archive">archive</a> builds from here.</p>
       </div>`}
     </div>`;
 }
 
-/* ---------- Past edition ---------- */
+/* ---------- Archive: every past edition ---------- */
+let archiveQuery = "";
+
+function editionMatches(e, q) {
+  if (!q) return true;
+  const hay = [
+    e.headline, e.summary, e.displayDate, e.date,
+    e.term && e.term.word,
+    ...(e.stories || []).map(s => s.title + " " + s.body + " " + s.why)
+  ].filter(Boolean).join(" ").toLowerCase();
+  return hay.includes(q);
+}
+
+function archiveList() {
+  const q = archiveQuery.trim().toLowerCase();
+  const hits = EDITIONS.map((e, i) => ({ e, i })).filter(({ e }) => editionMatches(e, q));
+  if (!hits.length) {
+    return `<div class="card empty-note">No editions mention “${esc(archiveQuery)}” yet.</div>`;
+  }
+  return hits.map(({ e, i }) => `
+    <div class="card archive-card" onclick="location.hash='#/edition/${i}'">
+      <div class="ac-date">${esc(e.displayDate)}</div>
+      <h3>${esc(e.headline)}</h3>
+      <p>${esc(e.summary)}</p>
+      <div class="ac-foot">
+        ${i === 0 ? '<span class="ac-latest">Latest</span>' : ""}
+        <span>${e.stories.length} stories</span>
+        ${e.media ? `<span>· ${e.media.length} listens</span>` : ""}
+        ${e.term ? `<span>· Term: ${esc(e.term.word)}</span>` : ""}
+        <span style="margin-left:auto;color:var(--accent)">Read edition →</span>
+      </div>
+    </div>`).join("");
+}
+
+function viewArchive() {
+  const n = EDITIONS.length;
+  app().innerHTML = `
+    <div class="container">
+      <div class="eyebrow">Archive</div>
+      <h1 class="page-title">Every edition of The Daily Token</h1>
+      <p class="page-desc">Each morning's brief is kept here permanently — ${n} edition${n === 1 ? "" : "s"} published so far. Search across headlines, stories, and terms of the day.</p>
+      <input id="archiveSearch" class="text-input" placeholder="Search all editions — e.g. “regulation”, “Anthropic”, “agents”…"
+             value="${esc(archiveQuery)}" oninput="archiveFilter(this.value)" style="margin-bottom:18px">
+      <div id="archiveList">${archiveList()}</div>
+    </div>`;
+  if (archiveQuery) {
+    const inp = $("#archiveSearch");
+    if (inp) { inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length); }
+  }
+}
+
+window.archiveFilter = (v) => {
+  archiveQuery = v;
+  const el = $("#archiveList");
+  if (el) el.innerHTML = archiveList();
+};
+
+/* ---------- A single edition (permanent link) ---------- */
 function viewEdition(idx) {
   const ed = EDITIONS[idx];
-  if (!ed) { location.hash = "#/"; return; }
+  if (!ed) { location.hash = "#/archive"; return; }
+  const isToday = idx === 0;
+  const newer = idx > 0 ? idx - 1 : null;          // lower index = more recent
+  const older = idx < EDITIONS.length - 1 ? idx + 1 : null;
+
   const stories = ed.stories.map(s => `
     <div class="story">
       <h3>${esc(s.title)}</h3>
@@ -173,17 +235,48 @@ function viewEdition(idx) {
       <div class="why"><b>Why it matters:</b> ${esc(s.why)}</div>
       <div class="src">Sources: ${s.sources.map(x => `<a href="${x.url}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join(" · ")}</div>
     </div>`).join("");
+
   app().innerHTML = `
     <div class="container">
-      <a href="#/" style="font-size:0.85rem">← Back to today's Signal</a>
+      <a href="#/archive" style="font-size:0.85rem">← All editions</a>
       <div class="brief-hero" style="margin-top:14px">
-        <div class="brief-date">🪙 The Daily Token — ${esc(ed.displayDate)}</div>
+        <div class="brief-date">🪙 The Daily Token — ${esc(ed.displayDate)}${isToday ? " · current" : ""}</div>
         <div class="brief-title">${esc(ed.headline)}</div>
         <p class="brief-summary">${esc(ed.summary)}</p>
       </div>
-      <div class="card">${stories}</div>
-      ${mediaSection(ed.media, "🎧 That day's watch & listen")}
+
+      <div class="card">
+        <div class="eyebrow">${isToday ? "Today's top stories" : "Top stories that day"}</div>
+        ${stories}
+      </div>
+
+      ${mediaSection(ed.media, isToday ? "🎧 Watch & listen today" : "🎧 That day's watch & listen")}
+
+      <div class="grid grid-2" style="margin-top:16px">
+        ${ed.term ? `
+        <div class="term-box">
+          <div class="eyebrow" style="color:var(--accent-2)">📖 Term of the day</div>
+          <div class="term">${esc(ed.term.word)}</div>
+          <p style="color:var(--text-dim);font-size:0.92rem">${esc(ed.term.definition)}</p>
+          <a href="${ed.term.link}" style="font-size:0.85rem;font-weight:700">Learn more →</a>
+        </div>` : ""}
+        ${ed.tryThis ? `
+        <div class="card" style="margin-top:0">
+          <div class="eyebrow" style="color:var(--accent-3)">⚡ Try this</div>
+          <p style="color:var(--text-dim);font-size:0.92rem">${esc(ed.tryThis)}</p>
+          ${ed.learnLinks && ed.learnLinks.length ? `
+            <hr class="sep" style="margin:14px 0">
+            <div class="eyebrow">Go deeper</div>
+            ${ed.learnLinks.map(l => `<div style="margin-bottom:6px"><a href="${l.href}" style="font-size:0.88rem">→ ${esc(l.label)}</a></div>`).join("")}` : ""}
+        </div>` : ""}
+      </div>
+
+      <div class="lesson-nav">
+        ${older !== null ? `<a class="btn ghost" href="#/edition/${older}">← Older edition</a>` : "<span></span>"}
+        ${newer !== null ? `<a class="btn ghost" href="#/edition/${newer}">Newer edition →</a>` : `<a class="btn ghost" href="#/">Today's edition →</a>`}
+      </div>
     </div>`;
+  window.scrollTo(0, 0);
 }
 
 /* ---------- Learning paths ---------- */
@@ -877,6 +970,7 @@ window.tts = tts;
 
 const routes = [
   [/^#?\/?$/, viewHome],
+  [/^#\/archive$/, viewArchive],
   [/^#\/edition\/(\d+)$/, (m) => viewEdition(parseInt(m[1], 10))],
   [/^#\/paths$/, viewPaths],
   [/^#\/courses$/, viewCourses],
@@ -908,7 +1002,7 @@ function highlightNav(hash) {
     const href = el.getAttribute("href");
     const section = hash.split("/")[1] || "";
     const target = (href || "").split("/")[1] || "";
-    const alias = { lesson: "courses", course: "courses", quiz: "quizzes", edition: "", deck: "flashcards" };
+    const alias = { lesson: "courses", course: "courses", quiz: "quizzes", edition: "archive", deck: "flashcards" };
     el.classList.toggle("active", target === (alias[section] !== undefined ? alias[section] : section));
   });
 }
