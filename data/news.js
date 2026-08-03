@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-03",
+    displayDate: "Monday, August 3, 2026 · Edition #3",
+    headline: "An unreleased OpenAI model quietly settles a 27-year-old math question as Big Tech's 2026 AI capex guidance climbs past $700 billion",
+    summary:
+      "OpenAI used a math blog post to tease its next flagship, 'Astra' — ten machine-checked proofs for problems that had stumped researchers for a decade or more, though critics are already cautioning against overreading it. Meanwhile earnings season made the scale of the AI bet impossible to ignore, and Washington moved a step closer to a voluntary pre-release review of frontier models.",
+    stories: [
+      {
+        title: "OpenAI teases 'Astra' by solving ten decade-old math and CS problems",
+        body: "On August 1, OpenAI published a 249-page manuscript titled 'Ten advances in mathematics and theoretical computer science,' revealing three paragraphs in that the results came from an internal, unreleased version of Astra, the company's next major model. The ten results span group theory, sphere packing, quantum complexity, and lattice cryptography — including the first explicit example of a non-sofic group, a question mathematician Mikhail Gromov left open roughly 27 years ago. Every proof was formalized in the Lean 4 proof assistant, producing machine-checkable certificates, and the entire run reportedly cost about $2,000 in compute. Fields Medalist Timothy Gowers said he would recommend one of the proofs for publication in the Annals of Mathematics without hesitation.",
+        why: "This is a rare case where an AI system's output is checkable by a computer rather than just judged by a human reader — Lean verifies that each logical step follows validly. That is a genuinely different kind of evidence for AI capability than a benchmark score or a demo.",
+        sources: [
+          { label: "OpenAI — Ten advances in mathematics", url: "https://openai.com/index/ten-advances-in-mathematics/" },
+          { label: "The Decoder", url: "https://the-decoder.com/openai-announces-its-next-major-model-astra-by-dropping-ten-previously-unsolved-math-solutions/" }
+        ]
+      },
+      {
+        title: "Why 'machine-checked' isn't the same as 'peer reviewed' — the pushback on Astra",
+        body: "AI critic Gary Marcus called the Astra results 'amazing — but vastly oversold,' arguing that math and code are unusual domains: they offer clean, automatic verification and effectively unlimited synthetic training data, so success there doesn't necessarily predict reliability in messier, open-ended reasoning. He also flagged a subtlety in the method itself — Lean confirms a proof's logical steps are internally valid, but it doesn't confirm the problem was translated into Lean's formal language the way mathematicians actually intended, which still needs a human expert to check. OpenAI itself has said the release does not amount to independent peer review, and outside mathematicians have only begun verifying individual results.",
+        why: "This is a useful template for reading any 'AI achieved X' headline: ask what, specifically, was verified, by whom, and whether the verification method actually covers the claim being made.",
+        sources: [
+          { label: "Gary Marcus — Substack", url: "https://garymarcus.substack.com/p/openais-amazing-but-vastly-oversold" },
+          { label: "Bleeping Computer", url: "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-teases-astra-its-next-major-ai-model-after-it-solves-10-long-standing-math-problems/" }
+        ]
+      },
+      {
+        title: "Big Tech's 2026 AI capex guidance climbs to roughly $720–745 billion",
+        body: "Second-quarter earnings from the four biggest AI spenders are now in, and every one of them raised its spending outlook. Alphabet posted $119.8 billion in Q2 revenue with cloud growth of 82%, but capex hit $44.9 billion for the quarter alone and free cash flow went negative $5.9 billion, as it raised full-year capex guidance to $195–205 billion. Microsoft's fiscal Q4 capex rose 70% year-over-year to $41 billion, though it actually trimmed its full-year forecast to $175 billion from an earlier $190 billion. Meta lifted its 2026 capex floor to $130–145 billion, and Amazon now expects to spend $220 billion this year, partly due to rising memory-chip prices — pushing the four companies' combined 2026 guidance to roughly $720–745 billion, up from $695–725 billion just a quarter ago.",
+        why: "Capex is the clearest public number for how much a company is actually betting on AI, as opposed to how much it talks about it. Watch free cash flow alongside capex — when it turns negative, investors start asking harder questions about when the spending is supposed to pay off.",
+        sources: [
+          { label: "CNBC — hyperscaler capex scrutiny", url: "https://www.cnbc.com/2026/07/28/hyperscalers-face-higher-capex-scrutiny-after-alphabet-report-panned.html" },
+          { label: "24/7 Wall St. — Microsoft vs Alphabet", url: "https://247wallst.com/investing/2026/08/01/the-real-ai-cost-question-that-defines-the-next-quarter-of-alphabet-vs-microsoft/" }
+        ]
+      },
+      {
+        title: "Washington nears a 30-day pre-release review framework for frontier AI models",
+        body: "Under a June 2 executive order, federal agencies had until August 1 to finalize a voluntary framework letting the U.S. government review frontier AI models for national-security and cybersecurity risks before they ship. The Commerce Department's Center for AI Standards and Innovation and the National Security Agency would get up to 30 days of early access, and would help select which other 'trusted partners' receive early access too. OpenAI, Anthropic, and Google have all submitted joint revisions and are reportedly close to a deal, while Meta and xAI have not yet signed on.",
+        why: "This is a preview of how AI safety regulation is actually shaping up in the US: not a public law, but a voluntary, negotiated arrangement between a handful of labs and specific federal agencies — worth contrasting with the EU's binding, publicly enforced rules covered in earlier editions.",
+        sources: [
+          { label: "Crowell & Moring — client alert", url: "https://www.crowell.com/en/insights/client-alerts/executive-order-creates-voluntary-regulatory-regime-of-frontier-ai-models" },
+          { label: "Tech Times", url: "https://www.techtimes.com/articles/321497/20260724/voluntary-paper-mandatory-practice-white-house-ai-review-hits-august-1-deadline.htm" }
+        ]
+      },
+      {
+        title: "xAI's Grok 4.5 lands inside GitHub Copilot's model picker",
+        body: "GitHub's changelog confirmed on July 28 that Grok 4.5, xAI's reasoning and coding model, is now selectable directly inside GitHub Copilot — in VS Code, the Copilot CLI, and Copilot's cloud agents — alongside the existing Claude, GPT, and Gemini options. xAI describes Grok 4.5 as built for fast, agentic, multi-step coding work, with a context window of up to 500,000 tokens. Some Business and Enterprise customers need to manually enable it in Copilot's policy settings before it appears for their organization.",
+        why: "'Copilot' is increasingly a shell around several competing models rather than a model of its own — the real skill is learning to switch models per task instead of treating a coding assistant as one fixed brain.",
+        sources: [
+          { label: "GitHub Changelog", url: "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot/" },
+          { label: "xAI — Grok in GitHub Copilot", url: "https://x.ai/news/grok-github-copilot" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "The best fit for today's Astra story — expect a clear, visual walkthrough of what these proofs mean and don't mean.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      },
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Same-day analysis of the Astra reveal alongside the earnings-week capex numbers.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "A weekly roundup likely to dig into Astra's actual math claims with more technical rigor than daily coverage.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "An accessible take on the Washington review framework and what 'voluntary' federal AI oversight really means in practice.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Formal verification (and its limits)",
+      definition:
+        "A technique where a proof or program is checked by another program — like the Lean proof assistant — that confirms each logical step is valid, a much stronger guarantee than a human skimming the argument. Its limit: it only checks that the formal statement follows correctly from the formal assumptions, not that the formal statement was written to mean what everyone assumes it means. That is why 'machine-verified' still is not the same as 'peer reviewed.'",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Read the plain-language summary of one Astra result on OpenAI's blog post (the non-sofic group example is a good start), then ask any chatbot to explain in simple terms what a 'sofic group' is and why mathematicians care whether one exists. Notice how far a good explanation gets you even without following the formal proof.",
+    learnLinks: [
+      { label: "How to read a model capability claim → How Models Work", href: "#/course/models" },
+      { label: "Follow the capex → The AI Industry", href: "#/course/industry" },
+      { label: "Voluntary vs binding AI rules → Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-08-02",
     displayDate: "Sunday, August 2, 2026 · Edition #2",
     headline: "The day AI had to introduce itself: EU transparency rules take effect, California's provenance law lands the same morning",
