@@ -530,6 +530,24 @@ input.text-input:focus { outline: none; border-color: var(--accent); }
 }
 .tts-bar.reading .tts-btn.play { background: var(--danger); }
 
+.tts-panel {
+  position: absolute; bottom: calc(100% + 12px); right: 0;
+  width: 280px; text-align: left;
+  background: var(--panel-2); border: 1px solid var(--outline);
+  border-radius: 14px; padding: 16px; box-shadow: var(--shadow);
+}
+.tts-panel label {
+  display: block; font-size: 0.68rem; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--text-faint); margin-bottom: 7px;
+}
+.tts-panel select {
+  width: 100%; background: var(--panel); color: var(--text);
+  border: 1px solid var(--outline); border-radius: 9px;
+  padding: 9px 10px; font-family: inherit; font-size: 0.86rem;
+}
+.tts-panel select:focus { outline: none; border-color: var(--accent); }
+.tts-hint { font-size: 0.74rem; color: var(--text-faint); line-height: 1.55; margin-top: 11px; }
+
 .howto-steps { counter-reset: step; }
 .howto-step {
   display: flex; gap: 14px; padding: 10px 0;

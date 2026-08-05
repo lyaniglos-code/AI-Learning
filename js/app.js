@@ -812,13 +812,95 @@ const tts = {
   rate: parseFloat(localStorage.getItem("np_tts_rate") || "1"),
   pitch: parseFloat(localStorage.getItem("np_tts_pitch") || "1"),
 
+  voiceName: localStorage.getItem("np_tts_voice") || "",
+  showPanel: false,
+
   supported() { return "speechSynthesis" in window; },
 
+  // Modern neural voices, best first. These are the conversational-sounding
+  // ones (Edge/Windows "Natural", Chrome/Google, macOS premium) — a world away
+  // from the old robotic defaults.
+  PREFERRED: [
+    /ava.*(natural|online)/i, /andrew.*(natural|online)/i, /emma.*(natural|online)/i,
+    /brian.*(natural|online)/i, /jenny.*(natural|online)/i, /aria.*(natural|online)/i,
+    /guy.*(natural|online)/i, /natural/i, /neural/i, /online/i,
+    /google us english/i, /google uk english female/i,
+    /samantha/i, /karen/i, /daniel/i, /alex/i
+  ],
+
+  voiceScore(v) {
+    const i = this.PREFERRED.findIndex(re => re.test(v.name));
+    const rank = i === -1 ? 90 : i;
+    return rank + (/^en-US/i.test(v.lang) ? 0 : 1); // nudge US English first
+  },
+
+  availableVoices() {
+    const all = speechSynthesis.getVoices();
+    const en = all.filter(v => /^en/i.test(v.lang));
+    return (en.length ? en : all).sort((a, b) => this.voiceScore(a) - this.voiceScore(b) || a.name.localeCompare(b.name));
+  },
+
   voice() {
-    const voices = speechSynthesis.getVoices();
-    return voices.find(v => v.lang.startsWith("en") && /natural|neural|online/i.test(v.name))
-        || voices.find(v => v.lang.startsWith("en"))
-        || voices[0] || null;
+    const list = this.availableVoices();
+    if (this.voiceName) {
+      const picked = list.find(v => v.name === this.voiceName);
+      if (picked) return picked;
+    }
+    return list[0] || null;
+  },
+
+  setVoice(name) {
+    this.voiceName = name;
+    localStorage.setItem("np_tts_voice", name);
+    if (this.reading) this.restartChunk();
+    else this.preview();
+    this.renderBar();
+  },
+
+  preview() {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance("Hi — this is how I'll read TokenWise to you.");
+    const v = this.voice();
+    if (v) u.voice = v;
+    u.rate = this.rate;
+    u.pitch = this.pitch;
+    speechSynthesis.speak(u);
+  },
+
+  // Rewrite on-screen text into something a voice can say naturally.
+  // Screens and ears want different things: "$130B" reads fine, but a voice
+  // saying "dollar one hundred thirty bee" does not.
+  humanize(t) {
+    return t
+      // emoji, arrows, and decorative glyphs — never read these aloud
+      .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2190}-\u{21FF}\u{FE0F}\u{2022}]/gu, " ")
+      // separators become breaths
+      .replace(/\s*[·|]\s*/g, ", ")
+      .replace(/\s*[—–]\s*/g, ", ")
+      .replace(/\.{3,}/g, ", ")
+      // money and magnitudes
+      .replace(/\$([\d.]+)\s*\/\s*\$([\d.]+)/g, "$$$1 and $$$2")   // "$5/$25" → "$5 and $25"
+      // "input/output" → "input or output", but leave URLs like openai.com/news alone
+      .replace(/([\w.]+)\s*\/\s*([\w.]+)/g, (m, a, b) => (a.includes(".") || b.includes(".")) ? m : a + " or " + b)
+      .replace(/\$\s?([\d.]+)\s*B\b/gi, "$1 billion dollars")
+      .replace(/\$\s?([\d.]+)\s*M\b/gi, "$1 million dollars")
+      .replace(/\$\s?([\d.]+)\s*K\b/gi, "$1 thousand dollars")
+      .replace(/\b([\d.]+)\s*B\b(?=\s|$|,|\.)/g, "$1 billion")
+      .replace(/\b([\d.]+)\s*M\b(?=\s|$|,|\.)/g, "$1 million")
+      .replace(/\b1M\b/g, "one million")
+      // symbols
+      .replace(/&/g, " and ")
+      .replace(/(\d)\s*%/g, "$1 percent")
+      .replace(/~\s*(\d)/g, "about $1")
+      .replace(/#(\d)/g, "number $1")
+      .replace(/\bvs\.?\b/gi, "versus")
+      .replace(/\be\.g\.,?/gi, "for example,")
+      .replace(/\bi\.e\.,?/gi, "that is,")
+      .replace(/\betc\.\B/gi, "et cetera")
+      // keep model names from being read as subtraction
+      .replace(/([A-Za-z])-(\d)/g, "$1 $2")
+      .replace(/\s{2,}/g, " ")
+      .trim();
   },
 
   // Extract the page as structured segments so the voice can breathe
@@ -832,22 +914,23 @@ const tts = {
     const blocks = [...clone.querySelectorAll(sel)].filter(el => !el.querySelector(sel));
     const segs = [];
     for (const el of blocks) {
-      const text = el.innerText.replace(/\s+/g, " ").trim();
+      const text = this.humanize(el.innerText.replace(/\s+/g, " ").trim());
       if (!text) continue;
       const isHeading = /^H[1-4]$/.test(el.tagName) || el.classList.contains("eyebrow") || el.classList.contains("brief-title");
-      // headings get a long beat after them; normal blocks a paragraph pause
-      segs.push({ text, pauseAfter: isHeading ? 850 : 450 });
+      // A narrator slows down for a title, then settles into pace for the body.
+      // Headings also get a longer beat after them.
+      segs.push({ text, pauseAfter: isHeading ? 850 : 450, rateMul: isHeading ? 0.92 : 1 });
     }
     if (!segs.length) {
-      const all = clone.innerText.replace(/\s+/g, " ").trim();
-      if (all) segs.push({ text: all, pauseAfter: 0 });
+      const all = this.humanize(clone.innerText.replace(/\s+/g, " ").trim());
+      if (all) segs.push({ text: all, pauseAfter: 0, rateMul: 1 });
     }
     return segs;
   },
 
   start(text) {
     this.stop();
-    const segs = text ? [{ text, pauseAfter: 0 }] : this.pageSegments();
+    const segs = text ? [{ text: this.humanize(text), pauseAfter: 0, rateMul: 1 }] : this.pageSegments();
     if (!segs.length) return;
     // split into sentence-sized chunks — long utterances stall in some browsers.
     // Each chunk carries its own pause: a small breath between sentences,
@@ -857,7 +940,9 @@ const tts = {
       const sentences = s.text.match(/[^.!?]+[.!?]+[\s"')\]]*|.+$/g) || [s.text];
       sentences.forEach((t, i) => this.chunks.push({
         text: t,
-        pauseAfter: i === sentences.length - 1 ? s.pauseAfter : 160
+        rateMul: s.rateMul || 1,
+        // longer sentences earn a slightly bigger breath after them
+        pauseAfter: i === sentences.length - 1 ? s.pauseAfter : (t.length > 140 ? 260 : 160)
       }));
     }
     this.idx = 0;
@@ -873,7 +958,7 @@ const tts = {
     const u = new SpeechSynthesisUtterance(chunk.text);
     const v = this.voice();
     if (v) u.voice = v;
-    u.rate = this.rate;
+    u.rate = this.rate * (chunk.rateMul || 1);
     u.pitch = this.pitch;
     const advance = () => {
       this.idx++;
@@ -947,13 +1032,41 @@ const tts = {
     this.renderBar();
   },
 
+  togglePanel() {
+    this.showPanel = !this.showPanel;
+    this.renderBar();
+  },
+
+  voicePanel() {
+    const list = this.availableVoices();
+    if (!list.length) {
+      return `<div class="tts-panel"><div class="tts-hint">Loading voices… if none appear, your browser has no speech voices installed.</div></div>`;
+    }
+    const current = this.voice();
+    const best = list.slice(0, 5);
+    const rest = list.slice(5);
+    const opt = v => `<option value="${esc(v.name)}"${current && v.name === current.name ? " selected" : ""}>${esc(v.name.replace(/^Microsoft /, "").replace(/ - English.*$/i, ""))}</option>`;
+    return `
+      <div class="tts-panel">
+        <label>Voice</label>
+        <select onchange="tts.setVoice(this.value)">
+          <optgroup label="Most natural on this device">${best.map(opt).join("")}</optgroup>
+          ${rest.length ? `<optgroup label="Other voices">${rest.map(opt).join("")}</optgroup>` : ""}
+        </select>
+        <div class="tts-hint">Pick a voice and you'll hear a sample. Voices marked “Natural” or “Online” are the modern neural ones — the closest to an AI assistant's speaking voice.
+        ${/edg\//i.test(navigator.userAgent) ? "" : "<br><br>Tip: Microsoft Edge ships the best free neural voices on Windows — the same page sounds noticeably warmer there."}</div>
+      </div>`;
+  },
+
   renderBar() {
     const bar = $("#ttsBar");
     if (!bar) return;
     if (!this.supported()) { bar.style.display = "none"; return; }
     bar.classList.toggle("reading", this.reading && !this.paused);
     bar.innerHTML = `
+      ${this.showPanel ? this.voicePanel() : ""}
       ${this.reading ? `<span class="tts-label">${this.paused ? "Paused" : "Reading page…"}</span>` : ""}
+      <button class="tts-rate" onclick="tts.togglePanel()" title="Choose voice">🎙</button>
       <button class="tts-rate" onclick="tts.cyclePitch()" title="Voice pitch (cycles low → high)">♪${this.pitch}</button>
       <button class="tts-rate" onclick="tts.cycleRate()" title="Reading speed">${this.rate}×</button>
       ${this.reading ? `<button class="tts-btn secondary" onclick="tts.stop()" title="Stop">⏹</button>` : ""}
@@ -963,6 +1076,11 @@ const tts = {
   }
 };
 window.tts = tts;
+
+// Voices load asynchronously in most browsers — refresh the picker when they arrive.
+if (tts.supported() && typeof speechSynthesis.addEventListener === "function") {
+  speechSynthesis.addEventListener("voiceschanged", () => tts.renderBar());
+}
 
 /* ============================================================
    ROUTER
@@ -987,6 +1105,7 @@ const routes = [
 ];
 
 function route() {
+  tts.showPanel = false;
   tts.stop(); // never keep reading a page the user left
   const hash = location.hash || "#/";
   for (const [re, fn] of routes) {
