@@ -966,9 +966,9 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "chatgpt",
       title: "ChatGPT (OpenAI)",
       minutes: 18,
-      updated: "Jul 31, 2026",
+      updated: "Aug 5, 2026",
       content: `
-<p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, with GPT-5.6 "Sol" the current flagship topping math and reasoning benchmarks.</p>
+<p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, split into three tiers: fast/cheap "Luna," balanced "Terra," and flagship "Sol," which currently tops math and reasoning benchmarks.</p>
 <h3>What it does</h3>
 <ul>
 <li><b>Chat with model choice</b> — fast default models for everyday questions; heavier reasoning modes that think before answering hard problems</li>
@@ -979,7 +979,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Connectors</b> — hooks into Drive, SharePoint, calendars, and third-party apps</li>
 </ul>
 <h3>Pricing shape</h3>
-<p>Generous free tier → Plus around $20/month (more usage, better models) → Pro tier around $200/month for power users → Team/Enterprise plans. (Exact limits shift often — check openai.com for today's numbers.)</p>
+<p>Generous free tier → Plus around $20/month (more usage, better models) → Pro tier around $200/month for power users → Team/Enterprise plans. (Exact limits shift often — check openai.com for today's numbers.) Developers metering the API by the token have seen an aggressive price war: on July 30, 2026 OpenAI cut Luna pricing 80% (to $0.20/$1.20 per million input/output tokens) and Terra pricing 20%, while Sol held steady — a sign per-token costs keep falling even as consumer subscription pricing stays flat.</p>
 <h3>Where it shines / where it doesn't</h3>
 <p><b>Shines:</b> broadest consumer feature set, voice mode, image generation, the custom-GPT ecosystem, and ubiquity — integrations and docs assume ChatGPT first. <b>Watch out:</b> quality varies across its many model options, and the personality tuning ("sycophancy") has needed repeated correction — ask it to push back.</p>
 <blockquote>Try it: give ChatGPT a photo of your fridge contents and ask for three dinner ideas with steps. Then ask Deep Research for a sourced comparison of two products you're actually shopping for.</blockquote>`,

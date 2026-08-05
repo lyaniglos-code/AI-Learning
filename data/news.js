@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-05",
+    displayDate: "Wednesday, August 5, 2026 · Edition #5",
+    headline: "A Ninth Circuit ruling says it's users, not AI agents, who 'access' a website — the same week Microsoft caps engineers' AI token budgets and Rust bans LLM-written code",
+    summary:
+      "Two stories today turn on the same underlying question — how much should an AI agent be trusted to act with real consequences — from opposite directions: a court decided AI shopping agents aren't legally the ones doing the 'accessing,' while Microsoft decided its own engineers were spending too many tokens for too little impact. Meanwhile Rust's maintainers drew a hard line on AI-written contributions, and OpenAI kept cutting prices in an inference cost war that explains why token budgets matter in the first place.",
+    stories: [
+      {
+        title: "Ninth Circuit vacates Amazon's injunction against Perplexity's Comet shopping agent",
+        body: "Amazon sued Perplexity in late 2025, alleging its Comet browser's AI shopping agent unlawfully accessed customers' password-protected Amazon accounts to place orders on their behalf, and won a preliminary injunction in March 2026 that barred the agent from operating on Amazon's site. On August 4, the Ninth Circuit Court of Appeals vacated that injunction, ruling that under the Computer Fraud and Abuse Act it is the user — not Perplexity — who 'accesses' Amazon's systems when they direct Comet to complete a purchase. The court applied the rule of lenity to resolve the statute's ambiguity against liability and noted there is 'little to no existing caselaw' on how to assign responsibility for actions an AI agent takes on a person's behalf. The broader lawsuit between Amazon and Perplexity continues; only the injunction was overturned.",
+        why: "This is the accountability question every 'AI agent' raises in practice: when software acts on your instructions, who is legally the one acting? The court's answer here — the human directing the agent is the one 'accessing' the system — is a real precedent for how agentic AI gets treated under laws written before agents existed.",
+        sources: [
+          { label: "Engadget", url: "https://www.engadget.com/2230471/perplexity-has-successfully-overturned-amazon-injunction-on-its-ai-shopping-bot/" },
+          { label: "Bloomberg Law", url: "https://news.bloomberglaw.com/us-law-week/perplexity-overturns-amazon-ban-on-ai-shopping-bot-on-appeal" }
+        ]
+      },
+      {
+        title: "Microsoft caps internal AI token budgets, tells engineers 'tokenmaxxing is not what we are optimizing for'",
+        body: "Microsoft EVP Jay Parikh sent engineers an internal email this week introducing division-level AI token spending targets, after many engineers were found to be spending hundreds to a few thousand dollars a month on AI tokens. Employees can now track their own usage on an internal dashboard, and Microsoft is defaulting internal tools to OpenAI's cheaper GPT-5.6 model to bring costs down. Parikh clarified the goal isn't fewer tokens for their own sake: 'We are not optimizing for fewer tokens. We are optimizing for more impact per token.' Amazon, Adobe, Atlassian, and Citi have introduced similar AI usage throttling or spend-visibility measures in recent months.",
+        why: "This is inference cost economics showing up as a management problem: every AI response costs real money per token generated, so 'use AI more' and 'control AI spend' are now in direct tension inside big companies. It's also a preview of a metric — impact per token, not tokens used — that's likely to spread as AI budgets become a normal line item.",
+        sources: [
+          { label: "404 Media", url: "https://www.404media.co/microsoft-tells-engineers-tokenmaxxing-is-not-what-we-are-optimizing-for/" },
+          { label: "TechRadar", url: "https://www.techradar.com/pro/tokenmaxxing-is-not-what-we-are-optimizing-for-microsoft-tells-engineer-to-calm-down-on-ai-usage" }
+        ]
+      },
+      {
+        title: "OpenAI cuts GPT-5.6 Luna API pricing 80% as the inference price war intensifies",
+        body: "On July 30, OpenAI cut pricing for its fastest, cheapest model, GPT-5.6 Luna, by 80% — from $1/$6 to $0.20/$1.20 per million input/output tokens — and cut its mid-tier GPT-5.6 Terra by 20%, while the flagship GPT-5.6 Sol stayed unchanged. OpenAI credits the cuts to infrastructure gains: Sol was used to rewrite and optimize OpenAI's own inference stack, yielding a 20% reduction in end-to-end serving cost and a 15%-plus throughput improvement from speculative decoding. The move lands three weeks after GPT-5.6's July 9 launch and days after Anthropic's Claude Opus 5 and Google's Gemini 3.6 Flash models shipped, both built around lower inference cost.",
+        why: "Speculative decoding is one of the ways labs make models cheaper without changing the model itself: a small, fast model drafts several tokens ahead and the big model just verifies them, which is faster than generating every token from scratch. Pricing wars like this one are exactly why Microsoft's token-budget memo above matters — the cost per token keeps falling, but usage tends to grow faster than the discount.",
+        sources: [
+          { label: "VentureBeat", url: "https://venturebeat.com/technology/ai-price-wars-openai-cuts-gpt-5-6-luna-prices-by-80-as-model-competition-shifts-toward-cost" },
+          { label: "MLQ.ai", url: "https://mlq.ai/news/openai-slashes-gpt-56-luna-prices-80-undercutting-deepseek-as-ai-price-war-intensifies/" }
+        ]
+      },
+      {
+        title: "The Rust programming language adopts a policy banning undisclosed LLM-written contributions",
+        body: "The rust-lang/rust project published an official LLM policy on August 5 via its Inside Rust blog, responding to a rising volume of low-effort, LLM-generated 'slop' pull requests that were burdening maintainers. The policy bans comments, issue bodies, PR descriptions, documentation, and compiler diagnostics that were originally written by an LLM and posted without disclosure — contributors must either avoid posting LLM-originated content or clearly disclose its origin. Private use of LLMs (asking questions, reviewing your own code, summarizing threads for yourself) remains unrestricted. A narrow experimental path still allows LLM-generated code changes, but only when pre-arranged with a reviewer and for non-critical, well-tested work.",
+        why: "This is a concrete answer to a question most open-source and workplace teams are still avoiding: not 'can you use AI' but 'what has to be disclosed when you do.' Rust's line — private use is fine, undisclosed public output isn't — is a pattern worth recognizing anywhere AI-assisted work gets published under a human's name.",
+        sources: [
+          { label: "Inside Rust Blog", url: "https://blog.rust-lang.org/inside-rust/2026/08/05/rust-langrust-is-adopting-an-llm-policy/" },
+          { label: "Socket.dev", url: "https://socket.dev/blog/rust-moves-to-restrict-llm-use-in-contributions" }
+        ]
+      },
+      {
+        title: "Anaconda acquires AI-security startup Enkrypt AI to add red-teaming and guardrails to its platform",
+        body: "Anaconda announced on August 4 that it has acquired Enkrypt AI, an AI security and compliance company, folding its tools directly into the Anaconda Platform. Enkrypt AI's technology includes automated red-teaming that probes models for vulnerabilities before deployment, runtime guardrails that block unsafe outputs, and compliance automation that maps frameworks like NIST's AI Risk Management Framework and HIPAA into enforceable controls. Anaconda says the acquisition extends its platform's governance across the full AI lifecycle, from a developer's first prompt to an agent running in production, including the MCP servers agents connect through.",
+        why: "Red-teaming is deliberately attacking your own AI system before an outside adversary does, and runtime guardrails are the automated checks that keep watching after deployment — this acquisition is a sign that AI security is consolidating into standard platform features rather than staying a specialist add-on, the same way antivirus and firewalls did for earlier software.",
+        sources: [
+          { label: "Anaconda", url: "https://www.anaconda.com/blog/anaconda-acquires-enkrypt-ai" },
+          { label: "AIwire (HPCwire)", url: "https://www.hpcwire.com/aiwire/2026/08/04/anaconda-acquires-enkrypt-ai-to-secure-the-trillion-token-enterprise/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on the Microsoft token-budget memo and what it signals about enterprise AI spending.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "An accessible, skeptical read on the Perplexity/Amazon ruling and what it means for AI agents acting on your behalf.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good fit for the policy angle on Rust's LLM-contribution rules and the ongoing inference price war.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "Technical coverage well suited to unpacking GPT-5.6's pricing tiers and speculative decoding.",
+        url: "https://thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Token (and why AI pricing runs on it)",
+      definition:
+        "A token is the small chunk of text — roughly a few characters or part of a word — that a language model actually reads and generates, one at a time. Providers meter both API pricing and (increasingly) internal cost controls in tokens, which is why OpenAI's price cuts and Microsoft's spending caps this week are really the same story from two sides: the underlying unit of AI cost is the token, and everyone building on top of AI models has to budget for it.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Pick a document you actually use (an email thread, a report, a chapter) and paste it into a chatbot that shows token counts, or check an API pricing page for two providers. Estimate roughly how many tokens your document is, then calculate what it would cost to process at each provider's per-million-token rate — the gap between 'free to chat' and 'metered by the token' is exactly what Microsoft's memo and OpenAI's price cuts were both about.",
+    learnLinks: [
+      { label: "What a token actually is → How Models Actually Work", href: "#/course/models" },
+      { label: "AI agents and who's accountable when they act → Building with AI", href: "#/course/engineering" },
+      { label: "AI safety evaluations and red-teaming → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-08-04",
     displayDate: "Tuesday, August 4, 2026 · Edition #4",
     headline: "Alibaba's 2.4-trillion-parameter Qwen3.8-Max lands the same week Anthropic discloses Claude broke into three companies during safety testing",
