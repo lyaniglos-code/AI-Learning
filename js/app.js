@@ -812,25 +812,65 @@ const tts = {
   rate: parseFloat(localStorage.getItem("np_tts_rate") || "1"),
   pitch: parseFloat(localStorage.getItem("np_tts_pitch") || "1"),
 
-  voiceName: localStorage.getItem("np_tts_voice") || "",
+  // drop any previously-saved Zira selection — she's the harshest legacy voice
+  voiceName: (() => {
+    const saved = localStorage.getItem("np_tts_voice") || "";
+    return /zira/i.test(saved) ? "" : saved;
+  })(),
   showPanel: false,
 
   supported() { return "speechSynthesis" in window; },
 
-  // Modern neural voices, best first. These are the conversational-sounding
-  // ones (Edge/Windows "Natural", Chrome/Google, macOS premium) — a world away
-  // from the old robotic defaults.
-  PREFERRED: [
-    /ava.*(natural|online)/i, /andrew.*(natural|online)/i, /emma.*(natural|online)/i,
-    /brian.*(natural|online)/i, /jenny.*(natural|online)/i, /aria.*(natural|online)/i,
-    /guy.*(natural|online)/i, /natural/i, /neural/i, /online/i,
-    /google us english/i, /google uk english female/i,
-    /samantha/i, /karen/i, /daniel/i, /alex/i
+  // Every system voice gets a persona name — celestial and mythic, to match
+  // the brand — plus a character note. Ordered best-sounding first; that order
+  // also drives auto-selection.
+  PERSONAS: [
+    { re: /ava/i,                    name: "Lyra",    tag: "warm, conversational" },
+    { re: /andrew/i,                 name: "Orion",   tag: "calm, grounded" },
+    { re: /emma/i,                   name: "Vesper",  tag: "bright, expressive" },
+    { re: /brian/i,                  name: "Atlas",   tag: "steady, documentary" },
+    { re: /jenny/i,                  name: "Juno",    tag: "friendly, upbeat" },
+    { re: /aria/i,                   name: "Nova",    tag: "crisp, newsreader" },
+    { re: /guy/i,                    name: "Kai",     tag: "easygoing" },
+    { re: /steffan/i,                name: "Caspian", tag: "measured" },
+    { re: /christopher/i,            name: "Cassius", tag: "deep, assured" },
+    { re: /michelle/i,               name: "Selene",  tag: "soft, unhurried" },
+    { re: /roger/i,                  name: "Sable",   tag: "dry, low" },
+    { re: /eric/i,                   name: "Rune",    tag: "even-toned" },
+    { re: /natural|neural/i,         name: "Astra",   tag: "neural" },
+    { re: /google us english/i,      name: "Solis",   tag: "clear, neutral" },
+    { re: /google uk english female/i, name: "Isolde", tag: "British" },
+    { re: /google uk english male/i, name: "Alaric",  tag: "British" },
+    { re: /samantha/i,               name: "Calla",   tag: "smooth" },
+    { re: /karen/i,                  name: "Marlowe", tag: "Australian" },
+    { re: /daniel/i,                 name: "Perseus", tag: "British" },
+    { re: /alex/i,                   name: "Altair",  tag: "classic" },
+    { re: /online/i,                 name: "Echo",    tag: "cloud voice" },
+    // legacy Windows voices — usable, but noticeably synthetic
+    { re: /mark/i,                   name: "Draco",   tag: "legacy" },
+    { re: /david/i,                  name: "Corvin",  tag: "legacy" },
+    { re: /hazel/i,                  name: "Wren",    tag: "legacy" },
+    { re: /zira/i,                   name: "Nyx",     tag: "legacy, harsh" }
   ],
 
+  persona(v) {
+    if (!v) return { name: "Default", tag: "", tier: "standard" };
+    const hit = this.PERSONAS.find(p => p.re.test(v.name));
+    const neural = /natural|neural|online|google|premium|enhanced/i.test(v.name);
+    const legacy = /zira|david|mark|hazel/i.test(v.name);
+    return {
+      name: hit ? hit.name : v.name.replace(/^(Microsoft|Google|Apple)\s+/i, "").replace(/\s*[-–(].*$/, "").trim(),
+      tag: hit ? hit.tag : (neural ? "neural" : ""),
+      tier: neural ? "signature" : legacy ? "legacy" : "standard"
+    };
+  },
+
   voiceScore(v) {
-    const i = this.PREFERRED.findIndex(re => re.test(v.name));
-    const rank = i === -1 ? 90 : i;
+    const i = this.PERSONAS.findIndex(p => p.re.test(v.name));
+    let rank = i === -1 ? 50 : i;
+    // Zira is the harshest of the legacy set — never auto-select her.
+    if (/zira/i.test(v.name)) rank += 100;
+    else if (/david|mark|hazel/i.test(v.name)) rank += 40;
     return rank + (/^en-US/i.test(v.lang) ? 0 : 1); // nudge US English first
   },
 
@@ -859,8 +899,8 @@ const tts = {
 
   preview() {
     speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance("Hi — this is how I'll read TokenWise to you.");
     const v = this.voice();
+    const u = new SpeechSynthesisUtterance(`Hi, I'm ${this.persona(v).name}. This is how I'll read TokenWise to you.`);
     if (v) u.voice = v;
     u.rate = this.rate;
     u.pitch = this.pitch;
@@ -1043,18 +1083,29 @@ const tts = {
       return `<div class="tts-panel"><div class="tts-hint">Loading voices… if none appear, your browser has no speech voices installed.</div></div>`;
     }
     const current = this.voice();
-    const best = list.slice(0, 5);
-    const rest = list.slice(5);
-    const opt = v => `<option value="${esc(v.name)}"${current && v.name === current.name ? " selected" : ""}>${esc(v.name.replace(/^Microsoft /, "").replace(/ - English.*$/i, ""))}</option>`;
+    const opt = v => {
+      const p = this.persona(v);
+      return `<option value="${esc(v.name)}"${current && v.name === current.name ? " selected" : ""}>${esc(p.name)}${p.tag ? " — " + esc(p.tag) : ""}</option>`;
+    };
+    const tier = t => list.filter(v => this.persona(v).tier === t);
+    const groups = [
+      ["✦ Signature voices", tier("signature")],
+      ["Standard voices", tier("standard")],
+      ["Legacy voices", tier("legacy")]
+    ].filter(([, vs]) => vs.length);
+    const onlyLegacy = tier("signature").length === 0 && tier("standard").length === 0;
     return `
       <div class="tts-panel">
-        <label>Voice</label>
+        <label>Narrator</label>
         <select onchange="tts.setVoice(this.value)">
-          <optgroup label="Most natural on this device">${best.map(opt).join("")}</optgroup>
-          ${rest.length ? `<optgroup label="Other voices">${rest.map(opt).join("")}</optgroup>` : ""}
+          ${groups.map(([label, vs]) => `<optgroup label="${label}">${vs.map(opt).join("")}</optgroup>`).join("")}
         </select>
-        <div class="tts-hint">Pick a voice and you'll hear a sample. Voices marked “Natural” or “Online” are the modern neural ones — the closest to an AI assistant's speaking voice.
-        ${/edg\//i.test(navigator.userAgent) ? "" : "<br><br>Tip: Microsoft Edge ships the best free neural voices on Windows — the same page sounds noticeably warmer there."}</div>
+        <div class="tts-hint">
+          Pick a narrator and you'll hear them introduce themselves. <b>Signature</b> voices are neural — the closest to an AI assistant's speaking voice.
+          ${onlyLegacy ? `<br><br><b>Only legacy voices found on this device.</b> They sound synthetic no matter the settings. To get the good ones free:
+            ${/edg\//i.test(navigator.userAgent) ? "" : "<br>• Open TokenWise in <b>Microsoft Edge</b> — it ships neural voices."}
+            <br>• Or install them: <b>Windows Settings → Time &amp; language → Speech → Manage voices → Add voices</b>, then reload this page.` : ""}
+        </div>
       </div>`;
   },
 
@@ -1066,7 +1117,7 @@ const tts = {
     bar.innerHTML = `
       ${this.showPanel ? this.voicePanel() : ""}
       ${this.reading ? `<span class="tts-label">${this.paused ? "Paused" : "Reading page…"}</span>` : ""}
-      <button class="tts-rate" onclick="tts.togglePanel()" title="Choose voice">🎙</button>
+      <button class="tts-rate" onclick="tts.togglePanel()" title="Choose narrator voice">🎙 ${esc(this.persona(this.voice()).name)}</button>
       <button class="tts-rate" onclick="tts.cyclePitch()" title="Voice pitch (cycles low → high)">♪${this.pitch}</button>
       <button class="tts-rate" onclick="tts.cycleRate()" title="Reading speed">${this.rate}×</button>
       ${this.reading ? `<button class="tts-btn secondary" onclick="tts.stop()" title="Stop">⏹</button>` : ""}
