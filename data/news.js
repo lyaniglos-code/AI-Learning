@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-06",
+    displayDate: "Thursday, August 6, 2026 · Edition #6",
+    headline: "Google reshuffles its entire AI leadership — Hassabis to chairman, Jeff Dean out — the same week Anthropic hires its first global-affairs chief ahead of a closed-door White House model-safety framework",
+    summary:
+      "Google made its biggest AI leadership change in years, moving DeepMind's CEO into a chairman role and losing its 27-year chief scientist to a new startup. Meanwhile Washington and the AI labs kept negotiating how frontier models get vetted before release, Anthropic staffed up for exactly that fight, DeepSeek shipped a sharply cheaper agentic model, and the EU's new AI transparency rules are now actually being enforced.",
+    stories: [
+      {
+        title: "Google reorganizes AI leadership: Hassabis moves to chairman, Kavukcuoglu takes over Gemini, Jeff Dean departs after 27 years",
+        body: "Google announced a major AI leadership shake-up on August 5. Demis Hassabis, DeepMind's co-founder and CEO, is stepping back from day-to-day operations to become chairman of Google DeepMind and Alphabet's chief scientist, focusing on long-term AGI strategy, global policy, and Isomorphic Labs. Koray Kavukcuoglu becomes SVP of Google DeepMind, reporting directly to Sundar Pichai and taking charge of Gemini model development, frontier research, and developer ecosystems; a key AI-coding lead, Sebastian Borgeaud, also relocated from the UK to California as part of the shift. Separately, longtime Google chief scientist Jeff Dean is leaving the company after 27 years to start his own company with senior fellow Sanjay Ghemawat, a departure Google described as amicable and says it plans to invest in. Alphabet shares fell about 4% after the news.",
+        why: "Leadership structure is a real signal of where a company thinks the competitive fight actually is: concentrating Gemini's product and research authority in California, under one person reporting straight to the CEO, is Google trying to close a speed gap with Anthropic and OpenAI. It's also a reminder that 'the AI race' runs through org charts and retention, not just model benchmarks.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/05/google-chief-scientist-jeff-dean-leaving-company-after-27-years.html" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-05/google-deepmind-boss-hassabis-moves-to-chair-role-in-shakeup" },
+          { label: "Fortune", url: "https://fortune.com/2026/08/05/demis-hassabis-steps-down-google-deepmind-ai-shakeup/" }
+        ]
+      },
+      {
+        title: "Anthropic names its first Chief Global Affairs Officer as it heads into a White House meeting on model-safety vetting",
+        body: "Anthropic announced on August 4 that Mariano-Florentino 'Tino' Cuéllar, a former California Supreme Court justice and outgoing president of the Carnegie Endowment for International Peace, is joining as its first Chief Global Affairs Officer, reporting to president Daniela Amodei. Cuéllar, taking leave from Stanford Law School, will lead policy, international engagement, and government relationships as Anthropic expands globally. The announcement landed the same day Anthropic, along with Google, Meta, and OpenAI, met with White House officials to discuss a voluntary framework for early federal cybersecurity review of frontier models — a relationship that has grown adversarial amid an ongoing Pentagon-related dispute and export restrictions.",
+        why: "AI labs increasingly employ senior former officials specifically to manage government relationships, because model releases now intersect with export controls, procurement rules, and national-security review, not just product launches. Watching who a lab hires into these roles is often a better predictor of upcoming policy fights than any single announcement.",
+        sources: [
+          { label: "Anthropic — Tino Cuéllar joins as Chief Global Affairs Officer", url: "https://www.anthropic.com/news/tino-cuellar" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/04/anthropic-names-global-affairs-chief-as-trump-tensions-persist.html" }
+        ]
+      },
+      {
+        title: "White House briefs OpenAI, Anthropic, Google, Meta, Microsoft and Nvidia on a frontier-model review framework it won't make public",
+        body: "Following President Trump's June 2 executive order on AI security, the White House briefed major AI companies on August 4 on a finalized framework requiring a 30-day voluntary early-access window for cybersecurity evaluation of new closed-source frontier models, before wider release. The administration has said it will not publicly release the details of how models will be vetted, and the process applies only to closed-source models from a small set of major developers — open-weight models are excluded from the review entirely.",
+        why: "This is a live, unresolved question in AI governance: should the rules for evaluating powerful models before release be public and consistent, or negotiated case-by-case between a handful of labs and regulators? A confidential, voluntary process shapes which companies get review speed advantages and which don't, well before the public ever sees a benchmark.",
+        sources: [
+          { label: "Fortune", url: "https://fortune.com/2026/08/04/baffling-white-house-wont-publicly-release-ai-model-evaluation-framework-it-reviewed-today-with-openai-anthropic-microsoft-and-others/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/03/white-house-ai-companies-voluntary-framework-meeting.html" }
+        ]
+      },
+      {
+        title: "DeepSeek ships the official V4-Flash model, cutting API costs further and adding stronger agent capabilities",
+        body: "DeepSeek released the official version of DeepSeek-V4-Flash on July 31, replacing its April preview with the same underlying architecture but substantially improved post-training. The update adds significantly stronger autonomous-agent capabilities, native support for an OpenAI-style Responses API, and Codex-focused compatibility. Pricing is aggressive: $0.14 per million input tokens on a cache miss, just $0.0028 per million on a cache hit (98% off), and $0.28 per million output tokens. DeepSeek says its larger V4-Pro model will follow 'soon.'",
+        why: "A cache hit versus cache miss price gap this large is 'prompt caching' in action: when a model reuses a prompt prefix it has already processed (like a long system prompt or document), providers charge far less for that repeated part because they can skip re-computing it. DeepSeek's pricing makes that incentive extremely visible, and it keeps pressure on every other lab's per-token pricing.",
+        sources: [
+          { label: "Caixin Global", url: "https://www.caixinglobal.com/2026-08-01/deepseek-releases-official-v4-flash-model-as-chinas-ai-race-intensifies-102470292.html" }
+        ]
+      },
+      {
+        title: "The EU's AI Act transparency rules are now in force, requiring AI systems to disclose themselves and label synthetic content",
+        body: "As of August 2, the European Commission and national authorities began enforcing new AI Act transparency obligations across the EU. Chatbots and other interactive AI systems must now tell users they're dealing with AI rather than a human, deepfakes must be labeled, and providers of systems that generate synthetic audio, image, video, or text must add machine-readable marks so the content can be identified as AI-generated. Violations can bring fines up to €15 million or 3% of global annual turnover; systems already on the market before August 2 have until December 2, 2026 to add the machine-readable marking.",
+        why: "'Machine-readable marking' means an invisible signal embedded in a file — like C2PA content credentials or watermarking — that software can detect even when a human can't tell the content is AI-made just by looking or listening. This is one of the first hard-deadline, enforceable disclosure rules of its kind anywhere, and it will shape how AI image, video, and voice tools are built for the EU market specifically.",
+        sources: [
+          { label: "European Commission", url: "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august" },
+          { label: "Goodwin", url: "https://www.goodwinlaw.com/en/insights/publications/2026/08/alerts-technology-dpc-eu-ai-act-transparency-obligations-now-in-force" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on Google's AI leadership shake-up and what it signals about the Gemini roadmap.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "An accessible, skeptical read on Jeff Dean's departure and the broader Google DeepMind reorganization.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good fit for unpacking the White House's confidential frontier-model review framework and the EU AI Act's new enforcement phase.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "Technical coverage well suited to DeepSeek V4-Flash's architecture, caching pricing, and agent capabilities.",
+        url: "https://thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Prompt caching",
+      definition:
+        "A technique where a model provider stores the processed form of a prompt's unchanged prefix (like a long system prompt, document, or conversation history) so a later request that reuses it doesn't have to be recomputed from scratch. Providers pass the savings on as steep 'cache hit' discounts — DeepSeek's V4-Flash charges 98% less for a cached hit than a cache miss — which is why structuring prompts with stable content first and variable content last can meaningfully cut real-world API costs.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "If you use an AI API or a tool that shows token/cost usage, look at whether it exposes a 'cached' vs 'uncached' token count. If it doesn't, read one provider's pricing page (OpenAI, Anthropic, or DeepSeek) and find the cache-hit discount — then think about a prompt you send repeatedly (a system instruction, a long document) and how reordering it so the stable part comes first could take advantage of that discount.",
+    learnLinks: [
+      { label: "How tokens and pricing actually work → How Models Actually Work", href: "#/course/models" },
+      { label: "Reading AI industry news critically → The AI Industry", href: "#/course/industry" },
+      { label: "Why AI safety evaluations and policy frameworks exist → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-08-05",
     displayDate: "Wednesday, August 5, 2026 · Edition #5",
     headline: "A Ninth Circuit ruling says it's users, not AI agents, who 'access' a website — the same week Microsoft caps engineers' AI token budgets and Rust bans LLM-written code",
