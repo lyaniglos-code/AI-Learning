@@ -825,32 +825,40 @@ const tts = {
   // the brand — plus a character note. Ordered best-sounding first; that order
   // also drives auto-selection.
   PERSONAS: [
-    { re: /ava/i,                    name: "Lyra",    tag: "warm, conversational" },
-    { re: /andrew/i,                 name: "Orion",   tag: "calm, grounded" },
-    { re: /emma/i,                   name: "Vesper",  tag: "bright, expressive" },
-    { re: /brian/i,                  name: "Atlas",   tag: "steady, documentary" },
-    { re: /jenny/i,                  name: "Juno",    tag: "friendly, upbeat" },
-    { re: /aria/i,                   name: "Nova",    tag: "crisp, newsreader" },
-    { re: /guy/i,                    name: "Kai",     tag: "easygoing" },
-    { re: /steffan/i,                name: "Caspian", tag: "measured" },
-    { re: /christopher/i,            name: "Cassius", tag: "deep, assured" },
-    { re: /michelle/i,               name: "Selene",  tag: "soft, unhurried" },
-    { re: /roger/i,                  name: "Sable",   tag: "dry, low" },
-    { re: /eric/i,                   name: "Rune",    tag: "even-toned" },
+    // Microsoft neural (Edge / Windows "Natural")
+    { re: /\bava\b/i,                name: "Lyra",    tag: "warm, conversational" },
+    { re: /\bandrew\b/i,             name: "Orion",   tag: "calm, grounded" },
+    { re: /\bemma\b/i,               name: "Vesper",  tag: "bright, expressive" },
+    { re: /\bbrian\b/i,              name: "Atlas",   tag: "steady, documentary" },
+    { re: /\bjenny\b/i,              name: "Juno",    tag: "friendly, upbeat" },
+    { re: /\baria\b/i,               name: "Nova",    tag: "crisp, newsreader" },
+    { re: /\bguy\b/i,                name: "Kai",     tag: "easygoing" },
+    { re: /\bsteffan\b/i,            name: "Caspian", tag: "measured" },
+    { re: /\bchristopher\b/i,        name: "Cassius", tag: "deep, assured" },
+    { re: /\bmichelle\b/i,           name: "Selene",  tag: "soft, unhurried" },
+    { re: /\broger\b/i,              name: "Sable",   tag: "dry, low" },
+    { re: /\beric\b/i,               name: "Rune",    tag: "even-toned" },
     { re: /natural|neural/i,         name: "Astra",   tag: "neural" },
-    { re: /google us english/i,      name: "Solis",   tag: "clear, neutral" },
-    { re: /google uk english female/i, name: "Isolde", tag: "British" },
-    { re: /google uk english male/i, name: "Alaric",  tag: "British" },
-    { re: /samantha/i,               name: "Calla",   tag: "smooth" },
-    { re: /karen/i,                  name: "Marlowe", tag: "Australian" },
-    { re: /daniel/i,                 name: "Perseus", tag: "British" },
-    { re: /alex/i,                   name: "Altair",  tag: "classic" },
+    // Google (Chrome)
+    { re: /google.*us english.*female/i, name: "Thalia", tag: "Google · bright" },
+    { re: /google.*us english.*male/i,   name: "Lucian", tag: "Google · steady" },
+    { re: /google.*(us|american) english/i, name: "Solis", tag: "Google · clear, neutral" },
+    { re: /google.*uk english.*female/i, name: "Isolde", tag: "Google · British" },
+    { re: /google.*uk english.*male/i,   name: "Alaric", tag: "Google · British" },
+    { re: /google.*austral/i,        name: "Talia",   tag: "Google · Australian" },
+    { re: /google.*indian?/i,        name: "Anara",   tag: "Google · Indian English" },
+    { re: /^google/i,                name: "Halcyon", tag: "Google voice" },
+    // Apple / other platform voices
+    { re: /\bsamantha\b/i,           name: "Calla",   tag: "smooth" },
+    { re: /\bkaren\b/i,              name: "Marlowe", tag: "Australian" },
+    { re: /\bdaniel\b/i,             name: "Perseus", tag: "British" },
+    { re: /\balex\b/i,               name: "Altair",  tag: "classic" },
     { re: /online/i,                 name: "Echo",    tag: "cloud voice" },
     // legacy Windows voices — usable, but noticeably synthetic
-    { re: /mark/i,                   name: "Draco",   tag: "legacy" },
-    { re: /david/i,                  name: "Corvin",  tag: "legacy" },
-    { re: /hazel/i,                  name: "Wren",    tag: "legacy" },
-    { re: /zira/i,                   name: "Nyx",     tag: "legacy, harsh" }
+    { re: /\bmark\b/i,               name: "Draco",   tag: "legacy" },
+    { re: /\bdavid\b/i,              name: "Corvin",  tag: "legacy" },
+    { re: /\bhazel\b/i,              name: "Wren",    tag: "legacy" },
+    { re: /\bzira\b/i,               name: "Nyx",     tag: "legacy, harsh" }
   ],
 
   persona(v) {
@@ -876,7 +884,9 @@ const tts = {
 
   availableVoices() {
     const all = speechSynthesis.getVoices();
-    const en = all.filter(v => /^en/i.test(v.lang));
+    // keep anything English by locale OR by name (some Google/Chrome voices
+    // report unusual lang codes and were slipping through the old filter)
+    const en = all.filter(v => /^en/i.test(v.lang) || /english/i.test(v.name));
     return (en.length ? en : all).sort((a, b) => this.voiceScore(a) - this.voiceScore(b) || a.name.localeCompare(b.name));
   },
 
@@ -1105,6 +1115,7 @@ const tts = {
           ${onlyLegacy ? `<br><br><b>Only legacy voices found on this device.</b> They sound synthetic no matter the settings. To get the good ones free:
             ${/edg\//i.test(navigator.userAgent) ? "" : "<br>• Open TokenWise in <b>Microsoft Edge</b> — it ships neural voices."}
             <br>• Or install them: <b>Windows Settings → Time &amp; language → Speech → Manage voices → Add voices</b>, then reload this page.` : ""}
+          <br><br>Voices come from your browser, so the list changes with it: <b>Chrome</b> provides the Google voices, <b>Edge</b> the Microsoft neural ones, <b>Safari</b> Apple's.
         </div>
       </div>`;
   },
