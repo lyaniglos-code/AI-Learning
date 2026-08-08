@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-08",
+    displayDate: "Saturday, August 8, 2026 · Edition #7",
+    headline: "AMD's biggest week of the year — record data-center revenue, a silicon-etching chip acquisition aimed at Nvidia, and a stock drop anyway — while SoftBank's earnings show Intel, not OpenAI, carrying its AI profits",
+    summary:
+      "AMD posted record data-center revenue, agreed to acquire an AI chip startup that etches model weights directly into silicon, and still watched its stock fall on capex nerves. SoftBank's own earnings told a related story about where AI money is actually landing right now: gains on its Intel and ByteDance stakes carried the quarter while its huge OpenAI investment sat flat on the books. Meanwhile Washington considered widening chip-adjacent export controls on China, a reminder that AI hardware supply chains now run through trade policy as much as engineering.",
+    stories: [
+      {
+        title: "AMD agrees to acquire Taalas, a startup that etches AI models directly into silicon",
+        body: "AMD announced on August 6 a definitive agreement to acquire Taalas, a Toronto-based AI chip startup, for undisclosed terms. Founded in 2023 by former Tenstorrent CEO Ljubisa Bajic, Taalas designs chips built for one specific AI model rather than general-purpose processors — its first chip ran a version of Meta's Llama 3.1 with the model's weights etched directly into the silicon instead of stored in separate HBM memory. Taalas has raised $219 million in venture funding; its team will join AMD's AI organization under Vamsi Boppana and its technology will feed into AMD's Instinct GPU and Helios rack-scale roadmap, targeting the inference market AMD expects to grow more than 80% annually.",
+        why: "This is the difference between a GPU and an ASIC (application-specific chip) made concrete: a GPU can run almost any model but pays a cost in flexibility, while a chip built for one model can be faster and cheaper to run because it skips the back-and-forth of pulling weights from separate memory. As inference (running trained models) becomes a bigger business than training them, expect more of this kind of narrow, model-specific hardware.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/06/amd-buys-taalas-startup-that-hardwires-ai-models-into-its-silicon.html" },
+          { label: "The Register", url: "https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/" },
+          { label: "Data Center Dynamics", url: "https://www.datacenterdynamics.com/en/news/amd-acquires-ai-chip-startup-taalas-to-further-support-inference-workloads/" }
+        ]
+      },
+      {
+        title: "AMD's data-center revenue more than doubles, but the stock falls on capex worries",
+        body: "AMD's Q2 2026 earnings, reported August 4, showed total revenue up 50% year-over-year to $11.53 billion and adjusted earnings per share of $1.66, both ahead of analyst expectations. The data-center segment — AMD's AI chip business — roughly doubled, with sales rising 107% year-over-year to $6.7 billion. Despite the beat, shares fell around 9% as investors focused on rising capital-expenditure guidance and margin pressure tied to AMD's aggressive AI infrastructure buildout; CEO Lisa Su said the company still expects data-center sales to double again in 2027.",
+        why: "This is the AI capex cycle in miniature: a company can beat every headline number and still see its stock fall if investors think the spending required to sustain that growth is outrunning the near-term payoff. It's the same tension underneath Microsoft's token-budget memo from a previous edition — impressive usage numbers don't automatically mean impressive returns on the money spent to produce them.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/04/amd-earnings-report-q2-2026.html" },
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/08/04/amd-doubles-data-center-revenue-stock-falls-concerns-rising-capex/" }
+        ]
+      },
+      {
+        title: "SoftBank's Q1 earnings: Intel and ByteDance stakes carry the quarter, OpenAI sits flat",
+        body: "SoftBank Group's Q1 FY2026 earnings, reported August 6, showed net profit of ¥347.3 billion ($2.2 billion), beating analyst forecasts of ¥120.23 billion despite falling about 18% year-over-year. The results were driven largely by a ¥1.3 trillion (about $8.2 billion) gain on SoftBank's roughly $2 billion Intel stake, which has climbed nearly 400% over the past year, plus a $2.2 billion gain in the value of its ByteDance holding. By contrast, SoftBank said it recorded no gain or loss on its OpenAI investment this quarter, with a person familiar with the matter telling CNBC there was no new information to justify changing the private company's valuation. SoftBank's cumulative OpenAI investment is expected to reach about $64.6 billion, for roughly a 13% stake, once a third funding tranche completes in October 2026.",
+        why: "Publicly traded stakes like Intel get 'marked to market' — their value updates automatically with the stock price — while a private company like OpenAI is valued by judgment calls that only change when there's a new funding round or other fresh evidence. That accounting difference is why a single earnings report can show a huge swing from one AI bet and total silence from another, even if both are core to the company's AI strategy.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/06/softbank-q1-earnings-intel-bytedance-stakes.html" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/markets/stocks/articles/softbank-q1-2026-earnings-beat-140213193.html" }
+        ]
+      },
+      {
+        title: "Washington weighs banning Chinese-made data-center optical components",
+        body: "Bloomberg reported on August 5 that the US is considering a ban on Chinese-made data-center components — specifically optical transceivers, which move data at high speed within and between data-center racks. The move, still under consideration, risks straining the fragile US-China trade truce reached earlier in 2026. China exported about $61.6 million worth of these components to the US in June, roughly 8.7% of its worldwide shipments of the product, which analysts say limits the likely economic impact even as it raises the political stakes.",
+        why: "AI export-control fights usually focus on GPUs, but a data center is a system of many parts, and optical transceivers are the connective tissue that lets thousands of chips act like one giant computer. Restricting a smaller, less-famous component is still a real chokepoint move — a reminder that AI hardware supply chains run through dozens of parts, not just the chip everyone talks about.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-05/china-s-official-newspaper-warns-us-over-expanding-tech-curbs" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on AMD's Taalas acquisition and what it signals about the inference-chip race with Nvidia.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "Technical coverage well suited to unpacking how Taalas etches model weights into silicon and why that speeds up inference.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good fit for the SoftBank earnings accounting story and the widening US-China chip-adjacent export controls.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "An accessible read on whether AI infrastructure capex is starting to outrun investor patience.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "ASIC (application-specific integrated circuit)",
+      definition:
+        "A chip designed to do one narrow job extremely well, instead of a general-purpose chip like a GPU that can run almost any model. Taalas's chips are an extreme version of this idea for AI: instead of loading a model's weights from separate memory every time (as GPUs do), they etch those weights directly into the silicon itself, trading flexibility (you'd need new chips for a new model) for speed and lower cost on the one model they're built for.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Look up a chip comparison site like Artificial Analysis and compare the cost-per-token of a general-purpose GPU (like an Nvidia H100 or B200) against any specialized inference chip you can find pricing for. Notice how narrowing a chip's job — from 'run any model' to 'run this one model' — tends to show up directly in price and speed.",
+    learnLinks: [
+      { label: "Why compute and chips matter in the AI industry → The AI Industry", href: "#/course/industry" },
+      { label: "How tokens, training, and model architecture work → How Models Actually Work", href: "#/course/models" },
+      { label: "Why AI hardware policy and export controls exist → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-08-06",
     displayDate: "Thursday, August 6, 2026 · Edition #6",
     headline: "Google reshuffles its entire AI leadership — Hassabis to chairman, Jeff Dean out — the same week Anthropic hires its first global-affairs chief ahead of a closed-door White House model-safety framework",
