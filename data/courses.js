@@ -966,7 +966,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "chatgpt",
       title: "ChatGPT (OpenAI)",
       minutes: 18,
-      updated: "Aug 5, 2026",
+      updated: "Aug 9, 2026",
       content: `
 <p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, split into three tiers: fast/cheap "Luna," balanced "Terra," and flagship "Sol," which currently tops math and reasoning benchmarks.</p>
 <h3>What it does</h3>
@@ -975,7 +975,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Multimodal everything</b> — analyze images and documents, generate images, real-time voice conversations with screen/camera sharing</li>
 <li><b>Web search & Deep Research</b> — grounded answers with citations; Deep Research produces long, sourced reports from many sites</li>
 <li><b>Projects, memory & custom GPTs</b> — persistent context about you, organized workspaces, and shareable custom assistants</li>
-<li><b>Agent mode & Canvas</b> — an agent that operates a browser to complete multi-step tasks, and a side-by-side editor for documents and code</li>
+<li><b>Agent mode & Canvas</b> — an agent that browses and acts on websites to complete multi-step tasks, and a side-by-side editor for documents and code. OpenAI retired its standalone Atlas browser on August 9, 2026, folding its browser-agent features directly into ChatGPT and Codex instead</li>
 <li><b>Connectors</b> — hooks into Drive, SharePoint, calendars, and third-party apps</li>
 </ul>
 <h3>Pricing shape</h3>

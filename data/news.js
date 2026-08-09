@@ -13,6 +13,96 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-09",
+    displayDate: "Sunday, August 9, 2026 · Edition #8",
+    headline: "OpenAI pauses its next model over a 'Critical' cyber-risk finding, shuts down its Atlas browser, and gets outed as ~70% of Microsoft's AI revenue — all in one week",
+    summary:
+      "OpenAI had an unusually candid, and unusually rough, stretch: it disclosed that its unreleased Astra model may have crossed a 'Critical' cybersecurity threshold, retired its ten-month-old Atlas browser in favor of folding agentic features straight into ChatGPT, and watched a Microsoft disclosure show just how much of Big Tech's AI revenue actually flows through one partnership. Meanwhile Ilya Sutskever's secretive Safe Superintelligence lab struck a multibillion-dollar compute deal with Nvidia — a reminder that even a safety-first lab that ships no products still needs chips at scale.",
+    stories: [
+      {
+        title: "OpenAI says its unreleased 'Astra' model may have hit a 'Critical' cybersecurity threshold — and pauses work on it",
+        body: "OpenAI disclosed on August 7 that internal testing of its upcoming Astra model could not rule out that the system has reached the 'Critical' tier for cyber capability under the company's Preparedness Framework — the highest risk category OpenAI tracks, and the first time any of its models has approached it. OpenAI said it is pausing internal Astra activities that don't yet meet strengthened security requirements, and has added universal monitoring for risky or misaligned behavior across all of the model's agentic uses, including training and evaluation. The company stressed it has not formally classified Astra as Critical — full benchmarking is still underway — but chose to disclose the preliminary finding for transparency with the public and the security research community. Astra had already made headlines in early August after OpenAI teased it by publishing ten machine-checked solutions to previously unsolved math and computer-science problems.",
+        why: "OpenAI's Preparedness Framework sorts a model's potential for harm into tiers (Low, Medium, High, Critical) before release; 'Critical' specifically means a model that could independently discover and use never-before-seen exploits against hardened real-world systems, not just replay known bugs. Pausing internal work rather than shipping first and patching later is a rare real-world test of whether a lab's safety commitments hold once a model's actual capability, not just its marketing, is what's being measured.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/" },
+          { label: "Forbes", url: "https://www.forbes.com/sites/jonmarkman/2026/08/09/openai-pauses-astra-after-it-nears-first-ever-critical-cyber-risk/" },
+          { label: "MacRumors", url: "https://www.macrumors.com/2026/08/07/openai-astra-model-hacking-concerns/" }
+        ]
+      },
+      {
+        title: "OpenAI shuts down its Atlas browser today, folding its features straight into ChatGPT",
+        body: "OpenAI's standalone AI browser, Atlas, stops working today, August 9, less than ten months after its October 2025 launch. Rather than continuing Atlas as a separate product, OpenAI is moving its browser-based agentic features — letting an AI agent navigate websites, fill forms, and complete multi-step tasks — directly into ChatGPT and its Codex coding tool, alongside planned improvements like multiple tabs, downloads, and account login support. OpenAI told users to export bookmarks and saved pages before the shutdown, since Atlas will no longer open or browse afterward. Atlas had drawn criticism for slow task completion and for being vulnerable to prompt-injection attacks, where instructions hidden in a webpage hijack the agent's behavior.",
+        why: "Retiring a nine-month-old product to fold its capability into the core app you already use daily is a sign OpenAI decided the browser itself wasn't the moat — the agent behavior was. It's also a concrete case study in prompt injection, a security risk worth understanding any time an AI agent is given the ability to act on real webpages on your behalf.",
+        sources: [
+          { label: "OpenAI Help Center", url: "https://help.openai.com/en/articles/20001371-evolving-atlas-into-chatgpt-for-browser-based-agentic-work" },
+          { label: "9to5Mac", url: "https://9to5mac.com/2026/08/04/openai-explains-what-will-happen-when-chatgpt-atlas-shuts-down-this-weekend/" },
+          { label: "TechRepublic", url: "https://www.techrepublic.com/article/news-chatgpt-atlas-shutdown-migration/" }
+        ]
+      },
+      {
+        title: "Microsoft discloses that OpenAI accounts for roughly 70% of its AI revenue",
+        body: "Regulatory disclosures reported August 5 show Microsoft booked $24.1 billion in OpenAI-related sales in the fiscal year that ended in June 2026 — around 70% of Microsoft's total AI revenue, which Bloomberg estimates at roughly $34 billion over the same period. The figure includes payments for Azure cloud computing, model development costs, and Microsoft's contractual share of OpenAI's revenue under their partnership. Even so, OpenAI-related sales made up less than 10% of Microsoft's overall company revenue, underscoring how large Microsoft's total business is relative to any single AI partner.",
+        why: "This is one of the clearest public numbers yet on how financially intertwined Microsoft and OpenAI actually are — a useful reminder that 'AI revenue' reported by big tech companies is often concentrated in a small number of deals rather than broad-based demand, which matters when judging how durable that revenue really is.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-05/microsoft-s-ai-sales-mostly-come-from-openai-disclosures-show" },
+          { label: "Neowin", url: "https://www.neowin.net/news/microsoft-reveals-it-generated-241-billion-in-revenue-from-openai-in-fiscal-2026/" }
+        ]
+      },
+      {
+        title: "Ilya Sutskever's Safe Superintelligence strikes a multibillion-dollar compute deal with Nvidia",
+        body: "Safe Superintelligence (SSI), the AI lab OpenAI co-founder and former chief scientist Ilya Sutskever started in 2024, announced a long-term strategic partnership with Nvidia in late July, reported to be worth around $5 billion. The deal gives SSI access to Nvidia's next-generation Vera Rubin GPU platform, expected to expand the startup's available compute by roughly an order of magnitude. SSI, led by Sutskever and Daniel Levy, has stayed almost entirely out of the public eye since its founding, saying it is pursuing safe superintelligence directly rather than releasing commercial products along the way.",
+        why: "SSI's entire pitch is that it can out-research competitors without racing to ship products, but that strategy still runs into the wall every lab eventually hits: frontier AI research requires enormous, expensive compute, and even a famously product-averse lab has to strike a major hardware deal to keep going.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/" },
+          { label: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/ilya-sutskevers-safe-superintelligence-inc-and-nvidia-announce-long-term-strategic-partnership" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on OpenAI's Astra cybersecurity pause and what 'Critical' actually means in practice.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · YouTube",
+        why: "Careful, skeptical breakdowns are this channel's specialty — well suited to unpacking what OpenAI's Preparedness Framework disclosure does and doesn't tell us.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "An accessible read on the Atlas shutdown and what it says about OpenAI's product strategy.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good fit for the Microsoft-OpenAI revenue disclosure and the SSI-Nvidia compute deal, side by side.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Capability threshold (Preparedness Framework)",
+      definition:
+        "A predefined line a lab sets in advance for how dangerous a specific capability (like cyberattacks, bioweapons help, or persuasion) can get before extra safeguards or a release pause kick in. OpenAI's Preparedness Framework defines tiers — Low, Medium, High, Critical — and 'Critical' for cyber capability means a model that can independently find and exploit unknown vulnerabilities in hardened, real-world systems end-to-end. The point of setting these thresholds ahead of time, rather than judging case by case, is to make a lab's safety response predictable instead of negotiable once a powerful model is actually in hand.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Read OpenAI's blog post on the Astra cybersecurity finding (linked above) and try to write, in your own plain-language sentence, the difference between its 'High' and 'Critical' cyber capability tiers. Then ask yourself what independent evidence — beyond the lab's own word — would actually convince you a classification like this is accurate.",
+    learnLinks: [
+      { label: "Why labs classify model risk before release → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How agentic AI and tool use actually work → How Models Actually Work", href: "#/course/models" },
+      { label: "Reading AI business and revenue claims critically → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-08-08",
     displayDate: "Saturday, August 8, 2026 · Edition #7",
     headline: "AMD's biggest week of the year — record data-center revenue, a silicon-etching chip acquisition aimed at Nvidia, and a stock drop anyway — while SoftBank's earnings show Intel, not OpenAI, carrying its AI profits",
