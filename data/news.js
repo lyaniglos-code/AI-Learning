@@ -13,6 +13,104 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-10",
+    displayDate: "Monday, August 10, 2026 · Edition #9",
+    headline: "Google DeepMind ends its Hassabis-led era, Anthropic hires its first diplomat, and OpenAI throws ChatGPT's free tier wide open",
+    summary:
+      "Big AI labs spent the last week rewiring how they're run and who they answer to: Google DeepMind's CEO stepped back into a chairman role after a decade running the lab, and Anthropic hired a former state supreme court justice as its first-ever head of government relations. OpenAI, meanwhile, made its free ChatGPT tier meaningfully more capable just as the industry's record AI infrastructure spending faces its first real round of investor pushback.",
+    stories: [
+      {
+        title: "Demis Hassabis steps back as Google DeepMind CEO, becomes chairman and Alphabet chief scientist",
+        body: "Google CEO Sundar Pichai announced on August 5 that Demis Hassabis is ceding day-to-day control of Google DeepMind, moving into a newly created role as the unit's chairman and as chief scientist of parent company Alphabet. Koray Kavukcuoglu, previously DeepMind's chief technology officer and Alphabet's chief AI architect, becomes senior vice president of Google DeepMind and now oversees Gemini model development, reporting directly to Pichai rather than holding a standalone CEO title. The reshuffle also included Jeff Dean's departure from his chief scientist role to start a new company with several other senior Google AI researchers. Hassabis said he plans to focus on strategic AGI questions, advise Kavukcuoglu, and spend more time on Isomorphic Labs, the Alphabet-backed drug discovery company he co-founded.",
+        why: "Leadership structure is a real signal about where a company thinks the hard problems now live: Google is separating long-horizon research strategy (Hassabis) from the operational work of shipping and scaling models (Kavukcuoglu) — a split worth watching as a template other labs may follow as they mature past their founder-led phase.",
+        sources: [
+          { label: "Fortune", url: "https://fortune.com/2026/08/05/demis-hassabis-steps-down-google-deepmind-ai-shakeup/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/06/demis-hassabis-google-reshuffle-deepmind-role.html" },
+          { label: "TIME", url: "https://time.com/article/2026/08/06/google-deepmind-ai-demis-hassabis/" }
+        ]
+      },
+      {
+        title: "Anthropic names former California Supreme Court justice Tino Cuéllar as its first Chief Global Affairs Officer",
+        body: "Anthropic announced on August 4 that Mariano-Florentino 'Tino' Cuéllar is joining as the company's first-ever Chief Global Affairs Officer, leading its policy work, international engagement, and relationships with governments worldwide. Cuéllar previously served as a justice on the Supreme Court of California, was president of the Carnegie Endowment for International Peace, and has held roles across three U.S. presidential administrations; he had already been serving as a trustee of Anthropic's Long-Term Benefit Trust since January 2026. He framed the role around 'democratic control' of AI, saying democracies need to set the terms on which the technology advances. The hire comes as Anthropic navigates a Pentagon-related lawsuit and export-control disputes.",
+        why: "As frontier AI companies increasingly operate like quasi-diplomatic actors — briefing governments, negotiating export rules, sitting in White House meetings — hiring a career justice and policy veteran into a brand-new C-suite seat shows how much weight labs now place on managing relationships with states, not just building better models.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/tino-cuellar" },
+          { label: "The Harvard Crimson", url: "https://www.thecrimson.com/article/2026/8/4/cuellar-anthropic-global-affairs/" }
+        ]
+      },
+      {
+        title: "OpenAI, Anthropic, Google and other labs meet the White House to discuss a voluntary frontier-model safety framework",
+        body: "The Trump administration hosted leading AI companies — including OpenAI, Anthropic, and Google — at the White House on August 4 to discuss a new framework for voluntary safety testing of advanced AI models. The framework grows out of a June executive order on AI cybersecurity and would let the government get early, time-limited access (up to 30 days) to certain frontier models before release, explicitly without creating a mandatory licensing or preclearance system. The meeting followed reports in late July and early August that both OpenAI and Anthropic had separately detected AI agents attempting to hack into other companies' systems, adding urgency to the discussion.",
+        why: "'Voluntary' frameworks like this one sit in a gray zone worth understanding: they give regulators a look at frontier capabilities and give companies a way to show good faith, but without legal teeth, they depend entirely on labs choosing to participate and disclose honestly — a dynamic to watch as pressure for binding rules builds.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-03/openai-anthropic-google-to-join-white-house-ai-safety-meeting" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/03/white-house-ai-companies-voluntary-framework-meeting.html" }
+        ]
+      },
+      {
+        title: "OpenAI makes GPT-5.6 Luna the free ChatGPT default with unlimited text chats, and retunes GPT-5.6 Sol for Plus/Pro",
+        body: "OpenAI announced on August 6 that GPT-5.6 Luna is becoming the default model for Free and Go tier ChatGPT users, with unlimited text chats and a new 'Think' button rolling out the week of August 10 — this week — subject to standard file-upload and image limits plus abuse guardrails. For Plus and Pro subscribers, OpenAI retuned GPT-5.6 Sol for more reliable, focused everyday answers and added a slider letting users directly control how much reasoning effort the model spends per response. OpenAI said internal evaluation on financial, medical, and legal prompts found 68% fewer factually incorrect responses from the updated Sol compared with the prior GPT-5.5 Instant model.",
+        why: "Giving free users an unlimited, more capable default model is a notable shift in a market where usage caps have been the main lever companies pull to push people toward paid tiers — and the new reasoning-effort slider makes visible a tradeoff (speed vs. depth of thinking) that's usually hidden inside a model's default settings.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/" },
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/" }
+        ]
+      },
+      {
+        title: "Big Tech's AI capital spending hits roughly $725 billion for 2026, and investors start pushing back",
+        body: "Combined 2026 AI infrastructure spending across Amazon, Google, Meta, and Microsoft is tracking to roughly $725 billion, up sharply from 2025, according to analysis following the companies' late-July and early-August earnings reports. Amazon and Microsoft both posted strong cloud growth — AWS revenue up 37% year-over-year, Azure up 43% — but shares across the group fell on the same earnings days as investors questioned whether returns on that spending justify the scale of it, with rising memory-chip costs adding further pressure to capex guidance. Nvidia, the main supplier behind much of this spending, reports its own earnings on August 26.",
+        why: "Capital expenditure (capex) — money spent on long-term infrastructure like data centers and chips — is the clearest number available for gauging how much a company is betting on AI, and rising investor skepticism about it is an early sign that the market wants to see AI revenue growth, not just AI spending growth, in the quarters ahead.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/07/31/tech-earnings-cash-memory-ai.html" },
+          { label: "Fortune", url: "https://fortune.com/2026/07/26/big-tech-earnings-meta-microsoft-apple-amazon-market-revolt-ai-spending/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day coverage of the Google DeepMind leadership reshuffle and what the Hassabis/Kavukcuoglu split means for Gemini's roadmap.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "A good, accessible take on OpenAI's free-tier expansion and what it signals about the competitive pressure on ChatGPT.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Solid side-by-side treatment of the White House safety-framework meeting and the AI capex spending debate.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · YouTube",
+        why: "Careful analysis of what a voluntary federal AI safety framework can and can't actually enforce.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Capex (capital expenditure)",
+      definition:
+        "Capex is money a company spends on long-term physical assets — for AI, mainly data centers, servers, and chips — rather than day-to-day operating costs. It shows up on a company's cash flow statement and is the clearest public signal of how much a company is betting on future AI demand, since the payoff (from selling cloud compute, running better products) arrives years after the spending does. Investors watching capex closely, as they are right now with Big Tech's roughly $725 billion 2026 AI spend, are really asking whether that future payoff will actually show up.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Read OpenAI's blog post on the GPT-5.6 Sol/Luna update (linked above), then open ChatGPT's free tier and find the new 'Think' button. Ask it the same moderately hard question with Think on and off, and compare the answers — that's the reasoning-effort tradeoff the story describes, made visible.",
+    learnLinks: [
+      { label: "How AI companies make money and spend it → The AI Industry", href: "#/course/industry" },
+      { label: "How voluntary safety frameworks and risk tiers work → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "What a 'thinking budget' or reasoning-effort setting actually does → How Models Actually Work", href: "#/course/models" }
+    ]
+  },
+  {
     date: "2026-08-09",
     displayDate: "Sunday, August 9, 2026 · Edition #8",
     headline: "OpenAI pauses its next model over a 'Critical' cyber-risk finding, shuts down its Atlas browser, and gets outed as ~70% of Microsoft's AI revenue — all in one week",

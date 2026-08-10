@@ -966,12 +966,12 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "chatgpt",
       title: "ChatGPT (OpenAI)",
       minutes: 18,
-      updated: "Aug 9, 2026",
+      updated: "Aug 10, 2026",
       content: `
-<p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, split into three tiers: fast/cheap "Luna," balanced "Terra," and flagship "Sol," which currently tops math and reasoning benchmarks.</p>
+<p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, split into three tiers: fast/cheap "Luna," balanced "Terra," and flagship "Sol," which currently tops math and reasoning benchmarks. On August 6, 2026 OpenAI made GPT-5.6 Luna the default model for Free and Go users, with unlimited text chats and a new "Think" button rolling out the week of August 10; Plus and Pro users got a retuned GPT-5.6 Sol plus a slider to directly control how much reasoning effort the model spends per answer.</p>
 <h3>What it does</h3>
 <ul>
-<li><b>Chat with model choice</b> — fast default models for everyday questions; heavier reasoning modes that think before answering hard problems</li>
+<li><b>Chat with model choice</b> — fast default models for everyday questions; a "Think" slider/button that lets you dial up reasoning effort before the model answers hard problems</li>
 <li><b>Multimodal everything</b> — analyze images and documents, generate images, real-time voice conversations with screen/camera sharing</li>
 <li><b>Web search & Deep Research</b> — grounded answers with citations; Deep Research produces long, sourced reports from many sites</li>
 <li><b>Projects, memory & custom GPTs</b> — persistent context about you, organized workspaces, and shareable custom assistants</li>
@@ -986,7 +986,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       keypoints: [
         "OpenAI's consumer flagship; GPT-5.x generation with reasoning modes",
         "Strongest all-round consumer feature set: voice, vision, images, agents, custom GPTs",
-        "Free tier → ~$20 Plus → ~$200 Pro; limits change frequently",
+        "Free tier now unlimited text chats on GPT-5.6 Luna (Aug 2026) → ~$20 Plus → ~$200 Pro; limits change frequently",
         "Default choice for breadth; verify facts and ask it to challenge you"
       ],
       resources: [
