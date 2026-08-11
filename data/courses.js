@@ -1092,7 +1092,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Jul 31, 2026",
+      updated: "Aug 11, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
@@ -1105,9 +1105,9 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Codex (OpenAI)</b> — cloud coding agents that work on tasks in parallel sandboxes</li>
 </ul>
 <h3>Grok (xAI)</h3>
-<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, competitive frontier models (Grok 4.x — including a budget coding model at aggressive prices), free tier for X users. Its history of ideological tuning controversies makes source-checking especially wise.</p>
+<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, competitive frontier models (Grok 4.x — including a budget coding model at aggressive prices), free tier for X users. In August 2026 xAI shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise.</p>
 <h3>Meta AI</h3>
-<p>Free assistant inside WhatsApp, Instagram, and Messenger (plus the standalone app) running on Llama/Muse models — the assistant billions will meet first because it lives where they already chat.</p>
+<p>Free assistant inside WhatsApp, Instagram, and Messenger (plus the standalone app) running on Llama/Muse models — the assistant billions will meet first because it lives where they already chat. In August 2026 Meta also open-sourced Muse Glimmer, a 30-billion-parameter model distilled small enough to run locally on a single consumer GPU, aimed at developers building local coding and agent tools rather than at the consumer app.</p>
 <blockquote>The pattern to notice: standalone chatbots compete on capability; copilots compete on <i>presence</i> — being inside the workflow. Both are converging on agents that do the task, not just advise on it.</blockquote>`,
       keypoints: [
         "Microsoft Copilot wins enterprises through Office presence, not benchmarks",

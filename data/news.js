@@ -13,6 +13,98 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-11",
+    displayDate: "Tuesday, August 11, 2026 · Edition #10",
+    headline: "Anthropic recruits Wall Street to build its data centers, Meta ships a laptop-sized open model, and Nvidia's new security alliance pointedly leaves out the biggest labs",
+    summary:
+      "Infrastructure and openness were the throughlines this week: Anthropic turned to asset managers Macquarie and GIC to finance and own its next wave of data centers rather than building them itself, while Meta released a 30-billion-parameter open model small enough to run on a laptop. Meanwhile Nvidia assembled a 50-plus-member alliance for open AI security tooling that conspicuously excludes OpenAI, Google, and Anthropic, and the EU's order forcing Google to open Android to rival AI assistants kept reverberating through the industry.",
+    stories: [
+      {
+        title: "Anthropic, Macquarie Asset Management, and GIC launch Theseus Infrastructure to build Anthropic's data centers",
+        body: "Anthropic announced on August 10 a strategic partnership with Macquarie Asset Management and Singapore's GIC sovereign wealth fund to form Theseus Infrastructure, a new company that will develop, own, and lease dedicated data centers to Anthropic under long-term agreements. Under the deal, funds managed by Macquarie together with GIC will fund the majority of the equity for each project and own the resulting facilities, while Anthropic serves as the anchor tenant and has committed to covering any consumer electricity price increases the facilities cause locally. The venture will initially focus on new sites in the United States, adding to Anthropic's existing infrastructure commitments, including its earlier $50 billion buildout with Fluidstack and multi-gigawatt compute deals with Google and Broadcom. Neither company disclosed a total dollar value or capacity target for Theseus.",
+        why: "The financing structure matters as much as the compute itself: by having outside asset managers own and fund the data centers while Anthropic simply signs long-term leases, Anthropic keeps the capital cost off its own balance sheet — a leasing pattern that's becoming common across the AI industry's infrastructure race, similar in spirit to OpenAI's Stargate arrangements.",
+        sources: [
+          { label: "Macquarie Group", url: "https://www.macquarie.com/au/en/about/news/2026/anthropic-mam-gic-data-centre-infrastructure-partnership.html" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-10/anthropic-macquarie-and-gic-form-venture-for-ai-data-centers" },
+          { label: "HPCwire", url: "https://www.hpcwire.com/off-the-wire/anthropic-macquarie-and-gic-launch-theseus-infrastructure-for-ai-data-centers/" }
+        ]
+      },
+      {
+        title: "Meta releases Muse Glimmer, a 30B open-weight model distilled to run on a single consumer GPU",
+        body: "Meta Superintelligence Labs released Muse Glimmer on August 10, a 30-billion-parameter open-weight model distilled from Meta's larger Muse Spark 1.2 and shrunk to under 20 gigabytes so it can run locally on a single consumer-grade GPU or a modern laptop. The model is released under an Apache 2.0 license and is built for local, always-on agentic workflows — multi-step reasoning and tool use — rather than general chat, with Meta saying it was trained and evaluated specifically for end-to-end agentic task completion. It's available now on Hugging Face for developers to download and run directly.",
+        why: "Distillation trains a smaller model to imitate a larger one's outputs, trading away some raw capability for a model that fits on hardware you already own. Muse Glimmer is a concrete example of that tradeoff: no API bill, no cloud dependency, and your data never leaves your machine, in exchange for being noticeably less capable than a frontier model like Claude or GPT.",
+        sources: [
+          { label: "Hugging Face", url: "https://huggingface.co/blog/muse-glimmer" },
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/08/10/meta-releases-open-source-muse-glimmer-model-30b-parameters/" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-10/meta-releases-muse-glimmer-ai-model-people-can-run-on-their-laptop" }
+        ]
+      },
+      {
+        title: "Nvidia forms a 50-plus-member Open Secure AI Alliance — without OpenAI, Google, or Anthropic",
+        body: "Nvidia announced the Open Secure AI Alliance in late July, an industry group of more than 50 inaugural members — including Microsoft, IBM, Cisco, Palo Alto Networks, Cloudflare, Dell, Red Hat, and Hugging Face — building open-source tools for securing AI systems and agents, including a new agent-auditing framework called NOOA that Nvidia is contributing. OpenAI, Google, and Anthropic, the three labs most associated with frontier closed-weight models, are notably absent. Coverage has linked the alliance's framing partly to a recent security incident involving Hugging Face, where an open-weight model reportedly helped review tens of thousands of suspicious actions during an intrusion — evidence, Nvidia argues, that defenders need AI security tools they can inspect and run directly rather than depend entirely on closed systems.",
+        why: "Industry alliances reveal as much through who's missing as who joined: a coalition built around open security tooling implicitly argues that closed frontier labs' internal safety work isn't sufficient on its own — a real philosophical split in how the industry thinks about defending AI systems, not just a branding exercise.",
+        sources: [
+          { label: "Nvidia (official blog)", url: "https://blogs.nvidia.com/blog/open-secure-ai-alliance/" },
+          { label: "Tom's Hardware", url: "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-google-and-anthropic-absent-from-nvidia-led-open-secure-ai-alliance-30-companies-join-security-alliance-after-openai-agent-breach" },
+          { label: "TechRadar", url: "https://www.techradar.com/pro/nvidia-launches-open-secure-ai-alliance-but-theres-no-room-for-openai-anthropic-or-google" }
+        ]
+      },
+      {
+        title: "EU's order forcing Google to open Android to Claude and ChatGPT keeps shaping the AI-assistant conversation",
+        body: "The European Commission's July 16 decision under the Digital Markets Act requires Alphabet to open eleven Android features — including default-assistant status, wake-word activation, on-screen context, and in-app actions — to competing AI assistants like Claude and ChatGPT on terms 'equally effective' to what Google gives its own Gemini. Google must build the required interoperability into a major Android release no later than August 1, 2027, with a separate requirement to start sharing anonymized Search data with eligible rivals from January 2027. Five of the most sensitive capabilities, including screen automation and system-level integration, require third-party assistants to pass an independent security and privacy certification, which Google must have ready by May 1, 2027. The ruling applies only inside the EU, and Google is expected to appeal — though under DMA rules, compliance obligations run during an appeal rather than pausing for it.",
+        why: "The Digital Markets Act's interoperability remedies are a live test of whether regulation can force open a platform's defaults without breaking the product — worth watching both for what it does to AI-assistant competition in Europe and for whether other regulators follow with similar rules of their own.",
+        sources: [
+          { label: "European Commission (official)", url: "https://digital-markets-act.ec.europa.eu/commission-provides-guidance-google-ai-interoperability-android-and-sharing-google-search-data-under-2026-07-16_en" },
+          { label: "TechJournal", url: "https://techjournal.org/eu-google-android-rival-ai-assistants" },
+          { label: "TheNextWeb", url: "https://thenextweb.com/news/google-eu-android-gemini-rivals-dma" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day coverage of the Anthropic-Macquarie-GIC data center deal and Meta's Muse Glimmer release.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good side-by-side treatment of Nvidia's Open Secure AI Alliance and the EU's Android interoperability order.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "An accessible take on what it means for Anthropic to have Wall Street asset managers financing its data centers.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · YouTube",
+        why: "Careful technical breakdowns are this channel's specialty — a good fit for unpacking what a distilled, laptop-sized model like Muse Glimmer can and can't do.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Model distillation",
+      definition:
+        "Distillation is a training technique where a smaller 'student' model learns to imitate a larger 'teacher' model's outputs, rather than being trained from scratch on raw data. The result is a model that captures much of the teacher's behavior at a fraction of the size and compute cost — which is how Meta shrank Muse Spark 1.2 down into the 30-billion-parameter Muse Glimmer, small enough to run on one consumer GPU. The tradeoff is real: distilled models are generally less capable than their teachers, especially on tasks requiring deep or novel reasoning.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Open the Muse Glimmer model card on Hugging Face (linked above) and read its 'intended uses' section — notice how it's scoped toward local coding and agent tasks rather than general chat. If you have a decent GPU, try running it locally with a tool like Ollama or LM Studio and time how it handles a coding or multi-step reasoning task compared to a frontier model you already use.",
+    learnLinks: [
+      { label: "How model distillation and smaller open models work → How Models Actually Work", href: "#/course/models" },
+      { label: "How AI companies structure infrastructure deals → The AI Industry", href: "#/course/industry" },
+      { label: "How regulation like the EU's DMA shapes AI competition → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-08-10",
     displayDate: "Monday, August 10, 2026 · Edition #9",
     headline: "Google DeepMind ends its Hassabis-led era, Anthropic hires its first diplomat, and OpenAI throws ChatGPT's free tier wide open",
