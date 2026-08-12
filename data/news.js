@@ -13,6 +13,88 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-12",
+    displayDate: "Wednesday, August 12, 2026 · Edition #11",
+    headline: "Nvidia lines up over $500 billion from Wall Street to fund AI compute, ships a fast open agent model the same week, and OpenAI arms vetted defenders with GPT-5.6-Cyber days after pausing a riskier model",
+    summary:
+      "Nvidia had one of its biggest weeks of the year on two very different fronts: a half-trillion-dollar financing push to turn AI compute into a new Wall Street asset class, and a fast, efficient open-weight model release for developers. Meanwhile OpenAI kept building out its response to its own worrying safety finding from earlier in the month, expanding a program that gives vetted cybersecurity firms access to a specialized 'offense-grade' model built for authorized defensive work.",
+    stories: [
+      {
+        title: "Nvidia signs Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs, and KKR to mobilize over $500 billion for AI compute",
+        body: "Nvidia announced on August 10 that it has signed memorandums of understanding with six of Wall Street's largest asset managers — Apollo Global Management, BlackRock, Blackstone, Brookfield Asset Management, Goldman Sachs, and KKR — to establish independent AI compute infrastructure financing platforms aimed at mobilizing more than $500 billion in third-party capital over time. The platforms are designed to fund the data centers and hardware that hyperscalers, frontier labs, and enterprises need to build out AI capacity, treating compute infrastructure as an investable asset class similar to commercial real estate or toll roads. CEO Jensen Huang told CNBC that Nvidia compute now qualifies as an 'investable asset' because of its token-cost economics and the CUDA software ecosystem built around it. None of the six firms have committed a specific dollar figure yet — the MOUs are a first step, with definitive agreements still to be negotiated.",
+        why: "Nvidia isn't just selling chips anymore — it's helping build the financial plumbing that lets its customers afford them, echoing how Anthropic just structured its own data centers as leased assets financed by outside investors rather than built on its own balance sheet. Watching who finances AI infrastructure, and how, says as much about the industry's risk appetite as any benchmark score.",
+        sources: [
+          { label: "NVIDIA Newsroom (official)", url: "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html" },
+          { label: "Data Center Dynamics", url: "https://www.datacenterdynamics.com/en/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-for-500bn-financing-program/" }
+        ]
+      },
+      {
+        title: "OpenAI launches GPT-5.6-Cyber for vetted defenders and expands its Daybreak program, days after flagging Astra for a 'Critical' cyber-risk finding",
+        body: "OpenAI announced on August 10 that it is expanding its Daybreak Cyber Partner program into two tiers: Daybreak Blue, which gives vetted partners access to GPT-5.6 Sol with its system-level cyber guardrails removed, and Daybreak Red, which adds access to a new model, GPT-5.6-Cyber, built specifically for authorized offensive security work like finding zero-day vulnerabilities and building exploit chains. Partners in the expanded program include CrowdStrike, Cisco, Palo Alto Networks, Cloudflare, Accenture, IBM, and several other security and consulting firms. In OpenAI's own testing, GPT-5.6-Cyber responded to about 95% of advanced cybersecurity prompts that its general-purpose sibling, GPT-5.6 Sol, refuses to answer. The launch follows OpenAI's August 7 disclosure that preliminary evaluations of its unreleased Astra model couldn't rule out that it had reached a 'Critical' cyber-risk threshold under the company's Preparedness Framework, prompting a pause on parts of Astra's development and the addition of isolated testing environments, restricted network access, and chain-of-thought monitoring for risky behavior.",
+        why: "This is a live example of dual-use risk management: OpenAI is simultaneously restricting its most capable unreleased model because it might help attackers, while unlocking a specialized version of a less capable model to help vetted defenders instead — a bet that giving security teams a head start outweighs the risk of that capability leaking or being misused.",
+        sources: [
+          { label: "OpenAI (official)", url: "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/" },
+          { label: "Axios", url: "https://www.axios.com/2026/08/10/openai-gpt-astra-restrictions-safety-hacking-defenders" },
+          { label: "Forbes", url: "https://www.forbes.com/sites/jonmarkman/2026/08/11/openai-ships-gpt-56-cyber-its-first-offense-grade-hacking-model/" }
+        ]
+      },
+      {
+        title: "Nvidia open-sources Nemotron 3.5 Lightning, a 30B mixture-of-experts model built to run fast on one consumer GPU",
+        body: "Nvidia released Nemotron 3.5 Lightning on August 11, a 30-billion-parameter open-weight model that uses a hybrid Mamba-2, mixture-of-experts, and attention architecture to activate only about 3 billion parameters per token, giving it a 1-million-token context window while still running on a single RTX or DGX Spark consumer GPU. Nvidia says the model delivers up to four times faster output and completes agentic tasks roughly 30% faster than comparable open models in its class, and the company published the weights, training data, and techniques on Hugging Face free for commercial use, without requiring permission or licensing fees. Alongside it, Nvidia released NeMo Switchyard, an open-source library that routes individual steps of an AI agent's task to whichever model handles that specific step most efficiently.",
+        why: "Mixture-of-experts architecture activates only a fraction of a model's total parameters for any given input, which is how Nemotron 3.5 Lightning packs 30 billion parameters' worth of knowledge into something that runs at the speed and hardware footprint of a much smaller model — a different efficiency lever than the plain distillation Meta used for Muse Glimmer earlier this week.",
+        sources: [
+          { label: "NVIDIA Blog (official)", url: "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/11/nvidia-releases-nemotron-3point5-lightning-open-source-ai-model-.html" },
+          { label: "MarkTechPost", url: "https://www.marktechpost.com/2026/08/11/nvidia-ai-releases-nemotron-3-5-lightning-and-nemo-switchyard/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on Nvidia's $500 billion financing push and what it means for how AI infrastructure gets paid for.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "Good technical treatment of open-weight model releases — a solid fit for unpacking Nemotron 3.5 Lightning's mixture-of-experts architecture.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful side-by-side coverage of OpenAI's Astra pause, GPT-5.6-Cyber launch, and what 'Critical' risk thresholds mean in practice.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · YouTube",
+        why: "Careful, skeptical breakdowns are this channel's specialty — well suited to weighing OpenAI's dual-use bet on cyber-capable models.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Mixture-of-experts (MoE)",
+      definition:
+        "A model architecture that splits its parameters into many smaller 'expert' sub-networks and activates only a handful of them for any given input, instead of running every parameter for every token. The result is a model that can hold far more total knowledge than its active compute cost would suggest — which is how Nvidia packed 30 billion parameters into Nemotron 3.5 Lightning while it only activates about 3 billion per token, letting it run fast on a single consumer GPU. It's a different lever than distillation (training a smaller model to imitate a bigger one): MoE keeps the large parameter count but is selective about which parts fire.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Open the Nemotron 3.5 Lightning model card on Hugging Face or Nvidia's developer blog (linked above) and find its total parameter count versus its active parameters per token — that ratio is the whole trick of mixture-of-experts. Then read OpenAI's Preparedness Framework post on the Astra finding and write, in one plain sentence, what would have to be true for a model to count as 'Critical' cyber risk rather than merely 'High.'",
+    learnLinks: [
+      { label: "How mixture-of-experts models pack more into less compute → How Models Actually Work", href: "#/course/models" },
+      { label: "How labs set capability risk thresholds before release → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI companies are financing the compute race → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-08-11",
     displayDate: "Tuesday, August 11, 2026 · Edition #10",
     headline: "Anthropic recruits Wall Street to build its data centers, Meta ships a laptop-sized open model, and Nvidia's new security alliance pointedly leaves out the biggest labs",
