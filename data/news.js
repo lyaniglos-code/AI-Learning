@@ -13,6 +13,106 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-13",
+    displayDate: "Thursday, August 13, 2026 · Edition #12",
+    headline: "Google hands DeepMind's day-to-day reins to Koray Kavukcuoglu as Gemini crosses 1 billion monthly users, a LiteLLM supply-chain breach exposes 2,500+ companies, and Claude Cowork moves into the Chrome sidebar",
+    summary:
+      "Google restructured its AI leadership right as its Gemini app hit a billion monthly users, a reminder that even the fastest-growing product in company history still needs someone minding day-to-day execution. Elsewhere, security researchers detailed the largest AI supply-chain breach uncovered so far this year, California lawmakers held make-or-break votes on dozens of AI bills, and Anthropic pushed Claude Cowork further into the browser.",
+    stories: [
+      {
+        title: "Demis Hassabis steps back to Alphabet chief scientist; Koray Kavukcuoglu becomes Google DeepMind's CEO",
+        body: "Google confirmed a leadership reshuffle in which Demis Hassabis, DeepMind's co-founder and longtime CEO, moves to the roles of Alphabet chief scientist and Google DeepMind chairman, handing day-to-day operational leadership of DeepMind to Koray Kavukcuoglu, previously the unit's chief technology officer. Kavukcuoglu now reports directly to Sundar Pichai and oversees Gemini model development, frontier research, and the Gemini app and developer teams. The reshuffle came alongside the departure of veteran Google AI researcher Jeff Dean, who is leaving to launch a new venture. Pichai framed the changes as sharpening focus so Hassabis can concentrate on long-term research direction while Kavukcuoglu drives execution.",
+        why: "Splitting a 'chief scientist' role from day-to-day CEO duties is a structure other AI labs have also leaned on as research organizations scale into product companies shipping on tight competitive timelines — it's worth watching whether the split speeds Gemini's release cadence or just adds a layer of coordination.",
+        sources: [
+          { label: "Google (official)", url: "https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/12/google-deepmind-koray-kavukcuoglu.html" },
+          { label: "TIME", url: "https://time.com/article/2026/08/06/google-deepmind-ai-demis-hassabis/" }
+        ]
+      },
+      {
+        title: "Google's Gemini app passes 1 billion monthly active users, its fastest product ever to the milestone",
+        body: "Google announced on August 11 that the standalone Gemini app has surpassed 1 billion monthly active users, making it the company's 14th product to reach that scale and its fastest one to get there. Google said 63% of users now interact with Gemini by voice, one in five Gemini Live sessions involve camera or screen sharing rather than voice alone, and the app generates more than 150 million images per day. Sundar Pichai announced the figure directly, noting Gemini can now carry out automated tasks across more than 40 apps, such as booking a ride or making a reservation.",
+        why: "User counts don't measure model quality, but they measure something else that matters commercially: distribution. A billion monthly users gives Google a feedback loop and default-app advantage that's hard for rivals to match purely on benchmark scores.",
+        sources: [
+          { label: "Google (official)", url: "https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/" },
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/" },
+          { label: "9to5Google", url: "https://9to5google.com/2026/08/11/gemini-app-1-billion/" }
+        ]
+      },
+      {
+        title: "Researchers detail 2026's largest AI supply-chain breach: compromised LiteLLM packages expose 2,500+ companies",
+        body: "Security firm CloudSEK published research this week on what it calls the largest AI supply-chain breach uncovered so far in 2026: a threat group compromised two versions of the widely used LiteLLM package on PyPI back in March, entering through the Trivy security scanner inside LiteLLM's own build pipeline, where it stayed hidden for roughly 20 days. The compromise potentially exposed credentials tied to more than 2,500 organizations and around 434,000 CI/CD pipelines, with high-confidence matches to major companies including Nvidia, AWS, Samsung, Cisco, and Salesforce — though a match doesn't prove those organizations were actually compromised or that stolen credentials were used. The FBI issued a flash advisory in July warning the exposed credentials could still be weaponized.",
+        why: "LiteLLM is plumbing — a routing library many companies use to call different AI models through one interface — which is exactly why compromising it was so effective: one poisoned dependency deep in a build pipeline can quietly expose thousands of downstream users at once, the same dynamic behind classic software supply-chain attacks like SolarWinds.",
+        sources: [
+          { label: "CloudSEK (research)", url: "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines" },
+          { label: "CX Today", url: "https://www.cxtoday.com/security-privacy-compliance/supply-chain-attack-exposes-2500-companies-in-largest-ai-infrastructure-breach-of-2026-so-far/" }
+        ]
+      },
+      {
+        title: "California lawmakers hold make-or-break 'suspense file' votes on roughly 30 AI bills",
+        body: "California's Assembly and Senate Appropriations Committees held suspense-file votes today, August 13, on a batch of roughly 30 pending AI bills covering areas like chatbot safety, transparency, and workplace AI use. Bills placed on the suspense file that fail to win a committee majority at this hearing die for the session with no chance of revival; those that pass move to a full floor vote in each chamber, with a September 12 deadline to reach Governor Newsom's desk. The hearings follow California's earlier first-in-the-nation companion-chatbot law (SB 243), which took effect January 1 and requires operators to disclose when a user is talking to AI and take extra precautions when that user is a minor.",
+        why: "The 'suspense file' is a quiet but powerful chokepoint in state lawmaking — bills can have public support and still die in a closed-door fiscal committee vote with no recorded debate, which is why so much AI-safety and AI-transparency policy in the US is currently being decided at the state level rather than in Congress.",
+        sources: [
+          { label: "TechTimes", url: "https://www.techtimes.com/articles/322386/20260731/california-ai-bills-face-kill-survive-vote-monday-eu-fines-start.htm" },
+          { label: "CalMatters", url: "https://calmatters.org/newsletter/california-ai-bills-workforce-newsletter/" }
+        ]
+      },
+      {
+        title: "Anthropic brings full Claude Cowork sessions into the Chrome sidebar, with skills, plugins, and connectors",
+        body: "Anthropic announced on August 12 that its Claude for Chrome browser extension now runs a full Claude Cowork session directly in the sidebar, rather than a lighter-weight side panel assistant. The update brings skills, plugins, and connectors into the browser for the first time with no extra setup, and lets a task started in the Claude app continue seamlessly in Chrome or vice versa, with conversation history shared across both. Max and Team subscribers can use the feature now; Pro plan access is coming in the following weeks.",
+        why: "This is Anthropic folding its 'agent that acts inside a live browser session' capability into the same product surface as its chat history and skills library, rather than keeping it siloed — a sign that Cowork-style persistent, tool-using sessions are becoming the default way Anthropic wants people to use Claude, not a separate experimental mode.",
+        sources: [
+          { label: "9to5Mac", url: "https://9to5mac.com/2026/08/12/claude-cowork-chrome/" },
+          { label: "The Decoder", url: "https://the-decoder.com/anthropic-brings-claude-cowork-to-its-chrome-extension-adding-skills-and-plugins-to-the-browser/" },
+          { label: "Engadget", url: "https://www.engadget.com/2235919/claude-cowork-can-now-run-in-a-chrome-sidebar/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on the Google DeepMind leadership reshuffle and what it signals about how AI labs are organizing research versus product execution.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good side-by-side treatment of the LiteLLM supply-chain breach and what it means for how companies vet the AI infrastructure they build on.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · weekly · NYT",
+        why: "Strong at unpacking product milestones like Gemini's billion-user mark alongside the human and organizational stories, like Hassabis's role change.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · YouTube",
+        why: "Careful framing of what state-level 'suspense file' politics actually accomplishes for AI governance, versus federal or EU rulemaking.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Software supply-chain attack",
+      definition:
+        "An attack that compromises a widely used piece of shared infrastructure — a package, library, or build tool — so that anyone who depends on it inherits the compromise, often without knowing it. The LiteLLM breach is a textbook case: attackers poisoned a routing library used to call different AI models, and the damage rippled out to thousands of downstream companies through their own CI/CD pipelines. It's a different threat model from attacking one company directly — the leverage comes from how deeply the compromised component is embedded in everyone else's stack.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Pick one AI-related library or SDK your own projects depend on (even something like an OpenAI or Anthropic client library) and check whether you're pinning it to an exact version versus always pulling 'latest' — then read CloudSEK's LiteLLM writeup (linked above) and note which specific practice would have limited the blast radius if you'd been an affected user.",
+    learnLinks: [
+      { label: "How software supply-chain attacks work and why they spread → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI labs are structured and who leads what → The AI Industry", href: "#/course/industry" },
+      { label: "Claude Cowork, connectors, and browser agents explained → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-08-12",
     displayDate: "Wednesday, August 12, 2026 · Edition #11",
     headline: "Nvidia lines up over $500 billion from Wall Street to fund AI compute, ships a fast open agent model the same week, and OpenAI arms vetted defenders with GPT-5.6-Cyber days after pausing a riskier model",

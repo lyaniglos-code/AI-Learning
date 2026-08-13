@@ -998,7 +998,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "claude",
       title: "Claude (Anthropic)",
       minutes: 18,
-      updated: "Jul 31, 2026",
+      updated: "Aug 13, 2026",
       content: `
 <p><b>Claude</b> (claude.ai) is Anthropic's assistant, built on the Claude model family — as of July 2026, the Claude 5 generation, whose Opus 5 flagship currently tops independent intelligence and agentic indexes. Claude's reputation: the writer's and builder's AI — long documents, careful reasoning, and best-in-class coding.</p>
 <h3>What it does</h3>
@@ -1009,6 +1009,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Huge context</b> — entire books or codebases in one conversation (hundreds of thousands of tokens; ~1M in API tiers)</li>
 <li><b>Web search, file analysis, voice</b> — grounded answers and document Q&A</li>
 <li><b>Claude Code</b> — the terminal/IDE agent that autonomously writes, tests, and refactors real codebases; the tool behind much of 2025–26's "agentic coding" wave</li>
+<li><b>Claude Cowork in Chrome</b> — as of August 2026, the Claude for Chrome sidebar runs a full Cowork session with skills, plugins, and connectors built in, and a task started in the Claude app can continue seamlessly in the browser (Max/Team now, Pro rolling out)</li>
 </ul>
 <h3>Pricing shape</h3>
 <p>Free tier → Pro (~$20/month) → Max tiers (~$100–200/month) for heavy Claude Code use → Team/Enterprise. API access is metered per token (Opus 5: $5/$25 per million).</p>
@@ -1019,6 +1020,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Anthropic's assistant; Claude 5 generation, Opus 5 currently tops agentic benchmarks",
         "Signature features: Projects, Artifacts, extended thinking, massive context",
         "Claude Code defined the agentic-coding category",
+        "Claude Cowork now runs full sessions with skills/plugins in the Chrome sidebar",
         "Pick it for writing, analysis, coding depth; ChatGPT still wins on consumer breadth"
       ],
       resources: [
