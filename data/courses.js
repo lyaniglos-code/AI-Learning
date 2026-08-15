@@ -1094,20 +1094,20 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Aug 11, 2026",
+      updated: "Aug 15, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
 <p>OpenAI models threaded through Windows, Office (Word, Excel, PowerPoint, Outlook, Teams), and Edge. Microsoft 365 Copilot (~$30/user/month for business) drafts documents, builds decks, analyzes spreadsheets, and summarizes meetings inside the apps your workplace already runs — which is why it leads enterprise seat counts regardless of benchmark standings.</p>
 <h3>The coding tools</h3>
 <ul>
-<li><b>GitHub Copilot</b> — the original autocomplete-in-your-IDE, now with chat, multi-model choice (including Claude and Gemini), and an autonomous coding agent that takes GitHub issues to pull requests</li>
+<li><b>GitHub Copilot</b> — the original autocomplete-in-your-IDE, now with chat, multi-model choice (including Claude and Gemini — Gemini 3.7 Flash joined the model picker on August 13, 2026), and an autonomous coding agent that takes GitHub issues to pull requests</li>
 <li><b>Claude Code</b> — Anthropic's terminal/IDE agent for real multi-file engineering work; the benchmark-setter for agentic coding</li>
 <li><b>Cursor</b> — the AI-native code editor (a VS Code fork) that made "vibe coding" a phrase; deep codebase awareness, multi-model</li>
 <li><b>Codex (OpenAI)</b> — cloud coding agents that work on tasks in parallel sandboxes</li>
 </ul>
-<h3>Grok (xAI)</h3>
-<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, competitive frontier models (Grok 4.x — including a budget coding model at aggressive prices), free tier for X users. In August 2026 xAI shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise.</p>
+<h3>Grok (SpaceXAI, formerly xAI)</h3>
+<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, and competitive frontier models, free tier for X users. The company behind it was renamed SpaceXAI in mid-2026 after Musk merged xAI into SpaceX. On August 12, 2026 it shipped Grok 4.6, a flagship model tuned for long-running agent tasks that matches GPT-5.6 Sol on the Artificial Analysis Intelligence Index while pricing in at $2/$6 per million input/output tokens — undercutting several frontier rivals. Earlier in August, xAI/SpaceXAI also shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise.</p>
 <h3>Meta AI</h3>
 <p>Free assistant inside WhatsApp, Instagram, and Messenger (plus the standalone app) running on Llama/Muse models — the assistant billions will meet first because it lives where they already chat. In August 2026 Meta also open-sourced Muse Glimmer, a 30-billion-parameter model distilled small enough to run locally on a single consumer GPU, aimed at developers building local coding and agent tools rather than at the consumer app.</p>
 <blockquote>The pattern to notice: standalone chatbots compete on capability; copilots compete on <i>presence</i> — being inside the workflow. Both are converging on agents that do the task, not just advise on it.</blockquote>`,

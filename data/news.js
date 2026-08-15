@@ -13,6 +13,102 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-15",
+    displayDate: "Saturday, August 15, 2026 · Edition #13",
+    headline: "Anthropic eyes its biggest-ever acquisition with a $6B bid for Decart, OpenAI previews a 14x-faster GPT-5.6 tier, and SpaceXAI's Grok 4.6 undercuts rivals on price",
+    summary:
+      "The infrastructure race kept accelerating this week: Anthropic is reportedly negotiating to buy an Israeli GPU-efficiency startup for roughly $6 billion, while OpenAI showed off a Cerebras-powered inference tier that answers in a fraction of the usual time. Meanwhile the newly renamed SpaceXAI shipped a flagship model at half the price of its closest rivals, GitHub Copilot picked up a new model option, and Meta pushed further into open-weight, on-device AI.",
+    stories: [
+      {
+        title: "Anthropic in talks to buy Israeli startup Decart AI for about $6 billion",
+        body: "Anthropic is negotiating to acquire Decart AI, an Israeli startup founded in 2023 that builds software for making AI training and inference run more efficiently on existing chips, plus real-time generative-video and world-model technology. Bloomberg and other outlets reported on August 13 that the deal, valued around $6 billion, would be Anthropic's largest acquisition to date, though talks remain early-stage and could still fall through. The move comes as Anthropic races to expand computing capacity to meet surging demand for Claude while it prepares for a future public listing.",
+        why: "Buying a GPU-efficiency company rather than just leasing more data centers is a different lever on the same problem: instead of paying for more compute, Anthropic would be paying to squeeze more useful work out of the compute it already has — a strategy worth watching as every major lab hits similar power and chip constraints.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion" },
+          { label: "Fortune", url: "https://fortune.com/2026/08/13/anthropic-said-in-talks-to-buy-startup-decart-for-6-billion/" }
+        ]
+      },
+      {
+        title: "OpenAI previews 'Ultrafast' mode: GPT-5.6 Sol at up to 14x the usual speed",
+        body: "OpenAI announced a limited preview of Ultrafast, a new API service tier that runs GPT-5.6 Sol on Cerebras hardware at up to 750 output tokens per second — as much as 14 times faster than the model's standard processing speed — with no drop in answer quality, according to both companies. OpenAI says it is testing the tier on latency-sensitive workloads like incident response, live voice support, coding, and financial research. Ultrafast launches first to a select group of API customers, with no public pricing or broad availability date yet announced.",
+        why: "Model intelligence and inference speed are separate axes of progress — this is a case of the same underlying model getting dramatically faster through specialized hardware rather than through a smarter model, which matters for any use case where a person or another system is waiting on the answer in real time.",
+        sources: [
+          { label: "OpenAI (official)", url: "https://openai.com/index/previewing-ultrafast/" },
+          { label: "Cerebras (official)", url: "https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai" }
+        ]
+      },
+      {
+        title: "SpaceXAI (formerly xAI) launches Grok 4.6, matching GPT-5.6 Sol at a lower price",
+        body: "SpaceXAI — the renamed entity formed when Elon Musk merged xAI into SpaceX earlier this year — released Grok 4.6 on August 12, a flagship model built for long-running agent tasks like multi-step research, codebase-wide work, and turning an idea into a finished artifact. Grok 4.6 scores 61 on the Artificial Analysis Intelligence Index, matching GPT-5.6 Sol, while pricing in at $2 per million input tokens and $6 per million output tokens — undercutting several frontier rivals. Its context window stays at 500,000 tokens, unchanged from Grok 4.5, and the model is available now through Cursor, SpaceXAI's own Grok Build tool, and its API.",
+        why: "Matching a rival's benchmark score while charging noticeably less is a common competitive play once a capability tier becomes commoditized — it shifts the competition from 'who is smartest' to 'who is smart enough, cheapest,' which is exactly the dynamic driving the pricing cuts happening across the industry this month.",
+        sources: [
+          { label: "VentureBeat", url: "https://venturebeat.com/technology/spacexai-debuts-grok-4-6-overtaking-kimi-k3s-performance-and-matching-gpt-5-6-sol-for-worlds-third-best-on-artificial-analysis" },
+          { label: "DataNorth AI", url: "https://datanorth.ai/news/xai-releases-grok-4-6" }
+        ]
+      },
+      {
+        title: "GitHub Copilot adds Google's Gemini 3.7 Flash as a selectable model",
+        body: "GitHub announced on August 13 that Gemini 3.7 Flash, Google's latest fast general-purpose model, is rolling out in GitHub Copilot for Pro, Pro+, Max, Business, and Enterprise users. Early testing shows improvements in web and app development and agentic coding workflows over the prior Gemini 3.6 Flash. The rollout is gradual, and Copilot Business and Enterprise admins must enable a preview policy before their organization can select the model.",
+        why: "Copilot's model picker is becoming a genuine multi-vendor menu — this is the same pattern the Toolbox course covers with Claude, GPT, and Gemini options inside one coding tool, and it means the 'best' model for a given Copilot task can change from week to week as vendors ship updates.",
+        sources: [
+          { label: "GitHub Changelog (official)", url: "https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/" }
+        ]
+      },
+      {
+        title: "Meta open-sources Muse Glimmer, a 30B model built to run on a single consumer GPU",
+        body: "Meta released Muse Glimmer, a roughly 30-billion-parameter open-weight model under the Apache 2.0 license, distilled from Meta's larger closed Muse Spark system. Unlike Muse Spark, Glimmer is small enough to run locally on a Mac or PC with one consumer graphics card, and Meta positions it for local agents, function calling, on-device coding help, and offline use with no cloud connection required. The release accompanied a lengthy essay from CEO Mark Zuckerberg describing his vision for personal AI assistants that run on a user's own hardware.",
+        why: "Most frontier discussion centers on giant cloud-hosted models, but a capable model small enough to run on your own laptop changes what's possible for privacy-sensitive or offline use cases — it's the same 'run it locally' idea covered in the Toolbox course, just at a meaningfully higher capability level than earlier small open models.",
+        sources: [
+          { label: "Meta AI Research (official)", url: "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" },
+          { label: "VentureBeat", url: "https://venturebeat.com/technology/meta-returns-to-open-source-with-muse-glimmer-an-apache-2-0-licensed-30b-parameter-ai-model-optimized-for-agents-available-now" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on the Decart acquisition talks and what buying compute-efficiency IP signals about the infrastructure race.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Strong technical breakdown of new model releases like Grok 4.6 and Muse Glimmer, with side-by-side benchmark context.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good grounded recap of the week's model and infrastructure news, including OpenAI's Ultrafast preview.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "Clear, visual explanation of what inference-speed jumps like Ultrafast's 14x actually mean under the hood.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Inference throughput (tokens per second)",
+      definition:
+        "A measure of how fast a model can generate its response once you've asked it something, usually counted in output tokens per second. It's a different quality from the model's underlying intelligence — the same model can run slow or fast depending on the chips and software serving it, which is exactly what OpenAI's Ultrafast preview demonstrates by running GPT-5.6 Sol up to 14x faster on Cerebras hardware with no change to the model's answers.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Time how long your usual chatbot takes to finish a medium-length answer (roughly a paragraph), then try the same prompt on a tool known for fast inference (like Cerebras- or Groq-hosted models, if you have access). Notice whether the faster answer is any less useful — that gap is what 'inference throughput' actually buys you.",
+    learnLinks: [
+      { label: "How model speed, size, and cost trade off → The AI Models", href: "#/course/models" },
+      { label: "Running models locally and open-weight tools → The AI Toolbox", href: "#/course/tools" },
+      { label: "Who's building what, and who's buying whom → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-08-13",
     displayDate: "Thursday, August 13, 2026 · Edition #12",
     headline: "Google hands DeepMind's day-to-day reins to Koray Kavukcuoglu as Gemini crosses 1 billion monthly users, a LiteLLM supply-chain breach exposes 2,500+ companies, and Claude Cowork moves into the Chrome sidebar",
