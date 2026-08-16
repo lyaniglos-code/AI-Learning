@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-16",
+    displayDate: "Sunday, August 16, 2026 · Edition #14",
+    headline: "Anthropic posts its first operating profit as Q2 revenue tops $11.5B, OpenAI's $7B tender offer holds its valuation flat at $852B, and Cognition eyes a $40B mark",
+    summary:
+      "The AI economy sent two very different signals this week: Anthropic crossed into positive operating income while its revenue kept compounding, while OpenAI let employees cash out $7 billion in stock at an unchanged valuation — a sign investors aren't yet paying up for a bigger number. Meanwhile coding-agent startup Cognition is already back in funding talks at a valuation 50%+ above its round from three months ago, and OpenAI kept reshaping ChatGPT's free tier with wider ad tests and a legacy feature's retirement.",
+    stories: [
+      {
+        title: "Anthropic posts its first operating profit as Q2 revenue tops $11.5 billion",
+        body: "Anthropic told investors its preliminary second-quarter 2026 revenue exceeded $11.5 billion, up from about $787 million in the same quarter last year and $4.73 billion in the first quarter of 2026 — a more than 14-fold year-over-year jump, according to a Bloomberg report cited by CNBC on August 15. The company also posted positive adjusted operating income for the first time, roughly two years ahead of its own earlier projections. The figures are preliminary and could still change; Anthropic is reportedly preparing for a possible IPO as soon as this fall.",
+        why: "Revenue growth and profitability are two different questions — a company can grow its top line fast while still losing money on every dollar it brings in. Anthropic crossing into positive operating income, not just posting a bigger revenue number, is the more meaningful signal here, and it's worth learning to look for both figures whenever a company reports 'explosive growth.'",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/15/anthropic-revenue-jumps-to-over-11point5-billion-in-q2-report.html" },
+          { label: "Fortune", url: "https://fortune.com/2026/08/15/anthropic-revenue-q2-11-5-billion-ipo-investors/" }
+        ]
+      },
+      {
+        title: "OpenAI completes $7B employee tender offer — at a valuation unchanged from March",
+        body: "OpenAI finished a roughly $7 billion tender offer that let current and former employees sell shares at the company's existing $852 billion valuation, the same level set by its $122 billion funding round in March, according to Bloomberg and CNBC reporting on August 10. Unlike prior tenders, OpenAI itself funded the buyback with its own cash rather than bringing in outside investors. The company confidentially filed IPO paperwork with the SEC in June but hasn't disclosed a timeline for going public.",
+        why: "A tender offer lets employees turn paper equity into cash without waiting for an IPO, but it's also a data point on demand: this one priced shares at the same valuation as five months ago rather than a step up, which is a more cautious signal than a splashy new funding round would send.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-10/openai-buys-back-7-billion-of-employee-shares-in-tender-offer" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/10/openai-wraps-7-billion-share-sale-ahead-of-potential-ipo-.html" }
+        ]
+      },
+      {
+        title: "AI coding startup Cognition reportedly in talks to raise at a $40 billion valuation",
+        body: "Cognition, maker of the autonomous coding agent Devin, is in early talks with investors for a new round that could value the company at $40 billion or more, Bloomberg and TechCrunch reported on August 12 — up over 50% from the $26 billion valuation it set just three months earlier with a $1 billion raise. Cognition's customers reportedly include Citi, Mercedes-Benz, Goldman Sachs, and the U.S. Army and Navy, and the company has said enterprise usage of Devin grew roughly 50% month-over-month in the run-up to its last round.",
+        why: "Cognition sells an autonomous agent that does engineering work end-to-end, a distinct category from general-purpose chatbots or in-editor autocomplete like GitHub Copilot. Investors repricing it more than 50% higher in three months is a bet that agentic coding tools are becoming their own durable market, not just a feature bolted onto existing IDEs.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-12/ai-startup-cognition-in-new-funding-talks-at-40-billion-value" },
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/" }
+        ]
+      },
+      {
+        title: "OpenAI expands ChatGPT ad test to the UK, Mexico, Brazil, Japan, and South Korea",
+        body: "OpenAI announced on August 11 that its ChatGPT ads pilot, which began in the U.S. in February, is now live in the UK, Mexico, Brazil, Japan, and South Korea. Ads only appear for logged-in adult users on the Free and Go tiers — Plus, Pro, Business, Enterprise, and Education accounts remain ad-free — and OpenAI says ads are clearly labeled as sponsored, visually separated from ChatGPT's answers, and don't influence what the model says. Users can dismiss ads, see why one was shown, and delete their ad data.",
+        why: "Advertising is becoming a real monetization lever for free AI tiers, the same way it funded free search and social products before it — and keeping ads from quietly shaping an assistant's actual answers is the trust question every ad-supported information tool eventually has to prove it can handle.",
+        sources: [
+          { label: "OpenAI (official)", url: "https://openai.com/index/testing-ads-in-chatgpt/" },
+          { label: "Digiday", url: "https://digiday.com/media-buying/expand-thoughtfully-openai-offers-chatgpt-ads-to-new-markets-including-the-u-k-brazil-and-japan/" }
+        ]
+      },
+      {
+        title: "OpenAI to retire the official DALL-E GPT from ChatGPT on August 30",
+        body: "OpenAI's ChatGPT release notes confirm the official DALL-E GPT — the preconfigured image-generation assistant built into ChatGPT — will be retired on August 30, 2026. OpenAI is directing users to ChatGPT Images, now the primary way to create and edit pictures inside ChatGPT, and recommends downloading any images people want to keep before the cutoff. User-created custom GPTs that use image generation are unaffected, and image generation itself isn't going away — only the original DALL-E GPT surface is.",
+        why: "This is a small but useful habit to build: as AI products mature, companies routinely fold overlapping legacy features into one primary surface, and a tool's own release notes are the place to catch a deadline like this before you lose access to something you rely on.",
+        sources: [
+          { label: "OpenAI Help Center (official)", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+          { label: "Tom's Guide", url: "https://www.tomsguide.com/ai/chatgpt/you-have-until-august-30-to-save-your-chatgpt-dall-e-images-heres-how-to-avoid-losing-them-forever" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on Anthropic's first profitable quarter and what OpenAI's flat-valuation tender offer signals about investor appetite.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Strong at the business and culture angle on stories like Cognition's fast valuation jump and OpenAI's expanding ad tests.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good grounded recap of the week's funding and monetization news across Anthropic, OpenAI, and Cognition.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Useful technical and product-focused take on what's changing inside ChatGPT as OpenAI tests ads and retires legacy features.",
+        url: "https://sub.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Operating profit (vs. revenue)",
+      definition:
+        "Revenue is all the money a company brings in; operating profit is what's left after subtracting the costs of actually running the business — before interest, taxes, and other adjustments. A company can post huge, fast-growing revenue while still losing money on every dollar, which is why Anthropic crossing into positive operating income this quarter is a different, and arguably bigger, milestone than the revenue number alone.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Read the Anthropic and OpenAI stories above and write one sentence each explaining, in your own words, the difference between 'revenue,' 'valuation,' and 'operating profit' — then find one AI company's public filing or press release and see whether its headline number is revenue, profit, or valuation. Notice how often headlines lead with the most impressive-sounding figure rather than the most informative one.",
+    learnLinks: [
+      { label: "How AI companies make money and spend it → The AI Industry", href: "#/course/industry" },
+      { label: "ChatGPT's free tier, ads, and image tools → The AI Toolbox", href: "#/course/tools" },
+      { label: "What agentic coding tools like Cognition's Devin actually do → Building with AI", href: "#/course/engineering" }
+    ]
+  },
+  {
     date: "2026-08-15",
     displayDate: "Saturday, August 15, 2026 · Edition #13",
     headline: "Anthropic eyes its biggest-ever acquisition with a $6B bid for Decart, OpenAI previews a 14x-faster GPT-5.6 tier, and SpaceXAI's Grok 4.6 undercuts rivals on price",

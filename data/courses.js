@@ -966,9 +966,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "chatgpt",
       title: "ChatGPT (OpenAI)",
       minutes: 18,
-      updated: "Aug 10, 2026",
+      updated: "Aug 16, 2026",
       content: `
 <p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, split into three tiers: fast/cheap "Luna," balanced "Terra," and flagship "Sol," which currently tops math and reasoning benchmarks. On August 6, 2026 OpenAI made GPT-5.6 Luna the default model for Free and Go users, with unlimited text chats and a new "Think" button rolling out the week of August 10; Plus and Pro users got a retuned GPT-5.6 Sol plus a slider to directly control how much reasoning effort the model spends per answer.</p>
+<p><b>Free tier now carries ads.</b> OpenAI's ChatGPT ads pilot, running since February 2026 in the U.S., expanded on August 11 to the UK, Mexico, Brazil, Japan, and South Korea. Ads only show to logged-in adult users on the Free and Go tiers — Plus, Pro, Business, Enterprise, and Education stay ad-free — and OpenAI says ads are labeled as sponsored, visually separated from answers, and don't influence what the model says. Separately, OpenAI is retiring the original DALL-E GPT surface inside ChatGPT on August 30, 2026; image generation itself isn't going away, but the old preconfigured DALL-E GPT is folding into ChatGPT Images, so download any images you want to keep first.</p>
 <h3>What it does</h3>
 <ul>
 <li><b>Chat with model choice</b> — fast default models for everyday questions; a "Think" slider/button that lets you dial up reasoning effort before the model answers hard problems</li>
@@ -987,6 +988,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "OpenAI's consumer flagship; GPT-5.x generation with reasoning modes",
         "Strongest all-round consumer feature set: voice, vision, images, agents, custom GPTs",
         "Free tier now unlimited text chats on GPT-5.6 Luna (Aug 2026) → ~$20 Plus → ~$200 Pro; limits change frequently",
+        "Free/Go tiers now show labeled ads in some countries (Aug 2026); paid tiers stay ad-free",
         "Default choice for breadth; verify facts and ask it to challenge you"
       ],
       resources: [
@@ -1064,23 +1066,24 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "research-tools",
       title: "NotebookLM & Perplexity: the research tools",
       minutes: 16,
-      updated: "Jul 31, 2026",
+      updated: "Aug 16, 2026",
       content: `
 <p>Two tools own the "help me understand and research" niche, and they approach it from opposite directions: NotebookLM starts from <i>your documents</i>; Perplexity starts from <i>the live web</i>.</p>
-<h3>NotebookLM (Google)</h3>
-<p>Upload sources — PDFs, Docs, websites, YouTube videos, audio — and NotebookLM (running on Gemini 3) becomes an expert grounded <i>only</i> in them, with citations for every claim. It's the closest thing to "chat with my documents" done right, and a masterclass in RAG as a product.</p>
+<h3>NotebookLM, now "Gemini Notebook" (Google)</h3>
+<p>On July 16, 2026 Google renamed NotebookLM to <b>Gemini Notebook</b> — a rebrand, not a shutdown: existing notebooks, shared links, and the underlying product all carry over unchanged. Upload sources — PDFs, Docs, websites, YouTube videos, audio — and Gemini Notebook (running on Gemini 3) becomes an expert grounded <i>only</i> in them, with citations for every claim. It's the closest thing to "chat with my documents" done right, and a masterclass in RAG as a product. The rename shipped alongside a technical upgrade: each notebook now gets a secure cloud sandbox that can write and run code.</p>
 <ul>
 <li><b>Audio Overviews</b> — its famous feature: turns your sources into a podcast-style discussion between two AI hosts (interactive — you can join and steer); video overviews and mind maps too</li>
 <li><b>Study aids</b> — auto-generated study guides, FAQs, flashcards, quizzes, timelines from your material</li>
-<li><b>2026 upgrades</b> — 1M-token chat context, saved chat history, goal-based briefing modes, and notebooks usable as sources inside the Gemini app</li>
+<li><b>2026 upgrades</b> — 1M-token chat context, saved chat history, goal-based briefing modes, native code execution, and notebooks usable as sources inside the Gemini app</li>
 <li><b>Great for</b> — students, researchers, and anyone turning a pile of documents into understanding. Free with generous limits; Pro tier for heavy use.</li>
 </ul>
 <h3>Perplexity</h3>
 <p>An "answer engine": ask anything and get a direct, citation-first answer synthesized from live web search — the researcher's alternative to Googling. Deep Research mode produces long sourced reports; its agentic side (Comet browser / Computer assistant, expanded through 2026) executes multi-step web tasks; Spaces organize research projects. Free tier → Pro ~$20/month with model choice (it routes across frontier models including Claude and GPT).</p>
 <h3>The habit worth building</h3>
-<p>Chatbot for thinking and creating; Perplexity-style search when the answer must be current and sourced; NotebookLM when the truth lives in <i>your</i> documents. Knowing which tool matches which question is half of practical AI literacy.</p>`,
+<p>Chatbot for thinking and creating; Perplexity-style search when the answer must be current and sourced; Gemini Notebook (NotebookLM) when the truth lives in <i>your</i> documents. Knowing which tool matches which question is half of practical AI literacy.</p>`,
       keypoints: [
-        "NotebookLM: grounded in your uploaded sources, citations always — RAG as a product",
+        "NotebookLM was renamed Gemini Notebook on July 16, 2026 — same product, existing notebooks and links carry over",
+        "Grounded in your uploaded sources, citations always — RAG as a product",
         "Audio Overviews turn documents into an interactive podcast; study aids auto-generate",
         "Perplexity: citation-first live-web answers, Deep Research, agentic browsing",
         "Match the tool to the question: create vs. search vs. understand-my-docs"
