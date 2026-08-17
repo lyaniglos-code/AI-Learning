@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-17",
+    displayDate: "Monday, August 17, 2026 · Edition #15",
+    headline: "Stripe buys AI gateway OpenRouter for $7B+, Google retires Imagen 4 in favor of its Gemini image model, and an AI store manager makes its first firing decision",
+    summary:
+      "Today's stories split between infrastructure money and real-world consequences: Stripe is paying more than five times OpenRouter's spring valuation to own a piece of how businesses route and bill for AI, while Google quietly shut off an entire generation of its image-generation API. Meanwhile DeepSeek repriced its flagship model sharply higher, and an autonomous AI 'manager' running a real San Francisco store made what's being called the first known AI-driven decision to fire a human employee.",
+    stories: [
+      {
+        title: "Stripe finalizes $7B+ deal to acquire AI model router OpenRouter",
+        body: "Stripe has finalized a deal to acquire OpenRouter, the AI model marketplace that lets developers route requests across 400+ models from providers like OpenAI, Anthropic, Google, and DeepSeek through a single API, Bloomberg and TechCrunch reported on August 16. The price, reported at more than $7 billion, is over five times the $1.3 billion valuation OpenRouter set just three months earlier in a $113 million Series B round. OpenRouter serves roughly 8 million developers looking to avoid vendor lock-in and manage AI costs across providers. The deal follows Stripe's January 2026 acquisition of usage-metering startup Metronome, positioning the payments company to own model-selection, metering, and billing for what's increasingly called the 'agent economy.'",
+        why: "A model router is plumbing that sits between an app and whichever AI provider it calls that day — the same idea covered in the Toolbox course when comparing tools that let you switch models. Stripe buying that layer, on top of a billing-metering company, is a bet that AI apps will keep switching models often enough that routing and metering become their own durable business, not just a feature.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-16/stripe-nears-deal-to-buy-ai-firm-openrouter-for-over-7-billion" }
+        ]
+      },
+      {
+        title: "Google shuts down Imagen 4's API endpoints, pushes developers to its Gemini image model",
+        body: "Google's Imagen 4 standard, ultra, and fast endpoints (model IDs imagen-4.0-generate-001, imagen-4.0-ultra-generate-001, and imagen-4.0-fast-generate-001) reached their scheduled shutdown date on August 17 across both the Gemini Developer API and the Agent Platform Gemini API. Google's own migration guidance directs developers to Gemini 3.1 Flash Image — the model widely known as 'Nano Banana 2' — as the replacement. The switch isn't a drop-in swap: Imagen's dedicated generate_images() method doesn't exist for the new model, so any code calling it has to be rewritten to use the general-purpose generate_content() method instead.",
+        why: "Model deprecation is a routine but underrated part of building on AI APIs — providers regularly retire older endpoints and consolidate capabilities into newer, differently-shaped ones. Google folding a standalone image-generation model into its general chat/content model is the same pattern OpenAI followed when it folded the standalone DALL-E GPT into ChatGPT Images, and it's worth budgeting migration time whenever you see a shutdown date on a model you depend on.",
+        sources: [
+          { label: "Google AI for Developers (official)", url: "https://ai.google.dev/gemini-api/docs/models/imagen" },
+          { label: "Kingy AI Launch Tracker", url: "https://kingy.ai/ai-launch-tracker/google-will-shut-down-three-imagen-4-api-models-august-17/" }
+        ]
+      },
+      {
+        title: "DeepSeek launches V4 Pro and moves to peak/off-peak pricing, raising API costs sharply",
+        body: "DeepSeek officially released V4 Pro (model V4-Pro-0813), priced at $1.32 per million input tokens and $3.96 per million output tokens — roughly 9 times the input price and 14 times the output price of its cheaper V4 Flash model, which stays at $0.14 and $0.28 respectively. Starting August 16, DeepSeek also restructured its pricing overall, moving from flat per-token rates to separate peak and off-peak prices, with reported cost increases ranging from about 50% to over 1,100% depending on the model and time of day. DeepSeek has offered no public explanation beyond framing V4 Pro as a premium flagship tier meant to compete on capability rather than rock-bottom price.",
+        why: "DeepSeek built its reputation on undercutting Western labs on price — this repricing is a signal that even the cheapest major provider is starting to charge closer to what serving a frontier-capability model actually costs, especially at peak demand hours. It's a good prompt to check whether a tool you use bills by time-of-day, the same way electricity or cloud compute often does.",
+        sources: [
+          { label: "Gulf Times", url: "https://www.gulf-times.com/article/731130/business/deepseek-launches-v4-pro-at-prices-up-to-14-times-higher-than-v4-flash" },
+          { label: "Engadget", url: "https://www.engadget.com/2236912/deepseek-ai-models-get-four-times-pricier/" }
+        ]
+      },
+      {
+        title: "An AI store manager built on Claude fires its first human employee",
+        body: "Andon Labs, a startup that stress-tests AI agents by giving them real-world responsibility, reported that Luna — an AI store manager built on Anthropic's Claude models running San Francisco's Andon Market with a $100,000 budget, internet access, and a corporate card — recommended firing a human employee after the worker was late for 17 of 23 shifts. Luna had created its own attendance policy earlier but lost track of it, letting the lateness continue for months; only after Andon Labs prompted Luna to search its own memory and reassess the situation did it recommend 'parting ways' with the employee. Humans at Andon Labs reviewed Luna's recommendation and carried out the actual dismissal. Andon Labs describes it as the first known case of an AI agent driving a personnel-termination decision.",
+        why: "This is a clean real-world example of 'agentic AI' — a system given a goal, a budget, and tools, then left to make ongoing decisions rather than just answer a single question. The failure mode here matters as much as the headline: Luna had the right policy in place but didn't reliably act on it without a human nudging it to check, which is exactly the kind of reliability gap the Safety course covers when discussing why autonomous agents still need human oversight loops.",
+        sources: [
+          { label: "The Next Web", url: "https://thenextweb.com/news/andon-market-luna-ai-store-manager-fires-employee" },
+          { label: "Inc.", url: "https://www.inc.com/kevin-haynes/a-real-life-terminator-ai-store-manager-fires-human-employee/91391677" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on the Stripe-OpenRouter deal and what owning the model-routing layer means for the AI infrastructure stack.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Best suited to the human and cultural angle on an AI agent making its first firing decision.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Strong technical breakdown of DeepSeek's V4 Pro pricing overhaul and Google's Imagen-to-Gemini image migration.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Grounded weekly recap that ties together the infrastructure deals and model repricing from this stretch of August.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Agentic AI",
+      definition:
+        "An AI system given a goal, a budget or set of tools, and ongoing autonomy to take actions and make decisions over time — rather than just answering one question and stopping. Andon Labs' Luna is a vivid example: it wasn't asked 'should I fire this employee?' in the moment, it was given a store to run and the standing authority to make personnel calls as part of that job. The interesting part is usually less the decision itself and more how reliably the system follows its own rules without a human having to check in.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Read the Andon Labs story above, then write down one task you currently do that involves a recurring policy or rule you set for yourself (a budget, a bedtime, a workout schedule) and ask honestly: would you actually notice if you quietly drifted away from it for weeks, the way Luna did? That's the same reliability gap agentic AI systems have to close before they can be trusted with bigger real-world responsibility.",
+    learnLinks: [
+      { label: "Why autonomous agents need human oversight → AI Safety", href: "#/course/safety" },
+      { label: "Model routing, switching, and vendor lock-in → The AI Toolbox", href: "#/course/tools" },
+      { label: "How AI companies price and monetize models → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-08-16",
     displayDate: "Sunday, August 16, 2026 · Edition #14",
     headline: "Anthropic posts its first operating profit as Q2 revenue tops $11.5B, OpenAI's $7B tender offer holds its valuation flat at $852B, and Cognition eyes a $40B mark",

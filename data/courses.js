@@ -1035,12 +1035,13 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "gemini",
       title: "Gemini (Google)",
       minutes: 16,
-      updated: "Jul 31, 2026",
+      updated: "Aug 17, 2026",
       content: `
 <p><b>Gemini</b> (gemini.google.com) is Google's assistant, powered by the Gemini 3.x model family. Its superpowers are exactly what you'd guess from Google: multimodal understanding, the largest context windows in the industry (millions of tokens in API tiers), and deep integration with Search, Workspace, Android, and Chrome.</p>
+<p><b>Image generation consolidated.</b> On August 17, 2026 Google shut down the Imagen 4 API endpoints (standard, ultra, and fast) across both the Gemini Developer API and its enterprise Agent Platform API. Image generation isn't going away — it now runs entirely through Gemini 3.1 Flash Image, the model widely nicknamed "Nano Banana 2," via the same general-purpose generate_content() method used for text and other Gemini output. Developers with code still calling Imagen's old generate_images() method need to migrate it.</p>
 <h3>What it does</h3>
 <ul>
-<li><b>Multimodal chat</b> — best-in-class at video, audio, and image understanding; strong image generation and (via Veo) video generation</li>
+<li><b>Multimodal chat</b> — best-in-class at video, audio, and image understanding; strong image generation (Gemini 3.1 Flash Image / "Nano Banana 2") and (via Veo) video generation</li>
 <li><b>Workspace integration</b> — drafts in Gmail/Docs, analyzes Sheets, summarizes Meet — where Google distribution does the heavy lifting</li>
 <li><b>Deep Research & grounding</b> — long sourced reports backed by Google Search; leads factual-grounding benchmarks</li>
 <li><b>Gems</b> — custom assistant personas (Google's custom-GPT equivalent)</li>
@@ -1055,6 +1056,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Google's assistant on Gemini 3.x; strongest multimodal + biggest context windows",
         "Distribution moat: Android, Chrome, Search, and Workspace integration",
         "Best price-to-performance for developers; generous free tier",
+        "Image generation now runs through Gemini 3.1 Flash Image ('Nano Banana 2') after Imagen 4's API shutdown (Aug 17, 2026)",
         "Pick it for video/audio/huge-docs and Google-native workflows"
       ],
       resources: [
