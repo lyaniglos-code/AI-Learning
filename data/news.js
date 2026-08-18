@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-18",
+    displayDate: "Tuesday, August 18, 2026 · Edition #16",
+    headline: "Nvidia guarantees $105B in financing for OpenAI's next data center, Unitree becomes the first humanoid robotics company to go public in mainland China, and USA Today journalists revolt over a Palantir data deal",
+    summary:
+      "Today's stories trace where AI's money and trust problems are landing at once: Nvidia is backstopping more than $100 billion of OpenAI's next data-center buildout even as 'circular financing' criticism grows louder, while AI video startup Higgsfield's valuation quadrupled to $5.4 billion in about a year. Half a world away, Unitree's blockbuster Shanghai listing turned a young robotics startup into a public company overnight, and at USA Today, journalists are pushing back hard against a newsroom data deal with the same company they cover for its surveillance work.",
+    stories: [
+      {
+        title: "Nvidia agrees to guarantee up to $105 billion in financing for OpenAI's new Ohio data center",
+        body: "Nvidia disclosed in a securities filing on August 17 that it will guarantee up to $105 billion in financing for a massive new OpenAI data center at the PORTS-Pike Technology Campus in Pike County, Ohio, being built and managed by SB Energy under a 20-year lease. The credit backs an initial 4.25 gigawatts of computing capacity, with an option to extend to a further 3.75 gigawatts, with capacity expected to come online in phases starting in 2028. Nvidia is also investing $1.5 billion directly in SB Energy, while SB Energy and SoftBank plan to build 10 gigawatts of supporting power generation and put at least $4.2 billion into regional grid upgrades; OpenAI says the project will support roughly 35,000 construction jobs through 2032 and 2,500 permanent positions. The deal reignited 'circular financing' criticism — the concern that Nvidia is effectively bankrolling the same customer that spends much of that money buying Nvidia's own chips — which CEO Jensen Huang pushed back on, saying OpenAI, not Nvidia, is on the hook to pay the lease.",
+        why: "'Circular financing' is worth understanding as its own concept: when a chipmaker guarantees credit for a customer that then spends heavily on that chipmaker's own hardware, the resulting revenue can look real on both companies' books while depending mostly on the same dollars moving between two players rather than outside demand. It's not automatically improper, but it's a useful lens for reading any AI infrastructure deal this large.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/17/nvidia-financing-open-ai-data-center-ohio.html" },
+          { label: "Axios", url: "https://www.axios.com/2026/08/17/openai-nvidia-ohio-data-center-sb-energy" }
+        ]
+      },
+      {
+        title: "AI video startup Higgsfield raises $400M Series B at a $5.4 billion valuation",
+        body: "Higgsfield, an AI video and image generation platform built for professional creators, brands, and agencies, announced on August 17 a $400 million Series B round at a $5.4 billion valuation — more than four times the $1.3 billion valuation it set in its Series A round. The round was led by DST Global, with Goldman Sachs Alternatives, Intel Capital, Fifth Wall, Smash Capital, and existing investors Accel and Menlo Ventures among the participants. Higgsfield says it has reached $700 million in annualized revenue this month and now serves more than 30 million users across 238 countries.",
+        why: "A valuation jump this large lands very differently depending on whether it's paired with real revenue growth or just user-count growth — Higgsfield's $700 million annualized-revenue figure is the number that turns a headline valuation into something investors can actually underwrite, the same distinction worth checking whenever a startup's valuation makes news.",
+        sources: [
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/08/17/higgsfield-raises-400m-at-5-4-billion-valuation-to-scale-video-and-image-generation-platform/" },
+          { label: "PR Newswire (official)", url: "https://www.prnewswire.com/news-releases/higgsfield-raises-400-million-series-b-financing-at-5-4-billion-valuation-with-annualized-revenue-reaching-700-million-302852430.html" }
+        ]
+      },
+      {
+        title: "Chinese humanoid robot maker Unitree prices its IPO, debuts on Shanghai's STAR Market",
+        body: "Unitree Robotics, China's leading humanoid and quadruped robotics maker, priced its initial public offering at 150.8 yuan per share, valuing the company at about 61 billion yuan, ahead of its August 19 trading debut on the Shanghai Stock Exchange's STAR Market — making it the first general-purpose humanoid robotics company to list on mainland China's public markets. The roughly $900 million offering was reportedly oversubscribed more than 8,000 times by retail investors, a record for a STAR Market tech listing. Unitree shipped more than 5,000 humanoid units in 2025 and grew revenue at a 226.8% compound annual rate from 2023 to 2025, though net profit fell 54.6% in the first quarter of 2026 as marketing and R&D spending rose.",
+        why: "Going public forces a company's finances into view for the first time, and Unitree's mix of triple-digit revenue growth alongside falling near-term profit is a common pattern for hardware companies scaling fast — public investors are betting the growth curve matters more right now than this quarter's margins, a trade-off worth watching as more robotics companies follow Unitree onto public markets.",
+        sources: [
+          { label: "Caixin Global", url: "https://www.caixinglobal.com/2026-08-18/unitree-to-debut-at-61-billion-yuan-valuation-in-closely-watched-shanghai-ipo-102475173.html" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/06/chinese-humanoid-robot-maker-unitree-prices-ipo-at-9-billion-valuation.html" }
+        ]
+      },
+      {
+        title: "800+ USA Today journalists demand the company drop its Palantir data-analytics deal",
+        body: "More than 30 unions representing nearly 800 unionized journalists and media workers at USA Today Co. are demanding the company end a partnership with Palantir Technologies that CEO Mike Reed disclosed on the company's August 6 earnings call. Under the deal, Palantir's AI-powered software would analyze USA Today's reader and customer data to find new subscription, advertising, and commerce monetization opportunities. Journalists say the arrangement creates a direct conflict of interest, since Palantir — a subject of USA Today's own reporting on surveillance and immigration enforcement, including its roughly $30 million contract with ICE — would simultaneously become a business partner profiting from the newsroom's data. As of this week, USA Today Co. had not agreed to end the deal.",
+        why: "This is a concrete example of a tension AI companies increasingly sit inside: the same data-analytics tools built for one purpose, like enforcement or targeting, can be sold into completely different institutions for another, like ad and subscription optimization. Who controls a company's data, and who profits from analyzing it, is becoming a normal labor and ethics fight, not just a technical one.",
+        sources: [
+          { label: "Forbes", url: "https://www.forbes.com/sites/sandycarter/2026/08/15/palantir-leads-ai-data-deal-with-usa-today-sparking-a-newsroom-revolt/" },
+          { label: "Cybernews", url: "https://cybernews.com/news/usa-today-palantir-partnership-union-protest/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on Nvidia's $105B OpenAI financing deal and the renewed 'circular financing' debate around it.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Best suited to the labor and trust angle on USA Today journalists pushing back against the Palantir data deal.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Strong technical read on Higgsfield's video-generation scaling and where Unitree's robotics stack fits in the broader humanoid race.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Grounded weekly recap that ties together this stretch of infrastructure financing, funding rounds, and IPO news.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Circular financing",
+      definition:
+        "A deal structure where a company invests in, lends to, or guarantees credit for a customer, who then uses much of that money to buy the original company's own products or services. In AI infrastructure this usually means a chipmaker backing a cloud or AI-lab customer's data-center buildout, with the customer then spending heavily on that chipmaker's GPUs — so the same dollars can effectively circle between two companies' balance sheets. It isn't automatically improper, but it makes it harder to tell how much of an industry's reported growth reflects genuine outside demand versus mutually reinforcing investment between a small number of players.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pick one AI infrastructure deal from the last month — Nvidia's $105B guarantee for OpenAI's Ohio data center above is a good one — and try to trace the money in a straight line: who is putting in outside cash, and who is spending money they received from the other party in the same deal? Sketching even a rough flow makes 'circular financing' concerns much easier to evaluate the next time a company reports one.",
+    learnLinks: [
+      { label: "How to read AI infrastructure and funding news → The AI Industry", href: "#/course/industry" },
+      { label: "AI, labor, and the ethics of automated decisions → AI Safety", href: "#/course/safety" },
+      { label: "What AI compute deals and data centers actually involve → Building with AI", href: "#/course/engineering" }
+    ]
+  },
+  {
     date: "2026-08-17",
     displayDate: "Monday, August 17, 2026 · Edition #15",
     headline: "Stripe buys AI gateway OpenRouter for $7B+, Google retires Imagen 4 in favor of its Gemini image model, and an AI store manager makes its first firing decision",
