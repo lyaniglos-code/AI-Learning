@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-19",
+    displayDate: "Wednesday, August 19, 2026 · Edition #17",
+    headline: "Unitree's Shanghai debut sends the stock up 629%, OpenAI rolls out a safety-first ChatGPT for Teens, and an AI agent keeps flying a modified F-16",
+    summary:
+      "Today's stories move from public markets to the cockpit: Unitree's humanoid-robotics IPO turned into one of the biggest first-day pops of the year on the Shanghai Stock Exchange, while OpenAI pushed a teen-specific version of ChatGPT to a global rollout after months of safety scrutiny. Meanwhile DARPA and the U.S. Air Force kept flying an AI agent inside a modified F-16 fighter jet, and a Boston University team showed that teaching a model antibody biology, not just scaling it up, sped up drug discovery.",
+    stories: [
+      {
+        title: "Unitree shares surge 629% on their Shanghai Stock Exchange debut",
+        body: "Shares of Unitree Robotics, the Chinese humanoid and quadruped robot maker, opened at 1,100 yuan on the Shanghai Stock Exchange's STAR Market on August 19 — 629% above its 150.80-yuan IPO price — before paring gains to close around 845 yuan, valuing the company at roughly $66 billion at its peak. The IPO itself raised about 6.1 billion yuan ($905 million), well above its original 4.2-billion-yuan target, after nearly 9.8 million retail accounts competed for about 9.7 million shares in the online tranche. Chinese AI lab DeepSeek was among the investors, putting in roughly 140.8 million yuan ahead of the listing.",
+        why: "A 629% first-day pop says much more about investor demand and scarcity of shares than about the company's underlying value — a useful reminder that an IPO's opening-day price is a measure of market enthusiasm, not a verified valuation, especially in a sector as narrative-driven as humanoid robotics right now.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/19/china-backflipping-robot-maker-unitree-jumps-shanghai-ipo.html" },
+          { label: "South China Morning Post", url: "https://www.scmp.com/tech/tech-trends/article/3364499/unitree-robotics-surges-629-us66-billion-valuation-shanghai-share-debut" }
+        ]
+      },
+      {
+        title: "OpenAI rolls out ChatGPT for Teens globally, leaning on an age-prediction system",
+        body: "OpenAI began a global rollout on August 18 of 'ChatGPT for Teens,' a version of the product tailored for users 13 to 17 with stronger built-in safety protections, expecting the rollout to finish within about two weeks (Australia follows by September 8). The teen experience blocks romantic or sexual roleplay and restricts conversations about suicide and self-harm, and ChatGPT is instructed not to imply it has feelings or consciousness when talking with teens. OpenAI's age-prediction system estimates a user's age from account signals like stated birthdate, topics discussed, and usage patterns, automatically applying teen protections to anyone it suspects is under 18 — with a path for adults who get flagged incorrectly to verify their age and remove the restrictions.",
+        why: "'Age assurance' — estimating a user's age from behavior rather than requiring proof up front — is becoming a standard building block across AI products as regulators press companies to protect minors; it's worth understanding both what it can catch and where it's likely to misfire, since OpenAI itself acknowledges the system can guess wrong in both directions.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/our-approach-to-age-prediction/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/18/openai-chatgpt-for-teens-safety.html" }
+        ]
+      },
+      {
+        title: "DARPA and the Air Force keep flying an AI agent inside a modified F-16",
+        body: "DARPA and the U.S. Air Force disclosed in July 2026 that they have been flight-testing a modified F-16 under the VENOM program (Viper Experimentation and Next-generation Operations Model), with an AI agent controlling the aircraft while a human safety pilot remains in the cockpit and can flip a dedicated switch to take back control at any time. VENOM builds on earlier tests with the one-of-a-kind X-62A VISTA aircraft, which demonstrated an AI agent autonomously flying and dogfighting, and is meant to show that standard operational fighter jets — not just specialized test planes — can be adapted to run AI-driven flight and combat software.",
+        why: "This is a clean real-world example of 'human-in-the-loop' autonomy: the AI does the moment-to-moment flying, but a person retains a fast, simple way to override it. That handoff design — not just how capable the AI is — is usually what determines how safely an autonomous system can be deployed in a high-stakes setting.",
+        sources: [
+          { label: "DARPA", url: "https://www.darpa.mil/news/2026/darpa-us-air-force-fly-ai-controlled-f-16" },
+          { label: "FlightGlobal", url: "https://www.flightglobal.com/archive/2026/07/darpa-and-us-air-force-fly-frontline-f-16-modified-for-autonomous-flight/" }
+        ]
+      },
+      {
+        title: "Teaching a model antibody biology, instead of just scaling it, speeds up drug discovery",
+        body: "Boston University researchers published a study on August 13 in the Nature-portfolio journal Communications AI & Computing describing an antibody-specific AI framework that narrows the search for effective antibody drugs. Rather than treating every amino acid in an antibody sequence as equally important, the team redesigned training to focus the model on the complementarity-determining regions (CDRs) — the small stretches that actually recognize a disease target — training it on more than 1.6 million naturally paired antibody heavy and light chains. The resulting model improved binding-affinity prediction over generic protein-language-model approaches trained without that biological structure built in.",
+        why: "This is a good example of a broader pattern in applied AI: building a model's architecture or training process around domain-specific structure often beats simply scaling a generic model on more data. It's a useful contrast to point to whenever 'bigger model' is treated as the automatic answer to a hard prediction problem.",
+        sources: [
+          { label: "Boston University", url: "https://www.bu.edu/hic/2026/08/13/teaching-ai-the-biology-of-antibodies-speeds-drug-discovery/" },
+          { label: "Phys.org", url: "https://phys.org/news/2026-08-ai-biology-antibodies-drug-discovery.html" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on Unitree's blowout Shanghai debut and what the market reaction says about robotics valuations.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Well-suited to the child-safety angle on OpenAI's ChatGPT for Teens rollout and the tradeoffs of age-prediction systems.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "Good fit for a plain-language walkthrough of how domain-specific training, like the antibody CDR-masking approach, changes model performance.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Grounded weekly recap likely to connect the VENOM F-16 tests to the broader trend of autonomy moving into real operational hardware.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Human-in-the-loop",
+      definition:
+        "A design where an autonomous system — like an AI flying a fighter jet or making a business decision — handles routine operation on its own, but a person retains a fast, reliable way to monitor it and take back control. It's a spectrum, not a single setting: the DARPA VENOM tests keep a safety pilot with a dedicated override switch, which is a much tighter loop than, say, a chatbot that simply lets a user edit its output afterward. How tight that loop is, and how quickly a human can intervene, is usually more important to safety than how capable the underlying AI is.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Pick one of today's stories — the DARPA F-16 tests are a good one — and write down, in plain language, exactly how a human could intervene if the AI made a mistake: what signal would they need, how fast would they need to act, and what happens if they're a second too slow. Doing this for any 'autonomous' system you read about is a fast way to tell how much human oversight it actually has versus how much it claims to have.",
+    learnLinks: [
+      { label: "Why autonomous agents need human oversight → AI Safety", href: "#/course/safety" },
+      { label: "How AI companies build safety features for different users → AI Safety", href: "#/course/safety" },
+      { label: "How model architecture and training data shape performance → The AI Models", href: "#/course/models" }
+    ]
+  },
+  {
     date: "2026-08-18",
     displayDate: "Tuesday, August 18, 2026 · Edition #16",
     headline: "Nvidia guarantees $105B in financing for OpenAI's next data center, Unitree becomes the first humanoid robotics company to go public in mainland China, and USA Today journalists revolt over a Palantir data deal",

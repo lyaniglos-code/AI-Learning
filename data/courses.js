@@ -966,9 +966,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "chatgpt",
       title: "ChatGPT (OpenAI)",
       minutes: 18,
-      updated: "Aug 16, 2026",
+      updated: "Aug 19, 2026",
       content: `
 <p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, split into three tiers: fast/cheap "Luna," balanced "Terra," and flagship "Sol," which currently tops math and reasoning benchmarks. On August 6, 2026 OpenAI made GPT-5.6 Luna the default model for Free and Go users, with unlimited text chats and a new "Think" button rolling out the week of August 10; Plus and Pro users got a retuned GPT-5.6 Sol plus a slider to directly control how much reasoning effort the model spends per answer.</p>
+<p><b>ChatGPT for Teens rolled out globally starting August 18, 2026</b> — a separate experience for 13–17-year-olds with stronger built-in protections: no romantic or sexual roleplay, tighter guardrails around suicide and self-harm topics, and instructions to the model not to imply it has feelings or consciousness when talking with a teen. An age-prediction system estimates whether an account belongs to a minor from signals like stated birthdate, topics discussed, and usage patterns, and applies teen protections automatically when it suspects someone is under 18 — adults who get flagged incorrectly can verify their age to remove the restrictions. The teen experience also adds Study Hours and homework-focused study mode, with parents able to manage settings through linked family controls.</p>
 <p><b>Free tier now carries ads.</b> OpenAI's ChatGPT ads pilot, running since February 2026 in the U.S., expanded on August 11 to the UK, Mexico, Brazil, Japan, and South Korea. Ads only show to logged-in adult users on the Free and Go tiers — Plus, Pro, Business, Enterprise, and Education stay ad-free — and OpenAI says ads are labeled as sponsored, visually separated from answers, and don't influence what the model says. Separately, OpenAI is retiring the original DALL-E GPT surface inside ChatGPT on August 30, 2026; image generation itself isn't going away, but the old preconfigured DALL-E GPT is folding into ChatGPT Images, so download any images you want to keep first.</p>
 <h3>What it does</h3>
 <ul>
@@ -989,6 +990,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Strongest all-round consumer feature set: voice, vision, images, agents, custom GPTs",
         "Free tier now unlimited text chats on GPT-5.6 Luna (Aug 2026) → ~$20 Plus → ~$200 Pro; limits change frequently",
         "Free/Go tiers now show labeled ads in some countries (Aug 2026); paid tiers stay ad-free",
+        "ChatGPT for Teens rolled out globally Aug 18, 2026, with age-prediction guardrails and study tools",
         "Default choice for breadth; verify facts and ask it to challenge you"
       ],
       resources: [
