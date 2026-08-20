@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-20",
+    displayDate: "Thursday, August 20, 2026 · Edition #18",
+    headline: "OpenAI's CFO pencils in a 2027 IPO, Nvidia's H200 chips start reaching China again, and most young Americans now say AI worries them more than it excites them",
+    summary:
+      "Today's stories are mostly about money and mood. OpenAI's CFO told staff the company expects to go public in 2027, Nvidia is reportedly in talks to back an AI data-labeling startup at double its October valuation, and Samsung raised advanced chipmaking prices as demand outstrips supply. Meanwhile a new Pew survey shows the sharpest generational mood swing on AI yet: young U.S. adults have flipped from AI's most optimistic age group to its most worried in just a few years.",
+    stories: [
+      {
+        title: "OpenAI's CFO tells staff the company 'will be a public company in 2027'",
+        body: "At an internal all-hands, OpenAI CFO Sarah Friar told employees the company will go public in 2027, or sooner if 'our business continues to inflect,' according to CNBC. Friar described an IPO as 'not a finish line, it is a milestone, another fundraise,' noting OpenAI raised $122 billion in March, which gives it flexibility on timing. She also shared that OpenAI's revenue run rate is up 35% this quarter, enterprise revenue run rate is up 50%, and its coding and work products have reached 20 million weekly active users. OpenAI confidentially filed IPO paperwork with the SEC in June but hasn't set a public debut date.",
+        why: "A company's own revenue-growth figures, shared internally and then leaked, are marketing as much as disclosure — there's no audited filing behind numbers like 'run rate up 35%' yet. It's a good habit to mentally separate a company's self-reported growth metrics from the audited numbers an actual IPO prospectus will eventually require.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/19/open-ai-ipo-timing-2027-friar.html" },
+          { label: "PYMNTS", url: "https://www.pymnts.com/news/artificial-intelligence/2026/openai-cfo-tells-employees-public-debut-coming-by-2027/" }
+        ]
+      },
+      {
+        title: "Nvidia's H200 chips start reaching China again, routed through Hong Kong",
+        body: "ByteDance and Tencent have each received roughly 10,000 Nvidia H200 processors in recent weeks, the Financial Times reported on August 19, marking the first confirmed H200 shipments into Chinese hands since the U.S. cleared licenses for up to 100,000 chips per company. The twist is that Beijing, not Washington, now appears to be the party limiting where the hardware actually goes: Chinese regulators reportedly want the chips kept in Hong Kong rather than deployed on the mainland, to protect domestic chipmakers from getting undercut by Nvidia's more capable silicon. Reuters said it could not independently verify the FT report, and Nvidia did not immediately comment.",
+        why: "Export-control stories usually get told as a straightforward U.S.-vs-China restriction, but this one shows the flow can be shaped by both sides at once — Washington controls what leaves the country, while Beijing can just as easily control where it's allowed to be used once it arrives. Chip policy is a negotiation with more than one party holding a lever.",
+        sources: [
+          { label: "Tom's Hardware", url: "https://www.tomshardware.com/pc-components/gpus/first-nvidia-h200-shipments-reach-bytedance-and-tencent-as-beijing-loosens-its-import-block" },
+          { label: "Business Recorder", url: "https://www.brecorder.com/news/40435527/nvidia-h200-chips-reach-china-in-small-shipments-ft-reports" }
+        ]
+      },
+      {
+        title: "Samsung raises advanced chipmaking prices up to 15% as AI demand outpaces supply",
+        body: "Samsung raised contract chipmaking prices by as much as 15% for new orders, Reuters reported August 19, with the increases already in effect since July. Its 4-nanometer SF4 process rose 10-15% for U.S. and Chinese customers (5-10% for Taiwanese customers), its 5-nanometer SF5 process rose a similar 10-15%, and even its older 8-nanometer line climbed nearly 10%. Chinese firms, whose access to the most advanced Taiwanese-made chips is limited by U.S. export controls, reportedly accepted the steepest increases because they have fewer alternative suppliers to turn to.",
+        why: "This is supply and demand in a very direct form: when a small number of companies control the world's cutting-edge chip fabrication, a demand surge shows up as a price hike rather than more supply appearing overnight, because building new fab capacity takes years, not months.",
+        sources: [
+          { label: "Benzinga", url: "https://www.benzinga.com/markets/prediction-markets/26/08/61317561/samsung-chip-prices-ai-demand" },
+          { label: "Seoul Economic Daily", url: "https://en.sedaily.com/international/2026/08/19/samsung-raises-foundry-prices-up-to-15-percent-as-tsmc" }
+        ]
+      },
+      {
+        title: "Nvidia discusses investing in AI data-labeling startup Mercor at a $20B valuation",
+        body: "Nvidia is in talks to invest in Mercor, a startup that supplies human-expert-labeled training data, as part of a round led by existing investor General Catalyst that would value the company at $20 billion — double its $10 billion valuation from October, The Information reported. Nvidia already pays Mercor tens of millions of dollars per quarter for domain-expert data (legal, financial, scientific) used to train its open-source Nemotron models. Mercor's annualized gross revenue reportedly hit $2 billion in June, having doubled since earlier this year, and the company has raised about $520 million to date from backers including Benchmark and Felicis.",
+        why: "It's easy to think of AI progress as purely a story about bigger models and more compute, but a lab like Nvidia paying tens of millions of dollars a quarter for human-curated training data is a reminder that high-quality labeled data is its own scarce, expensive input — and companies that supply it well are becoming AI infrastructure in their own right.",
+        sources: [
+          { label: "The Information", url: "https://www.theinformation.com/articles/nvidia-discusses-funding-ai-data-supplier-mercor-20-billion-valuation" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-explores-stake-ai-204528438.html" }
+        ]
+      },
+      {
+        title: "Pew: a majority of young U.S. adults are now more concerned than excited about AI",
+        body: "A Pew Research Center survey released August 18 found that 55% of U.S. adults under 30 are now more concerned than excited about AI — the first time a majority of this age group has said so since Pew began asking the question in 2021. The share of young adults who are more excited than concerned has fallen from 25% in 2021 to just 11% today, and about three-quarters of adults under 30 now think AI will mean fewer jobs overall, up from 61% two years ago. Across all age groups, 52% were more concerned than excited as of June 2026, versus 37% in 2021 — but the swing has been sharpest among young adults, who were previously AI's most optimistic demographic.",
+        why: "Public sentiment isn't a side detail to AI progress — it shapes what regulation gets political support, which products companies feel safe shipping, and how much scrutiny a new model release gets. A generation moving from most optimistic to most worried in five years is the kind of shift that eventually shows up in policy, not just opinion polls.",
+        sources: [
+          { label: "Pew Research Center", url: "https://www.pewresearch.org/short-reads/2026/08/18/young-adults-in-the-us-are-increasingly-wary-of-ai-concerned-it-will-take-jobs/" },
+          { label: "Axios", url: "https://www.axios.com/2026/08/18/young-adults-ai-job-loss" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on OpenAI's IPO timeline comments and what they signal about the broader AI-funding race.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good fit for connecting the H200-to-China shipments and Samsung's price hikes into the bigger picture of AI hardware supply chains.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Likely to dig into the Pew survey on young adults' souring AI sentiment and what's driving the shift.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Weekly community roundup that tends to cover data-supply-chain stories like Nvidia's Mercor talks in more technical depth.",
+        url: "https://www.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Data labeling",
+      definition:
+        "The process of having humans (often domain experts) annotate or generate examples — labeling an image, rating a chatbot response, writing an ideal answer to a hard question — that a model is then trained or fine-tuned on. It sits underneath techniques like supervised fine-tuning and reinforcement learning from human feedback, and its quality has a direct effect on model quality: a model trained on carelessly labeled data tends to inherit those mistakes. As frontier labs push into specialized domains like law, medicine, and science, they increasingly pay for labeling done by actual domain experts rather than generalist crowdworkers, which is why a supplier like Mercor can command a multi-billion-dollar valuation.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Pick any AI chatbot and ask it a question in a field you know well — your job, a hobby, something you have real expertise in. Rate its answer the way a human data labeler would: is it factually correct, is it missing nuance an expert would catch, would you trust it unedited? That's roughly the same judgment call that human labelers like the ones Mercor supplies are paid to make at scale, and doing it yourself once makes it easier to spot where a model's training data might be thin.",
+    learnLinks: [
+      { label: "How training data and human feedback shape a model → How Models Actually Work", href: "#/course/models" },
+      { label: "Reading AI companies' growth and valuation claims critically → The AI Industry", href: "#/course/industry" },
+      { label: "Why public trust and sentiment matter for AI policy → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-08-19",
     displayDate: "Wednesday, August 19, 2026 · Edition #17",
     headline: "Unitree's Shanghai debut sends the stock up 629%, OpenAI rolls out a safety-first ChatGPT for Teens, and an AI agent keeps flying a modified F-16",
