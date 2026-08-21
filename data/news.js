@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-21",
+    displayDate: "Friday, August 21, 2026 · Edition #19",
+    headline: "Claude designs protein binders that actually work in the lab, Google gives college students a free year of Gemini, and CISA orders emergency patches for an exploited AI-framework bug",
+    summary:
+      "Today's edition spans lab benches, campus quads, and federal patch deadlines. Anthropic published lab-validated results showing Claude designed working protein binders for 14 of 15 targets tested by outside labs, beating typical industry success rates, while Google opened a free Gemini Student Hub with a year of paid access for eligible college students. Meanwhile CISA ordered federal agencies to patch an actively exploited flaw in Ray, the open-source framework AI labs use to scale training, and SK Hynix announced a record buyback on the strength of AI memory-chip demand.",
+    stories: [
+      {
+        title: "Anthropic says Claude designed protein binders that worked in the lab, beating typical industry hit rates",
+        body: "Anthropic asked Claude Opus 4.8 and an experimental model called Mythos Preview to design de novo 'minibinder' proteins for 15 biological targets, then had outside labs Adaptyv Bio and Twist Bioscience physically synthesize and test the designs on real lab equipment. Claude produced at least one working binder for 14 of the 15 targets, with success rates of 22-35% compared with the roughly 10-15% hit rate typical of established computational design methods, and for four targets the best AI-designed protein matched or beat previously published affinity levels. Anthropic separately said its Opus 5 model processed raw NMR and mass-spectrometry data in under 25 minutes, with purity readings within 0.1% of the lab's own measurements. The company says the underlying life-sciences capability stays restricted in its most capable models while it builds an access program for outside scientists.",
+        why: "This is a case where an AI's output gets checked against physical reality instead of another benchmark score — a wet lab either produces a protein that binds or it doesn't. That kind of ground-truth validation is worth more than most leaderboard results, and it's part of why 'does it work outside a chat window' is becoming the real test for frontier models.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/research/Claude-accelerates-protein-design" },
+          { label: "Tech Times", url: "https://www.techtimes.com/articles/325081/20260820/claude-runs-autonomous-protein-design-campaign-wet-lab-confirms-twice-industry-hit-rate.htm" }
+        ]
+      },
+      {
+        title: "Google launches a free Gemini Student Hub with a year of AI Pro or Plus for college students",
+        body: "Google opened a dedicated Student Hub inside Gemini on August 20, bundling study notebooks, AI-generated flashcards and practice quizzes, diagnostic study plans, and a syllabus reader that can add exam dates straight to Google Calendar. Eligible U.S. college students get a full year of Google AI Pro at no cost, and students in more than 140 other countries get a year of Google AI Plus, with redemption open through December 31, 2026. Deep Research, previously limited to typed queries, is also being extended into Gemini Live so students can request a research report and then talk through it by voice. The rollout is timed to the start of the U.S. fall semester.",
+        why: "Giving students free access to a paid AI tier is also a customer-acquisition strategy — habits formed with a specific assistant during school tend to stick after graduation. It's worth treating 'free student plan' offers as marketing as much as a gift, and comparing what each vendor's terms actually include before settling into one ecosystem.",
+        sources: [
+          { label: "Google", url: "https://blog.google/innovation-and-ai/products/gemini-app/student-offer-google-ai/" },
+          { label: "Tom's Guide", url: "https://www.tomsguide.com/ai/google-gemini/google-is-giving-students-a-free-year-of-gemini-pro-plus-new-ai-study-features" }
+        ]
+      },
+      {
+        title: "CISA orders federal agencies to patch an actively exploited flaw in Ray, the open-source AI compute framework",
+        body: "The Cybersecurity and Infrastructure Security Agency added CVE-2025-62593, a critical code-injection flaw in the Ray distributed-computing framework, to its Known Exploited Vulnerabilities catalog on August 17, giving U.S. federal civilian agencies until August 20 to patch. Ray is widely used to scale AI training and machine-learning workloads, including at companies like Amazon, Apple, and OpenAI. The flaw, which carries a CVSS score of 9.4, lets an attacker use a DNS-rebinding technique so that simply visiting a malicious webpage or ad can trigger remote code execution against a Ray instance running on the visitor's network. A botnet reportedly began exploiting the bug in November 2025, before the CVE was even publicly disclosed. Ray Project fixed the issue in version 2.52.0; anyone running an older version is urged to upgrade immediately.",
+        why: "The tools used to build and scale AI models are themselves ordinary software with ordinary vulnerabilities, and attackers go after the infrastructure underneath AI just as readily as the models on top of it. A framework doesn't need 'AI' in a headline to matter for AI security — Ray is plumbing, not a chatbot, and that's exactly why it's a good target.",
+        sources: [
+          { label: "The Hacker News", url: "https://thehackernews.com/2026/08/cisa-flags-actively-exploited-ray-flaw.html" },
+          { label: "CISA KEV Catalog", url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-62593" }
+        ]
+      },
+      {
+        title: "SK Hynix announces a record $28.6 billion buyback as AI memory-chip profits pile up",
+        body: "SK Hynix said it will repurchase and cancel about 40 trillion won ($28.6 billion) in shares over roughly three months starting August 20 — the largest share cancellation ever by a listed South Korean company. The company also committed to returning more than 50% of its cumulative free cash flow from 2025 through 2027 to shareholders, after facing pressure to share more of the windfall from booming demand for high-bandwidth memory (HBM) chips used alongside AI accelerators like Nvidia's GPUs. The announcement sent SK Hynix shares up more than 12% in a single day in Seoul. It comes just weeks after the company separately pledged 54 trillion won toward new memory-chip fabrication plants to keep up with AI-driven demand.",
+        why: "High-bandwidth memory is one of the least visible but most important bottlenecks in AI hardware — GPUs get the headlines, but they're often supply-constrained by how much HBM can be paired with them. A memory maker's buyback size is a rough proxy for how much of the AI capital-spending boom is actually reaching hardware suppliers' bottom lines.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-19/sk-hynix-announces-28-6-billion-share-buy-back-on-ai-boom" },
+          { label: "Korea Herald", url: "https://www.koreaherald.com/article/10845792" }
+        ]
+      },
+      {
+        title: "OpenAI retires its o3 reasoning model and previews a new 'Astra' model built for long-running tasks",
+        body: "OpenAI confirmed it will retire the o3 reasoning model from ChatGPT on August 26, 2026, after a 90-day sunset period, alongside separate plans to shut down the standalone DALL-E GPT surface on August 30 in favor of ChatGPT's built-in image tools. At the same time, free and Go-tier users are getting a new default model for everyday chats, while Plus and Pro subscribers get an updated GPT-5.6 Sol with a slider to control how much reasoning effort ChatGPT applies to a response. Separately, The Information reported that OpenAI CEO Sam Altman recently demonstrated a new model family, tentatively named 'Astra,' to policymakers and regulators in Washington, D.C. — OpenAI says its main capability is letting multiple agents collaborate over long periods on difficult projects and advanced math problems. OpenAI hasn't decided whether to release it as GPT-6, a GPT-5.x update, or a separate model class, and no release date has been announced.",
+        why: "Model retirements are as informative as launches — they tell you which capabilities a company considers safely superseded and free up engineering and compute for what's next. An 'effort slider,' meanwhile, is a useful concept to understand on its own: it's an explicit trade-off between how long a model 'thinks' and how fast or cheap the answer comes back.",
+        sources: [
+          { label: "OpenAI Deployment Safety Hub", url: "https://deploymentsafety.openai.com/gpt-5-6-august-update" },
+          { label: "The Information", url: "https://www.theinformation.com/briefings/exclusive-openai-previews-astra-ai-model-dc" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on Anthropic's protein-design results and what they mean for AI moving into physical science.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good fit for connecting the SK Hynix buyback and CISA's Ray advisory into the bigger picture of AI infrastructure and supply chains.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Weekly community roundup that tends to dig into model-lifecycle news like o3's retirement and OpenAI's Astra preview in technical depth.",
+        url: "https://www.thursdai.news/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · YouTube",
+        why: "Tends to give a grounded, skeptical read on frontier-model previews like Astra, separating confirmed capability from hype.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "High-bandwidth memory (HBM)",
+      definition:
+        "A type of memory chip stacked in layers and placed physically close to a processor, giving it much faster data transfer than conventional memory — which matters enormously for AI because training and running large models means constantly moving huge amounts of data between memory and the GPU. HBM is a major reason AI accelerators like Nvidia's GPUs are supply-constrained: it's made by only a few manufacturers (SK Hynix, Samsung, Micron), takes a long time to add capacity for, and a GPU is only as fast as the memory feeding it. When you hear about chip shortages or memory-maker profits soaring alongside AI demand, HBM is usually the underlying story.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Look up the specs of any GPU used for AI (search 'Nvidia H100 specs' or similar) and find its memory bandwidth figure, usually listed in GB/s or TB/s. Compare it to the memory bandwidth of a regular laptop or gaming PC. The gap you'll see is exactly why AI accelerators need HBM instead of ordinary RAM, and why memory supply has become its own bottleneck in the AI hardware race.",
+    learnLinks: [
+      { label: "Why chips and compute shape what AI labs can build → The AI Industry", href: "#/course/industry" },
+      { label: "How training and validation work for AI models → How Models Actually Work", href: "#/course/models" },
+      { label: "Comparing what ChatGPT, Claude, and Gemini actually offer → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-08-20",
     displayDate: "Thursday, August 20, 2026 · Edition #18",
     headline: "OpenAI's CFO pencils in a 2027 IPO, Nvidia's H200 chips start reaching China again, and most young Americans now say AI worries them more than it excites them",

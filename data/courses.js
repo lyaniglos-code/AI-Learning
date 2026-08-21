@@ -966,9 +966,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "chatgpt",
       title: "ChatGPT (OpenAI)",
       minutes: 18,
-      updated: "Aug 19, 2026",
+      updated: "Aug 21, 2026",
       content: `
 <p><b>ChatGPT</b> (chatgpt.com) is the tool that made AI mainstream and remains the most-used AI assistant on Earth. It's OpenAI's consumer face for the GPT model family — as of mid-2026, the GPT-5.x generation, split into three tiers: fast/cheap "Luna," balanced "Terra," and flagship "Sol," which currently tops math and reasoning benchmarks. On August 6, 2026 OpenAI made GPT-5.6 Luna the default model for Free and Go users, with unlimited text chats and a new "Think" button rolling out the week of August 10; Plus and Pro users got a retuned GPT-5.6 Sol plus a slider to directly control how much reasoning effort the model spends per answer.</p>
+<p><b>o3 is being retired.</b> OpenAI confirmed the o3 reasoning model will be removed from ChatGPT on August 26, 2026, following a 90-day sunset period — one more sign that the GPT-5.x Luna/Terra/Sol lineup has fully superseded the older o-series reasoning models for everyday use. Separately, OpenAI has previewed (but not released) a new model family tentatively called "Astra," said to focus on multiple agents collaborating over long stretches on hard projects; no release date or official name has been confirmed.</p>
 <p><b>ChatGPT for Teens rolled out globally starting August 18, 2026</b> — a separate experience for 13–17-year-olds with stronger built-in protections: no romantic or sexual roleplay, tighter guardrails around suicide and self-harm topics, and instructions to the model not to imply it has feelings or consciousness when talking with a teen. An age-prediction system estimates whether an account belongs to a minor from signals like stated birthdate, topics discussed, and usage patterns, and applies teen protections automatically when it suspects someone is under 18 — adults who get flagged incorrectly can verify their age to remove the restrictions. The teen experience also adds Study Hours and homework-focused study mode, with parents able to manage settings through linked family controls.</p>
 <p><b>Free tier now carries ads.</b> OpenAI's ChatGPT ads pilot, running since February 2026 in the U.S., expanded on August 11 to the UK, Mexico, Brazil, Japan, and South Korea. Ads only show to logged-in adult users on the Free and Go tiers — Plus, Pro, Business, Enterprise, and Education stay ad-free — and OpenAI says ads are labeled as sponsored, visually separated from answers, and don't influence what the model says. Separately, OpenAI is retiring the original DALL-E GPT surface inside ChatGPT on August 30, 2026; image generation itself isn't going away, but the old preconfigured DALL-E GPT is folding into ChatGPT Images, so download any images you want to keep first.</p>
 <h3>What it does</h3>
@@ -991,6 +992,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Free tier now unlimited text chats on GPT-5.6 Luna (Aug 2026) → ~$20 Plus → ~$200 Pro; limits change frequently",
         "Free/Go tiers now show labeled ads in some countries (Aug 2026); paid tiers stay ad-free",
         "ChatGPT for Teens rolled out globally Aug 18, 2026, with age-prediction guardrails and study tools",
+        "o3 reasoning model retires from ChatGPT Aug 26, 2026; a long-task-focused model family (\"Astra\") is in preview",
         "Default choice for breadth; verify facts and ask it to challenge you"
       ],
       resources: [
@@ -1037,10 +1039,11 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "gemini",
       title: "Gemini (Google)",
       minutes: 16,
-      updated: "Aug 17, 2026",
+      updated: "Aug 21, 2026",
       content: `
 <p><b>Gemini</b> (gemini.google.com) is Google's assistant, powered by the Gemini 3.x model family. Its superpowers are exactly what you'd guess from Google: multimodal understanding, the largest context windows in the industry (millions of tokens in API tiers), and deep integration with Search, Workspace, Android, and Chrome.</p>
 <p><b>Image generation consolidated.</b> On August 17, 2026 Google shut down the Imagen 4 API endpoints (standard, ultra, and fast) across both the Gemini Developer API and its enterprise Agent Platform API. Image generation isn't going away — it now runs entirely through Gemini 3.1 Flash Image, the model widely nicknamed "Nano Banana 2," via the same general-purpose generate_content() method used for text and other Gemini output. Developers with code still calling Imagen's old generate_images() method need to migrate it.</p>
+<p><b>Free year for students.</b> On August 20, 2026 Google launched a dedicated Student Hub inside Gemini (gemini.google.com/students) bundling study notebooks, AI-generated flashcards and practice quizzes, diagnostic study plans, and a syllabus reader that adds exam dates to Google Calendar. Eligible college students get a full year of a paid tier at no cost — Google AI Pro in the U.S., Google AI Plus in 140+ other countries — redeemable through December 31, 2026. Deep Research also expanded into Gemini Live, letting students request and then talk through a research report by voice.</p>
 <h3>What it does</h3>
 <ul>
 <li><b>Multimodal chat</b> — best-in-class at video, audio, and image understanding; strong image generation (Gemini 3.1 Flash Image / "Nano Banana 2") and (via Veo) video generation</li>
@@ -1059,6 +1062,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Distribution moat: Android, Chrome, Search, and Workspace integration",
         "Best price-to-performance for developers; generous free tier",
         "Image generation now runs through Gemini 3.1 Flash Image ('Nano Banana 2') after Imagen 4's API shutdown (Aug 17, 2026)",
+        "Free year of Google AI Pro/Plus for eligible students via the new Gemini Student Hub (Aug 20, 2026)",
         "Pick it for video/audio/huge-docs and Google-native workflows"
       ],
       resources: [
