@@ -13,6 +13,92 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-23",
+    displayDate: "Sunday, August 23, 2026 · Edition #21",
+    headline: "Google's Gemma passes a billion downloads, an open coding model finds over 1,000 critical bugs and delays its own release, and the US and China start asking countries to pick an AI side",
+    summary:
+      "Today's edition is about who controls the AI stack, from open weights to open skies. Google DeepMind's Gemma family passed a billion downloads as a case study in open-model reach, Z.ai held back its GLM-5.3 coding model's weights after it got unexpectedly good at finding software exploits, and Washington and Beijing both leaned on countries to align with one AI ecosystem over the other. Meanwhile, the fight over how much AI regulation is genuine safety work versus competitive gamesmanship kept escalating in Washington.",
+    stories: [
+      {
+        title: "Google's open-weight Gemma models pass one billion downloads",
+        body: "Google DeepMind announced on August 20 that its Gemma family of open AI models has been downloaded more than one billion times since launching roughly two years ago, with developers publishing over 100,000 fine-tuned variants — what Google calls the 'Gemmaverse.' The models are showing up in unusual places: NASA, Satlyt, and Starcloud are running Gemma onboard satellites for image analysis and communications routing, India's national health app Aarogya Setu integrated Gemma 4 for over 100 million Android users, and researchers built DolphinGemma to analyze dolphin vocalizations. Google also opened a GitHub directory to organize the growing ecosystem of community variants.",
+        why: "Download counts and derivative-model counts are one of the few concrete ways to measure how far an 'open-weight' model family actually spreads once it leaves a lab — unlike a closed API, anyone can take the weights and adapt them, which is why Gemma's reach into satellites and health apps is a more telling signal than a benchmark score.",
+        sources: [
+          { label: "Google Blog", url: "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-one-billion-downloads/" },
+          { label: "Unite.AI", url: "https://www.unite.ai/googles-gemma-open-models-pass-1-billion-downloads-as-variants-top-100k/" }
+        ]
+      },
+      {
+        title: "An open coding model got so good at finding exploits that its maker delayed releasing it",
+        body: "Chinese AI company Z.ai announced GLM-5.3, an open-weight coding model, on August 14 — but as of publication its weights still aren't public, because the model's cybersecurity capability grew faster during training than Z.ai expected. On CyberGym, a benchmark for finding known vulnerabilities in source code, GLM-5.3 scored 84.5%, up from 77.2% for its predecessor; on ExploitBench, a benchmark for reasoning about how to exploit a flaw, it more than doubled its predecessor's score. Using GLM models, Z.ai says it has identified 2,436 vulnerabilities across 269 open-source projects since the prior version, 1,097 of them rated critical or high severity, including one bug dating back to 1981. Only 53 have public CVEs so far; the rest remain under embargo while maintainers patch them. Z.ai says the two-week delay is for extra safety hardening before public release.",
+        why: "This is a real-world example of 'dual-use' AI capability: the same skill that helps a model find and fix security bugs for defenders is exactly what would let an attacker find them first — which is why frontier labs increasingly treat cyber-offense capability as something to test and gate before release, not just a coding benchmark to publish.",
+        sources: [
+          { label: "MLQ News", url: "https://mlq.ai/news/zai-delays-glm-53-weights-after-cybersecurity-tests-show-strong-exploit-capability/" },
+          { label: "Tech Times", url: "https://www.techtimes.com/articles/324426/20260814/glm-53-post-training-produced-exploit-chains-zai-never-planned-finds-1097-critical-bugs.htm" }
+        ]
+      },
+      {
+        title: "The US and China both press countries to pick an AI 'side'",
+        body: "Reports that the United States is preparing to ask dozens of countries to choose between American and Chinese AI technology stacks — and to exclude nations trying to join both a US-led coalition and a competing Chinese framework — drew a public response from Beijing. On August 19, Chinese foreign ministry spokesperson Lin Jian said countries should be free to choose their technology partners based on their own national conditions and rejected the idea of forming rival camps, invoking each country's 'digital sovereignty.' Analysts note that many mid-sized countries have so far tried to hedge by using both American and Chinese AI tools and infrastructure, but tightening export controls on chips and technology transfer are making that middle path harder to sustain.",
+        why: "'Digital sovereignty' is the idea that a country's control over its own data, software, and infrastructure is a matter of national interest, not just a commercial choice — it's the concept underneath why AI chip export rules, cloud-hosting requirements, and model access restrictions keep showing up as geopolitical flashpoints rather than ordinary business news.",
+        sources: [
+          { label: "China Global South Project", url: "https://chinaglobalsouth.com/2026/08/20/us-china-ai-race-digital-sovereignty/" }
+        ]
+      },
+      {
+        title: "Trump's AI czar renews his 'regulatory capture' accusation against Anthropic",
+        body: "The feud between White House AI and crypto czar David Sacks and Anthropic escalated again in mid-August, with Sacks accusing Anthropic co-founder and CEO Dario Amodei of pushing for what Sacks called a 'DMV for AI' — heavy licensing-style regulation that Sacks argues would lock in large incumbent labs like Anthropic while making it harder for startups and open-source developers to compete. Sacks has repeated a version of this argument since October 2025, saying Anthropic times alarming safety research to coincide with its own model releases to shape public perception and drive state-level regulation. Anthropic's leadership has publicly disputed the characterization, maintaining its safety research and policy advocacy reflect genuine risk concerns rather than a competitive strategy.",
+        why: "'Regulatory capture' describes a situation where regulation, intended to protect the public, ends up benefiting the industry it regulates instead — usually by raising costs or compliance burdens that only large, well-resourced incumbents can absorb. It's a useful lens for reading any AI company's public safety advocacy: the same statement can be genuine risk concern and a competitive move at the same time.",
+        sources: [
+          { label: "Fortune", url: "https://fortune.com/2026/08/18/david-sacks-says-anthropics-dario-amodei-wants-a-dmv-for-ai-but-plenty-of-industries-thrive-despite-safety-regulation/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliably fast same-day coverage of open-model milestones like Gemma's billion-download mark and dual-use stories like GLM-5.3.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for connecting open-weight model milestones and cyber-capability stories into the broader research and safety picture.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Strong on the politics side of AI — a natural home for the US-China 'pick a side' story and the Sacks-Anthropic feud.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Tends to dig into open-weight model releases like GLM-5.3 and the Gemmaverse ecosystem in real technical depth.",
+        url: "https://www.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Dual-use capability",
+      definition:
+        "A capability that can serve both beneficial and harmful purposes depending on who wields it — the same skill that lets an AI model find and patch a software vulnerability for defenders could let an attacker find and exploit that same vulnerability first. GLM-5.3's unplanned jump in cyber-exploit reasoning is a concrete example: Z.ai chose to delay releasing the model's weights specifically because that dual-use gap between finding and exploiting a flaw had grown wider than intended.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Pick one AI capability you use regularly — writing code, drafting emails, analyzing data — and write down one beneficial use and one way it could be misused. Then look up whether the AI company you use has published a policy (like a Preparedness Framework or Responsible Scaling Policy) that addresses that specific risk.",
+    learnLinks: [
+      { label: "Why 'open-weight' vs 'closed' matters for how models spread and get used → How Models Actually Work", href: "#/course/models" },
+      { label: "How labs test and gate dangerous capabilities before release → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How chip export controls and data rules turn into geopolitics → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-08-22",
     displayDate: "Saturday, August 22, 2026 · Edition #20",
     headline: "OpenAI pumps the brakes on its next model over 'critical' cyber-risk fears, Anthropic's revenue run rate rockets to $65 billion, and Google hands its agent protocol to a neutral foundation",
