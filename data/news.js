@@ -13,6 +13,93 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-24",
+    displayDate: "Monday, August 24, 2026 · Edition #22",
+    headline: "OpenAI's enterprise revenue overtakes consumer at a $40B run rate, Google folds its agent protocol into the same open foundation as Anthropic's MCP, and the EU's AI transparency rules go live",
+    summary:
+      "Today's edition tracks money, standards, and trust all moving at once. OpenAI told investors its business customers now out-earn ChatGPT's consumer side, Google handed its agent-to-agent protocol to the same neutral foundation now hosting Anthropic's Model Context Protocol, and Brussels' AI transparency law became directly enforceable. Meanwhile Anthropic's CEO argued the AI industry's real problem isn't safety warnings — it's decades of institutional distrust the industry hasn't earned its way out of yet.",
+    stories: [
+      {
+        title: "OpenAI says enterprise revenue has overtaken consumer for the first time",
+        body: "OpenAI CFO Sarah Friar told investors at a closed-door meeting on August 14 that the company's annualized revenue run rate hit $40 billion, roughly double where it stood at the start of the year, and that enterprise customers now generate more revenue than the consumer ChatGPT app. At the start of 2026 OpenAI's revenue split was roughly 60% consumer to 40% enterprise; business customer growth accelerated to 32% in July alone, driven partly by AI coding tools and a nascent advertising business. The milestone arrives about six months ahead of the pace OpenAI described to investors when it closed its $122 billion funding round in March.",
+        why: "Annualized run rate (ARR) — a single month or quarter's revenue multiplied out to a yearly pace — is the metric AI labs lean on most in investor updates because actual audited annual revenue lags months behind; watching which segment (consumer vs. enterprise) drives that number tells you where a company's real leverage and dependency sit, which matters for judging how sensitive its business is to a consumer-subscription downturn versus an enterprise-budget one.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-13/openai-s-revenue-run-rate-tops-40-billion-ahead-of-ipo" },
+          { label: "Unite.AI", url: "https://www.unite.ai/openai-tells-investors-enterprise-revenue-has-overtaken-its-chatgpt-consumer-business/" }
+        ]
+      },
+      {
+        title: "Google moves its agent-to-agent protocol under the same roof as Anthropic's MCP",
+        body: "On August 20, Google formally transferred governance of its Agent2Agent (A2A) protocol — a standard for how AI agents communicate with each other — to the Linux Foundation-backed Agentic AI Foundation (AAIF), the same neutral body that already hosts Anthropic's Model Context Protocol (MCP). The AAIF has grown from 49 to more than 250 member organizations in under a year, with AWS, Anthropic, Google, Microsoft, and OpenAI all holding platinum-level status. MCP standardizes how an individual agent connects to tools and data; A2A standardizes how separate agents coordinate with one another — together they cover both edges of how multi-agent systems get built.",
+        why: "When rival companies hand competing technical standards to the same neutral nonprofit rather than each pushing their own, it's a signal the market has decided interoperability is worth more than lock-in — the same dynamic that made USB or HTTP universal instead of splintered, and a sign that 'which agent protocol should I build on' is becoming a less risky question to answer.",
+        sources: [
+          { label: "Axios", url: "https://www.axios.com/2026/08/17/a2a-agentic-ai-foundation-open-ai-standards" },
+          { label: "DevOpsDigest", url: "https://www.devopsdigest.com/google-agent2agent-protocol-joins-aaif" }
+        ]
+      },
+      {
+        title: "Anthropic's CEO says the AI backlash is a 'crisis of trust,' not a safety-messaging problem",
+        body: "In comments published August 16, Anthropic CEO Dario Amodei rejected investor Gavin Baker's argument that Amodei's own warnings about AI risk are what's fueling public backlash against the industry, including opposition to data centers. Amodei instead argued that ordinary people don't trust companies, governments, or the tech industry generally, and that this distrust predates AI by decades — AI is simply the latest thing it's attaching to. His prescription: the industry needs to actually deliver on its promised benefits, using curing diseases as an example, rather than adjust its messaging.",
+        why: "This is a real dispute about causation, not just PR: one camp says publicizing AI risks manufactures public fear that could be avoided with quieter messaging, the other says the fear reflects a pre-existing trust deficit that messaging can't paper over — which theory you believe changes whether you think AI safety disclosures should be scaled back or leaned into.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/" }
+        ]
+      },
+      {
+        title: "The EU AI Act's transparency rules become directly enforceable",
+        body: "Article 50 of the EU AI Act took effect August 2, 2026, requiring AI providers and deployers to disclose when a person is interacting with a chatbot rather than a human, mark AI-generated content (audio, image, video, or text) as synthetic, and inform people when emotion-recognition or biometric-categorization systems are being used on them. The European Commission published detailed compliance guidelines on July 20 ahead of the deadline. Enforcement falls to national market-surveillance authorities, with fines up to €15 million or 3% of global annual turnover for violations; a narrower transitional window through December 2, 2026 applies only to the technical content-marking requirement for generative systems already on the market.",
+        why: "'Transparency obligation' in AI regulation specifically means the law requiring a system to disclose its own AI-ness to the people it interacts with — a lighter-touch rule than banning a use case outright, but one that turns something previously left to a company's discretion (labeling a chatbot, watermarking a deepfake) into a legal requirement with real financial penalties attached.",
+        sources: [
+          { label: "European Commission", url: "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act" },
+          { label: "Cooley", url: "https://www.cooley.com/news/insight/2026/2026-08-03-eu-ai-act-transparency-obligations-take-effect-2-august-2026" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Fast same-day coverage of business milestones like OpenAI's revenue mix flip and standards moves like A2A joining the AAIF.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Strong on the trust-and-backlash debate Amodei waded into, and good at unpacking what EU-style regulation means in practice.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Connects protocol-governance news like MCP and A2A consolidating into the bigger picture of how agent infrastructure is standardizing.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Technical crowd that digs into what A2A-under-AAIF actually changes for developers building multi-agent systems.",
+        url: "https://www.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Annualized Run Rate (ARR)",
+      definition:
+        "A projection of yearly revenue based on a shorter, more recent period — usually the latest month's revenue multiplied by 12. Fast-growing companies like OpenAI report ARR instead of trailing annual revenue because audited yearly figures lag reality by months; a company whose revenue is accelerating looks far stronger on ARR than on last year's actual total. It's useful for spotting momentum, but it assumes the current pace holds, which isn't guaranteed.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Open two different chatbots you have access to (say, ChatGPT and Claude) and ask each one directly: 'How do you disclose to users that you're an AI rather than a human?' Compare the answers — that disclosure is exactly what the EU AI Act's Article 50 now legally requires providers to build in, not just something they do voluntarily.",
+    learnLinks: [
+      { label: "How agents use protocols like MCP and A2A to connect and coordinate → AI Systems & Engineering", href: "#/course/engineering" },
+      { label: "How AI labs make money and what revenue metrics like ARR mean → The AI Industry", href: "#/course/industry" },
+      { label: "How laws like the EU AI Act shape what AI companies can ship → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-08-23",
     displayDate: "Sunday, August 23, 2026 · Edition #21",
     headline: "Google's Gemma passes a billion downloads, an open coding model finds over 1,000 critical bugs and delays its own release, and the US and China start asking countries to pick an AI side",
