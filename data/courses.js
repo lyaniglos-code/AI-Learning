@@ -1004,9 +1004,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "claude",
       title: "Claude (Anthropic)",
       minutes: 18,
-      updated: "Aug 13, 2026",
+      updated: "Aug 25, 2026",
       content: `
 <p><b>Claude</b> (claude.ai) is Anthropic's assistant, built on the Claude model family — as of July 2026, the Claude 5 generation, whose Opus 5 flagship currently tops independent intelligence and agentic indexes. Claude's reputation: the writer's and builder's AI — long documents, careful reasoning, and best-in-class coding.</p>
+<p><b>Claude Academy launched August 20, 2026.</b> Anthropic opened a free learning hub at academy.claude.com with roughly 355 tutorials, prompting guides, and use-case walkthroughs covering Claude.ai, Claude Cowork, Claude Code, Claude Tag, and the API. It works without an account, starts with general AI fundamentals before splitting into product-specific paths, and offers multi-language content; signed-in users can track progress and earn shareable completion badges you can add to a LinkedIn profile.</p>
 <h3>What it does</h3>
 <ul>
 <li><b>Chat with extended thinking</b> — visible step-by-step reasoning on hard problems</li>
@@ -1027,12 +1028,13 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Signature features: Projects, Artifacts, extended thinking, massive context",
         "Claude Code defined the agentic-coding category",
         "Claude Cowork now runs full sessions with skills/plugins in the Chrome sidebar",
+        "Claude Academy (academy.claude.com) launched Aug 20, 2026 — 355 free tutorials, no account needed",
         "Pick it for writing, analysis, coding depth; ChatGPT still wins on consumer breadth"
       ],
       resources: [
         { title: "Claude", url: "https://claude.ai", type: "tool" },
         { title: "Anthropic news", url: "https://www.anthropic.com/news", type: "article" },
-        { title: "Anthropic Academy (free courses)", url: "https://www.anthropic.com/learn", type: "course" }
+        { title: "Claude Academy (free courses)", url: "https://academy.claude.com", type: "course" }
       ]
     },
     {
