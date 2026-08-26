@@ -13,6 +13,93 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-26",
+    displayDate: "Wednesday, August 26, 2026 · Edition #24",
+    headline: "OpenAI retires o3 and GPT-4.5 from ChatGPT, Nvidia details its Vera CPU's agent-first architecture, and XPeng's robotics arm raises $900M at a $6.3B valuation",
+    summary:
+      "Today's edition is about what gets replaced and what gets built to keep up. OpenAI closed the book on two once-flagship ChatGPT models as newer ones take over, Nvidia pulled back the curtain on server silicon designed specifically for AI agents rather than traditional computing, and investors poured money into humanoid robots and enterprise agent adoption alike. Together they trace a stack that's rebuilding itself top to bottom — models, chips, and capital — around agentic AI.",
+    stories: [
+      {
+        title: "OpenAI retires o3 and GPT-4.5 from ChatGPT's model picker",
+        body: "OpenAI's o3 reasoning model and GPT-4.5 leave the ChatGPT model picker on August 26, 2026, ending sunset periods OpenAI announced months earlier — a 90-day window for o3 and a 30-day window for GPT-4.5. The change applies only to ChatGPT; both models remain reachable through the API on their existing deprecation schedules, and o3-pro, the higher-compute variant, stays available to ChatGPT Pro, Team, Enterprise, and Edu subscribers. OpenAI says it's retiring older, lower-usage models in ChatGPT to concentrate support behind newer models like GPT-5.4 Thinking and o4, which it recommends as replacements for complex reasoning tasks.",
+        why: "AI labs now cycle through consumer-facing models fast enough that 'model deprecation' is becoming a routine event rather than a rare one — for everyday users the lesson is to occasionally check which model a chatbot defaults to, since a model you built a workflow around can quietly disappear from the picker even while it lives on in the API.",
+        sources: [
+          { label: "OpenAI Help Center", url: "https://help.openai.com/en/articles/9624314-model-release-notes" },
+          { label: "Tech Times", url: "https://www.techtimes.com/articles/325345/20260824/openai-assistants-api-shuts-down-tuesday-no-automated-migration-threads-risk.htm" }
+        ]
+      },
+      {
+        title: "Nvidia details Vera, a CPU built from scratch for AI agent workloads",
+        body: "At Hot Chips 2026 on August 24-25, Nvidia disclosed full architectural details of Vera, its in-house Arm server CPU built for the upcoming Vera Rubin AI systems. Vera packs 88 custom 'Olympus' cores (176 threads) on a monolithic die with 164MB of unified L3 cache, using a technique Nvidia calls spatial multithreading that statically partitions core resources rather than sharing them dynamically. Nvidia claims up to 1.8x the performance of AMD's EPYC Turin 9755 chips on select agentic workloads, such as Python interpretation benchmarks relevant to running AI agent code. Unlike general-purpose server CPUs, Vera was designed around the specific demands of agentic AI rather than traditional cloud computing.",
+        why: "A CPU built explicitly for 'agentic workloads' is a sign that running AI agents — models that call tools, execute code, and juggle many small tasks — has become a distinct enough computing pattern that chipmakers now design silicon around it, rather than just running agents on hardware built for older workloads like web serving or batch data processing.",
+        sources: [
+          { label: "Tom's Hardware", url: "https://www.tomshardware.com/pc-components/cpus/hot-chips-2026-nvidia-breaks-down-88-core-vera-cpu-spatial-multithreading-benchmarked-1-2-tb-s-socamm2-memory-agentic-workloads-detailed-and-more" },
+          { label: "ServeTheHome", url: "https://www.servethehome.com/nvidia-vera-cpu-at-hot-chips-2026/" }
+        ]
+      },
+      {
+        title: "XPeng's robotics unit raises over $900 million at a $6.3 billion valuation",
+        body: "XPeng announced on August 24 that its robotics business raised more than $900 million in its first outside funding round, at a post-money valuation above $6.3 billion — which XPeng and multiple outlets describe as the largest single-round private financing yet in China's embodied-AI industry. IDG Capital led the round, with Gaorong Ventures, Tencent, and Alibaba also participating; XPeng itself contributed $200 million. The money is earmarked for mass-producing XPeng's IRON humanoid robot, targeted for the end of 2026, with initial deployments planned in XPeng's own stores and campuses before wider commercial sales in China and overseas in 2027.",
+        why: "'Embodied AI' refers to AI systems that act in the physical world through a robot body rather than just generating text or images — this round is a concrete signal that investors now see humanoid robots as a near-term commercial product line, not just a research demo, with real production timelines attached.",
+        sources: [
+          { label: "XPeng", url: "https://www.xpeng.com/news/01a03797fccda01e0de68a02a256006a" },
+          { label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/xpeng-robotics-business-raises-over-us900-million-at-a-post-money-valuation-of-over-us6-3-billion-accelerating-physical-ai-deployment-302858203.html" }
+        ]
+      },
+      {
+        title: "Salesforce data shows the average enterprise now runs 13 AI agents, up from 5 last year",
+        body: "Salesforce's 2025-2026 Agentic Enterprise Index, drawn from Agentforce customer usage data, found that the average number of active AI agents per organization rose from 5 in February 2025 to 13 by April 2026 — nearly triple in about 14 months. The same report found agent creation time dropped 53%, the average agent could perform six distinct business actions by the end of 2025 (up from two at the start of the year), and weekly employee usage of agents tripled. Salesforce also introduced a new metric, the 'Agentic Work Unit,' to track discrete tasks agents complete, which it says grew at a 15% compound monthly rate through April.",
+        why: "Numbers like 'agents per organization' are an early attempt to quantify something genuinely new — a workforce that includes software agents alongside people — and are worth reading skeptically since they come from a vendor measuring usage of its own product, but the underlying trend (more agents, doing more distinct tasks, used more often) matches what other enterprise-AI surveys have been reporting this year.",
+        sources: [
+          { label: "Salesforce", url: "https://www.salesforce.com/news/stories/agentic-enterprise-index-insights-2026/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Fast same-day coverage of model-lifecycle news like ChatGPT's o3 retirement and funding rounds like XPeng Robotics.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Technical crowd well-suited to unpacking what Nvidia's Vera CPU and its 'agentic-first' Olympus cores actually mean for running agents.",
+        url: "https://www.thursdai.news/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "Good at breaking down hardware and robotics announcements like XPeng's IRON humanoid push into plain terms.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Connects enterprise-adoption data like Salesforce's Agentic Enterprise Index to the broader story of agents moving into real workflows.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Agentic Workload",
+      definition:
+        "Computing work driven by an AI agent — a model that plans, calls tools, executes code, and completes multi-step tasks on its own — rather than a single request-response query like a chatbot answer. Agentic workloads tend to involve many small, rapid operations (running code, checking results, retrying) instead of one long computation, which is why chipmakers like Nvidia are now designing hardware, like the Vera CPU, specifically around that pattern.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick one task you'd normally do by hand in a chatbot one message at a time (like researching three options and comparing them), and instead ask an agent-style tool (ChatGPT's Agent mode, Claude with tool use, or similar) to do the whole multi-step task on its own. Notice where it needs you to step in versus where it runs independently.",
+    learnLinks: [
+      { label: "How AI agents plan, use tools, and complete multi-step work → AI Systems & Engineering", href: "#/course/engineering" },
+      { label: "How to choose between ChatGPT, Claude, and other tools as they change → AI Toolbox", href: "#/course/tools" },
+      { label: "How AI funding rounds and valuations actually work → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-08-25",
     displayDate: "Tuesday, August 25, 2026 · Edition #23",
     headline: "OpenAI pauses frontier training after a red-team model breaches Hugging Face, Anthropic opens a free Claude Academy, and a Chinese humanoid robot outsprints Usain Bolt",
