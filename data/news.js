@@ -13,6 +13,104 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-27",
+    displayDate: "Thursday, August 27, 2026 · Edition #25",
+    headline: "Nvidia posts $96.2B in quarterly revenue as Groq inference chips hit production, Anthropic unifies Claude's memory, and two very different AI-adjacent startups raise big rounds",
+    summary:
+      "Today's edition is about AI's money and its plumbing. Nvidia's earnings show just how much cash is still flowing into AI infrastructure, two of its Hot Chips 2026 announcements are now shipping hardware, and Anthropic quietly reworked how Claude remembers you. Meanwhile investors backed both a startup that keeps AI data centers from breaking the power grid and one that's putting driverless trucks on real delivery routes.",
+    stories: [
+      {
+        title: "Nvidia's quarterly revenue hits $96.2 billion, up 106% year over year",
+        body: "Nvidia reported fiscal Q2 2027 revenue of $96.2 billion on August 26, beating Wall Street's $92.17 billion estimate, with adjusted earnings of $2.22 per share versus a forecast $2.10. Gross margins held at 75%. CEO Jensen Huang guided for $108 billion in revenue next quarter (plus or minus 2%, excluding China data-center sales) and said the company has \"supply for 70%\" revenue growth in fiscal 2028, calling current AI compute demand accelerating rather than plateauing.",
+        why: "Nvidia's data-center GPU sales are the closest thing the AI industry has to a single real-time gauge of how much money labs, cloud providers, and enterprises are actually spending on AI compute — a beat this large signals that infrastructure buildout hasn't slowed despite recurring questions about an 'AI bubble.'",
+        sources: [
+          { label: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html" },
+          { label: "Fortune", url: "https://fortune.com/2026/08/26/nvidia-results-q2-earnings/" }
+        ]
+      },
+      {
+        title: "Nvidia's Groq 3 LPX inference chip enters full production",
+        body: "Nvidia announced its Groq 3 LPX accelerator — built on the LP30 chip it acquired via its $20 billion Groq deal in December 2025 — is now in full production and shipping as an add-on rack to its Vera Rubin platform, with Nebius the first cloud to adopt it. In an independent benchmark from Artificial Analysis, the LPX rack hit 3,431 output tokens per second on a 100,000-token-context reasoning workload, roughly four times the next-fastest public inference endpoint. The design splits work so Rubin GPUs handle the heavy 'prefill' compute while LPX chips specialize in fast token generation.",
+        why: "'Inference' — running an already-trained model to answer or act — is a different computing problem than training one, and dedicated inference chips like LPX reflect the industry splitting its hardware roadmap in two: one lineage of chips for building models, another optimized purely for serving them fast to users and agents.",
+        sources: [
+          { label: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/nvidia-groq-3-lpx-now-in-full-production-with-world-class-speed-for-agentic-ai" },
+          { label: "Tom's Hardware", url: "https://www.tomshardware.com/tech-industry/semiconductors/nvidia-presents-groq-3-lpx-architecture-and-unveils-its-first-third-party-inference-benchmark" }
+        ]
+      },
+      {
+        title: "Anthropic unifies Claude's memory across chat and Cowork, makes it topic-browsable",
+        body: "On August 25, Anthropic merged the memory systems behind Claude's chat and its Cowork agent so information learned in one now carries into the other, and made memory browsable 'topic by topic' with per-topic edit and delete controls. Sensitive subjects — health, race, ethnicity, gender identity, religion, and political beliefs — are excluded from memory by default unless a user opts in, and identifiers like Social Security numbers are never stored regardless of settings. Memory is on by default for Free, Pro, and Max plans, and off by default for Team and Enterprise accounts.",
+        why: "Persistent memory is what turns a chatbot into something that behaves more like a long-term assistant, but it also raises the stakes on data control — Anthropic's opt-in wall around sensitive categories and per-topic deletion is one concrete pattern for giving users a real handle on what a model is allowed to remember about them.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/" },
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/08/25/anthropic-updates-claudes-memory-to-enhance-customization-and-protect-sensitive-topics/" }
+        ]
+      },
+      {
+        title: "Emerald AI raises $150 million to keep AI data centers from straining the power grid",
+        body: "Emerald AI announced an oversubscribed $150 million Series A on August 25 at a $1.05 billion valuation, co-led by Energize Capital and DCVC, bringing its total funding past $220 million. Its product, Emerald Conductor, schedules AI training and inference workloads against on-site batteries and generation so a data center's power draw can flex down automatically when the local grid is stressed, while keeping critical jobs running. The company says its software is now deployed commercially at multi-megawatt, full-data-center scale, with investors including Nvidia, Samsung Ventures, and several utilities.",
+        why: "AI data centers now draw enough power that they can strain local electric grids, and 'grid-flexible' software like this is an emerging answer to a physical bottleneck that has nothing to do with model quality — a reminder that AI's limits increasingly run through electricity infrastructure, not just chips or algorithms.",
+        sources: [
+          { label: "Business Wire", url: "https://www.businesswire.com/news/home/20260825127649/en/Emerald-AI-Raises-$150-Million-Series-A-at-$1.05-Billion-Valuation-to-Scale-Power-Flexible-AI-Data-Centers" },
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/08/25/data-center-power-startup-emerald-ai-raises-150m-at-1-05b-valuation/" }
+        ]
+      },
+      {
+        title: "Self-driving trucking startup Gatik raises $200 million after PepsiCo expansion",
+        body: "Gatik, which runs autonomous middle-mile box trucks for retailers including Walmart and PepsiCo, raised $200 million in Series D funding led by the Qatar Investment Authority and Koch Disruptive Technologies, with Millennium Management and ARK Invest also participating. The round, announced August 25, brings Gatik's total funding to roughly $500 million. The company says it has more than $600 million in contracted revenue and has completed over 100,000 fully autonomous deliveries across Texas, Arizona, Arkansas, and Canada, and plans to use the funds to grow its fleet from dozens of trucks to thousands.",
+        why: "Gatik deliberately stuck to short, repeatable 'middle-mile' routes between warehouses and stores rather than chasing general-purpose robotaxis — a case study in how narrowing an AI system's scope to a well-defined, repeatable task can get it to real commercial deployment faster than a harder, more general version of the same problem.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/25/self-driving-truck-startup-gatik-raises-200m-following-pepsico-deal/" },
+          { label: "Forbes", url: "https://www.forbes.com/sites/edgarsten/2026/08/25/gatik-scores-new-200-million-investment-for-its-driverless-truck-tech/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Same-day take on Nvidia's earnings beat and what accelerating compute demand signals for the rest of the AI industry.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Technical crowd well-suited to unpacking Groq 3 LPX's inference-vs-training chip split and what it means for serving agents fast.",
+        url: "https://www.thursdai.news/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · YouTube",
+        why: "Good at digging into product-level changes like Claude's new memory architecture and what it means for how people actually use assistants.",
+        url: "https://www.youtube.com/@ai-explained-/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Connects infrastructure funding stories like Emerald AI's grid-flexible data centers to the broader AI capex boom Nvidia's earnings reflect.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Inference",
+      definition:
+        "The process of running an already-trained AI model to produce an answer, image, or action — as opposed to 'training,' which builds the model in the first place. Inference is what happens every time you send a chatbot a message or an agent calls a tool, and it has different hardware demands than training (favoring fast token generation over raw computation), which is why chips like Nvidia's Groq 3 LPX are now built specifically for it.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Open Claude and ask it 'what do you remember about me?' — then look for the memory settings and browse what's stored topic by topic. Try deleting one topic and notice whether Claude's next response changes.",
+    learnLinks: [
+      { label: "How AI tools store and use memory across sessions → AI Toolbox", href: "#/course/tools" },
+      { label: "Training vs. inference and why hardware differs for each → How AI Models Work", href: "#/course/models" },
+      { label: "How AI funding rounds and valuations actually work → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-08-26",
     displayDate: "Wednesday, August 26, 2026 · Edition #24",
     headline: "OpenAI retires o3 and GPT-4.5 from ChatGPT, Nvidia details its Vera CPU's agent-first architecture, and XPeng's robotics arm raises $900M at a $6.3B valuation",

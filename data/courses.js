@@ -1004,7 +1004,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "claude",
       title: "Claude (Anthropic)",
       minutes: 18,
-      updated: "Aug 25, 2026",
+      updated: "Aug 27, 2026",
       content: `
 <p><b>Claude</b> (claude.ai) is Anthropic's assistant, built on the Claude model family — as of July 2026, the Claude 5 generation, whose Opus 5 flagship currently tops independent intelligence and agentic indexes. Claude's reputation: the writer's and builder's AI — long documents, careful reasoning, and best-in-class coding.</p>
 <p><b>Claude Academy launched August 20, 2026.</b> Anthropic opened a free learning hub at academy.claude.com with roughly 355 tutorials, prompting guides, and use-case walkthroughs covering Claude.ai, Claude Cowork, Claude Code, Claude Tag, and the API. It works without an account, starts with general AI fundamentals before splitting into product-specific paths, and offers multi-language content; signed-in users can track progress and earn shareable completion badges you can add to a LinkedIn profile.</p>
@@ -1017,6 +1017,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Web search, file analysis, voice</b> — grounded answers and document Q&A</li>
 <li><b>Claude Code</b> — the terminal/IDE agent that autonomously writes, tests, and refactors real codebases; the tool behind much of 2025–26's "agentic coding" wave</li>
 <li><b>Claude Cowork in Chrome</b> — as of August 2026, the Claude for Chrome sidebar runs a full Cowork session with skills, plugins, and connectors built in, and a task started in the Claude app can continue seamlessly in the browser (Max/Team now, Pro rolling out)</li>
+<li><b>Memory (unified, Aug 25 2026)</b> — Claude now shares one memory system across chat and Cowork, browsable topic by topic so you can see, edit, or delete what it remembers; sensitive subjects (health, race, religion, politics) are excluded by default unless you opt in, and identifiers like Social Security numbers are never stored. On by default for Free/Pro/Max, off by default for Team/Enterprise</li>
 </ul>
 <h3>Pricing shape</h3>
 <p>Free tier → Pro (~$20/month) → Max tiers (~$100–200/month) for heavy Claude Code use → Team/Enterprise. API access is metered per token (Opus 5: $5/$25 per million).</p>
@@ -1029,6 +1030,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Claude Code defined the agentic-coding category",
         "Claude Cowork now runs full sessions with skills/plugins in the Chrome sidebar",
         "Claude Academy (academy.claude.com) launched Aug 20, 2026 — 355 free tutorials, no account needed",
+        "Memory unified across chat and Cowork (Aug 25, 2026) — browsable topic by topic, sensitive topics excluded by default",
         "Pick it for writing, analysis, coding depth; ChatGPT still wins on consumer breadth"
       ],
       resources: [
