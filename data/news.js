@@ -13,6 +13,102 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-28",
+    displayDate: "Friday, August 28, 2026 · Edition #26",
+    headline: "OpenAI's Broadcom-built Jalapeño chip beats Nvidia on power efficiency, Nvidia warns cloud giants of 15%+ AI server price hikes, and Grok 4.6 lands on Microsoft Foundry",
+    summary:
+      "Today's edition is about who controls AI's hardware stack and who's building on top of it. OpenAI showed off its first custom inference chip beating Nvidia on efficiency, while Nvidia itself is telling its biggest customers that AI servers are about to get meaningfully more expensive. Meanwhile a 23-year-old's personal-assistant startup hit a $2.5 billion valuation, Google made Gemini responses interactive, and xAI's newest model showed up inside Microsoft's enterprise AI platform.",
+    stories: [
+      {
+        title: "OpenAI unveils Jalapeño, its first custom inference chip built with Broadcom",
+        body: "OpenAI and Broadcom detailed Jalapeño, an inference-only accelerator OpenAI says was taped out in just 16 months on TSMC's N3P process, with a 700W power envelope and HBM4 memory delivering 15.4TB/s of bandwidth. Independent benchmarks from SemiAnalysis, run on its InferenceX suite, found Jalapeño delivered 1.5 to 1.9 times more throughput per watt than benchmarked Nvidia Blackwell configurations and cut end-to-end response times by 1.7 to 3.6 times. SemiAnalysis notes it's a general-purpose inference chip, not one narrowly tuned to OpenAI's own models, and it also outperformed AMD and Google accelerators on several tested workloads.",
+        why: "Building a chip that only needs to do one job — serving an already-trained model's answers — lets you strip out everything a general-purpose GPU carries for training, which is why 'perf-per-watt' rather than raw speed is becoming the metric labs compete on as they start designing their own silicon instead of just buying Nvidia's.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/" },
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/" },
+          { label: "SemiAnalysis", url: "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" }
+        ]
+      },
+      {
+        title: "Nvidia tells cloud giants that AI server prices are rising more than 15% on surging memory costs",
+        body: "Bloomberg reported that Nvidia's contract server builders have told Microsoft, Google, and Oracle that prices on systems built around its Vera Rubin and Grace Blackwell platforms will rise more than 15% on shipments starting in early 2027. The increase is being driven by memory chips rather than Nvidia's own GPU pricing: Morgan Stanley research cited in the reporting found memory's share of a Vera Rubin rack's total cost has jumped from roughly 5-10% to 25-30%, or about $2 million per rack, as AI demand strains global memory supply.",
+        why: "This is a concrete look at 'capex' — the huge upfront spending clouds commit to building AI infrastructure — getting more expensive for a reason that has nothing to do with AI models themselves: a global squeeze on memory-chip supply that's now a bigger cost driver than the processors doing the actual computing.",
+        sources: [
+          { label: "Yahoo Finance (Bloomberg)", url: "https://finance.yahoo.com/technology/ai/articles/nvidia-ai-servers-even-more-153107484.html" },
+          { label: "Benzinga", url: "https://www.benzinga.com/markets/tech/26/08/61375602/nvidias-ai-servers-are-about-to-get-even-more-expensive-as-rising-memory-costs-push-prices-up-more-than-15-report" }
+        ]
+      },
+      {
+        title: "AI personal-assistant startup Instinct raises $250M Series B at a $2.5 billion valuation",
+        body: "Instinct, whose AI assistant handles personal logistics like scheduling, booking travel, canceling subscriptions, and managing email over text or phone call, raised a $250 million Series B led by Index Ventures and Benchmark, the company confirmed. The round brings its total funding to $350 million and pushes its valuation to $2.5 billion, up from roughly $50 million just months earlier. The startup is run by 23-year-old founder Noah Shinn.",
+        why: "Instinct is a bet on 'agentic AI' as a consumer product — an assistant that doesn't just answer questions but actually takes actions across your calendar, inbox, and accounts on your behalf — and its valuation jump shows how much investor appetite there is for that shift from chatbot to doer.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html" }
+        ]
+      },
+      {
+        title: "Google rolls out interactive visualizations and simulations in the Gemini app",
+        body: "Google has begun rolling out a Gemini app feature, powered by Gemini 3, that turns a question or topic into a custom, interactive visualization directly inside the chat — such as a rotatable 3D molecule or a running physics simulation — rather than a static image or text explanation. Google frames it as a way to help users understand complex topics by letting them manipulate the model's response instead of just reading it.",
+        why: "It's an example of generative UI: instead of a model just producing text or a picture, it's generating a small interactive tool tailored to your exact question, which blurs the line between 'answering' and 'building software on demand.'",
+        sources: [
+          { label: "Google Blog", url: "https://blog.google/innovation-and-ai/products/gemini-app/3d-models-charts/" }
+        ]
+      },
+      {
+        title: "xAI's Grok 4.6 arrives on Microsoft Foundry for enterprise deployment",
+        body: "Microsoft announced Grok 4.6, xAI's latest model, is now available in public preview on Microsoft Foundry Models, giving enterprise customers a 500,000-token context window and configurable reasoning effort levels (low, medium, high, and extra-high). Microsoft describes it as built for long-horizon reasoning and complex, multi-step agentic workflows, and says Foundry lets organizations evaluate it against other frontier models before deploying it with the platform's standard security and governance controls.",
+        why: "Microsoft Foundry is turning into a neutral marketplace where competing labs' models — OpenAI's, xAI's, and others — sit side by side, so enterprises increasingly pick a model per task rather than locking into a single vendor the way they might with a cloud provider.",
+        sources: [
+          { label: "Microsoft Tech Community", url: "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/grok-4-6-comes-to-microsoft-foundry-models-built-for-long-horizon-reasoning-and-/4547578" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Same-day take on OpenAI's Jalapeño chip and what it signals about labs building their own silicon instead of relying solely on Nvidia.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Strong on the business and platform-competition angle — a natural home for Grok landing on Microsoft Foundry and Instinct's fast valuation climb.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good at connecting hardware-economics stories like Nvidia's memory-driven price hikes to the broader AI capex picture.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "Technical crowd well-suited to unpacking Jalapeño's perf-per-watt benchmarks and Gemini's new interactive-visualization feature.",
+        url: "https://www.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Perf-per-watt (performance per watt)",
+      definition:
+        "A measure of how much useful computing work a chip does for each watt of electricity it consumes, rather than just how fast it is in absolute terms. It matters enormously for AI inference because data centers are often limited by how much power and cooling they can supply, not just by how many chips they can buy — which is exactly the metric OpenAI highlighted when comparing its new Jalapeño chip to Nvidia's GPUs.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Ask an AI chatbot to explain a concept you find confusing, then ask it to represent that concept as a diagram, table, or step-by-step breakdown instead of prose — notice how re-forming the same information changes how well you understand it, which is the same idea behind Gemini's new interactive visualizations.",
+    learnLinks: [
+      { label: "Training vs. inference and why custom chips target inference → How AI Models Work", href: "#/course/models" },
+      { label: "How AI funding rounds and valuations actually work → The AI Industry", href: "#/course/industry" },
+      { label: "What 'agentic AI' means and how assistants take real actions → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-08-27",
     displayDate: "Thursday, August 27, 2026 · Edition #25",
     headline: "Nvidia posts $96.2B in quarterly revenue as Groq inference chips hit production, Anthropic unifies Claude's memory, and two very different AI-adjacent startups raise big rounds",

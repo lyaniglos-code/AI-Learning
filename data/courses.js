@@ -1043,9 +1043,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "gemini",
       title: "Gemini (Google)",
       minutes: 16,
-      updated: "Aug 21, 2026",
+      updated: "Aug 28, 2026",
       content: `
 <p><b>Gemini</b> (gemini.google.com) is Google's assistant, powered by the Gemini 3.x model family. Its superpowers are exactly what you'd guess from Google: multimodal understanding, the largest context windows in the industry (millions of tokens in API tiers), and deep integration with Search, Workspace, Android, and Chrome.</p>
+<p><b>Interactive visualizations.</b> Google has begun rolling out a Gemini app feature, powered by Gemini 3, that turns a question or topic into a custom interactive visualization directly in the chat — a rotatable 3D molecule, a running physics simulation — instead of a static image or block of text, letting you manipulate the response rather than just read it.</p>
 <p><b>Image generation consolidated.</b> On August 17, 2026 Google shut down the Imagen 4 API endpoints (standard, ultra, and fast) across both the Gemini Developer API and its enterprise Agent Platform API. Image generation isn't going away — it now runs entirely through Gemini 3.1 Flash Image, the model widely nicknamed "Nano Banana 2," via the same general-purpose generate_content() method used for text and other Gemini output. Developers with code still calling Imagen's old generate_images() method need to migrate it.</p>
 <p><b>Free year for students.</b> On August 20, 2026 Google launched a dedicated Student Hub inside Gemini (gemini.google.com/students) bundling study notebooks, AI-generated flashcards and practice quizzes, diagnostic study plans, and a syllabus reader that adds exam dates to Google Calendar. Eligible college students get a full year of a paid tier at no cost — Google AI Pro in the U.S., Google AI Plus in 140+ other countries — redeemable through December 31, 2026. Deep Research also expanded into Gemini Live, letting students request and then talk through a research report by voice.</p>
 <h3>What it does</h3>
@@ -1067,6 +1068,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Best price-to-performance for developers; generous free tier",
         "Image generation now runs through Gemini 3.1 Flash Image ('Nano Banana 2') after Imagen 4's API shutdown (Aug 17, 2026)",
         "Free year of Google AI Pro/Plus for eligible students via the new Gemini Student Hub (Aug 20, 2026)",
+        "New interactive-visualization feature turns a question into a manipulable simulation or 3D model right in the chat",
         "Pick it for video/audio/huge-docs and Google-native workflows"
       ],
       resources: [
@@ -1109,7 +1111,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Aug 15, 2026",
+      updated: "Aug 28, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
@@ -1122,7 +1124,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Codex (OpenAI)</b> — cloud coding agents that work on tasks in parallel sandboxes</li>
 </ul>
 <h3>Grok (SpaceXAI, formerly xAI)</h3>
-<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, and competitive frontier models, free tier for X users. The company behind it was renamed SpaceXAI in mid-2026 after Musk merged xAI into SpaceX. On August 12, 2026 it shipped Grok 4.6, a flagship model tuned for long-running agent tasks that matches GPT-5.6 Sol on the Artificial Analysis Intelligence Index while pricing in at $2/$6 per million input/output tokens — undercutting several frontier rivals. Earlier in August, xAI/SpaceXAI also shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise.</p>
+<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, and competitive frontier models, free tier for X users. The company behind it was renamed SpaceXAI in mid-2026 after Musk merged xAI into SpaceX. On August 12, 2026 it shipped Grok 4.6, a flagship model tuned for long-running agent tasks that matches GPT-5.6 Sol on the Artificial Analysis Intelligence Index while pricing in at $2/$6 per million input/output tokens — undercutting several frontier rivals. Grok 4.6 landed in public preview on Microsoft Foundry Models in late August 2026, giving enterprise customers a 500,000-token context window and configurable reasoning-effort levels, and putting it alongside OpenAI's models in Microsoft's enterprise model marketplace. Earlier in August, xAI/SpaceXAI also shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise.</p>
 <h3>Meta AI</h3>
 <p>Free assistant inside WhatsApp, Instagram, and Messenger (plus the standalone app) running on Llama/Muse models — the assistant billions will meet first because it lives where they already chat. In August 2026 Meta also open-sourced Muse Glimmer, a 30-billion-parameter model distilled small enough to run locally on a single consumer GPU, aimed at developers building local coding and agent tools rather than at the consumer app.</p>
 <blockquote>The pattern to notice: standalone chatbots compete on capability; copilots compete on <i>presence</i> — being inside the workflow. Both are converging on agents that do the task, not just advise on it.</blockquote>`,
