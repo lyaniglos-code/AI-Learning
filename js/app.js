@@ -819,6 +819,19 @@ const tts = {
   })(),
   showPanel: false,
 
+  // ---- ElevenLabs: optional studio-quality narration, bring-your-own-key ----
+  el: {
+    key: localStorage.getItem("np_el_key") || "",
+    voiceId: localStorage.getItem("np_el_voice") || "",
+    voiceName: localStorage.getItem("np_el_name") || "",
+    model: localStorage.getItem("np_el_model") || "",
+    voices: [],
+    loading: false,
+    error: ""
+  },
+
+  useEleven() { return !!(this.el.key && this.el.voiceId); },
+
   supported() { return "speechSynthesis" in window; },
 
   // Every system voice gets a persona name — celestial and mythic, to match
@@ -908,6 +921,13 @@ const tts = {
   },
 
   preview() {
+    if (this.useEleven()) {
+      const line = "Hi, I'm " + (this.el.voiceName || "your narrator") + ". This is how I'll read TokenWise to you.";
+      this.fetchEleven(line)
+        .then(url => { const a = new Audio(url); a.playbackRate = this.rate; a.onended = () => URL.revokeObjectURL(url); a.play(); })
+        .catch(e => toast(e.message));
+      return;
+    }
     speechSynthesis.cancel();
     const v = this.voice();
     const u = new SpeechSynthesisUtterance(`Hi, I'm ${this.persona(v).name}. This is how I'll read TokenWise to you.`);
@@ -1002,27 +1022,131 @@ const tts = {
     this.renderBar();
   },
 
+  saveElevenKey(v) {
+    this.el.key = (v || "").trim();
+    localStorage.setItem("np_el_key", this.el.key);
+    this.el.voices = [];
+    this.el.error = "";
+    if (this.el.key) this.loadEleven();
+    else { this.el.voiceId = ""; localStorage.removeItem("np_el_voice"); this.renderBar(); }
+  },
+
+  async loadEleven() {
+    if (!this.el.key) return;
+    this.el.loading = true; this.el.error = ""; this.renderBar();
+    try {
+      const r = await fetch("https://api.elevenlabs.io/v1/voices", { headers: { "xi-api-key": this.el.key } });
+      if (!r.ok) throw new Error(r.status === 401 ? "Key rejected — check it and try again" : "Could not reach ElevenLabs (" + r.status + ")");
+      const data = await r.json();
+      this.el.voices = (data.voices || []).map(v => ({
+        id: v.voice_id,
+        name: v.name || "Voice",
+        desc: (v.labels && (v.labels.description || v.labels.accent)) || ""
+      }));
+      // ask the account which models it can use instead of hardcoding one
+      try {
+        const mr = await fetch("https://api.elevenlabs.io/v1/models", { headers: { "xi-api-key": this.el.key } });
+        if (mr.ok) {
+          const ids = (await mr.json()).map(m => m.model_id);
+          const pref = ["eleven_turbo_v2_5", "eleven_flash_v2_5", "eleven_multilingual_v2"];
+          this.el.model = pref.find(p => ids.indexOf(p) !== -1) || ids[0] || "";
+          localStorage.setItem("np_el_model", this.el.model);
+        }
+      } catch (e) { /* optional - the API has a sane default model */ }
+      if (!this.el.voiceId && this.el.voices.length) this.setElevenVoice(this.el.voices[0].id, false);
+    } catch (e) {
+      this.el.error = e.message;
+      this.el.voices = [];
+    }
+    this.el.loading = false;
+    this.renderBar();
+  },
+
+  setElevenVoice(id, speak) {
+    const v = this.el.voices.find(x => x.id === id);
+    this.el.voiceId = id;
+    this.el.voiceName = v ? v.name : "";
+    localStorage.setItem("np_el_voice", id);
+    localStorage.setItem("np_el_name", this.el.voiceName);
+    if (this.reading) this.restartChunk();
+    else if (speak !== false) this.preview();
+    this.renderBar();
+  },
+
+  useDeviceVoice() {
+    this.el.voiceId = "";
+    localStorage.removeItem("np_el_voice");
+    if (this.reading) this.restartChunk();
+    this.renderBar();
+  },
+
+  async fetchEleven(text) {
+    const body = { text: text };
+    if (this.el.model) body.model_id = this.el.model;
+    const r = await fetch("https://api.elevenlabs.io/v1/text-to-speech/" + encodeURIComponent(this.el.voiceId) + "?output_format=mp3_44100_128", {
+      method: "POST",
+      headers: { "xi-api-key": this.el.key, "content-type": "application/json" },
+      body: JSON.stringify(body)
+    });
+    if (!r.ok) {
+      if (r.status === 401) throw new Error("ElevenLabs key rejected");
+      if (r.status === 429) throw new Error("ElevenLabs quota reached");
+      throw new Error("ElevenLabs error " + r.status);
+    }
+    return URL.createObjectURL(await r.blob());
+  },
+
+  async speakEleven(chunk) {
+    try {
+      let url;
+      if (this.preUrl && this.preIdx === this.idx) { url = this.preUrl; this.preUrl = null; }
+      else url = await this.fetchEleven(chunk.text);
+      if (!this.reading) { URL.revokeObjectURL(url); return; }
+      const a = new Audio(url);
+      this.audio = a;
+      a.playbackRate = this.rate * (chunk.rateMul || 1);
+      const done = () => { URL.revokeObjectURL(url); this.audio = null; this.advance(chunk); };
+      a.onended = done;
+      a.onerror = done;
+      await a.play();
+      // fetch the next line while this one plays so playback stays seamless
+      const next = this.chunks[this.idx + 1];
+      if (next) {
+        this.preIdx = this.idx + 1;
+        this.fetchEleven(next.text).then(u => { this.preUrl = u; }).catch(() => {});
+      }
+    } catch (e) {
+      toast(e.message + " — switching to device voice");
+      this.el.error = e.message;
+      this.useDeviceVoice();
+      this.speakNext();
+    }
+  },
+
+  advance(chunk) {
+    this.idx++;
+    const pause = Math.round((chunk.pauseAfter || 0) / this.rate); // faster speech, shorter pauses
+    if (pause > 0) {
+      this.pauseTimer = setTimeout(() => {
+        if (!this.reading) return;
+        if (this.paused) { this.pendingResume = true; return; }
+        this.speakNext();
+      }, pause);
+    } else {
+      this.speakNext();
+    }
+  },
+
   speakNext() {
     if (!this.reading || this.idx >= this.chunks.length) { this.stop(); return; }
     const chunk = this.chunks[this.idx];
+    if (this.useEleven()) { this.speakEleven(chunk); return; }
     const u = new SpeechSynthesisUtterance(chunk.text);
     const v = this.voice();
     if (v) u.voice = v;
     u.rate = this.rate * (chunk.rateMul || 1);
     u.pitch = this.pitch;
-    const advance = () => {
-      this.idx++;
-      const pause = Math.round((chunk.pauseAfter || 0) / this.rate); // faster speech, shorter pauses
-      if (pause > 0) {
-        this.pauseTimer = setTimeout(() => {
-          if (!this.reading) return;
-          if (this.paused) { this.pendingResume = true; return; }
-          this.speakNext();
-        }, pause);
-      } else {
-        this.speakNext();
-      }
-    };
+    const advance = () => this.advance(chunk);
     u.onend = advance;
     u.onerror = advance;
     speechSynthesis.speak(u);
@@ -1034,9 +1158,11 @@ const tts = {
       this.paused = false;
       // if we paused during an inter-section gap, restart from the next chunk
       if (this.pendingResume) { this.pendingResume = false; this.speakNext(); }
+      else if (this.audio) this.audio.play();
       else speechSynthesis.resume();
     } else {
-      speechSynthesis.pause();
+      if (this.audio) this.audio.pause();
+      else speechSynthesis.pause();
       this.paused = true;
     }
     this.renderBar();
@@ -1049,6 +1175,8 @@ const tts = {
     this.chunks = [];
     this.idx = 0;
     clearTimeout(this.pauseTimer);
+    if (this.audio) { this.audio.pause(); this.audio = null; }
+    if (this.preUrl) { URL.revokeObjectURL(this.preUrl); this.preUrl = null; }
     speechSynthesis.cancel();
     this.renderBar();
   },
@@ -1059,6 +1187,8 @@ const tts = {
       const resumeAt = Math.min(this.idx, this.chunks.length - 1);
       const chunks = this.chunks;
       clearTimeout(this.pauseTimer); // avoid double-advance if mid-gap
+      if (this.audio) { this.audio.pause(); this.audio = null; }
+      if (this.preUrl) { URL.revokeObjectURL(this.preUrl); this.preUrl = null; }
       speechSynthesis.cancel();
       this.chunks = chunks;
       this.idx = resumeAt;
@@ -1084,6 +1214,7 @@ const tts = {
 
   togglePanel() {
     this.showPanel = !this.showPanel;
+    if (this.showPanel && this.el.key && !this.el.voices.length && !this.el.loading) this.loadEleven();
     this.renderBar();
   },
 
@@ -1117,6 +1248,30 @@ const tts = {
             <br>• Or install them: <b>Windows Settings → Time &amp; language → Speech → Manage voices → Add voices</b>, then reload this page.` : ""}
           <br><br>Voices come from your browser, so the list changes with it: <b>Chrome</b> provides the Google voices, <b>Edge</b> the Microsoft neural ones, <b>Safari</b> Apple's.
         </div>
+        ${this.elevenSection()}
+      </div>`;
+  },
+
+  elevenSection() {
+    const e = this.el;
+    return `
+      <div class="el-block">
+        <label>✦ Premium narration — ElevenLabs</label>
+        ${e.key ? "" : `<div class="tts-hint" style="margin:0 0 9px">Studio-quality AI voices, using your own key.
+          <a href="https://elevenlabs.io/app/settings/api-keys" target="_blank" rel="noopener">Get a free key →</a></div>`}
+        <div class="el-row">
+          <input class="text-input" type="password" id="elKey" placeholder="Paste ElevenLabs API key" value="${esc(e.key)}">
+          <button class="btn small" onclick="tts.saveElevenKey(document.getElementById('elKey').value)">${e.key ? "Update" : "Connect"}</button>
+        </div>
+        ${e.loading ? `<div class="el-status">Loading voices…</div>` : ""}
+        ${e.error ? `<div class="el-status err">${esc(e.error)}</div>` : ""}
+        ${e.voices.length ? `
+          <select style="margin-top:9px" onchange="tts.setElevenVoice(this.value, true)">
+            ${e.voices.map(v => `<option value="${esc(v.id)}"${v.id === e.voiceId ? " selected" : ""}>${esc(v.name)}${v.desc ? " — " + esc(v.desc) : ""}</option>`).join("")}
+          </select>` : (e.key && !e.loading && !e.error ? `<div class="el-status">No voices on this account yet.</div>` : "")}
+        ${this.useEleven() ? `<div class="el-status ok">✦ Narrating with <b>${esc(e.voiceName)}</b> —
+          <a href="#" onclick="event.preventDefault();tts.useDeviceVoice()">use device voice instead</a></div>` : ""}
+        ${e.key ? `<div class="tts-hint" style="margin-top:9px">Your key stays in this browser and is sent only to ElevenLabs. Audio is generated per page, so long pages use more credits.</div>` : ""}
       </div>`;
   },
 
@@ -1128,7 +1283,7 @@ const tts = {
     bar.innerHTML = `
       ${this.showPanel ? this.voicePanel() : ""}
       ${this.reading ? `<span class="tts-label">${this.paused ? "Paused" : "Reading page…"}</span>` : ""}
-      <button class="tts-rate" onclick="tts.togglePanel()" title="Choose narrator voice">🎙 ${esc(this.persona(this.voice()).name)}</button>
+      <button class="tts-rate" onclick="tts.togglePanel()" title="Choose narrator voice">🎙 ${esc(this.useEleven() ? "✦ " + (this.el.voiceName || "ElevenLabs") : this.persona(this.voice()).name)}</button>
       <button class="tts-rate" onclick="tts.cyclePitch()" title="Voice pitch (cycles low → high)">♪${this.pitch}</button>
       <button class="tts-rate" onclick="tts.cycleRate()" title="Reading speed">${this.rate}×</button>
       ${this.reading ? `<button class="tts-btn secondary" onclick="tts.stop()" title="Stop">⏹</button>` : ""}

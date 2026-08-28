@@ -18,7 +18,7 @@ An AI learning hub that evolves with AI. Also works fully offline: open `index.h
 | **🃏 Flashcards** | 5 decks / 68 cards with missed-card retry |
 | **✅ Quizzes** | 6 quizzes / 45 questions with explanations; best scores saved |
 | **🤖 AI Tutor** | Claude-powered chat tutor (bring your own Anthropic API key; stored only in your browser — the Tutor page has a 5-step guide to getting a key at console.anthropic.com) |
-| **🔊 Read aloud** | Floating speaker button (bottom-right) reads any page out loud — pause/resume, stop, 0.75×–1.5× speed, and ♪ pitch control (0.7–1.3). Uses the browser's built-in voices; free, no API key needed |
+| **🔊 Read aloud** | Floating speaker button reads any page aloud, with named narrator voices (Lyra, Orion, Vesper…), speed and pitch control, and section-aware pauses. Uses the browser's built-in voices for free; optionally connect an **ElevenLabs** API key in the voice panel for studio-quality narration (key stays in the browser, falls back to a device voice on any error). |
 | **📚 Resources** | Curated videos, free courses, papers, newsletters, tools, books |
 
 Lesson progress, quiz scores, My Track, and the tutor API key all live in your browser's localStorage — nothing is sent anywhere except tutor messages (directly to Anthropic).
