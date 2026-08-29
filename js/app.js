@@ -1025,8 +1025,13 @@ const tts = {
   },
 
   saveElevenKey(v) {
-    // tolerate stray quotes or whitespace from copy-paste
-    this.el.key = (v || "").trim().replace(/^["']+|["']+$/g, "").trim();
+    // Copy-paste often drags in quotes, spaces, or invisible characters
+    // (zero-width spaces, non-breaking spaces, BOM) that silently break auth.
+    const raw = v || "";
+    this.el.key = raw
+      .replace(/^["'\s]+|["'\s]+$/g, "")
+      .replace(/[\s\u00a0\u200b-\u200f\u2028\u2029\ufeff\u0000-\u001f]/g, "");
+    this.el.stripped = raw.trim().length - this.el.key.length;
     localStorage.setItem("np_el_key", this.el.key);
     this.el.voices = [];
     this.el.error = "";
@@ -1089,6 +1094,8 @@ const tts = {
   async elDiagnose() {
     const k = this.el.key || "";
     const lines = ["Key: " + (k ? k.length + " chars · starts \"" + k.slice(0, 3) + "\" · ends \"" + k.slice(-4) + "\"" : "(empty)")];
+    if (k && !/^sk_/.test(k)) lines.push("NOTE: does not start with sk_ — this may not be an API key");
+    if (this.el.stripped) lines.push("NOTE: removed " + this.el.stripped + " hidden/whitespace character(s) from the pasted key");
     this.el.diag = "Running…";
     this.renderBar();
     const probes = [
