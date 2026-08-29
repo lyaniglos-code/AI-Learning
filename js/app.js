@@ -1023,7 +1023,8 @@ const tts = {
   },
 
   saveElevenKey(v) {
-    this.el.key = (v || "").trim();
+    // tolerate stray quotes or whitespace from copy-paste
+    this.el.key = (v || "").trim().replace(/^["']+|["']+$/g, "").trim();
     localStorage.setItem("np_el_key", this.el.key);
     this.el.voices = [];
     this.el.error = "";
@@ -1031,13 +1032,43 @@ const tts = {
     else { this.el.voiceId = ""; localStorage.removeItem("np_el_voice"); this.renderBar(); }
   },
 
+  // Surface ElevenLabs' own explanation instead of a generic "rejected".
+  async elError(r) {
+    let detail = "";
+    try {
+      const b = await r.json();
+      let d = (b && b.detail) || b;
+      if (d && typeof d === "object") d = d.message || d.status || JSON.stringify(d);
+      detail = typeof d === "string" ? d : "";
+    } catch (e) { /* body may not be JSON */ }
+    const tail = detail ? " — " + detail : "";
+    if (r.status === 401) return "Key rejected (401)" + (tail || " — check the key is complete; ElevenLabs keys start with sk_");
+    if (r.status === 403) return "Key lacks permission (403)" + (tail || " — enable Voices and Text to Speech on this key");
+    if (r.status === 429) return "Quota reached (429)" + tail;
+    return "ElevenLabs error " + r.status + tail;
+  },
+
+  async elGet(url) {
+    let r;
+    try {
+      r = await fetch(url, { headers: { "xi-api-key": this.el.key } });
+    } catch (e) {
+      throw new Error("Could not reach ElevenLabs — check your connection, or an extension/firewall may be blocking the request.");
+    }
+    if (!r.ok) throw new Error(await this.elError(r));
+    return r.json();
+  },
+
   async loadEleven() {
     if (!this.el.key) return;
     this.el.loading = true; this.el.error = ""; this.renderBar();
     try {
-      const r = await fetch("https://api.elevenlabs.io/v1/voices", { headers: { "xi-api-key": this.el.key } });
-      if (!r.ok) throw new Error(r.status === 401 ? "Key rejected — check it and try again" : "Could not reach ElevenLabs (" + r.status + ")");
-      const data = await r.json();
+      // some accounts/keys only serve the v2 listing — try v1, then fall back
+      const data = await this.elGet("https://api.elevenlabs.io/v1/voices")
+        .catch(e => {
+          if (/\(401\)|\(403\)|reach ElevenLabs/.test(e.message)) throw e;
+          return this.elGet("https://api.elevenlabs.io/v2/voices?page_size=100");
+        });
       this.el.voices = (data.voices || []).map(v => ({
         id: v.voice_id,
         name: v.name || "Voice",
@@ -1057,6 +1088,17 @@ const tts = {
     } catch (e) {
       this.el.error = e.message;
       this.el.voices = [];
+      // tell "wrong key" apart from "right key, missing permission"
+      if (/\(401\)|\(403\)/.test(e.message)) {
+        try {
+          await this.elGet("https://api.elevenlabs.io/v1/user");
+          this.el.error = "This key works, but it is not allowed to list voices. In ElevenLabs → API Keys, edit the key and enable Voices (read) and Text to Speech.";
+        } catch (e2) {
+          if (/\(401\)/.test(e2.message)) {
+            this.el.error = "Key not recognised. Copy it again from ElevenLabs → Profile → API Keys — it starts with sk_ and is only shown once, so a re-copied or newly created key usually fixes this.";
+          }
+        }
+      }
     }
     this.el.loading = false;
     this.renderBar();
@@ -1088,11 +1130,7 @@ const tts = {
       headers: { "xi-api-key": this.el.key, "content-type": "application/json" },
       body: JSON.stringify(body)
     });
-    if (!r.ok) {
-      if (r.status === 401) throw new Error("ElevenLabs key rejected");
-      if (r.status === 429) throw new Error("ElevenLabs quota reached");
-      throw new Error("ElevenLabs error " + r.status);
-    }
+    if (!r.ok) throw new Error(await this.elError(r));
     return URL.createObjectURL(await r.blob());
   },
 
