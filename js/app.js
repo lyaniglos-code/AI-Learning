@@ -1363,8 +1363,8 @@ const tts = {
           </select>` : (e.key && !e.loading && !e.error ? `<div class="el-status">No voices on this account yet.</div>` : "")}
         ${this.useEleven() ? `<div class="el-status ok">✦ Narrating with <b>${esc(e.voiceName)}</b> —
           <a href="#" onclick="event.preventDefault();tts.useDeviceVoice()">use device voice instead</a></div>` : ""}
-        ${e.key ? `<div class="tts-hint" style="margin-top:9px">Your key stays in this browser and is sent only to ElevenLabs. Audio is generated per page, so long pages use more credits.
-          <a href="#" onclick="event.preventDefault();tts.elDiagnose()">Run diagnostics</a></div>` : ""}
+        ${(e.key || e.error) ? `<div class="tts-hint" style="margin-top:9px">Your key stays in this browser and is sent only to ElevenLabs. Audio is generated per page, so long pages use more credits.
+          <br><a href="#" onclick="event.preventDefault();tts.elDiagnose()"><b>▸ Run diagnostics</b></a> — shows exactly what ElevenLabs says about your key.</div>` : ""}
         ${e.diag ? `<pre class="el-diag">${esc(e.diag)}</pre>` : ""}
       </div>`;
   },
