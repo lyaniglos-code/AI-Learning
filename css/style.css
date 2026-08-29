@@ -687,3 +687,10 @@ input.text-input:focus { outline: none; border-color: var(--accent); }
 .el-status { font-size: 0.74rem; color: var(--text-faint); margin-top: 8px; line-height: 1.5; }
 .el-status.err { color: var(--danger); }
 .el-status.ok { color: var(--accent-3); }
+.el-diag {
+  margin-top: 9px; padding: 9px 10px;
+  background: #0d1119; border: 1px solid var(--border); border-radius: 8px;
+  font-family: Consolas, "Cascadia Code", monospace;
+  font-size: 0.68rem; line-height: 1.6; color: var(--text-dim);
+  white-space: pre-wrap; word-break: break-word; user-select: all;
+}

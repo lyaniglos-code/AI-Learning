@@ -822,6 +822,8 @@ const tts = {
   // ---- ElevenLabs: optional studio-quality narration, bring-your-own-key ----
   el: {
     key: localStorage.getItem("np_el_key") || "",
+    auth: localStorage.getItem("np_el_auth") || "",
+    diag: "",
     voiceId: localStorage.getItem("np_el_voice") || "",
     voiceName: localStorage.getItem("np_el_name") || "",
     model: localStorage.getItem("np_el_model") || "",
@@ -1048,15 +1050,67 @@ const tts = {
     return "ElevenLabs error " + r.status + tail;
   },
 
+  // ElevenLabs accepts the classic xi-api-key header; some newer keys
+  // authenticate as a bearer token instead, so try both before giving up.
+  elHeaders(mode, json) {
+    const h = mode === "bearer"
+      ? { "authorization": "Bearer " + this.el.key }
+      : { "xi-api-key": this.el.key };
+    if (json) h["content-type"] = "application/json";
+    return h;
+  },
+
   async elGet(url) {
-    let r;
-    try {
-      r = await fetch(url, { headers: { "xi-api-key": this.el.key } });
-    } catch (e) {
-      throw new Error("Could not reach ElevenLabs — check your connection, or an extension/firewall may be blocking the request.");
+    const modes = this.el.auth ? [this.el.auth] : ["xi", "bearer"];
+    let lastErr = null;
+    for (const m of modes) {
+      let r;
+      try {
+        r = await fetch(url, { headers: this.elHeaders(m) });
+      } catch (e) {
+        // Bearer auth is blocked by CORS in browsers; if an earlier attempt
+        // already produced a real API error, that one is the useful message.
+        if (lastErr) break;
+        throw new Error("Could not reach ElevenLabs — check your connection, or an extension/firewall may be blocking the request.");
+      }
+      if (r.ok) {
+        this.el.auth = m;
+        localStorage.setItem("np_el_auth", m);
+        return r.json();
+      }
+      lastErr = new Error(await this.elError(r));
+      if (r.status !== 401) break; // only an auth failure is worth retrying differently
     }
-    if (!r.ok) throw new Error(await this.elError(r));
-    return r.json();
+    throw lastErr;
+  },
+
+  // Prints exactly what ElevenLabs says to each probe, so a failure is
+  // diagnosable instead of mysterious.
+  async elDiagnose() {
+    const k = this.el.key || "";
+    const lines = ["Key: " + (k ? k.length + " chars · starts \"" + k.slice(0, 3) + "\" · ends \"" + k.slice(-4) + "\"" : "(empty)")];
+    this.el.diag = "Running…";
+    this.renderBar();
+    const probes = [
+      ["/v1/user via xi-api-key", "https://api.elevenlabs.io/v1/user", "xi"],
+      ["/v1/user via Bearer (browsers usually block this)", "https://api.elevenlabs.io/v1/user", "bearer"],
+      ["/v1/voices via xi-api-key", "https://api.elevenlabs.io/v1/voices", "xi"]
+    ];
+    for (const [label, url, mode] of probes) {
+      try {
+        const r = await fetch(url, { headers: this.elHeaders(mode) });
+        let msg = "";
+        try {
+          const b = await r.json();
+          msg = (b && b.detail && (b.detail.message || b.detail.status)) || (b && b.message) || "";
+        } catch (e) { /* body may be binary or empty */ }
+        lines.push(label + " → " + r.status + (r.ok ? " OK" : (msg ? " " + msg : "")));
+      } catch (e) {
+        lines.push(label + " → request blocked (network, CORS, or extension)");
+      }
+    }
+    this.el.diag = lines.join("\n");
+    this.renderBar();
   },
 
   async loadEleven() {
@@ -1127,7 +1181,7 @@ const tts = {
     if (this.el.model) body.model_id = this.el.model;
     const r = await fetch("https://api.elevenlabs.io/v1/text-to-speech/" + encodeURIComponent(this.el.voiceId) + "?output_format=mp3_44100_128", {
       method: "POST",
-      headers: { "xi-api-key": this.el.key, "content-type": "application/json" },
+      headers: this.elHeaders(this.el.auth || "xi", true),
       body: JSON.stringify(body)
     });
     if (!r.ok) throw new Error(await this.elError(r));
@@ -1309,7 +1363,9 @@ const tts = {
           </select>` : (e.key && !e.loading && !e.error ? `<div class="el-status">No voices on this account yet.</div>` : "")}
         ${this.useEleven() ? `<div class="el-status ok">✦ Narrating with <b>${esc(e.voiceName)}</b> —
           <a href="#" onclick="event.preventDefault();tts.useDeviceVoice()">use device voice instead</a></div>` : ""}
-        ${e.key ? `<div class="tts-hint" style="margin-top:9px">Your key stays in this browser and is sent only to ElevenLabs. Audio is generated per page, so long pages use more credits.</div>` : ""}
+        ${e.key ? `<div class="tts-hint" style="margin-top:9px">Your key stays in this browser and is sent only to ElevenLabs. Audio is generated per page, so long pages use more credits.
+          <a href="#" onclick="event.preventDefault();tts.elDiagnose()">Run diagnostics</a></div>` : ""}
+        ${e.diag ? `<pre class="el-diag">${esc(e.diag)}</pre>` : ""}
       </div>`;
   },
 
