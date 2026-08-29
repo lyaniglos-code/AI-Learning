@@ -13,6 +13,104 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-29",
+    displayDate: "Saturday, August 29, 2026 · Edition #27",
+    headline: "OpenAI's unreleased Astra model formally proves 10 open math problems, Nvidia pauses its AI-cloud revenue-sharing deals over antitrust worries, and Meta closes another smart-glasses recording loophole",
+    summary:
+      "Today's edition is about trust — in results, in deals, and in devices. OpenAI let an internal model do genuine, machine-checked mathematics, Nvidia backed away from a financing structure that started to look like too much control over its customers, and Meta patched a privacy hole in its smart glasses for the second time in two months. ChatGPT also picked up a practical multi-account feature for people juggling work and personal Google logins.",
+    stories: [
+      {
+        title: "OpenAI says an internal Astra model produced 10 verified advances in math and computer science",
+        body: "OpenAI published a research post reporting that an internal version of \"Astra,\" described as its next major model family, generated solutions to ten long-standing open problems spanning group theory, operator algebras, sphere packing, quantum complexity, and extremal combinatorics — including the first explicit construction of a non-sofic group and a disproof of Connes's rigidity conjecture. The company released a 249-page manuscript plus machine-checkable Lean 4 proof files on GitHub with zero unproven steps (\"sorry\" count of zero), so mathematicians can verify every step themselves rather than take OpenAI's word for it. OpenAI said the total compute cost for all ten results was roughly $2,000 at its Sol API pricing. Astra itself remains unreleased, with no confirmed launch date or model card.",
+        why: "Formal verification — proofs written in a language like Lean that a computer can mechanically check line by line — is what turns \"the AI says it solved this\" into something a skeptical human doesn't have to trust blindly, which is exactly why it matters more here than the flashy claim of solving open problems.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/ten-advances-in-mathematics/" },
+          { label: "BleepingComputer", url: "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-teases-astra-its-next-major-ai-model-after-it-solves-10-long-standing-math-problems/" },
+          { label: "The Decoder", url: "https://the-decoder.com/openai-announces-its-next-major-model-astra-by-dropping-ten-previously-unsolved-math-solutions/" }
+        ]
+      },
+      {
+        title: "Nvidia pauses its AI-cloud revenue-sharing deals amid antitrust and control concerns",
+        body: "The Wall Street Journal reported that Nvidia has paused parts of a financing program, launched less than two months earlier, in which it offered credit support to smaller AI cloud companies in exchange for a cut of the cloud revenue those Nvidia-powered chips generated. According to the report, some Nvidia employees warned that the arrangement — which also let Nvidia rent back capacity customers couldn't resell and restrict who they could rent chips to — could draw antitrust scrutiny and gave Nvidia unusual leverage over how its customers run their businesses. Nvidia could still revive or restructure the program later, the report said.",
+        why: "This is a live example of how a dominant supplier's deal terms can shade into anticompetitive territory: financing that comes bundled with control over a customer's downstream business (who they can resell capacity to, at what price) is the kind of vertical arrangement antitrust regulators watch closely.",
+        sources: [
+          { label: "U.S. News (via Reuters/WSJ)", url: "https://money.usnews.com/investing/news/articles/2026-08-27/nvidia-pauses-revenue-sharing-deals-with-ai-cloud-companies-wsj-reports" },
+          { label: "Benzinga", url: "https://www.benzinga.com/markets/tech/26/08/61486472/nvidia-reportedly-pauses-revenue-sharing-deals-with-ai-cloud-companies-amid-antitrust-concerns" }
+        ]
+      },
+      {
+        title: "Meta closes a second loophole letting its smart glasses record with the capture light covered",
+        body: "Meta is rolling out a software update that stops video recording on its AI smart glasses if a user covers the front-facing capture LED mid-recording — closing a workaround where people started a recording first, then covered the light to hide that it was still capturing. It's Meta's second privacy patch to the glasses in under two months, following an earlier update that blocked recording from starting at all if the LED was already covered or tampered with. Meta says it will keep shipping updates so the capture light reliably signals to bystanders when they're being recorded.",
+        why: "Wearable AI devices put the burden of consent on bystanders who never opted in, which is why the \"capture indicator\" — the visible light meant to signal recording — is treated as a core safety feature rather than a cosmetic one, and why loopholes in it get patched urgently.",
+        sources: [
+          { label: "Engadget", url: "https://www.engadget.com/2245776/meta-closing-loophole-that-allowed-people-to-record-with-smart-glasses-light-covered/" },
+          { label: "Digital Trends", url: "https://www.digitaltrends.com/wearables/meta-says-its-glasses-cant-secretly-record-you-anymore-at-least-not-this-way/" }
+        ]
+      },
+      {
+        title: "ChatGPT adds support for multiple Gmail, Calendar, and Contacts accounts in one conversation",
+        body: "OpenAI updated ChatGPT's Gmail, Google Calendar, and Google Contacts connectors to support multiple linked accounts at once, letting users bring both personal and work Google logins into the same chat. Users can now ask ChatGPT to check availability across both calendars when planning a day, or search for an email across multiple connected inboxes, by adding a second account through the gear icon on an already-connected plugin. OpenAI says the feature is live globally on Plus, Pro, Business, and Enterprise plans across web, desktop, iOS, and Android.",
+        why: "This is a small but telling step in AI assistants moving from single-account novelties to tools that model how people actually work — most people juggle a personal and a work identity across the same apps, and an assistant that can't see across both is only doing half the job.",
+        sources: [
+          { label: "9to5Mac", url: "https://9to5mac.com/2026/08/28/chatgpt-and-codex-now-support-multiple-gmail-and-google-calendar-accounts/" },
+          { label: "BleepingComputer", url: "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-rolls-out-gmail-calendar-and-contacts-integration-in-chatgpt/" }
+        ]
+      },
+      {
+        title: "Regulators and labs converge on the same question: how do you audit what an AI agent did with your money?",
+        body: "A Fortune analysis tied together several threads pointing the same direction: Google's Agent Payments Protocol (AP2), built with 60-plus partners including Mastercard and PayPal, gives businesses a way to track exactly how an AI agent spends money on a user's behalf; separately, Sen. Mark Warner introduced the federal AI AGENT Act (S. 5051) in July, which would require \"custodial\" AI agents to keep real-time, auditable records of actions taken for users and directs NIST to develop technical standards for verifying that a user actually delegated authority to an agent. The Fortune piece noted a real gap: tracking what an agent spent doesn't automatically stop it from buying something the user never approved in the first place.",
+        why: "As AI agents move from answering questions to taking real actions — booking, buying, canceling — \"agent identity and authorization\" (proving who delegated what to which agent, and logging it) is becoming its own infrastructure layer, much like authentication and audit logs did for regular software.",
+        sources: [
+          { label: "Fortune", url: "https://fortune.com/2026/08/24/google-ai-agent-payment-protocol-gap/" },
+          { label: "Davis Wright Tremaine", url: "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/07/ai-agent-act-consumer-ai-regulation" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on OpenAI's Astra math results and what they signal about the still-unreleased model.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "AI Explained · YouTube",
+        why: "Strong at unpacking formal-verification claims like Astra's Lean proofs in plain terms, separating real rigor from hype.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good home for the Nvidia financing story and what it says about power dynamics in the AI supply chain.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Well suited to the Meta smart-glasses privacy story and the broader question of consent around wearable AI cameras.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Formal verification",
+      definition:
+        "The practice of writing a mathematical proof (or a piece of software's logic) in a strict language that a computer can mechanically check step by step, rather than relying on human review alone. It's the difference between an AI model claiming a result and that result being independently, automatically confirmed correct — which is exactly why OpenAI published Lean proof files for Astra's math results instead of just describing them.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Ask an AI chatbot to solve a moderately hard logic or math puzzle, then ask it to show its work in a way you could independently check step by step (not just trust). Notice which steps you can verify yourself and which ones you're still taking on faith — that gap is exactly what formal verification tools like Lean are built to close.",
+    learnLinks: [
+      { label: "Why AI \"shows its work\" and where that reasoning can still go wrong → How AI Models Work", href: "#/course/models" },
+      { label: "How AI agents take real actions and what can go wrong → Building With AI" , href: "#/course/engineering" },
+      { label: "What ChatGPT's connectors and integrations actually do → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-08-28",
     displayDate: "Friday, August 28, 2026 · Edition #26",
     headline: "OpenAI's Broadcom-built Jalapeño chip beats Nvidia on power efficiency, Nvidia warns cloud giants of 15%+ AI server price hikes, and Grok 4.6 lands on Microsoft Foundry",
