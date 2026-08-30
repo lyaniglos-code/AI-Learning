@@ -13,6 +13,87 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-30",
+    displayDate: "Sunday, August 30, 2026 · Edition #28",
+    headline: "OpenAI pulls the plug on DALL-E inside ChatGPT, Nvidia's earnings show the AI buildout still accelerating, and Salesforce's Anthropic stake hands it a $2.6 billion earnings surprise",
+    summary:
+      "Today's edition is about money and cleanup. Nvidia and Salesforce both posted numbers this week that show how deeply AI investment is now woven into corporate earnings — one from selling the compute, the other from just holding a stake in a lab. Meanwhile OpenAI tidied up an old ChatGPT feature, and Amazon quietly closed the book on the human-labor platform that helped build the AI industry in the first place.",
+    stories: [
+      {
+        title: "OpenAI retires the original DALL-E GPT from ChatGPT, folding image generation into ChatGPT Images",
+        body: "OpenAI is shutting down the standalone DALL-E GPT inside ChatGPT on August 30, 2026, the date it had set months earlier for the sunset. Image generation itself isn't disappearing — it's consolidating into ChatGPT Images, the newer image tool already used for most in-chat image requests, so the change mainly removes a redundant, older entry point. OpenAI advised users to download any DALL-E-generated images they wanted to keep before the cutoff; custom user-built GPTs that use image generation are unaffected.",
+        why: "This is product consolidation rather than a capability loss: companies often ship a new version of a feature alongside the old one, then need a separate, deliberate step to retire the legacy path once usage has shifted — a pattern worth recognizing whenever you see an AI product's feature list quietly shrink.",
+        sources: [
+          { label: "Tom's Guide", url: "https://www.tomsguide.com/ai/chatgpt/you-have-until-august-30-to-save-your-chatgpt-dall-e-images-heres-how-to-avoid-losing-them-forever" },
+          { label: "Windows Report", url: "https://windowsreport.com/openai-will-retire-the-official-dalle-gpt-on-august-30/" }
+        ]
+      },
+      {
+        title: "Nvidia posts $96.2 billion in quarterly revenue and guides even higher, easing AI-spending-bubble worries",
+        body: "Nvidia's second-quarter fiscal 2027 results, reported August 26, showed revenue of $96.2 billion, up 18% from the prior quarter and 106% year over year, with the Data Center segment alone bringing in $89.02 billion on strong Blackwell Ultra sales to cloud providers, enterprises, and governments. Nvidia guided next quarter's revenue to $108.0 billion, about 4% above what Wall Street analysts had expected, and said supply commitments — advance orders it has locked in, largely for memory — more than doubled from $119 billion to $279 billion in a single quarter.",
+        why: "Guidance is a company's own forecast for its next quarter, and analysts watch whether it beats or misses their models as a read on real-world demand; Nvidia beating expectations here is one of the more concrete signals available that hyperscalers' AI infrastructure spending isn't slowing down, whatever the broader 'AI bubble' debate suggests.",
+        sources: [
+          { label: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html" }
+        ]
+      },
+      {
+        title: "Salesforce's stock jumps 18-20% after a $2.6 billion paper gain on its Anthropic stake boosts earnings",
+        body: "Salesforce reported fiscal second-quarter results on August 26 showing revenue up 11% year over year to $11.35 billion and adjusted earnings per share of $5.90 — far above the $3.27 analysts expected — with the beat driven largely by a $2.6 billion unrealized gain on its investment in Anthropic. Salesforce's broader strategic portfolio spans more than 450 companies worth a combined $11.3 billion, and its Anthropic stake alone is now valued at roughly $5.1 billion. The company also raised its full-year outlook, and shares surged as much as 20% on the news.",
+        why: "An 'unrealized gain' is a paper profit on an investment a company still holds, marked up to its current estimated value even though no cash has changed hands — which is why a single startup's rising valuation can now swing a public company's reported earnings per share, blurring the line between operating a business and betting on AI labs.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/26/salesforce-crm-q2-earnings-report-2027.html" },
+          { label: "The Motley Fool", url: "https://www.fool.com/investing/2026/08/27/salesforce-stock-just-soared-but-investment-gains-delivered-usd2-53-of-its-usd5-90-in-per-share-profit/" }
+        ]
+      },
+      {
+        title: "Amazon shuts down Mechanical Turk after 21 years, closing the human-labor marketplace that helped build modern AI",
+        body: "Amazon announced it is permanently closing Mechanical Turk, the crowdsourced task marketplace Jeff Bezos once called \"artificial artificial intelligence,\" with the platform going dark on September 30, 2026. Workers used the site to complete small paid tasks — labeling data, transcribing audio, answering surveys — that at its peak drew more than 500,000 participants and directly fed the labeled datasets early machine learning and computer vision systems were trained on. Amazon said usage had been declining for years as newer, specialized data-labeling companies such as Scale AI, Mercor, and Prolific drew workers away; AWS's related SageMaker Ground Truth labeling service is also being wound down.",
+        why: "Long before models could grade their own homework, human-labeled data (and later human preference rankings, the basis of RLHF) was the raw material that made supervised machine learning and helpful chatbots possible — Mechanical Turk's shutdown marks the end of the platform most associated with that unglamorous but foundational layer of AI's supply chain.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/25/amazon-service-that-jeff-bezos-called-artificial-ai-is-shutting-down.html" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/technology/ai/articles/amazon-shutting-down-mechanical-turk-110911035.html" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on Nvidia's earnings beat and what the AI-capex-bubble debate looks like against real hyperscaler spending.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good home for connecting Salesforce's Anthropic-stake windfall and Nvidia's numbers into the bigger AI-investment picture.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Well suited to the Mechanical Turk shutdown story and what it says about how AI's human-labor supply chain has evolved.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "RLHF (Reinforcement Learning from Human Feedback)",
+      definition:
+        "A training technique where humans rank pairs of a model's candidate answers, a separate 'reward model' learns to predict those human preferences, and the original model is then optimized against that reward model. It's the technique that turned raw language models into assistants that feel helpful rather than just fluent — and platforms like Mechanical Turk were where much of that human ranking work actually got done.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Next time you rate an AI chatbot's response with a thumbs up/down, or pick between two draft answers it offers you, notice that you're doing a tiny version of the same job Mechanical Turk workers were paid to do at scale: giving a model the human preference signal it's trained on.",
+    learnLinks: [
+      { label: "How RLHF and fine-tuning turn a base model into an assistant → How AI Models Work", href: "#/course/models" },
+      { label: "How AI investment and infrastructure spending actually works → The AI Industry", href: "#/course/industry" },
+      { label: "Keeping your AI toolbox current as products change → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-08-29",
     displayDate: "Saturday, August 29, 2026 · Edition #27",
     headline: "OpenAI's unreleased Astra model formally proves 10 open math problems, Nvidia pauses its AI-cloud revenue-sharing deals over antitrust worries, and Meta closes another smart-glasses recording loophole",
