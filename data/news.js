@@ -13,6 +13,102 @@
 
 const EDITIONS = [
   {
+    date: "2026-08-31",
+    displayDate: "Monday, August 31, 2026 · Edition #29",
+    headline: "OpenAI cuts off Cursor after its SpaceX buyout, Anthropic locks in Sonnet 5's launch price for good, and two more music giants sue Anthropic over Claude's training data",
+    summary:
+      "Today's edition is about the fine print behind the AI boom: a contract clause, a pricing deadline, and a lawsuit all came due at once. OpenAI used a change-of-control clause to walk away from a coding-tool partner the moment Elon Musk's SpaceX bought it, Anthropic let its introductory Sonnet 5 pricing become permanent instead of raising it as planned, and Sony and Warner's publishing arms became the latest labels to sue Anthropic over how Claude was trained. A DeepSeek funding round and a Google Play Books integration round out a day heavier on deals and disputes than new models.",
+    stories: [
+      {
+        title: "OpenAI terminates Cursor's access to its models after SpaceX's acquisition of the coding-tool maker",
+        body: "OpenAI announced it will end Cursor's access to OpenAI models on November 12, 2026, invoking a clause in their contract triggered by a change of control after Elon Musk's SpaceX acquired Cursor's parent company, Anysphere, in a deal reported at roughly $60 billion. OpenAI said in a blog post that it could not be confident SpaceX would keep operating within the terms of service, pointing to what it called Musk's history of breaking contracts at Twitter/X and xAI. OpenAI also said it will not offer future models to Cursor. OpenAI's models reportedly account for only about 5% of Cursor's user traffic, so most users should see limited disruption, but Cursor will lean more heavily on Anthropic's and Google's models for that share going forward.",
+        why: "This is a concrete case of vendor dependency risk: products like Cursor are built on top of other companies' models through an API, and that access can be revoked for business reasons that have nothing to do with the product itself — a fragility worth weighing before any team bets its roadmap on a single outside model provider.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/29/openai-cursor-spacex-model-access.html" }
+        ]
+      },
+      {
+        title: "Anthropic lets Claude Sonnet 5's introductory pricing become permanent, canceling a planned September 1 hike",
+        body: "When Anthropic launched Claude Sonnet 5, it priced the model at $2 per million input tokens and $10 per million output tokens, explicitly labeled as introductory pricing running only through August 31, 2026, with a jump to $3/$15 — a 50% increase — scheduled for September 1. Anthropic announced on August 10 that the increase would not happen: the $2/$10 rate is now the permanent standard price. Anthropic's own pricing documentation has since been updated to state plainly that the introductory rate \"is now the standard price,\" with today marking the date that window was originally set to close.",
+        why: "Frontier labs price models per input and output token, and introductory pricing is normally a temporary discount used to drive adoption before a planned increase — Anthropic choosing to lock in the discount instead, likely under competitive pressure from cheaper rival models, is a useful reminder to read any AI company's \"introductory pricing\" label as provisional in both directions.",
+        sources: [
+          { label: "Anthropic (Pricing docs)", url: "https://platform.claude.com/docs/en/about-claude/pricing" }
+        ]
+      },
+      {
+        title: "Sony Music Publishing and Warner Chappell sue Anthropic, alleging a campaign to pirate copyrighted songs for Claude",
+        body: "Sony Music Publishing and Warner Chappell Music filed a joint lawsuit against Anthropic, accusing the company of \"one of the largest and most blatant ongoing thefts of intellectual property in history.\" The complaint alleges Anthropic illegally torrented, scraped, and downloaded copyrighted lyrics and sheet music at scale, stripped out copyright-management information, and trained Claude in ways that led it to reproduce verbatim and near-verbatim lyrics on request. The publishers are seeking a jury trial and statutory damages of up to $150,000 per infringed work, plus up to $25,000 for each instance of removed copyright information. This is now the fourth major music-industry suit against Anthropic, following an earlier case from the same publishers covering more than 20,000 works, a BMG suit over 493 compositions, and a Round Hill Music suit filed August 17.",
+        why: "The legal question running through every one of these suits is whether training a model on copyrighted material — and how that material was obtained — counts as fair use or infringement, a question still unresolved in U.S. courts and one that's actively shaping how every AI lab sources its training data going forward.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/" },
+          { label: "Music Business Worldwide", url: "https://www.musicbusinessworldwide.com/now-sony-music-publishing-and-warner-chappell-sue-anthropic-in-multi-billion-dollar-lawsuit-one-of-the-largest-and-most-blatant-ongoing-thefts-of-intellectual-property-in-history/" }
+        ]
+      },
+      {
+        title: "DeepSeek nears a $7.4 billion funding round at a $74 billion valuation ahead of a planned 2027 IPO",
+        body: "DeepSeek is close to finalizing a funding round of roughly 50 billion yuan (about $7.4 billion) that would value the Chinese AI lab at around $74 billion before the new investment, with the round expected to close by the end of August. Reported backers include existing investors Monolith and Shixiang Capital alongside battery maker CATL, with new investors including CPE, Legend Capital, and Stony Creek Capital reportedly in talks to join. The round is widely seen as a step toward an initial public offering on Shanghai's STAR Market, which people close to the matter say DeepSeek could file for as soon as late 2026, targeting a public listing in 2027.",
+        why: "DeepSeek went from an open-weight model that rattled markets in early 2025 to a lab on track for a roughly $74 billion IPO in under two years — a fast-moving data point for understanding how far capital has moved to back Chinese AI labs specifically, alongside the U.S. buildout dominating most headlines.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-06/deepseek-resumes-8-billion-round-with-monolith-in-the-running" },
+          { label: "TechCrunch", url: "https://techstartups.com/2026/08/28/deepseek-nears-7-4-billion-funding-round-at-74-billion-valuation-ahead-of-2027-ipo/" }
+        ]
+      },
+      {
+        title: "Google adds 'Expert Intelligence' to Gemini Notebook, letting owned Google Play ebooks become AI-grounded sources",
+        body: "Google announced Expert Intelligence, a new Gemini Notebook (the tool formerly called NotebookLM) feature that lets anyone who has bought an ebook through Google Play Books load its full text in as a source, then ask questions the AI answers while staying grounded only in that book, plus generate the tool's Audio Overviews, infographics, and quizzes from it. At launch, more than 100,000 titles from publishers including Bloomsbury, Macmillan, O'Reilly Media, and Penguin Random House are supported, and 15 bestselling authors built curated companion notebooks around their own books. Google built ownership checks directly into the feature: a reader must own the book through Google Play Books before Gemini Notebook can use it, and collaborators on a shared notebook are prompted to buy their own copy rather than read someone else's purchase for free.",
+        why: "This is a clean real-world example of retrieval-augmented generation (RAG): grounding a model strictly in a bounded, verified set of sources so it can only answer from what's actually in them, plus a rare case of an AI company building licensing and ownership controls directly into a RAG feature instead of training on the content outright.",
+        sources: [
+          { label: "Google", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/expert-intelligence-leading-sources/" },
+          { label: "9to5Google", url: "https://9to5google.com/2026/08/27/gemini-notebook-play-books/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on the OpenAI-Cursor-SpaceX fallout and what Anthropic's pricing reversal signals about competitive pressure on frontier-model costs.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Well suited to unpacking the Sony/Warner lawsuit against Anthropic and what it means for the music industry's fight with AI labs.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good home for connecting DeepSeek's funding trajectory and the Cursor-OpenAI split into the bigger picture of AI business dealmaking.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "Technical crowd well suited to unpacking Gemini Notebook's Expert Intelligence feature and how its RAG-style grounding actually works.",
+        url: "https://thursdai.news/"
+      }
+    ],
+    term: {
+      word: "RAG (Retrieval-Augmented Generation)",
+      definition:
+        "A technique where a model's answers are grounded in a specific, retrieved set of documents rather than only in what it learned during training — the system fetches relevant passages from a source (your uploaded files, a database, in Gemini Notebook's case a purchased ebook) and feeds them into the model's context so it answers from, and can cite, that material directly. It's why tools like Gemini Notebook can stay accurate about a specific book instead of guessing from general knowledge.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick a PDF, article, or ebook you actually own and load it into a RAG-style tool like Gemini Notebook or NotebookLM as its only source. Ask it a specific factual question about the material, then check whether its answer matches the text and whether it cites the right section — that's you testing retrieval-augmented generation directly, not just chatting with a general-purpose model.",
+    learnLinks: [
+      { label: "How retrieval-augmented generation actually works → Building with AI", href: "#/course/engineering" },
+      { label: "How AI funding rounds and valuations actually work → The AI Industry", href: "#/course/industry" },
+      { label: "Keeping your AI toolbox current as products change → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-08-30",
     displayDate: "Sunday, August 30, 2026 · Edition #28",
     headline: "OpenAI pulls the plug on DALL-E inside ChatGPT, Nvidia's earnings show the AI buildout still accelerating, and Salesforce's Anthropic stake hands it a $2.6 billion earnings surprise",

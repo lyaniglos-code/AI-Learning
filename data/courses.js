@@ -1082,15 +1082,16 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "research-tools",
       title: "NotebookLM & Perplexity: the research tools",
       minutes: 16,
-      updated: "Aug 16, 2026",
+      updated: "Aug 31, 2026",
       content: `
 <p>Two tools own the "help me understand and research" niche, and they approach it from opposite directions: NotebookLM starts from <i>your documents</i>; Perplexity starts from <i>the live web</i>.</p>
 <h3>NotebookLM, now "Gemini Notebook" (Google)</h3>
 <p>On July 16, 2026 Google renamed NotebookLM to <b>Gemini Notebook</b> — a rebrand, not a shutdown: existing notebooks, shared links, and the underlying product all carry over unchanged. Upload sources — PDFs, Docs, websites, YouTube videos, audio — and Gemini Notebook (running on Gemini 3) becomes an expert grounded <i>only</i> in them, with citations for every claim. It's the closest thing to "chat with my documents" done right, and a masterclass in RAG as a product. The rename shipped alongside a technical upgrade: each notebook now gets a secure cloud sandbox that can write and run code.</p>
+<p>On August 27, 2026 Google added <b>Expert Intelligence</b>: anyone who has bought an ebook through Google Play Books can load its full text in as a source and ask questions grounded only in that book, with the tool's Audio Overviews, infographics, and quizzes generated from it too. More than 100,000 titles are supported at launch — from publishers including Bloomsbury, Macmillan, O'Reilly Media, and Penguin Random House — and 15 bestselling authors built curated companion notebooks around their own books. Ownership is enforced directly in the feature: you must own the book through Google Play Books before Gemini Notebook can use it, and collaborators on a shared notebook are prompted to buy their own copy rather than read someone else's purchase for free.</p>
 <ul>
 <li><b>Audio Overviews</b> — its famous feature: turns your sources into a podcast-style discussion between two AI hosts (interactive — you can join and steer); video overviews and mind maps too</li>
 <li><b>Study aids</b> — auto-generated study guides, FAQs, flashcards, quizzes, timelines from your material</li>
-<li><b>2026 upgrades</b> — 1M-token chat context, saved chat history, goal-based briefing modes, native code execution, and notebooks usable as sources inside the Gemini app</li>
+<li><b>2026 upgrades</b> — 1M-token chat context, saved chat history, goal-based briefing modes, native code execution, owned-ebook sources via Expert Intelligence, and notebooks usable as sources inside the Gemini app</li>
 <li><b>Great for</b> — students, researchers, and anyone turning a pile of documents into understanding. Free with generous limits; Pro tier for heavy use.</li>
 </ul>
 <h3>Perplexity</h3>
@@ -1100,6 +1101,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       keypoints: [
         "NotebookLM was renamed Gemini Notebook on July 16, 2026 — same product, existing notebooks and links carry over",
         "Grounded in your uploaded sources, citations always — RAG as a product",
+        "Expert Intelligence (Aug 27, 2026) lets owned Google Play ebooks become sources, with ownership checks built in",
         "Audio Overviews turn documents into an interactive podcast; study aids auto-generate",
         "Perplexity: citation-first live-web answers, Deep Research, agentic browsing",
         "Match the tool to the question: create vs. search vs. understand-my-docs"
