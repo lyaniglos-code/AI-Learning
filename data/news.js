@@ -13,6 +13,93 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-01",
+    displayDate: "Tuesday, September 1, 2026 · Edition #30",
+    headline: "The Pentagon opens its AI portal to ChatGPT and Grok, a judge calls its Anthropic ban 'illegal and baseless' but the ban stands anyway, and Alibaba previews its Qwen4 architecture",
+    summary:
+      "Today's edition is about who gets to be the default AI vendor. The Pentagon added OpenAI's and xAI's models to its internal AI portal partly to avoid depending on one supplier, even as a federal judge ruled its earlier move to cut off Anthropic was unlawful — a ruling that hasn't actually restored Anthropic's access. Elsewhere, Alibaba's Qwen team open-sourced an early look at its next model architecture, and sales-automation startup Clay landed a sharply higher valuation.",
+    stories: [
+      {
+        title: "The Pentagon adds OpenAI's ChatGPT and xAI's Grok to its internal AI portal, alongside Google's Gemini",
+        body: "On August 31, the Department of Defense launched a military-tailored version of OpenAI's ChatGPT, called ChatGPT Mil, and Starshield AI's Grok for Government on GenAI.mil, its secure portal for giving military personnel access to commercial AI tools without routing sensitive data through consumer apps. Both join Google's Gemini, which was already available on the platform, and all three have cleared Impact Level 5 authorization — the government's standard for environments that handle sensitive, non-public unclassified data. More than 1.7 million of the department's roughly 3 million personnel have already set up GenAI.mil accounts. Defense officials framed adding a second and third vendor partly as a way to avoid depending on any single AI company for a platform now used department-wide.",
+        why: "This is vendor lock-in — the risk of depending on one supplier for something critical — playing out at government scale, the same dynamic behind OpenAI cutting off Cursor's model access after its SpaceX acquisition covered in yesterday's edition.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/" },
+          { label: "DefenseScoop", url: "https://defensescoop.com/2026/08/31/grok-chatgpt-added-to-genai-mil/" }
+        ]
+      },
+      {
+        title: "A federal judge rules the Pentagon's Anthropic ban 'illegal and baseless' — but the September 30 phase-out deadline hasn't moved",
+        body: "U.S. District Judge Rita Lin ruled that the Defense Department's decision to designate Anthropic a 'supply chain risk' violated the First Amendment, writing that the department acted out of a desire to punish Anthropic publicly rather than for a genuine security reason and that 'the empty invocation of national security is not a blank check to punish and retaliate against government critics.' The dispute traces back to February, when the Pentagon demanded Anthropic allow Claude to be used for any lawful military purpose, including autonomous weapons and domestic surveillance; Anthropic refused, citing its own safety guardrails, and President Trump then directed federal agencies to stop using Anthropic's products within six months. That window closes September 30, and reporting indicates the Defense Department is continuing its phase-out of Claude on that timeline despite the ruling, with the government expected to appeal.",
+        why: "For large customers like governments, which AI model gets used increasingly turns on contracts and politics as much as on model quality — a reminder that 'best model' and 'available model' aren't always the same thing, even after a court sides with the company that got cut off.",
+        sources: [
+          { label: "NBC News", url: "https://www.nbcnews.com/business/business-news/anthropic-pentagon-blacklist-claude-judge-rcna594825" },
+          { label: "CNN Business", url: "https://www.cnn.com/2026/08/27/tech/anthropic-pentagon-supply-chain-risk-unlawful-hnk" }
+        ]
+      },
+      {
+        title: "Alibaba's Qwen team open-sources Qwen3.8-Flash-Next, an early preview of its next-generation Qwen4 architecture",
+        body: "Alibaba's Qwen team released Qwen3.8-Flash-Next, an open-weight mixture-of-experts model with 125 billion total parameters but only about 6 billion active per token, describing it as an early look at the architecture that will underpin the coming Qwen4 generation. The model combines a hybrid attention mechanism, a gated residual structure, and a new optimizer the team says lower training costs and improve scalability, with a native context window of 262,144 tokens extendable to 1 million via YaRN. It's freely downloadable on Hugging Face and ModelScope rather than gated behind a paid API. Qwen used the same playbook ahead of its Qwen3.5 release — ship the new architecture early as a smaller model, let outside developers stress-test it, then build the full generation on top.",
+        why: "Mixture-of-experts (MoE) architecture activates only a fraction of a model's total parameters for any given input, which is why a '125B' model can run faster and cheaper than its raw parameter count implies — most frontier models today, open and closed, use some version of this design.",
+        sources: [
+          { label: "TechNode", url: "https://technode.com/2026/08/26/alibabas-qwen-to-open-source-qwen3-8-flash-next-previewing-qwen4-architecture/" },
+          { label: "MarkTechPost", url: "https://www.marktechpost.com/2026/08/26/alibabas-qwen-team-releases-qwen3-8-flash-next-a-125b-multimodal-moe-with-6b-active-parameters-previewing-the-qwen4-architecture/" }
+        ]
+      },
+      {
+        title: "AI sales-automation startup Clay raises a new round at a $7 billion valuation",
+        body: "Clay, a startup that uses AI to research prospects and automate sales and marketing outreach, is raising a new round led by Wellington Management at a $7 billion pre-money valuation. That's up sharply from the $5 billion mark set in a January 2026 employee tender offer, and more than double the roughly $3.1 billion valuation from its Series C just over a year earlier. Clay's product pulls and enriches contact and company data from dozens of sources, then lets AI agents draft personalized outreach at scale for sales teams. The fast re-pricing reflects continued investor appetite for AI applied to a specific, revenue-generating business function rather than for foundation models themselves.",
+        why: "Watching how quickly a single applied-AI company's valuation climbs is a useful, separate signal from the foundation-model funding races — it shows where investors think AI creates defensible business value once it's wrapped around a specific workflow.",
+        sources: [
+          { label: "Axios", url: "https://www.axios.com/pro/all-deals/2026/08/31/clay-7-billion-pre-money-valuation" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on the Pentagon opening GenAI.mil to ChatGPT and Grok, and what it signals about the government's AI vendor strategy.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good home for connecting the Anthropic-Pentagon ruling and Clay's valuation jump into the bigger picture of AI business and policy dealmaking.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "Technical crowd well suited to unpacking Qwen3.8-Flash-Next's architecture and what it previews about Qwen4.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · NYT · weekly",
+        why: "Well suited to unpacking the legal and political tangle behind the Pentagon's Anthropic ban surviving a court loss.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Vendor lock-in",
+      definition:
+        "The risk of becoming so dependent on one supplier for something critical that switching away becomes costly or disruptive — even if that supplier's terms change, their access is cut off, or a better option appears elsewhere. In AI, this shows up when a product or an organization builds heavily on a single model provider's API, so losing that access (through a contract dispute, a policy decision, or a pricing change) can disrupt operations with little warning, as both the Pentagon's multi-vendor AI portal and OpenAI's split with Cursor illustrate.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pick a task you'd normally hand to one AI assistant and run it through two different ones instead — say ChatGPT and Claude, or Claude and Gemini. Compare not just the answers but how each disagrees or fills gaps differently; that's a small, personal test of why relying on a single AI vendor for anything important carries real risk.",
+    learnLinks: [
+      { label: "How AI companies compete on models, pricing, and access → The AI Industry", href: "#/course/industry" },
+      { label: "How mixture-of-experts models work under the hood → How AI Models Work", href: "#/course/models" },
+      { label: "Keeping your AI toolbox current as products change → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-08-31",
     displayDate: "Monday, August 31, 2026 · Edition #29",
     headline: "OpenAI cuts off Cursor after its SpaceX buyout, Anthropic locks in Sonnet 5's launch price for good, and two more music giants sue Anthropic over Claude's training data",
