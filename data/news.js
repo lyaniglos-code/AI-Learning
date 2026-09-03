@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-03",
+    displayDate: "Thursday, September 3, 2026 · Edition #32",
+    headline: "Google ships Gemini 3.8 Flash and a locked-down 'Cyber' sibling, Anthropic's Claude Fable 5.1 lands up to 45% cheaper, and Dell's AI server backlog hits $95 billion",
+    summary:
+      "Today's edition tracks the AI buildout from three angles at once. Google and Anthropic both pushed out upgraded models within 24 hours of each other, Dell's earnings show just how much money is flowing into the servers that run them, and a fresh funding round is a reminder that letting AI agents loose on the web creates security problems nobody had to solve before.",
+    stories: [
+      {
+        title: "Google DeepMind ships Gemini 3.8 Flash — its fourth Flash-tier release in four months — plus a locked-down 'Cyber' sibling",
+        body: "Google released Gemini 3.8 Flash on September 2, alongside Gemini 3.8 Flash Cyber, a more restricted version built specifically for security work. The new Flash model's gains are concentrated in agentic tasks — tool use, coding, and multi-step reasoning — scoring 59 on the Artificial Analysis Intelligence Index at high reasoning effort, three points above Gemini 3.7 Flash and roughly matching sub-maximum reasoning runs of rival models from OpenAI and xAI. It ships at the same introductory pricing as its predecessor ($0.75 per million input tokens, $3.75 per million output tokens), with a 1-million-token context window, multimodal input (text, image, audio, video, PDF), and built-in function calling, search, and computer use.",
+        why: "Google is now shipping a new Flash-tier model roughly every three to six weeks — a bet that most real AI usage doesn't need the biggest, slowest flagship model, just a cheap, fast one that keeps improving quickly enough to stay competitive with pricier releases.",
+        sources: [
+          { label: "Google", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" },
+          { label: "The Register", url: "https://www.theregister.com/ai-and-ml/2026/09/02/with-gemini-38-flash-google-reminds-everyone-its-still-in-the-race/5294049" }
+        ]
+      },
+      {
+        title: "Anthropic releases Claude Fable 5.1 and Claude Mythos 5.1, cutting agentic-workload pricing up to 45%",
+        body: "Anthropic released Claude Fable 5.1 and Claude Mythos 5.1 on September 1, three months after the original Fable 5, describing them as its most advanced models yet for coding and knowledge work and reporting they outperform Fable 5, Opus 5, and OpenAI's GPT-5.6 Sol across multiple benchmarks. The two are the same underlying model shipped at different safeguard levels: Fable 5.1 is generally available to everyone, while Mythos 5.1 is restricted to trusted-access programs, with safeguards built specifically for cybersecurity and life-sciences work. Anthropic also cut cache-read pricing, making typical workloads roughly 25% cheaper than Fable 5 and highly agentic workloads — which lean heavily on cached context — up to 45% cheaper, while base per-token pricing is unchanged.",
+        why: "Releasing one model as two variants — a generally available one and a restricted one with domain-specific safeguards — is how Anthropic tries to give specialists (like biosecurity researchers) more raw capability without handing that same capability to everyone by default.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/claude-fable-and-mythos-5-1" },
+          { label: "MacRumors", url: "https://www.macrumors.com/2026/09/01/anthropic-claude-fable-5-1/" }
+        ]
+      },
+      {
+        title: "Dell's AI server backlog hits $95 billion as fiscal Q2 revenue jumps 58% on AI demand",
+        body: "Dell reported fiscal second-quarter revenue of $46.97 billion, up 58% year over year, with AI-optimized servers alone contributing $16.4 billion — more than double the same quarter a year ago. The company booked a record $60.9 billion in new AI server orders during the quarter, pushing its backlog to $95 billion, and raised its full-year revenue guidance by $25 billion to roughly $192 billion. Adjusted earnings per share came in at $7.04, up 203% year over year, beating analyst expectations on both revenue and profit.",
+        why: "Numbers like these are the clearest evidence of how much capital is actually flowing into AI infrastructure right now — every chatbot reply and coding-agent run ultimately depends on server capacity like the kind Dell is racing to ship.",
+        sources: [
+          { label: "Investing.com", url: "https://www.investing.com/news/company-news/dell-q2-fy27-slides-ai-server-backlog-hits-95b-revenue-up-58-93CH-4884718" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/technology/ai/articles/dell-technologies-q2-fy27-earnings-204127355.html" }
+        ]
+      },
+      {
+        title: "Security startup Huskeys raises $27M Series A from Blackstone to tell AI agents apart from malicious bot traffic",
+        body: "Huskeys, which builds tools to distinguish legitimate AI-agent web traffic from malicious automated traffic, raised a $27 million Series A led by Blackstone Innovations Investments, bringing its total funding to $35 million. The company says it already analyzes more than a trillion web requests a day across customers including TikTok, LEGOLAND, and Hugging Face, sorting AI agents acting on users' behalf from bots probing for vulnerabilities. Huskeys cites industry estimates that non-human traffic will make up 70% of all web traffic by 2027, as both legitimate AI agents and AI-assisted attackers scale up automated requests to websites and apps.",
+        why: "As AI agents increasingly browse and act on the web on people's behalf, security tools built for a simple human-vs-bot world need a third category — legitimate-agent traffic that behaves like a bot but should be let through.",
+        sources: [
+          { label: "TheNextWeb", url: "https://thenextweb.com/news/huskeys-raises-27m-series-a-led-by-blackstone" },
+          { label: "HackerNoon", url: "https://hackernoon.com/huskeys-raises-$27m-series-a-led-by-blackstone-to-tackle-the-growing-complexity-of-edge-security" }
+        ]
+      },
+      {
+        title: "South Korea's KT wins a project to rebuild Woori Bank's chatbot around task-processing AI agents",
+        body: "KT, the South Korean telecom operator, won a project to rebuild Woori Bank's customer-facing chatbot and consultation-bot infrastructure, deploying a new 'Agent Connector' system that links the bank's existing AI Banker consultation service with AI agents able to process banking tasks rather than just answer questions. The upgrade is meant to raise the resolution rate for inbound customer inquiries and extend AI handling to outbound consultations and some branch services. It follows a separate, earlier Samsung SDS-led AI agent project at the same bank, part of a broader push by Korean financial institutions toward agentic customer service.",
+        why: "Moving a chatbot from 'answers questions' to 'processes the task' is the practical, real-world definition of an AI agent — and banking, with its heavy compliance requirements, is a telling place to watch that shift happen carefully.",
+        sources: [
+          { label: "Digital Today", url: "https://www.digitaltoday.co.kr/en/view/97987/kt-begins-rebuild-of-woori-bank-ai-chatbot-consultation-bot" },
+          { label: "The Elec", url: "https://www.thelec.net/news/articleView.html?idxno=13469" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on the Gemini 3.8 Flash and Claude Fable 5.1 releases landing within a day of each other.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "Technical crowd well suited to comparing Gemini 3.8 Flash's and Claude Fable 5.1's benchmark claims side by side.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good home for connecting Dell's AI server backlog to the broader story of how much capital is chasing AI infrastructure.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest uploads",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "For a quick, visual gut-check on what a jump like Gemini 3.8 Flash's benchmark gains actually looks like in practice.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Prompt caching",
+      definition:
+        "A technique where a model provider stores the processed representation of a prompt's unchanging parts — like a long system prompt, a big document, or earlier turns in an agent's task — so a later request that reuses that same context doesn't have to pay full price to reprocess it. Anthropic's Claude Fable 5.1 pricing cut works this way: it mainly discounts 'cache-read' tokens, which is why highly agentic workloads that repeatedly reuse the same context saw the biggest price drop (up to 45%) while one-off requests saved less.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick one small coding or research task you'd normally do yourself, and run it through both Gemini 3.8 Flash (free in Google AI Studio) and whichever Claude model you have access to. Don't just compare the final answer — compare how each one explains its reasoning along the way. That's increasingly what frontier labs are actually competing on, not just raw benchmark scores.",
+    learnLinks: [
+      { label: "How frontier labs price and iterate their models → Engineering with AI", href: "#/course/engineering" },
+      { label: "How AI companies compete and where the money flows → The AI Industry", href: "#/course/industry" },
+      { label: "Keeping your AI toolbox current as products change → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-02",
     displayDate: "Wednesday, September 2, 2026 · Edition #31",
     headline: "OpenAI's own technical report shows how its test agents broke into Hugging Face's servers by reward-hacking a security exercise, the EU brands ChatGPT a search engine, and McKinsey finds a third of enterprises now build instead of buy",

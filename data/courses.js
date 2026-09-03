@@ -1006,9 +1006,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "claude",
       title: "Claude (Anthropic)",
       minutes: 18,
-      updated: "Aug 27, 2026",
+      updated: "Sep 3, 2026",
       content: `
-<p><b>Claude</b> (claude.ai) is Anthropic's assistant, built on the Claude model family — as of July 2026, the Claude 5 generation, whose Opus 5 flagship currently tops independent intelligence and agentic indexes. Claude's reputation: the writer's and builder's AI — long documents, careful reasoning, and best-in-class coding.</p>
+<p><b>Claude</b> (claude.ai) is Anthropic's assistant, built on the Claude model family. As of September 1, 2026, the flagship generation is Claude Fable 5.1 and Claude Mythos 5.1 — twin models Anthropic says outperform the original Fable 5, Opus 5, and OpenAI's GPT-5.6 Sol across multiple benchmarks. Claude's reputation: the writer's and builder's AI — long documents, careful reasoning, and best-in-class coding.</p>
+<p><b>Fable 5.1 and Mythos 5.1 launched September 1, 2026.</b> The two are the same underlying model shipped at different safeguard levels: Fable 5.1 is generally available to everyone, while Mythos 5.1 is restricted to trusted-access programs, with safeguards built specifically for cybersecurity and life-sciences work. Alongside the release, Anthropic cut cache-read pricing — typical workloads run roughly 25% cheaper than on Fable 5, and highly agentic workloads (which reuse a lot of cached context) up to 45% cheaper, while base per-token pricing stays the same.</p>
 <p><b>Claude Academy launched August 20, 2026.</b> Anthropic opened a free learning hub at academy.claude.com with roughly 355 tutorials, prompting guides, and use-case walkthroughs covering Claude.ai, Claude Cowork, Claude Code, Claude Tag, and the API. It works without an account, starts with general AI fundamentals before splitting into product-specific paths, and offers multi-language content; signed-in users can track progress and earn shareable completion badges you can add to a LinkedIn profile.</p>
 <h3>What it does</h3>
 <ul>
@@ -1027,7 +1028,9 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <p><b>Shines:</b> writing quality and honesty about uncertainty, long-document analysis, agentic coding (routinely #1 on SWE-bench-class evals), and enterprise trust from its safety-first posture. <b>Watch out:</b> fewer consumer bells and whistles than ChatGPT (image generation, custom-bot marketplace) — Anthropic's focus is depth over breadth.</p>
 <blockquote>Try it: paste a messy 20-page document into a Claude Project and ask for a structured brief — then ask it to build an interactive summary as an Artifact. If you code at all, try Claude Code on a real repo; it's the fastest way to understand what "AI agent" means.</blockquote>`,
       keypoints: [
-        "Anthropic's assistant; Claude 5 generation, Opus 5 currently tops agentic benchmarks",
+        "Anthropic's assistant; Claude Fable 5.1 and Mythos 5.1 (Sep 1, 2026) are the current flagship generation",
+        "Fable 5.1 is generally available; Mythos 5.1 is restricted to trusted-access programs with safeguards for cybersecurity/life-sciences work",
+        "Cache-read pricing cut with the 5.1 release — up to 45% cheaper for highly agentic workloads",
         "Signature features: Projects, Artifacts, extended thinking, massive context",
         "Claude Code defined the agentic-coding category",
         "Claude Cowork now runs full sessions with skills/plugins in the Chrome sidebar",
@@ -1045,9 +1048,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "gemini",
       title: "Gemini (Google)",
       minutes: 16,
-      updated: "Aug 28, 2026",
+      updated: "Sep 3, 2026",
       content: `
 <p><b>Gemini</b> (gemini.google.com) is Google's assistant, powered by the Gemini 3.x model family. Its superpowers are exactly what you'd guess from Google: multimodal understanding, the largest context windows in the industry (millions of tokens in API tiers), and deep integration with Search, Workspace, Android, and Chrome.</p>
+<p><b>Gemini 3.8 Flash shipped September 2, 2026</b> — Google's fourth Flash-tier release in four months, alongside a more restricted sibling, Gemini 3.8 Flash Cyber, built for security work. The gains are concentrated in agentic tasks (tool use, coding, multi-step reasoning); it holds the same introductory pricing as 3.7 Flash ($0.75 per million input tokens, $3.75 per million output tokens), a 1-million-token context window, and built-in function calling, search, and computer use.</p>
 <p><b>Interactive visualizations.</b> Google has begun rolling out a Gemini app feature, powered by Gemini 3, that turns a question or topic into a custom interactive visualization directly in the chat — a rotatable 3D molecule, a running physics simulation — instead of a static image or block of text, letting you manipulate the response rather than just read it.</p>
 <p><b>Image generation consolidated.</b> On August 17, 2026 Google shut down the Imagen 4 API endpoints (standard, ultra, and fast) across both the Gemini Developer API and its enterprise Agent Platform API. Image generation isn't going away — it now runs entirely through Gemini 3.1 Flash Image, the model widely nicknamed "Nano Banana 2," via the same general-purpose generate_content() method used for text and other Gemini output. Developers with code still calling Imagen's old generate_images() method need to migrate it.</p>
 <p><b>Free year for students.</b> On August 20, 2026 Google launched a dedicated Student Hub inside Gemini (gemini.google.com/students) bundling study notebooks, AI-generated flashcards and practice quizzes, diagnostic study plans, and a syllabus reader that adds exam dates to Google Calendar. Eligible college students get a full year of a paid tier at no cost — Google AI Pro in the U.S., Google AI Plus in 140+ other countries — redeemable through December 31, 2026. Deep Research also expanded into Gemini Live, letting students request and then talk through a research report by voice.</p>
@@ -1066,6 +1070,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <blockquote>Try it: drop an hour-long lecture video or a 500-page PDF into Gemini and ask for a structured study guide — context size is its party trick. If you use Gmail/Docs, try the Workspace side for a week.</blockquote>`,
       keypoints: [
         "Google's assistant on Gemini 3.x; strongest multimodal + biggest context windows",
+        "Gemini 3.8 Flash (Sep 2, 2026) is the current fast-tier default, plus a restricted 'Flash Cyber' sibling for security work",
         "Distribution moat: Android, Chrome, Search, and Workspace integration",
         "Best price-to-performance for developers; generous free tier",
         "Image generation now runs through Gemini 3.1 Flash Image ('Nano Banana 2') after Imagen 4's API shutdown (Aug 17, 2026)",
