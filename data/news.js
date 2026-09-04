@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-04",
+    displayDate: "Friday, September 4, 2026 · Edition #33",
+    headline: "OpenAI ships GPT-6 Astra and calls it the start of the 'AGI era,' the G20 endorses a US-led light-touch approach to AI rules, and Salesforce bets its platform on Claude",
+    summary:
+      "Today's edition centers on one big claim: OpenAI says GPT-6 Astra is powerful enough to mark the start of the 'AGI era' — and it's also the first OpenAI model to cross the company's own 'critical' threshold for cyber risk. The same week, Washington got the G20 to back a lighter-touch approach to AI regulation, Salesforce tied its enterprise AI strategy to Anthropic's Claude, and the Justice Department weighed in on the side of AI labs in the copyright fights reshaping how models get trained.",
+    stories: [
+      {
+        title: "OpenAI launches GPT-6 Astra, its first model to trip the 'critical' cybersecurity threshold — and says it may mark the start of AGI",
+        body: "OpenAI began rolling out GPT-6 Astra on September 3, starting with select enterprise customers in its Daybreak cybersecurity program, with broader access via ChatGPT Plus, Pro, Business, and Enterprise, the API, and Amazon Web Services following in the days after. OpenAI president Greg Brockman called it a 'generational leap' in cybersecurity, professional work, software engineering, and science, writing 'Welcome to the AGI era!' Astra is the first OpenAI model classified as reaching the company's 'critical' cybersecurity threshold under its Preparedness Framework, meaning internal testing found it can find and exploit previously unknown vulnerabilities in well-protected systems without step-by-step human guidance. OpenAI says safeguards are in place to restrict access to Astra's most advanced cybersecurity capabilities while the rollout continues.",
+        why: "A 'critical' classification isn't marketing — it's OpenAI's own internal safety framework flagging that a model has crossed a capability line serious enough to require new restrictions, which matters as models increasingly get sorted by what they can do, not just how well they score on benchmarks.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html" },
+          { label: "NBC News", url: "https://www.nbcnews.com/tech/tech-news/openai-debuts-gpt-6-astra-security-measures-rcna595940" }
+        ]
+      },
+      {
+        title: "Salesforce and Anthropic launch 'Claudeforce,' making Claude the default reasoning engine across Salesforce's platform",
+        body: "Salesforce and Anthropic announced an expanded partnership called Claudeforce on August 26, making Claude the default model behind Salesforce's Atlas Reasoning Engine, including Agentforce Vibes and Agentforce Coworker, and available inside Agent Builder. The deal also ships 'Salesforce in Claude,' a plugin with 37 prebuilt sales skills that let sellers and agents reason over live revenue data, automate pipeline updates, and take governed actions directly from Claude. The companies plan further integrations spanning Claude, Salesforce, and Slack. Salesforce shares rose 12% in after-hours trading the day of the announcement, which landed alongside fiscal second-quarter results that beat Wall Street's expectations.",
+        why: "This is a case study in how AI labs compete beyond raw model quality: instead of only building bigger models, Anthropic is embedding Claude directly into software millions of salespeople already use daily, which can matter more for adoption than a benchmark score.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/26/salesforce-anthropic-partnership-claudeforce.html" },
+          { label: "Salesforce", url: "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/" }
+        ]
+      },
+      {
+        title: "G20 nations back a US-led 'light touch' AI framework as the EU's AI Act enforcement teeth kick in",
+        body: "At a G20 technology summit hosted by the US in Chapel Hill, North Carolina, representatives from the world's largest economies unanimously endorsed a US-proposed framework — dubbed the 'Carolina Principles' — that calls for reserving new regulation for genuinely novel risks rather than writing bespoke rules for every new AI capability. US Commerce Secretary Howard Lutnick announced the agreement on September 2; tech adviser Michael Kratsios argued regulation should not single out AI as a technology. The announcement came just weeks after the EU's AI Act reached a major enforcement milestone: as of August 2, 2026, requirements for 'high-risk' AI systems — covering hiring, credit decisions, education access, and law enforcement — became legally enforceable, with fines of up to €15 million or 3% of global revenue for noncompliance.",
+        why: "The US and EU are now running two visibly different experiments in AI governance at once — one betting that light-touch rules keep innovation fast, the other betting that enforceable guardrails on high-risk uses build more durable public trust — and how that divergence plays out will shape what 'responsible AI' means for years.",
+        sources: [
+          { label: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/9/2/us-pushes-looser-approach-to-ai-regulation-while-eu-pushes-new-law" },
+          { label: "U.S. News", url: "https://www.usnews.com/news/top-news/articles/2026-09-01/us-to-urge-hands-off-ai-regulation-at-g-20-official-says" }
+        ]
+      },
+      {
+        title: "Big Tech's 2026 AI infrastructure spending is on pace to hit $725 billion, up 77% from last year",
+        body: "Following their latest earnings calls, Amazon, Microsoft, Alphabet, and Meta collectively raised their combined 2026 capital expenditure guidance to roughly $725 billion, up 77% from about $410 billion in 2025 and more than triple 2024's spending. Amazon is guiding to roughly $200 billion, Microsoft to about $190 billion, Alphabet to $175–205 billion after raising its ceiling, and Meta to $125–145 billion after raising guidance twice this year. Nearly all of the spending is going toward AI infrastructure — GPU clusters, custom chips like Google's TPUs and Amazon's Trainium, and new data centers to train and run large models. Analysts estimate Nvidia alone captures roughly 40% of that hyperscaler capital spending.",
+        why: "These four companies' AI spending is now a large enough share of overall US capital investment that tracking it is one of the clearest ways to gauge whether the AI buildout is being met with matching revenue, or running ahead of it.",
+        sources: [
+          { label: "Tom's Hardware", url: "https://www.tomshardware.com/tech-industry/big-tech/big-techs-ai-spending-plans-reach-725-billion" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/sectors/technology/article/meta-microsoft-amazon-and-alphabet-are-about-to-spend-a-shocking-amount-of-money-to-dominate-the-ai-era-115359575.html" }
+        ]
+      },
+      {
+        title: "Justice Department tells federal judge that training AI on copyrighted news articles is fair use, backing OpenAI and Microsoft",
+        body: "The US Department of Justice filed a statement of interest in the Southern District of New York on September 2, urging the judge to rule that OpenAI and Microsoft's use of New York Times and other publishers' copyrighted articles to train AI models qualifies as fair use. It's the first time the federal government has formally weighed in on the wave of copyright lawsuits brought by publishers, authors, and music labels against AI companies. Government lawyers argued that large language models don't copy the text they train on, and that ruling for OpenAI would support US competitiveness and national security. A statement of interest isn't legally binding — the judge will still decide the fair-use question independently — but it signals where the administration stands on a fight that could reshape how every AI company sources training data.",
+        why: "Fair use is the legal question underlying nearly every AI copyright lawsuit right now — how it gets resolved will determine whether AI companies can keep training on copyrighted material without licensing it, which affects the cost and openness of building future models.",
+        sources: [
+          { label: "Washington Post", url: "https://www.washingtonpost.com/technology/2026/09/02/doj-urges-judge-rule-openai-microsoft-ny-times-lawsuit/" },
+          { label: "Bloomberg Law", url: "https://news.bloomberglaw.com/ip-law/trump-administration-backs-openai-in-ny-times-copyright-suit" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Reliable same-day take on GPT-6 Astra's launch and what OpenAI's own 'critical' safety classification actually means.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Well suited to unpacking both GPT-6 Astra's AGI framing and the DOJ's fair-use filing in the Times' own copyright case.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good home for connecting the G20's light-touch framework and the EU AI Act's new enforcement teeth into one policy picture.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest uploads",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "For a quick, visual sense of what a 'critical' cybersecurity capability jump like GPT-6 Astra's actually looks like in practice.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Preparedness Framework",
+      definition:
+        "A risk-classification system major labs like OpenAI and Anthropic use to rate how dangerous a new model's capabilities are before release — for example, whether it can meaningfully help someone exploit unknown software vulnerabilities or build a bioweapon. When a model crosses a 'critical' threshold, as GPT-6 Astra did for cybersecurity, the lab is supposed to add extra safeguards restricting that specific capability before letting people use it freely. It's one of the main tools labs use to try to catch a dangerous capability jump before a model reaches the public, rather than after.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Ask any chatbot you use to explain 'fair use' in copyright law, then ask it whether it thinks its own training counted as fair use. Compare its answer to the DOJ's actual argument in the New York Times case — that language models don't 'copy' the text they train on — and notice where the model sounds confident but is really just repeating a talking point it has no special insight into.",
+    learnLinks: [
+      { label: "How AI safety frameworks classify model risk → AI Safety & Alignment", href: "#/course/safety" },
+      { label: "How the AI industry raises and spends capital → The AI Industry", href: "#/course/industry" },
+      { label: "Keeping your AI toolbox current as products change → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-03",
     displayDate: "Thursday, September 3, 2026 · Edition #32",
     headline: "Google ships Gemini 3.8 Flash and a locked-down 'Cyber' sibling, Anthropic's Claude Fable 5.1 lands up to 45% cheaper, and Dell's AI server backlog hits $95 billion",
