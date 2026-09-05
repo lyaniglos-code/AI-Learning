@@ -13,6 +13,95 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-05",
+    displayDate: "Saturday, September 5, 2026 · Edition #34",
+    headline: "OpenAI's ChatGPT ads cross $1 billion in run-rate revenue, Anthropic's revenue run rate hits $65 billion ahead of a possible IPO, SoundHound closes its LivePerson deal, and Cursor crowns Claude Fable 5.1 its best coding model",
+    summary:
+      "Today's edition is about money moving through the AI industry from several directions at once: OpenAI's ad business crossed $1 billion in annualized revenue faster than any comparable ad platform in history, Anthropic disclosed a $65 billion revenue run rate as it edges toward a possible IPO near a $2 trillion valuation, and SoundHound AI closed a major acquisition to build out its own agent platform. Meanwhile, Cursor's own benchmarking crowned Anthropic's Claude Fable 5.1 the best coding model it has tested — a reminder that how a tool performs for real users often matters more than a lab's own launch claims.",
+    stories: [
+      {
+        title: "OpenAI's ChatGPT ads cross $1 billion in annualized revenue about 200 days after the first ad appeared, as self-serve access expands to Europe, India, and the Middle East",
+        body: "OpenAI said its ChatGPT advertising business has surpassed a $1 billion annualized revenue run rate, a milestone it reached roughly 200 days after showing its first ad — compared with the roughly four years Google's AdWords took to reach the same mark, according to CNBC. Ads currently appear only to logged-in adult users on ChatGPT's Free and Go tiers; Plus, Pro, Business, and Enterprise remain ad-free. OpenAI has also opened its previously U.S.-only self-serve ad platform to marketers in India, Europe, the Middle East, and North Africa, with ads now live in more than 40 countries. The company is targeting $2.5 billion in ad revenue for the full year and says its overall annualized revenue is tracking toward more than $40 billion, roughly double where it stood at the end of 2025.",
+        why: "Advertising gives OpenAI a second major revenue stream beyond subscriptions and API fees right as it faces enormous data-center spending commitments — a diversification move that's worth watching other AI labs copy as they look for ways to pay for their own infrastructure bills.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/31/open-ai-chatgpt-ads-revenue.html" },
+          { label: "Digiday", url: "https://digiday.com/media-buying/openais-chatgpt-ads-business-hits-1-billion-run-rate-as-europe-gets-self-serve-access/" }
+        ]
+      },
+      {
+        title: "Anthropic's revenue run rate hits $65 billion as the Claude maker moves toward a possible IPO valuing it near $2 trillion",
+        body: "Anthropic told investors its annualized revenue run rate topped $65 billion by the end of July — more than seven times where it stood at the close of 2025 — with second-quarter revenue exceeding $11.5 billion, up from $787 million a year earlier, according to Bloomberg and CNBC. The company has raised more than $130 billion across its recent private funding rounds, including a $30 billion Series G at a $380 billion valuation in February and a $65 billion Series H at a $965 billion valuation in May, both confirmed on Anthropic's own site. Reporting this week says Anthropic is preparing to go public as soon as late September or October and could seek a valuation approaching $2 trillion, though the company has not publicly confirmed an IPO timeline.",
+        why: "The jump from a $183 billion valuation about a year ago to a potential $2 trillion IPO shows how much investor money is betting that enterprise demand for AI models keeps compounding — a bet that gets its first real public-market test if the listing happens.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-08-17/anthropic-revenue-run-rate-surpasses-65-billion-ahead-of-ipo" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/technology/ai/articles/anthropic-already-raised-130-billion-135300760.html" }
+        ]
+      },
+      {
+        title: "SoundHound AI closes its acquisition of LivePerson, merging voice AI with one of the web's largest digital-messaging networks",
+        body: "SoundHound AI announced on September 4 that it has completed its acquisition of LivePerson, combining SoundHound's voice and agentic AI technology with LivePerson's enterprise messaging infrastructure. The combined company says its customer base now includes 25 of the Fortune 100 and a patent portfolio of more than 750 patents, and it named John Collins as the combined company's chief financial officer. LivePerson's platform is being folded into OASYS, SoundHound's 'self-learning' orchestrated agent system, built in part from several earlier acquisitions. The deal closed after LivePerson shareholders voted to approve the merger.",
+        why: "It's a reminder that the AI boom isn't only about who trains the biggest model — a wave of consolidation is also reshaping which companies own the customer-facing infrastructure, like voice and chat systems, that AI agents actually run on top of.",
+        sources: [
+          { label: "SoundHound (official)", url: "https://www.soundhound.com/newsroom/soundhound-ai-completes-acquisition-of-liveperson-creating-a-world-leading-omnichannel-conversational-ai-powerhouse" },
+          { label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/liveperson-stockholders-approve-acquisition-by-soundhound-ai-302867972.html" }
+        ]
+      },
+      {
+        title: "Cursor names Claude Fable 5.1 its top-performing coding model, crediting its ability to check its own work",
+        body: "Cursor added Anthropic's Claude Fable 5.1 to its editor and said it's the most capable model it has run on its CursorBench 3.2 benchmark, scoring 73.4% at maximum reasoning effort. Cursor credited the model's skill at verifying its own work, which lets it carry difficult, multi-step coding tasks through to completion rather than stopping partway. Fable 5.1 itself launched September 1 as Anthropic's new flagship for coding and long-running agentic work, with cache-read pricing cut enough to make typical workloads roughly 25% cheaper than the prior Fable 5, and highly agentic workloads up to 45% cheaper. The model is now also available through GitHub Copilot, Microsoft Copilot, and OpenRouter, alongside Cursor and Anthropic's own products.",
+        why: "Independent, tool-specific benchmark results — not just a lab's own launch claims — are one of the more reliable signals of whether a new model actually performs better in practice, which is exactly the kind of gap a 'living toolbox' needs to track.",
+        sources: [
+          { label: "Cursor Docs", url: "https://cursor.com/docs/models/claude-fable-5-1" },
+          { label: "Anthropic", url: "https://www.anthropic.com/claude-fable-and-mythos-5-1" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day read on what OpenAI's ad milestone and Anthropic's revenue disclosures signal about the industry's business model, not just its models.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "A builder's-eye view well suited to unpacking Cursor's CursorBench numbers and what 'verifying its own work' actually means for a coding model.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Reliable for connecting the dots between the SoundHound-LivePerson merger and Anthropic's IPO prep as pieces of the same AI-money story.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest uploads",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "For a quick, visual sense of how benchmark scores like CursorBench's 73.4% translate into what a coding model can actually finish on its own.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Annualized revenue run rate",
+      definition:
+        "A way of estimating a company's yearly revenue by taking a recent, shorter period — often a single month or quarter — and multiplying it out to a full year, rather than waiting for actual annual results. OpenAI and Anthropic both used this figure this week ($1 billion and $65 billion respectively) to show investors how fast their businesses are growing in real time. It's a useful early signal, but it's not the same as revenue a company has actually earned yet — a strong single month can make a run rate look better than a full year might turn out to be.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pick an AI product or subscription you actually use, and see if you can find its most recent public revenue disclosure or a credible outside estimate. Calculate its annualized run rate the way OpenAI and Anthropic did this week (multiply one quarter's revenue by four), then compare that to any valuation figure reported for the company. Notice how many years of today's revenue the market appears to be pricing in — and how much of that number is a bet on future growth rather than money already earned.",
+    learnLinks: [
+      { label: "How AI companies are funded, valued, and monetized → The AI Industry", href: "#/course/industry" },
+      { label: "Keeping your AI toolbox current as products change → AI Toolbox", href: "#/course/tools" },
+      { label: "What benchmarks can and can't tell you about a model → Models & Architectures", href: "#/course/models" }
+    ]
+  },
+  {
     date: "2026-09-04",
     displayDate: "Friday, September 4, 2026 · Edition #33",
     headline: "OpenAI ships GPT-6 Astra and calls it the start of the 'AGI era,' the G20 endorses a US-led light-touch approach to AI rules, and Salesforce bets its platform on Claude",

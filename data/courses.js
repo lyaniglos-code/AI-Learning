@@ -1123,7 +1123,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Aug 28, 2026",
+      updated: "Sep 5, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
@@ -1132,7 +1132,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <ul>
 <li><b>GitHub Copilot</b> — the original autocomplete-in-your-IDE, now with chat, multi-model choice (including Claude and Gemini — Gemini 3.7 Flash joined the model picker on August 13, 2026), and an autonomous coding agent that takes GitHub issues to pull requests</li>
 <li><b>Claude Code</b> — Anthropic's terminal/IDE agent for real multi-file engineering work; the benchmark-setter for agentic coding</li>
-<li><b>Cursor</b> — the AI-native code editor (a VS Code fork) that made "vibe coding" a phrase; deep codebase awareness, multi-model</li>
+<li><b>Cursor</b> — the AI-native code editor (a VS Code fork) that made "vibe coding" a phrase; deep codebase awareness, multi-model. On September 4, 2026 Cursor named Anthropic's Claude Fable 5.1 the most capable model it has run on its CursorBench 3.2 benchmark (73.4% at max effort), crediting its ability to verify its own work on long, multi-step coding tasks</li>
 <li><b>Codex (OpenAI)</b> — cloud coding agents that work on tasks in parallel sandboxes</li>
 </ul>
 <h3>Grok (SpaceXAI, formerly xAI)</h3>
@@ -1142,7 +1142,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <blockquote>The pattern to notice: standalone chatbots compete on capability; copilots compete on <i>presence</i> — being inside the workflow. Both are converging on agents that do the task, not just advise on it.</blockquote>`,
       keypoints: [
         "Microsoft Copilot wins enterprises through Office presence, not benchmarks",
-        "Coding: GitHub Copilot (in-IDE), Claude Code (agentic terminal), Cursor (AI-native editor)",
+        "Coding: GitHub Copilot (in-IDE), Claude Code (agentic terminal), Cursor (AI-native editor) — Cursor named Claude Fable 5.1 its top coding model on CursorBench 3.2 (Sep 4, 2026)",
         "Grok = real-time X data + edgy persona; Meta AI = billions via messaging apps",
         "Chatbots compete on capability; copilots compete on being inside the workflow"
       ],
