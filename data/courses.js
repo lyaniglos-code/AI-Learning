@@ -1123,14 +1123,14 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Sep 5, 2026",
+      updated: "Sep 6, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
 <p>OpenAI models threaded through Windows, Office (Word, Excel, PowerPoint, Outlook, Teams), and Edge. Microsoft 365 Copilot (~$30/user/month for business) drafts documents, builds decks, analyzes spreadsheets, and summarizes meetings inside the apps your workplace already runs — which is why it leads enterprise seat counts regardless of benchmark standings.</p>
 <h3>The coding tools</h3>
 <ul>
-<li><b>GitHub Copilot</b> — the original autocomplete-in-your-IDE, now with chat, multi-model choice (including Claude and Gemini — Gemini 3.7 Flash joined the model picker on August 13, 2026), and an autonomous coding agent that takes GitHub issues to pull requests</li>
+<li><b>GitHub Copilot</b> — the original autocomplete-in-your-IDE, now with chat, multi-model choice (including Claude and Gemini — Gemini 3.7 Flash joined the model picker on August 13, 2026), and an autonomous coding agent that takes GitHub issues to pull requests. On September 1, 2026, GitHub deprecated six models across most Copilot surfaces — Claude Opus 4.5, Claude Opus 4.6, Claude Sonnet 4.5, Claude Sonnet 4.6, Gemini 3.1 Pro, and Raptor Mini (Claude Sonnet 4.6 stays available to individual subscribers on annual plans) — while shipping admin-facing governance controls: enterprise-managed default models, content exclusions generally available in the Copilot app and CLI, and multi-org Team-plan access now tied to whichever organization pays for the usage</li>
 <li><b>Claude Code</b> — Anthropic's terminal/IDE agent for real multi-file engineering work; the benchmark-setter for agentic coding</li>
 <li><b>Cursor</b> — the AI-native code editor (a VS Code fork) that made "vibe coding" a phrase; deep codebase awareness, multi-model. On September 4, 2026 Cursor named Anthropic's Claude Fable 5.1 the most capable model it has run on its CursorBench 3.2 benchmark (73.4% at max effort), crediting its ability to verify its own work on long, multi-step coding tasks</li>
 <li><b>Codex (OpenAI)</b> — cloud coding agents that work on tasks in parallel sandboxes</li>
@@ -1143,6 +1143,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       keypoints: [
         "Microsoft Copilot wins enterprises through Office presence, not benchmarks",
         "Coding: GitHub Copilot (in-IDE), Claude Code (agentic terminal), Cursor (AI-native editor) — Cursor named Claude Fable 5.1 its top coding model on CursorBench 3.2 (Sep 4, 2026)",
+        "GitHub Copilot deprecated six older models on Sep 1, 2026 and added enterprise governance controls (admin-set default models, org-based billing for multi-org users)",
         "Grok = real-time X data + edgy persona; Meta AI = billions via messaging apps",
         "Chatbots compete on capability; copilots compete on being inside the workflow"
       ],

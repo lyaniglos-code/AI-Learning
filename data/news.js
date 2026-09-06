@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-06",
+    displayDate: "Sunday, September 6, 2026 · Edition #35",
+    headline: "35 music publishers sue Anthropic over song lyrics, John Ternus takes over as Apple's CEO, Nvidia claims a model beat the top human coder at IOI 2026, and GitHub locks down its Copilot model lineup",
+    summary:
+      "Today's edition mixes a major copyright fight, a leadership change, a benchmark claim worth reading skeptically, and two stories about the unglamorous mechanics of running AI at scale. Sony Music Publishing, Warner Chappell, and 33 other publishers sued Anthropic over song lyrics, John Ternus formally became Apple's CEO as the company faces pressure to catch up on AI, Nvidia says a research model beat the best human at a coding olympiad (in a paper it wrote itself), GitHub tightened how organizations govern Copilot's model lineup, and a new report says most hyperscalers' AI spending is about to outrun their cash flow.",
+    stories: [
+      {
+        title: "Sony Music Publishing, Warner Chappell, and 33 other publishers sue Anthropic over song lyrics",
+        body: "On August 28, 2026, Sony Music Publishing, Warner Chappell Music, and 33 other music publishing companies filed a copyright lawsuit against Anthropic in the U.S. District Court for the Northern District of California, naming co-founders Dario Amodei and Benjamin Mann personally as defendants. The complaint alleges Anthropic scraped, torrented, and downloaded tens of thousands of copyrighted song lyrics without permission to train Claude, citing songs including 'Eye of the Tiger,' 'Hallelujah,' and 'Uptown Funk.' The publishers are seeking a jury trial and statutory damages of up to $150,000 per infringed work plus $25,000 per instance of removed copyright-management information — a claim that could run into the billions given the scale alleged. It's the second such suit from major music publishers against Anthropic, following one filed in January 2026 covering more than 20,000 works and seeking over $3 billion.",
+        why: "Whether training a model on copyrighted text counts as 'fair use' is one of the central unresolved legal questions in AI, and how courts rule in cases like this one will shape what data every AI lab can legally train on going forward.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/" },
+          { label: "Fortune", url: "https://fortune.com/2026/09/01/anthropic-warner-sony-music-songs-lawsuit/" }
+        ]
+      },
+      {
+        title: "John Ternus officially becomes Apple's CEO as Tim Cook moves to executive chairman",
+        body: "John Ternus took over as Apple's chief executive on September 1, 2026, succeeding Tim Cook, who moved into the newly created role of executive chairman after 15 years running the company. Ternus previously led Apple's hardware engineering group, overseeing the iPhone, iPad, Mac, Apple Watch, and Vision Pro; the succession plan was announced by Apple back in April. Cook's tenure saw Apple's market value grow to roughly $4.6 trillion, driven largely by iPhone sales, but Apple is widely viewed as the major tech company furthest behind in building a frontier AI model of its own. Ternus now inherits closing that gap as one of his first major challenges.",
+        why: "Leadership transitions at companies this size rarely happen in a vacuum — Apple handing the job to an engineering-focused CEO right as AI capability becomes central to every large tech company's roadmap is a signal of how seriously it's treating the competitive pressure.",
+        sources: [
+          { label: "Apple Newsroom", url: "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/" },
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/01/who-is-john-ternus-the-incoming-apple-ceo/" }
+        ]
+      },
+      {
+        title: "Nvidia says its Nemotron model beat the top human contestant at a 2026 coding olympiad — in a paper it wrote itself",
+        body: "In an arXiv preprint posted around September 4, 2026, Nvidia researchers report that a 550-billion-parameter model called Nemotron-3-Ultra-CC scored 535.4 out of 600 on the 2026 International Olympiad in Informatics (IOI) problem set — above the 498.27 scored by the competition's top human contestant and well past the 361.12 gold-medal threshold. The team built the result through a post-training pipeline that curated roughly 22,000 competitive-programming problems, generated synthetic reasoning traces, and applied supervised fine-tuning plus reinforcement learning, along with a test-time technique called GenCorrect that iteratively generates, checks, and refines candidate solutions. Nvidia calls it the first AI system to outscore the highest-scoring human on an IOI problem set, but the result is self-reported in a preprint that has not been peer-reviewed or independently verified.",
+        why: "It's worth reading benchmark claims like this the way you'd read any single self-reported result — impressive if it holds up, but a 'first to beat a human' claim published by the same company that built the model deserves independent replication before it's treated as settled fact.",
+        sources: [
+          { label: "arXiv preprint", url: "https://arxiv.org/abs/2609.02849" },
+          { label: "AI Weekly", url: "https://aiweekly.co/alerts/nvidias-550b-nemotron-beats-top-human-coder-at-ioi-2026" }
+        ]
+      },
+      {
+        title: "GitHub deprecates six Copilot models and adds enterprise governance controls",
+        body: "In late August and early September 2026, GitHub rolled out governance changes to Copilot aimed at IT admins managing it across large organizations. On September 1, GitHub deprecated six models across most Copilot surfaces — Claude Opus 4.5, Claude Opus 4.6, Claude Sonnet 4.5, Claude Sonnet 4.6, Gemini 3.1 Pro, and Raptor Mini — though Claude Sonnet 4.6 stays available to individual subscribers on annual plans. Alongside the deprecations, GitHub shipped enterprise-managed default models, made content exclusions generally available in the Copilot app and CLI, and changed how model access is decided for users who hold Team-plan seats in more than one organization, tying access to whichever organization is paying for usage rather than any organization that merely grants it.",
+        why: "As AI coding tools become permanent fixtures on software teams, the interesting story shifts from 'which model is best' to 'how do you govern dozens of models across an organization' — the unglamorous admin work that determines whether these tools are actually usable at scale.",
+        sources: [
+          { label: "GitHub Changelog", url: "https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated/" },
+          { label: "DevOps.com", url: "https://devops.com/github-tightens-copilots-billing-and-governance-rules-ahead-of-a-busy-fall/" }
+        ]
+      },
+      {
+        title: "S&P Global: six hyperscalers headed for $1.3 trillion in 2027 capex, but only Microsoft is expected to stay cash-flow positive",
+        body: "A new S&P Global report, covered on September 6, 2026, estimates that six major hyperscalers — Alphabet, Amazon, Meta, Microsoft, Oracle, and SpaceX — will collectively spend $1.3 trillion on capital expenditures in 2027, up from roughly $870 billion projected for this year and $470 billion in 2025. The same report projects that only one of the six, Microsoft, will still generate positive free cash flow next year, down from three that managed it in the second quarter of this year. S&P Global points to Microsoft's heavier reliance on leases — which can sometimes be classified as operating rather than capital expenses — as part of why its cash flow holds up better than its peers'.",
+        why: "Free cash flow turning negative across most of the industry's biggest spenders is a concrete sign of how much of the AI buildout is being financed with debt and outside capital rather than paid for out of profits — a detail worth weighing against any headline revenue run-rate number.",
+        sources: [
+          { label: "The Motley Fool", url: "https://www.fool.com/investing/2026/09/06/hyperscalers-driving-ai-capex-cash-flow/" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/sectors/technology/articles/hyperscalers-free-cash-flow-dips-083314165.html" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on what the Ternus transition and the S&P capex numbers mean for the AI industry's balance sheets and leadership bets.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "A builder's-eye view well suited to unpacking Nvidia's IOI claim and GitHub's Copilot governance changes from a practitioner's angle.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Reliable for connecting the music-publisher lawsuit to the broader copyright fights reshaping how AI labs train their models.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest uploads",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "For a visual, skeptical-but-fair look at what a self-reported benchmark claim like Nemotron's IOI score actually shows — and doesn't.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Fair use",
+      definition:
+        "A U.S. copyright doctrine allowing limited use of copyrighted material without the rights holder's permission, weighed by factors like the purpose of the use, how much was used, and its effect on the market for the original work. AI companies including Anthropic have argued that training a model on copyrighted text is 'transformative' fair use because the model learns statistical patterns rather than storing and republishing the works; publishers suing over song lyrics argue the copying itself — especially through pirated sources — is illegal regardless of what the model does afterward. No U.S. appellate court has definitively settled the question, so lawsuits like today's are part of building the case law that eventually will.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Pick one AI tool you use regularly and look up its terms of service or a recent legal filing (like the one covered today) for what it says about training data. Try to identify whether the company discloses where its training data came from, and whether it distinguishes licensed content from content it claims falls under fair use. Notice how much of that distinction is still contested rather than settled law.",
+    learnLinks: [
+      { label: "Copyright, fair use, and how AI models are trained → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "Keeping your AI toolbox current as products change → AI Toolbox", href: "#/course/tools" },
+      { label: "How AI companies are funded and valued → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-09-05",
     displayDate: "Saturday, September 5, 2026 · Edition #34",
     headline: "OpenAI's ChatGPT ads cross $1 billion in run-rate revenue, Anthropic's revenue run rate hits $65 billion ahead of a possible IPO, SoundHound closes its LivePerson deal, and Cursor crowns Claude Fable 5.1 its best coding model",
