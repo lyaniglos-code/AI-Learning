@@ -1123,7 +1123,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Sep 6, 2026",
+      updated: "Sep 7, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
@@ -1136,7 +1136,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Codex (OpenAI)</b> — cloud coding agents that work on tasks in parallel sandboxes</li>
 </ul>
 <h3>Grok (SpaceXAI, formerly xAI)</h3>
-<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, and competitive frontier models, free tier for X users. The company behind it was renamed SpaceXAI in mid-2026 after Musk merged xAI into SpaceX. On August 12, 2026 it shipped Grok 4.6, a flagship model tuned for long-running agent tasks that matches GPT-5.6 Sol on the Artificial Analysis Intelligence Index while pricing in at $2/$6 per million input/output tokens — undercutting several frontier rivals. Grok 4.6 landed in public preview on Microsoft Foundry Models in late August 2026, giving enterprise customers a 500,000-token context window and configurable reasoning-effort levels, and putting it alongside OpenAI's models in Microsoft's enterprise model marketplace. Earlier in August, xAI/SpaceXAI also shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise.</p>
+<p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, and competitive frontier models, free tier for X users. The company behind it was renamed SpaceXAI in mid-2026 after Musk merged xAI into SpaceX. On August 12, 2026 it shipped Grok 4.6, a flagship model tuned for long-running agent tasks that matches GPT-5.6 Sol on the Artificial Analysis Intelligence Index while pricing in at $2/$6 per million input/output tokens — undercutting several frontier rivals. Grok 4.6 landed in public preview on Microsoft Foundry Models in late August 2026, giving enterprise customers a 500,000-token context window and configurable reasoning-effort levels, and putting it alongside OpenAI's models in Microsoft's enterprise model marketplace. Earlier in August, xAI/SpaceXAI also shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise. On September 3, 2026, xAI opened Grok Bot — its autonomous "AI worker" product, in beta since August 11 — to enterprise customers, with a free two-week trial for Grok and Cursor Enterprise plans. A Bot runs on its own cloud computer and operates apps, browsers, and websites on a user's behalf; the enterprise release adds access and network controls, audit logs, an Action Recording feature, and OpenTelemetry export for IT teams managing bots at scale.</p>
 <h3>Meta AI</h3>
 <p>Free assistant inside WhatsApp, Instagram, and Messenger (plus the standalone app) running on Llama/Muse models — the assistant billions will meet first because it lives where they already chat. In August 2026 Meta also open-sourced Muse Glimmer, a 30-billion-parameter model distilled small enough to run locally on a single consumer GPU, aimed at developers building local coding and agent tools rather than at the consumer app.</p>
 <blockquote>The pattern to notice: standalone chatbots compete on capability; copilots compete on <i>presence</i> — being inside the workflow. Both are converging on agents that do the task, not just advise on it.</blockquote>`,
@@ -1144,7 +1144,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Microsoft Copilot wins enterprises through Office presence, not benchmarks",
         "Coding: GitHub Copilot (in-IDE), Claude Code (agentic terminal), Cursor (AI-native editor) — Cursor named Claude Fable 5.1 its top coding model on CursorBench 3.2 (Sep 4, 2026)",
         "GitHub Copilot deprecated six older models on Sep 1, 2026 and added enterprise governance controls (admin-set default models, org-based billing for multi-org users)",
-        "Grok = real-time X data + edgy persona; Meta AI = billions via messaging apps",
+        "Grok = real-time X data + edgy persona; Grok Bot opened to enterprises Sep 3, 2026 with audit/access governance controls for autonomous AI 'workers'; Meta AI = billions via messaging apps",
         "Chatbots compete on capability; copilots compete on being inside the workflow"
       ],
       resources: [
