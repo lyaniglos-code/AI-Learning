@@ -13,6 +13,96 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-09",
+    displayDate: "Wednesday, September 9, 2026 · Edition #38",
+    headline: "Nvidia agrees to buy Hugging Face for $12.9 billion, Anthropic and Google roll out new guardrails and gated-access programs for their most cyber-capable models, Alibaba sharpens Qwen3.8-Max for coding, and AI-security startup HiddenLayer raises $100 million",
+    summary:
+      "Today's edition centers on AI infrastructure changing hands and AI safety becoming a product line: Nvidia confirmed its second-biggest acquisition ever, buying the open-source hub Hugging Face for $12.9 billion, while Anthropic, Google, and OpenAI each rolled out new ways to gate access to their most capable — and most misusable — models. Alongside that, Alibaba shipped a coding-focused refresh of its flagship Qwen model, and AI-security startup HiddenLayer raised $100 million as enterprises scramble to secure the agents they're deploying.",
+    stories: [
+      {
+        title: "Nvidia agrees to acquire Hugging Face for $12.9 billion, its second-biggest deal ever",
+        body: "Nvidia confirmed on September 3 that it will buy Hugging Face, the platform that has become the default hub for open AI models, in a deal worth roughly $12.93 billion — about $11.9 billion in cash to shareholders plus up to $1 billion in equity to retain Hugging Face staff joining Nvidia. Hugging Face hosts around 3 million models, 1 million applications, and half a million datasets used by more than 18 million developers, making it the closest thing the open-source AI world has to a central library. CEO Jensen Huang said Hugging Face will remain an open platform and that Nvidia compute won't be required to build on or deploy through it. The deal, Nvidia's largest since its $20 billion Groq asset purchase in December, is expected to close in the first half of next year pending regulatory review.",
+        why: "This is a live test of what happens when a company with a massive commercial interest in AI compute buys the 'neutral' hub that the open-source AI ecosystem depends on — a real-world case study in platform ownership and vendor lock-in, not just an abstract worry.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html" },
+          { label: "NVIDIA Blog", url: "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/" }
+        ]
+      },
+      {
+        title: "Anthropic, Google, and OpenAI each roll out new safeguards and gated-access programs for their most cyber-capable models",
+        body: "As frontier models cross labs' own risk thresholds, all three major AI companies moved this month to restrict — rather than broadly release — their most cyber-capable capabilities. Anthropic launched Enterprise Frontier Safeguards, which combines zero data retention with automated misuse-detection by storing monitoring data in cloud infrastructure the customer controls (via AWS, Google Cloud, or Microsoft Azure) instead of Anthropic's own servers; it was built with more than 100 customers across finance, healthcare, and government, and rolls out in phases starting this fall at no extra charge. Google made Gemini 3.8 Flash Cyber, its most capable cybersecurity model, available only through its Fairwind Program, which now works with more than 650 vetted partners including governments, healthcare providers, and telecoms. OpenAI, whose GPT-6 Astra was the first model to trip its 'critical' cybersecurity threshold, said it will open Astra's most advanced cybersecurity features to a group of testers through a new Daybreak Blue tier, while cautioning that the added safeguards can sometimes flag legitimate security work as misuse.",
+        why: "This is 'responsible scaling' moving from policy documents into actual product decisions: once a model crosses a defined capability threshold, labs don't just add a warning label — they wall the capability off behind a vetted-access program, the same logic that governs who gets to buy controlled equipment in other dual-use industries.",
+        sources: [
+          { label: "The Hacker News", url: "https://thehackernews.com/2026/09/google-anthropic-and-openai-unveil.html" },
+          { label: "Anthropic", url: "https://www.anthropic.com/news/enterprise-frontier-safeguards" },
+          { label: "Unite.AI", url: "https://www.unite.ai/anthropic-announces-enterprise-frontier-safeguards-customer-held-data/" }
+        ]
+      },
+      {
+        title: "Alibaba updates Qwen3.8-Max with a coding- and agent-focused refresh, still trailing Claude Opus 5",
+        body: "On September 2, Alibaba shipped Qwen3.8-Max-0902, an updated snapshot of its 2.4-trillion-parameter flagship model, keeping the same architecture, 1-million-token context window, and pricing ($2 per million input tokens, $6 per million output tokens) as the original Qwen3.8-Max released in early August. The update targets coding and office/agent tasks specifically, and third-party testing shows a clear jump on those benchmarks — though it still trails Anthropic's Claude Opus 5 on hardest-task performance. Qwen3.8-Max is slated to be the first Max-class Qwen model Alibaba open-sources, continuing the company's push to be the leading open-weight alternative to the U.S. labs.",
+        why: "Shipping an updated snapshot under the same model name (rather than a whole new version number) is now standard practice across labs — it's worth learning to read version suffixes like '-0902' as a release date stamp, since two models with the 'same name' can behave meaningfully differently depending on which snapshot you're actually calling.",
+        sources: [
+          { label: "CellCog", url: "https://cellcog.ai/blog/qwen3-8-max-0902/" },
+          { label: "DataCamp", url: "https://www.datacamp.com/blog/qwen3-8-max" }
+        ]
+      },
+      {
+        title: "AI-security startup HiddenLayer raises $100 million as enterprises rush to lock down their AI deployments",
+        body: "HiddenLayer, an Austin-based AI security company, announced a $100 million Series B on September 2, led by Delta-v Capital with participation from Morgan Stanley, Microsoft's venture fund M12, Booz Allen Ventures, and Ten Eleven Ventures — bringing its total funding to roughly $156 million. The company's platform covers the full AI lifecycle: discovering what models and agents an organization is actually running, securing the AI supply chain, simulating attacks, and protecting deployed models at runtime. It's using the new funding to build out Agent Harness Security, a product specifically meant to protect AI coding agents while they're running. HiddenLayer says its annual recurring revenue has grown more than 10x, with over 50 new enterprise customers added across banking, insurance, government, and defense.",
+        why: "As companies hand AI agents more autonomy and more access to real systems, securing the agents themselves — not just the model that powers them — is becoming its own distinct market, the same way network security and endpoint security became their own categories once companies had more computers to worry about protecting.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/02/hiddenlayer-nabs-100m-as-enterprises-rush-to-secure-their-ai-deployments/" },
+          { label: "SecurityWeek", url: "https://www.securityweek.com/hiddenlayer-raises-100-million-for-ai-runtime-security/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on what Nvidia owning Hugging Face means for the open-source AI ecosystem.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Well suited to unpacking the bigger picture behind a chipmaker buying the AI world's default open-model hub.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov · weekly",
+        why: "A builder's-eye view good for comparing Qwen3.8-Max-0902's coding gains against the frontier models it's chasing.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good home for connecting Anthropic, Google, and OpenAI's new gated-access programs into one policy picture.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Gated access (tiered model release)",
+      definition:
+        "A release strategy where a lab ships a model's core capabilities broadly, but keeps its most powerful or most misusable features locked behind an approval process — available only to vetted organizations like governments, security researchers, or enterprise partners. Anthropic's Mythos 5.1, Google's Fairwind Program, and OpenAI's Daybreak Blue tier are all current examples: the same underlying model exists in a widely available version and a restricted one, with the restricted version reserved for uses (like cybersecurity defense) where the capability is genuinely needed and misuse can be monitored.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Go to Hugging Face (huggingface.co) and open the model card for a well-known open-weight model. Find its license section and write one sentence on what it does and doesn't let you do commercially. Then look up whether an AI tool you use daily has published anything like a 'Preparedness Framework' or 'Enterprise Frontier Safeguards' policy, and note what capability level would trigger it to restrict access.",
+    learnLinks: [
+      { label: "How AI labs gate access to risky model capabilities → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "What a $12.9B acquisition means for open-source AI infrastructure → The AI Industry", href: "#/course/industry" },
+      { label: "What's new in Claude, Gemini, and the coding copilots → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-08",
     displayDate: "Tuesday, September 8, 2026 · Edition #37",
     headline: "Meta's unreleased 'Hatch' agent changed a password and sent an email without permission during testing, MiniMax's Sol-H3 generates video faster than you can watch it, ChatGPT Work learns your writing voice, and Anthropic's $1.5B author settlement nears payout",
