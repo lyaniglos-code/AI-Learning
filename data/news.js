@@ -13,6 +13,107 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-11",
+    displayDate: "Friday, September 11, 2026 · Edition #40",
+    headline: "A young Anthropic researcher's resignation over 'self-improving AI' goes viral and its own safety lead echoes the warning, Congress calls AI a possible 9/11-style blind spot, OpenAI opens its Codex agent harness to developers, and legal-AI startup Harvey raises $550M",
+    summary:
+      "Today's edition centers on how seriously the people closest to frontier AI are taking catastrophic risk: a researcher's resignation letter went viral, Anthropic's own alignment lead backed up his numbers, and a congressional committee warned AI oversight itself could become a blind spot. Alongside that, OpenAI gave developers direct access to its Codex agent infrastructure, legal-AI startup Harvey raised $550 million, and Suno launched its first label-licensed music models.",
+    stories: [
+      {
+        title: "A young Anthropic researcher's resignation over 'self-improving AI' goes viral, and Anthropic's own safety lead echoes his warning",
+        body: "On September 8, Jacob Coxon — a 27-year-old who spent three years doing pretraining research at both OpenAI and Anthropic — announced on X that he had resigned from Anthropic, writing that neither company is 'acting responsibly' and that the industry is 'racing straight to self-improving superintelligence and gambling with our lives.' His seven-part post, amplified by a same-day Wall Street Journal interview, drew tens of millions of views; Coxon said people building AI 'earnestly believe it could kill us all by the end of the decade' and that on the most aggressive timelines, 'things could be out of control already' by the end of next year. Rather than distancing itself, Anthropic's own alignment science lead, Evan Hubinger, publicly said he shares the underlying concern and put his own estimate of AI causing human extinction at 'more than 10%' within the next decade. Coxon joins a small but growing list of researchers who have left frontier labs specifically citing self-improving-AI risk as their reason for going.",
+        why: "This is a rare case of a specific, numeric estimate of catastrophic AI risk — sometimes called 'p(doom)' — coming from inside a lab's own safety team rather than an outside critic, which is worth more than the usual vague warnings precisely because of who is saying it.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai/" },
+          { label: "Washington Post", url: "https://www.washingtonpost.com/technology/2026/09/09/anthropic-researcher-resigns-warning-reckless-race-toward-superintelligence/" },
+          { label: "Forbes", url: "https://www.forbes.com/sites/siladityaray/2026/09/09/anthropic-alignment-lead-warns-ai-could-kill-all-humans-as-researcher-quits/" }
+        ]
+      },
+      {
+        title: "House Intelligence Committee warns AI could become the next 9/11-style 'failure of imagination' blind spot",
+        body: "In a review of the original 9/11 Commission report released this week — roughly 56 pages, about a tenth of it devoted to AI — the House Permanent Select Committee on Intelligence warned that artificial intelligence risks becoming the kind of blind spot that preceded the September 11 attacks. The report cites testimony from Johns Hopkins professor and former White House AI adviser Benjamin Buchanan, who compared today's AI trajectory to the 9/11 Commission's core finding that the attacks stemmed from a 'failure of imagination,' arguing AI capability is moving faster than government oversight can adapt. It follows an earlier committee warning, issued August 31, urging US intelligence agencies to better prepare for low-probability, high-consequence 'Black Swan' AI risks, including AI helping terrorists or adversaries design more dangerous weapons or plan more effective attacks. FBI Director Kash Patel separately told the committee that China-linked hacking campaigns have already infiltrated parts of the US power grid and water systems.",
+        why: "This is a case study in institutional self-awareness: a congressional intelligence committee is explicitly naming its own capacity to notice and act on new threats — not just AI's raw capabilities — as the thing most likely to fail.",
+        sources: [
+          { label: "NewsNation", url: "https://www.newsnationnow.com/business/tech/national-security-house-intelligence-committee-ai-china-hacking/" },
+          { label: "Gizmodo", url: "https://gizmodo.com/the-house-intelligence-committees-latest-9-11-report-has-a-lot-and-nothing-to-say-about-ai-2000805346" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/31/ai-warning-house-intelligence-committee.html" }
+        ]
+      },
+      {
+        title: "OpenAI opens its Codex agent harness to developers with a new Agents API",
+        body: "On September 10, OpenAI released the Agents API in public beta, giving developers direct access to the same managed infrastructure — session orchestration, context compaction, and automatic recovery — that powers its Codex coding agent, instead of requiring them to build that plumbing themselves. The API is built around four pieces: an Agent (model, instructions, tools, and MCP servers), an optional sandboxed Environment where the agent can run code and edit files, a durable Session that persists across turns, and the stream of events a session produces. Agents can run in OpenAI-hosted sandboxes or a developer's own infrastructure, call outside tools through the Model Context Protocol, and split work across subagents under a set concurrency limit. There's no separate API fee — usage bills at standard per-token model rates plus standard rates for any tools or hosted sandboxes used.",
+        why: "This is a concrete look at what 'agent infrastructure' actually consists of under the hood — durable sessions, sandboxed environments, and tool-calling loops — rather than the vaguer 'AI agent' language most product marketing uses.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/introducing-the-agents-api/" },
+          { label: "MarkTechPost", url: "https://www.marktechpost.com/2026/09/10/openai-launches-the-agents-api-in-public-beta-putting-the-codex-harness-behind-one-api-call/" }
+        ]
+      },
+      {
+        title: "Legal-AI startup Harvey raises $550 million at a $15.5 billion valuation",
+        body: "Harvey, which sells AI tools to law firms and in-house legal teams, announced on September 9 that it raised $550 million co-led by Lightspeed Venture Partners and Diffusion — a new fund cofounded by longtime Harvey backer Kris Fredrickson — at a $15.5 billion valuation, with Sapphire Ventures and Whale Rock Capital Management also participating. The company says its annual recurring revenue has climbed past $400 million, its customer base now includes roughly 80% of the 100 highest-ranked US law firms, and half of the Fortune 10 use its products, including Microsoft's in-house legal team. Harvey says part of the new funding will go toward building more of its own AI models rather than relying solely on models it licenses from OpenAI and Anthropic. The round makes Harvey the most highly valued startup in the legal-AI category.",
+        why: "Harvey's move to build its own models on top of the ones it already licenses is a pattern worth watching across AI startups broadly: once usage and revenue scale up enough, owning part of the model stack can become cheaper than renting all of it.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-09/legal-ai-startup-harvey-hits-15-6-billion-value-with-550-million-round" },
+          { label: "PYMNTS", url: "https://www.pymnts.com/news/investment-tracker/2026/harvey-raises-550-million-dollars-bring-ai-law-firms" },
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/09/09/harvey-raises-another-550m-to-develop-ai-tools-for-legal-teams/" }
+        ]
+      },
+      {
+        title: "Suno launches label-backed AI music models built on licensed tracks from Warner Music and BMG",
+        body: "On September 9, AI music company Suno released its v6 generation of models — a flagship v6, an experimental v6-wild for paid subscribers, and a free v6-mini — the first Suno models trained on music licensed directly from label partners Warner Music Group, BMG, and distributor Believe, with revenue sharing built in for participating artists and labels. Suno says the new models generate faster, higher-quality audio and follow detailed prompts more closely than its earlier models, which were trained without label licensing deals. The licensing arrangement behind v6 followed a copyright lawsuit Warner Music had filed against Suno, which the two companies settled earlier this year; lawsuits from Universal Music Group and Sony Music against Suno remain unresolved, and neither label is part of the new licensed lineup.",
+        why: "It's a real-world side-by-side of two very different foundations for the same technology: a model trained on scraped data versus one trained on data its creator actually has permission, credit, and a payment structure for.",
+        sources: [
+          { label: "Axios", url: "https://www.axios.com/2026/09/09/suno-v6-ai-music-warner-bmg" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-09/ai-music-startup-suno-launches-new-models-that-pay-labels" },
+          { label: "Gizmodo", url: "https://gizmodo.com/ai-song-generator-suno-releases-new-model-developed-with-warner-music-2000809180" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on Jacob Coxon's resignation and Anthropic's own safety lead backing up his risk estimate.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A natural home for the House Intelligence Committee's 9/11-blind-spot warning alongside the Coxon resignation as one policy-and-safety picture.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Good for the business angle on Harvey's $550M raise and Suno's shift to label-licensed, revenue-sharing music models.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A dev-focused crowd well suited to unpacking what OpenAI's new Agents API actually changes about building agents.",
+        url: "https://www.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "P(doom)",
+      definition:
+        "Shorthand in AI-safety circles for a person's subjective probability that advanced AI leads to a catastrophic or extinction-level outcome for humanity. It's an informal, often-debated number — not a rigorous forecast — but today's story gives it unusual weight: Anthropic's own alignment science lead put his estimate above 10% within the next decade, a figure worth sitting with given it comes from inside the safety team of a company still racing to build the technology.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Read Jacob Coxon's resignation thread or the TechCrunch writeup (linked above), then write your own one-paragraph p(doom) estimate and the two biggest reasons behind your number. It's a useful exercise in separating what you actually believe about AI risk from what you've merely absorbed from headlines.",
+    learnLinks: [
+      { label: "How labs think about catastrophic and existential AI risk → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "What an 'AI agent' actually consists of under the hood → Building with AI: Prompting, APIs & Agents", href: "#/course/engineering" },
+      { label: "How AI companies choose between licensing, training, and buying models → The AI Industry & Business", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-09-10",
     displayDate: "Thursday, September 10, 2026 · Edition #39",
     headline: "OpenAI claims its AI solved a $1M Millennium Prize math problem amid a priority dispute, US agencies accuse six Chinese AI firms of industrial-scale model distillation, Meta launches its Muse personal agent, and Paul Christiano joins OpenAI's safety board",
