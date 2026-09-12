@@ -13,6 +13,106 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-12",
+    displayDate: "Saturday, September 12, 2026 · Edition #41",
+    headline: "Sam Altman says OpenAI is open to slowing down as Anthropic's new threat report details a disrupted bioweapons case and an autonomous drone-swarm build, hundreds of AI agents autonomously breach 395 organizations in hours, and Google commits $15B to AI infrastructure in Finland",
+    summary:
+      "Today's edition is dominated by AI acting on its own — for better and worse. OpenAI's CEO told staff the company would consider slowing its pace, Anthropic detailed disrupted misuse cases including a bioweapons research attempt and an autonomous drone-targeting build, and a single attacker used hundreds of AI agents to breach hundreds of organizations in under four hours. Alongside that: Google poured $15 billion into Finnish data centers and nuclear power, and researchers disclosed a class of vulnerabilities letting a booby-trapped repository make coding agents run attacker commands.",
+    stories: [
+      {
+        title: "Sam Altman tells OpenAI staff the company is open to slowing down AI development",
+        body: "At an all-hands meeting reported on September 11, OpenAI CEO Sam Altman told employees the company would consider slowing its pace of AI development as concerns grow over the safety of increasingly capable systems, and said he hopes rival labs would join a coordinated slowdown, while acknowledging some may not. The comments follow OpenAI's delayed rollout of GPT-6 Astra, which the company held back to add safeguards after internal testing found it was the first OpenAI model to cross a 'critical' threshold on its own cybersecurity risk framework — meaning it can find and exploit unknown software vulnerabilities without step-by-step human guidance. OpenAI's chief scientist, Jakub Pachocki, has separately argued the industry may need coordinated slowdowns until shared safety standards exist, and the company paused much of its own model development for two weeks in August over safety concerns.",
+        why: "It's notable when a lab's own CEO — not a critic or a departing employee — floats slowing down publicly; it also illustrates a real coordination problem in AI safety: no single company can unilaterally slow down without risking falling behind competitors who don't.",
+        sources: [
+          { label: "PYMNTS", url: "https://www.pymnts.com/news/artificial-intelligence/2026/sam-altman-floats-industrywide-pause-as-frontier-ai-safety-concerns-grow/" },
+          { label: "Slashdot", url: "https://slashdot.org/story/26/09/11/1746211/altman-considers-slowing-down-ai-development" },
+          { label: "The News International", url: "https://www.thenews.com.pk/latest/1415792-sam-altman-says-openai-open-to-slower-ai-development-amid-safety-scrutiny" }
+        ]
+      },
+      {
+        title: "Anthropic's September threat report details a disrupted bioweapons research attempt and an autonomous drone-targeting build",
+        body: "Anthropic published its latest threat intelligence report on September 10-11, covering misuse cases disrupted between December 2025 and August 2026 across cyber operations, biological misuse, conventional weapons, influence operations, and 'illicit distillation.' In one case study, a researcher used Claude to help draft a grant proposal for gain-of-function research aimed at making the chikungunya virus more transmissible and immune-evasive; Anthropic says it disrupted five such biological-misuse cases in total. Separately, the report describes a group of Russia-linked freelancers who used Claude Code to help build a fully autonomous drone swarm capable of selecting human targets and issuing detonation commands without a human in the loop, and details disruption of large-scale 'distillation' attempts — where operators tied to Chinese labs including Alibaba tried to systematically extract Claude's capabilities into their own models via its API.",
+        why: "This is Anthropic publishing specific, verified case studies of its own product being misused for weapons development rather than speculating about hypothetical risks, which is a useful model for how AI safety claims should be substantiated.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/threat-intelligence-report-september-2026" },
+          { label: "TechTimes", url: "https://www.techtimes.com/articles/327308/20260911/anthropic-threat-report-ai-models-near-bioweapons-threshold-drone-kill-software-emerges.htm" },
+          { label: "Interesting Engineering", url: "https://interestingengineering.com/ai-robotics/anthropic-scientists-claude-lethal-bioweapons-research" }
+        ]
+      },
+      {
+        title: "An attacker used hundreds of AI agents to autonomously breach 395 organizations in under four hours",
+        body: "Security firm GreyNoise reported that a campaign beginning August 31 used hundreds of AI agents — built on OpenAI's Codex and a DeepSeek model — to develop and fire exploits for two vulnerabilities in PaperCut print-management software (an authentication bypass and a remote-code-execution flaw), compromising at least 440 servers across 395 organizations in 48 countries. The operator went from an empty workspace to code execution on a real victim in under four hours and obtained domain administrator access two hours after that; once the operation reached full speed, the agents breached 11 organizations in 26 seconds. GreyNoise says the attacker harvested credentials from 280 victims and gained administrator privileges at 12 organizations, with education-sector targets accounting for roughly half of all breaches; the campaign's ultimate goal — data theft, ransomware, or something else — remains unknown.",
+        why: "This is a concrete data point on how AI agents change attack economics: the same orchestration abilities that let a developer spin up parallel coding agents also let one attacker run dozens of exploit attempts simultaneously, compressing what used to take a team of humans days into hours.",
+        sources: [
+          { label: "The Hacker News", url: "https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html" },
+          { label: "BleepingComputer", url: "https://www.bleepingcomputer.com/news/security/ai-powered-attack-exploited-papercut-flaws-to-hack-395-organizations/" }
+        ]
+      },
+      {
+        title: "Google commits $15 billion to AI infrastructure and nuclear power in Finland",
+        body: "Google announced on September 9 a $15.1 billion investment in Finnish AI infrastructure through 2028 — its largest single investment in Europe — funding three new data centers and an expansion of an existing facility in Hamina, plus supporting sites in Kajaani, Muhos, and Vaala. As part of the deal, Google signed a 22-year power purchase agreement with Finnish energy company Fortum to extend the life of one of Finland's nuclear plants, under which Google will draw up to half of that plant's output. Google says the buildout will add roughly $3.6 billion to Finland's GDP during construction and support about 7,000 jobs annually once operational, and will power services including Gemini, Maps, and YouTube.",
+        why: "The nuclear power-purchase agreement is the real story: AI data centers now consume enough electricity that hyperscalers are directly financing decades-long extensions of existing nuclear plants rather than just buying power off the grid.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/09/09/google-finland-ai-infrastructure-investment.html" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-09/google-plans-13-billion-ai-infrastructure-investment-in-finland" },
+          { label: "AI Business", url: "https://aibusiness.com/data-centers/google-invest-15b-finland-s-ai-infrastructure" }
+        ]
+      },
+      {
+        title: "Researchers disclose a git-config trick that makes Claude Code, Codex, Cursor, and other coding agents run attacker commands",
+        body: "Security researchers at Manifold Security disclosed eight vulnerabilities across seven command-line AI coding agents in which a repository's own Git configuration can name a command that the agent then runs on the developer's machine — outside the agent's sandbox and without a permission prompt — by abusing a legitimate Git feature called core.fsmonitor. Exploitation requires a repository to arrive with its .git directory intact, such as through a shared archive, synced folder, or USB drive, rather than an ordinary clone. Fixes have shipped for goose, Claude Code, and Cursor, while Hermes Agent, Qwen Code, Grok Build, and a second affected path in Claude Code were still exploitable when retested on September 1; OpenAI published three related CVEs for Codex the same day, credited to three separate research groups.",
+        why: "It's a clean example of a 'trust boundary' failure: the vulnerability isn't in the AI model itself but in what the surrounding tool automatically trusts and executes once a file lands on disk — a distinction that matters more, not less, as coding agents get wired directly into developers' machines.",
+        sources: [
+          { label: "The Hacker News", url: "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html" },
+          { label: "Techzine", url: "https://www.techzine.eu/news/security/143038/researchers-bypass-sandbox-security-in-cursor-codex-and-gemini-cli/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on Altman's slowdown comments and what a coordinated industry pause would actually require.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A natural fit for unpacking Anthropic's threat report alongside the PaperCut agent-driven breach as one story about AI misuse in the wild.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "Good for the developer-facing angle on the git-config vulnerability affecting Claude Code, Codex, and Cursor.",
+        url: "https://www.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Good for the business and infrastructure angle on Google's $15B Finland investment and its nuclear power deal.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Trust boundary",
+      definition:
+        "The line separating data or code a system should treat as untrusted (like the contents of a downloaded repository) from actions it's willing to take automatically on the user's behalf. Today's git-config vulnerability crosses that line: a file inside a repository — which should be inert until a human reviews it — gets read and executed by the coding agent's tooling as if it were a trusted local setting. As AI agents get more autonomy to read files, run commands, and act without asking first, where exactly the trust boundary sits becomes one of the most important design decisions in building them safely.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Check which version of your coding agent (Claude Code, Cursor, Codex, or similar) you're running and confirm it's on the patched release mentioned in today's git-config story. Then read your agent's docs for what it treats as 'inside the sandbox' versus what it's allowed to touch on your actual machine — most people never check this until something goes wrong.",
+    learnLinks: [
+      { label: "How AI agents decide what to trust and what to ask permission for → Building with AI: Prompting, APIs & Agents", href: "#/course/engineering" },
+      { label: "How labs test for and respond to catastrophic misuse → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI's compute demands are reshaping energy and infrastructure → The AI Industry & Business", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-09-11",
     displayDate: "Friday, September 11, 2026 · Edition #40",
     headline: "A young Anthropic researcher's resignation over 'self-improving AI' goes viral and its own safety lead echoes the warning, Congress calls AI a possible 9/11-style blind spot, OpenAI opens its Codex agent harness to developers, and legal-AI startup Harvey raises $550M",
