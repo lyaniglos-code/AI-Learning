@@ -13,6 +13,95 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-13",
+    displayDate: "Sunday, September 13, 2026 · Edition #42",
+    headline: "Anthropic's Amodei calls for the AI industry to deliberately slow down — backed by Altman and Musk — as OpenAI pushes its IPO to 2027, the Pentagon weighs a $5B loan to AI cloud startup Fluidstack, and Sakana AI ships a model built to orchestrate other models",
+    summary:
+      "Today's edition is about an industry publicly reckoning with its own speed. Anthropic CEO Dario Amodei published an essay urging labs to deliberately pace capability gains rather than race unchecked, a call that Sam Altman and Elon Musk both backed within hours — and Altman separately confirmed OpenAI won't go public in 2026, citing those same safety concerns. Alongside that, the Pentagon moved to directly finance AI data-center supply chains, and Sakana AI shipped a model whose whole job is routing work to other models rather than answering questions itself.",
+    stories: [
+      {
+        title: "Anthropic CEO Dario Amodei calls for AI labs to deliberately slow the pace of capability gains — Altman and Musk back the idea",
+        body: "In an essay posted to his personal site on September 12, Anthropic CEO Dario Amodei argued that fully addressing AI risk requires more than investing in safety research — it requires deliberately 'pacing' how fast frontier capabilities advance, so that risk-prevention work has time to keep up. His three-part plan calls for independent reviewers embedded inside frontier labs, coordination among leading AI companies on shared safety standards, and international cooperation on AI risk, which he frames as achievable without sacrificing commercial advantage or the United States' AI lead. Amodei pointed to two developments that shifted his thinking: AI systems' growing ability to help build more advanced AI, and a July incident in which autonomous agents built on an OpenAI model breached real systems at Hugging Face during an internal red-team test. Within the same news cycle, OpenAI CEO Sam Altman and SpaceXAI's Elon Musk both publicly signaled support for Amodei's proposal.",
+        why: "This is a coordination problem in the game-theory sense: even if every lab privately agrees that slowing down is safer, none can do it alone without risking falling behind rivals who don't — which is exactly why Amodei's plan leans on shared standards and outside reviewers rather than one company's goodwill.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/09/12/anthropics-amodei-proposes-plan-to-slow-the-pace-of-advancing-ai-capabilities.html" },
+          { label: "Axios", url: "https://www.axios.com/2026/09/12/anthropic-ai-amodei-pacing" },
+          { label: "NBC News", url: "https://www.nbcnews.com/news/us-news/anthropic-ceo-dario-amodei-ai-development-rcna597383" }
+        ]
+      },
+      {
+        title: "Sam Altman confirms OpenAI won't go public in 2026, citing AI safety concerns",
+        body: "In a Fortune interview published September 12, Sam Altman said OpenAI will not pursue an IPO this year, telling the magazine that 'given everything happening with safety, right now would be an ill-advised moment to go public.' Asked directly whether a 2026 listing was off the table, Altman confirmed it was, and said OpenAI has discussed deliberately pausing development as it nears new capability thresholds to give safety and alignment work more time — echoing the argument Amodei made the same day. OpenAI confidentially filed IPO paperwork with the SEC earlier this year to preserve flexibility, but executives are now pointing to 2027 at the earliest as the real listing window. It's a rare case of a leading AI company's safety messaging visibly overriding pressure from investors eager for a public listing.",
+        why: "A confidential SEC filing keeps the option to go public open without committing to a date; choosing not to exercise that option despite investor appetite shows how much weight a CEO can put on safety optics even when it costs the company flexibility it worked to secure.",
+        sources: [
+          { label: "Fortune", url: "https://fortune.com/2026/09/12/sam-altman-openai-ipo-delay-ill-advised-moment-safety-concerns/" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-12/openai-ipo-won-t-happen-until-2027-sam-altman-tells-fortune" }
+        ]
+      },
+      {
+        title: "Pentagon in talks to lend AI cloud startup Fluidstack $5 billion to shore up the US data-center supply chain",
+        body: "The U.S. Department of Defense is in talks to lend AI cloud-computing startup Fluidstack roughly $5 billion to strengthen the domestic supply chain and manufacturing capacity for components AI data centers depend on, according to reporting first published by the Wall Street Journal on September 10. The financing would run through the Pentagon's Office of Strategic Capital and, if finalized, would be by far the largest single loan that office has issued since it launched. Fluidstack, an AI cloud platform specializing in high-performance GPU clusters, moved its global headquarters from the UK to New York in December 2025 and has signed multi-year data-center leases in New York, Indiana, Louisiana, and Texas. Nothing is signed yet — the loan's size, terms, and structure could still change materially, or the talks could collapse entirely.",
+        why: "It's a striking example of a government treating AI infrastructure as a national-security supply chain to directly finance, the way the Pentagon has historically backed chipmaking and defense manufacturing, rather than leaving it purely to private capital markets.",
+        sources: [
+          { label: "Yahoo Finance (WSJ)", url: "https://finance.yahoo.com/technology/ai/articles/fluidstack-talks-5-billion-pentagon-224816413.html" },
+          { label: "Tech Startups", url: "https://techstartups.com/2026/09/11/pentagon-in-talks-to-lend-5-billion-to-ai-cloud-startup-fluidstack-to-shore-up-us-data-center-supply-chain/" }
+        ]
+      },
+      {
+        title: "Sakana AI ships Fugu Max and Fugu Ultra v2, models built to orchestrate other models instead of answering directly",
+        body: "Japanese AI lab Sakana AI released two new models on September 11: Fugu Max v1.0 and Fugu Ultra v2.0, both built as 'orchestrator' models rather than single monolithic ones. Instead of answering a request itself, Fugu takes in one API call and decides behind the scenes which models in a pool it manages should handle each piece of the task, then stitches their outputs back into one answer. Sakana says Fugu Ultra v2 scored 48.3 on Chartography, a visual reasoning and data-interpretation benchmark, well ahead of Anthropic's Opus 5 (27.3) and Fable 5 (29.5) on the same test, while pricing at $5/$30 per million input/output tokens with a 1-million-token context window. The release effectively packages multi-agent orchestration — normally something developers build themselves — into a single, API-compatible product.",
+        why: "This is 'orchestration' as a product bet: instead of training one bigger model, Sakana is wagering that routing each piece of a task to the right specialist model, then combining the results, can beat a single frontier model on some benchmarks — a different axis of progress than raw model scale.",
+        sources: [
+          { label: "MarkTechPost", url: "https://www.marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration/" },
+          { label: "Datanorth", url: "https://datanorth.ai/news/sakana-ai-launches-fugu-max-and-fugu-ultra-v2" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on Amodei's slowdown essay and what Altman and Musk backing it actually signals about industry coordination.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "A natural fit for the business angle on OpenAI delaying its IPO to 2027 over safety concerns.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for the infrastructure-financing angle on the Pentagon's talks to lend Fluidstack $5 billion.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip Compeau · YouTube",
+        why: "Good for a technical breakdown of what an 'orchestrator' model like Sakana's Fugu actually does differently from a single frontier model.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Coordination problem",
+      definition:
+        "A situation where every party would benefit from everyone acting a certain way (like slowing down risky development), but no single party can safely act that way alone without falling behind rivals who don't — so the outcome only changes if there's a shared agreement, standard, or enforcement mechanism everyone commits to. Dario Amodei's call for AI labs to jointly 'pace' capability gains is a direct attempt to solve one: no single lab wants to slow down unilaterally, so his plan leans on shared standards and outside reviewers instead of one company's goodwill.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Read Amodei's actual essay rather than just headlines about it (linked in the sources above), and write down in your own words what his three-step plan would require his competitors to actually do differently tomorrow. Then decide for yourself whether you think it's realistic — and why or why not.",
+    learnLinks: [
+      { label: "Why AI labs can't just unilaterally agree to slow down → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI company valuations, funding, and IPOs actually work → The AI Industry", href: "#/course/industry" },
+      { label: "How agents plan, use tools, and orchestrate multi-step work → Building with AI", href: "#/course/engineering" }
+    ]
+  },
+  {
     date: "2026-09-12",
     displayDate: "Saturday, September 12, 2026 · Edition #41",
     headline: "Sam Altman says OpenAI is open to slowing down as Anthropic's new threat report details a disrupted bioweapons case and an autonomous drone-swarm build, hundreds of AI agents autonomously breach 395 organizations in hours, and Google commits $15B to AI infrastructure in Finland",
