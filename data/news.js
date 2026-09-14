@@ -13,6 +13,95 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-14",
+    displayDate: "Monday, September 14, 2026 · Edition #43",
+    headline: "Trump and his AI adviser David Sacks push back on Amodei's slowdown call, Microsoft's Nadella publishes a Code of Conduct for its own models in response, Google DeepMind's Hassabis backs the 'direction' while plugging his own standards-body plan, and Anthropic tells investors it just turned its first profitable quarter",
+    summary:
+      "Yesterday's edition covered Dario Amodei's essay calling on AI labs to deliberately slow down. Today is about how the rest of the world reacted to it: the White House publicly waved off the warning, Microsoft answered with its own governance document instead of a pledge to slow down, and Google DeepMind's CEO endorsed the direction while steering credit toward a proposal he'd already made. Layered underneath all of it, Anthropic quietly told investors its business just crossed into profitability.",
+    stories: [
+      {
+        title: "Trump downplays AI slowdown calls; adviser David Sacks tells Amodei he doesn't 'see what you see in the lab'",
+        body: "Speaking to reporters in Ireland and separately on Air Force One around September 13, President Trump dismissed concerns behind the growing calls to slow AI development, saying people worried about AI's ultimate impacts 'are bringing up things that won't happen' and that the technology is 'going to be more good than bad by a lot.' David Sacks, co-chair of the President's Council of Advisors on Science and Technology and the White House's AI and crypto policy lead, responded to Amodei more directly on social media, writing 'I don't see what you see in the lab' and telling him 'if the unreleased models are scary enough that you think you should slow down, I support your decision to be responsible' — while also suggesting labs should 'stop pretending you need anyone else's permission' to act. Sacks went further, floating that safety warnings from AI executives could be amplified by 'doomer' narratives that serve competitors, including China.",
+        why: "This is the same coordination problem as yesterday's essay, but from the government's side: Amodei is explicitly asking for outside verification and shared rules because no single company can safely slow down alone, while the administration's response is to tell labs they don't need anyone's permission — which removes the exact external pressure that makes voluntary pacing credible.",
+        sources: [
+          { label: "NPR", url: "https://www.npr.org/2026/09/13/nx-s1-5968078/trump-mike-johnson-ai-slowdown" },
+          { label: "CNN Politics", url: "https://edition.cnn.com/2026/09/14/politics/trump-ai-warning-sacks-coxon-anthropic" }
+        ]
+      },
+      {
+        title: "Microsoft's Nadella responds to the pacing debate by publishing a public 'Code of Conduct' for its own MAI models",
+        body: "In a September 13 post on X, Microsoft CEO Satya Nadella said the company 'welcomes' the 'deliberate pacing needed to get alignment right' and announced that Microsoft would publish, on September 14, a Code of Conduct governing its own first-party MAI model family — covering reasoning, coding, image-generation, transcription, and voice models — and open it for public consultation. Nadella wrote that 'any pursuit of superintelligence has to be grounded in the core principle that if the AI we build is not helping humanity and under human control, it's not worth pursuing,' and argued that safety mechanisms 'cannot be controlled by a handful of entities' and need broad representation across countries, industries, and academia, name-checking ideas like independent 'embedded evaluators' similar to what Amodei proposed.",
+        why: "Notice what Microsoft actually committed to versus what Amodei asked for: a published rulebook for its own models and an invitation for public comment is a governance document, not a pledge to slow capability gains or grant outside evaluators access — a useful reminder that 'we support the goal' and 'we'll do the specific thing you asked for' are different commitments.",
+        sources: [
+          { label: "Satya Nadella on X", url: "https://x.com/satyanadella/status/2099220712024408084" },
+          { label: "Dataconomy", url: "https://dataconomy.com/2026/09/14/satya-nadella-says-superintelligence-must-remain-human-controlled/" },
+          { label: "Kingy AI", url: "https://kingy.ai/news/microsoft-ai-code-of-conduct-nadella-human-control/" }
+        ]
+      },
+      {
+        title: "Google DeepMind's Demis Hassabis backs the 'direction' of Amodei's plan — while pointing back to his own standards-body proposal",
+        body: "Roughly nine hours after Amodei's essay posted, Google DeepMind co-founder and CEO Demis Hassabis quote-posted it on X, writing that it 'points towards the right path forward' and that 'the details need working through, but the direction is correct for meeting this critical moment.' Hassabis then noted that this was also why DeepMind had already put out its own proposal for an industry-wide standards body for frontier AI — a framework he first published on July 14 in an essay modeled loosely on FINRA, the industry-funded body that polices Wall Street under government oversight. Amodei's own essay had separately cited 'the mechanism suggested by Demis Hassabis' as one viable route for labs to coordinate on shared safety standards.",
+        why: "Watching how each CEO responds to the same proposal is a window into competitive dynamics even inside apparent agreement: Hassabis endorsed the idea while redirecting attention to a framework DeepMind proposed two months earlier, which is its own quiet way of trying to set the terms of any eventual industry standard.",
+        sources: [
+          { label: "The Tribune", url: "https://www.tribuneindia.com/news/advanced-ai-development/direction-is-correct-google-deepmind-co-founder-demis-hassabis-backs-anthropic-boss-dario-amodeis-calls-for-ai-slowdown" },
+          { label: "LatestLY", url: "https://www.latestly.com/technology/demis-hassabis-backs-dario-amodeis-call-to-slow-down-frontier-ai-race-warns-of-escalating-risks-7603427.html" }
+        ]
+      },
+      {
+        title: "Anthropic tells investors its Q2 revenue topped $11.5 billion with its first positive operating income",
+        body: "According to documents reported by Bloomberg and confirmed by other outlets around mid-September, Anthropic told prospective investors that second-quarter revenue exceeded $11.5 billion — more than 14 times the roughly $787 million it made in the same quarter a year earlier — and that the company recorded positive adjusted operating income for the period, a first for the company. That follows first-quarter revenue of about $4.73 billion, meaning Anthropic made roughly $16.2 billion in the first half of 2026 alone. The figures are preliminary, shared as part of fundraising conversations, and could still change before being finalized.",
+        why: "The number worth sitting with isn't the revenue, it's the growth rate — 14x year-over-year on a multi-billion-dollar base is a pace almost no company sustains for long, and it's part of why the same lab issuing public warnings about AI risk is simultaneously one of the most commercially successful startups in history, which is exactly the tension Amodei's essay is trying to manage.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/08/15/anthropic-revenue-jumps-to-over-11point5-billion-in-q2-report.html" },
+          { label: "The Next Web", url: "https://thenextweb.com/news/anthropic-q2-2026-revenue-11-5-billion-operating-income" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on the White House pushing back on Amodei's slowdown call and what that means for voluntary industry pacing.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "A good fit for unpacking Nadella's Code of Conduct announcement and what it actually commits Microsoft to versus what it doesn't.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together how Hassabis, Nadella, Musk, and the White House each responded differently to the same essay.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "Good for the business angle on Anthropic's reported $11.5B quarter and what it signals about AI revenue growth right now.",
+        url: "https://www.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Regulatory capture",
+      definition:
+        "A situation where the people or institutions responsible for overseeing an industry end up shaped by, or aligned with, the interests of that same industry — so oversight ends up protecting incumbents rather than the public. It's the underlying worry when a White House AI adviser who came from venture capital tells a lab CEO he doesn't need 'anyone else's permission' to act responsibly: voluntary safety pledges only work as a substitute for regulation if there's real pressure to keep them, and that pressure usually has to come from outside the industry itself.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Read Sacks' and Nadella's actual statements linked above side by side, and write one sentence for each describing what it concretely commits its author to doing (not just what it says it supports). Notice how much easier it is to state a position than to commit to a specific, checkable action.",
+    learnLinks: [
+      { label: "Why voluntary industry pledges are hard to enforce → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI company revenue, funding, and IPOs actually work → The AI Industry & Business", href: "#/course/industry" },
+      { label: "What 'AI governance' and model policies actually mean → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-09-13",
     displayDate: "Sunday, September 13, 2026 · Edition #42",
     headline: "Anthropic's Amodei calls for the AI industry to deliberately slow down — backed by Altman and Musk — as OpenAI pushes its IPO to 2027, the Pentagon weighs a $5B loan to AI cloud startup Fluidstack, and Sakana AI ships a model built to orchestrate other models",
