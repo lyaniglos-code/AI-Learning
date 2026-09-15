@@ -13,6 +13,95 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-15",
+    displayDate: "Tuesday, September 15, 2026 · Edition #44",
+    headline: "China's state media brands the AI-slowdown push 'self-serving' as Anthropic, OpenAI and xAI move from pledges to a real evaluator-access standard, Anthropic's threat report documents AI-run espionage, and DeepMind opens a map of all 9 billion possible human DNA mutations",
+    summary:
+      "The Amodei slowdown essay from earlier this week keeps generating downstream reactions: China's government and state press dismissed it as competitive cover, while Anthropic, OpenAI and xAI turned the vaguer parts of the proposal into an actual access standard for outside evaluators. Separately, Anthropic published a detailed account of AI-assisted attacks it disrupted, and Google DeepMind released a free research tool built on a much less talked-about kind of AI: one that predicts what non-coding DNA does.",
+    stories: [
+      {
+        title: "China's state media brands the US AI-slowdown push 'self-serving,' calling it containment by another name",
+        body: "Bloomberg reported on September 15 that Chinese state media dismissed the wave of AI-slowdown calls from Dario Amodei, Sam Altman, and Elon Musk as an attempt to protect American dominance rather than a genuine safety concern. A China Daily editorial argued that after export controls on chips and equipment failed to stop Chinese labs from building competitive models, US companies were shifting the same containment strategy toward software and safety rhetoric. The state-run Global Times went further, calling the push 'packed with containment provisions targeting China' and a 'Cold War playbook' for the AI sector. Foreign Ministry spokesperson Guo Jiakun told reporters that 'fearmongering, confrontation and malicious competition will only disrupt the process of global AI governance and serve no one's interests.'",
+        why: "This is the geopolitical reading of a debate that in the US has mostly been framed as safety versus speed — a reminder that domestic proposals about AI pacing don't land in a vacuum, and other governments will read them through their own competitive lens regardless of what the proposers intended.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-15/chinese-state-media-dismisses-self-serving-ai-slowdown-call" },
+          { label: "NBC News", url: "https://www.nbcnews.com/world/china/china-ai-slowdown-trump-amodei-altman-threat-cold-war-rcna597631" }
+        ]
+      },
+      {
+        title: "Anthropic, OpenAI and xAI turn the evaluator pledge into an actual standard: permanent, employee-level lab access",
+        body: "Following up on the pacing proposal from earlier in the week, Anthropic said it would immediately grant independent third-party evaluators permanent, employee-level access to its systems so they can verify safety measures, review incidents, and assess model alignment during training. Sam Altman confirmed on September 12 that OpenAI would match the commitment, and xAI signed on as well. Around the same time, the AI Evaluator Forum published AEF-1, a voluntary standard called 'Minimum Operating Conditions for Independent Third-Party AI Evaluations,' meant to define what real independence, access, and transparency require rather than leaving those words open to interpretation. The standard names organizations like METR as the kind of evaluator meant to receive this access.",
+        why: "The gap between a public pledge and an enforceable standard is the story here — AEF-1 matters because it tries to spell out concrete, checkable conditions instead of letting 'outside oversight' stay a phrase each company can define for itself.",
+        sources: [
+          { label: "Medianama", url: "https://www.medianama.com/2026/09/223-anthropic-evaluators-frontier-ai-labs/" },
+          { label: "MarkTechPost", url: "https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/" },
+          { label: "AI Evaluator Forum", url: "https://aievaluatorforum.org/initiatives/minimum-operating-conditions" }
+        ]
+      },
+      {
+        title: "Anthropic's latest threat report: one operator with AI now does the work a state-backed hacking team used to need",
+        body: "Anthropic published its September 2026 threat intelligence report, a detailed account of AI-assisted misuse it disrupted between December 2025 and August 2026 across categories including state espionage, weapons development, surveillance, and fraud. Its central case study, an actor Anthropic calls GTG-20006, used Claude to automate attacks on Ukrainian and European government, defense, and drone-supply-chain targets, reaching 24 of 27 targeted institutions over 130 days, with tradecraft consistent with the Russian state-linked group publicly known as Midnight Blizzard. Anthropic said the case illustrates a broader shift: operations that a year ago would have required a team of skilled specialists can now be sustained by a single operator with AI assistance. The report also documents attempted misuse for biological weapons research and autonomous drone-targeting software, which Anthropic said its safeguards blocked.",
+        why: "This is the concrete version of the abstract 'AI could enable catastrophic misuse' argument safety researchers make — real, disrupted campaigns with named tactics and targets, rather than a hypothetical scenario, which is exactly the kind of evidence proposals like this week's evaluator-access standard are meant to respond to.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/threat-intelligence-report-september-2026" },
+          { label: "TechNode Global", url: "https://technode.global/2026/09/11/anthropic-ai-orchestrated-cyberattacks-model-distillation/" }
+        ]
+      },
+      {
+        title: "Google DeepMind opens a free map of what all 9 billion possible human DNA mutations might do",
+        body: "Google DeepMind released the AlphaGenome Atlas, a roughly 1-petabyte dataset of precomputed predictions for the molecular effects of all 9 billion possible single-letter changes across the human genome. It's built on AlphaGenome, the DeepMind model released last year that predicts how stretches of non-coding DNA — the regions that mostly regulate when and how genes switch on — are likely to affect biology. The Atlas adds a single ranking score, called AVI (AlphaGenome Variant Impact), so researchers can quickly prioritize which of millions of variants in a genome are worth investigating first, and it's free to use through a public research portal. Early users at the Broad Institute and the University of Exeter say it has already surfaced a previously missed disease variant and turned up 22% more genetic associations in non-coding regions of UK Biobank data.",
+        why: "Non-coding DNA makes up most of the human genome and was long dismissed as 'junk,' so a free, searchable map of what nearly all of it might do is the kind of unglamorous AI infrastructure that can quietly accelerate disease research for years — a useful contrast to the chatbot headlines that usually define 'AI progress.'",
+        sources: [
+          { label: "Google DeepMind", url: "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/" },
+          { label: "Nature", url: "https://www.nature.com/articles/d41586-026-02835-4" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on China's state-media pushback and what the new evaluator-access standard actually commits Anthropic, OpenAI, and xAI to.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together this week's whole slowdown saga: Amodei's essay, the White House pushback, and now China's and the labs' own responses.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "A good fit for unpacking what 'employee-level access' for outside evaluators would really change day-to-day inside an AI lab.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "Best fit for a fast, visual explainer on what AlphaGenome Atlas actually predicts and why non-coding DNA matters.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Third-party evaluator",
+      definition:
+        "An outside organization given access to an AI company's systems, models, or training process specifically to check its safety claims and practices — rather than relying on the company to grade its own homework. The value of a third-party evaluator depends entirely on how real its access, independence, and reporting rights actually are; a standard like AEF-1 exists because 'we welcome outside oversight' can otherwise mean almost anything a company wants it to.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Read the AI Evaluator Forum's description of AEF-1's 'minimum operating conditions' (linked above), then write one sentence describing what a frontier lab would actually have to change about its internal processes to comply — versus what it could satisfy just by issuing a statement.",
+    learnLinks: [
+      { label: "Why oversight only works if it's independent and enforceable → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How competition between labs and countries shapes AI policy → The AI Industry & Business", href: "#/course/industry" },
+      { label: "How models like AlphaGenome learn to predict from raw data → How AI Models Actually Work", href: "#/course/models" }
+    ]
+  },
+  {
     date: "2026-09-14",
     displayDate: "Monday, September 14, 2026 · Edition #43",
     headline: "Trump and his AI adviser David Sacks push back on Amodei's slowdown call, Microsoft's Nadella publishes a Code of Conduct for its own models in response, Google DeepMind's Hassabis backs the 'direction' while plugging his own standards-body plan, and Anthropic tells investors it just turned its first profitable quarter",
