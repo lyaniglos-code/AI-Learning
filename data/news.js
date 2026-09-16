@@ -13,6 +13,95 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-16",
+    displayDate: "Wednesday, September 16, 2026 · Edition #45",
+    headline: "Trump attacks Amodei by name and dismisses AI 'guardrails' on Truth Social, OpenAI reveals weeks of quiet safety coordination with Anthropic and Google DeepMind, Altman confirms OpenAI's IPO has slipped to 2027, and Shanghai AI Lab quietly ships a free 744B open agentic model",
+    summary:
+      "The week's AI-slowdown debate collided directly with the White House: President Trump attacked Anthropic's Dario Amodei by name on Truth Social and rejected calls for AI guardrails, even as OpenAI's policy chief revealed the three biggest US labs have been coordinating on safety measures behind the scenes for weeks. Separately, Sam Altman confirmed OpenAI's IPO won't happen until 2027, and Shanghai AI Laboratory released a free, 744-billion-parameter open model along with an unusually detailed look at how much it sped up the humans who built it.",
+    stories: [
+      {
+        title: "Trump attacks Amodei by name on Truth Social, calls AI 'guardrails' unnecessary",
+        body: "President Trump wrote on Truth Social on September 14 that 'the only control or \"guardrails\" that AI needs is a STRONG AND SMART (High IQ!) PRESIDENT, and the U.S.A. has that, in spades,' directly rejecting the AI-slowdown push that had gathered momentum over the prior week. He singled out Anthropic CEO Dario Amodei by name, writing that his administration has stopped AI 'people' from doing 'bad, or potentially bad, things, like Dario (Anthropic!), who is now pretending to be a \"perfect little angel.\"' The post came four days after Amodei published an essay titled 'We Must Pace the Frontier,' arguing the industry should deliberately slow frontier development to avoid catastrophic risks — a call Sam Altman and Elon Musk had both publicly backed. Multiple outlets reported Trump has separately dismissed broader AI existential-risk concerns as a 'hoax.'",
+        why: "It's a direct, public collision between the federal government's stated approach to AI — leave it to the market, let a 'strong president' handle problems as they arise — and the safety framing that Anthropic, OpenAI and others have spent the past week building public support for.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-14/trump-rejects-calls-for-ai-guardrails-blasts-anthropic-s-amodei" },
+          { label: "Axios", url: "https://www.axios.com/2026/09/14/trump-ai-safety-anthropic-dario-amodei" },
+          { label: "NBC News", url: "https://www.nbcnews.com/politics/trump-administration/trump-rejects-ai-guardrails-rcna597700" }
+        ]
+      },
+      {
+        title: "OpenAI's policy chief reveals weeks of behind-the-scenes safety coordination with Anthropic and Google DeepMind",
+        body: "OpenAI global policy chief Chris Lehane told reporters in Washington on September 15 that OpenAI, Anthropic and Google DeepMind have been quietly coordinating on AI safety measures for several weeks, TechCrunch reported. Lehane said OpenAI supports a provision in the proposed FRONTIER Act that would require top frontier labs to give 'independent verification organizations' access to check their safety practices. He added that the three companies don't believe they need an antitrust exemption to work together on shared risk mitigation, framing it as simply the right approach rather than a legal maneuver. The disclosure follows Sam Altman's earlier confirmation that OpenAI would match Anthropic's commitment to give outside evaluators permanent, employee-level access.",
+        why: "This is the mechanism behind this week's public pledges — actual lawmakers, actual proposed legislative text, and competitors talking to each other directly — which is a more concrete test of whether 'we'll cooperate on safety' turns into anything binding.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-15/openai-says-it-s-working-with-anthropic-google-on-ai-safety" }
+        ]
+      },
+      {
+        title: "Altman confirms OpenAI's IPO has slipped to 2027 as Anthropic aims to go public by year-end",
+        body: "In a Fortune interview published September 15, Sam Altman said OpenAI will not go public in 2026, telling the magazine, 'I would say not 2026 — we got a lot of stuff to do, like meeting this moment of what is going to be required for safety and alignment, and how the industry and governments can work together.' It follows his September 12 comment that listing in 2026 would be 'an ill-advised moment' given rising AI safety scrutiny across the industry. OpenAI is now reportedly targeting a 2027 window instead. Anthropic, by contrast, is still said to be preparing to go public before the end of 2026, at a valuation that could reach roughly $2.3 trillion.",
+        why: "An IPO timeline is a company's own bet on how the public and regulators will read it at listing time — OpenAI pushing its date out while framing it around 'safety and alignment' work is worth separating from ordinary market timing.",
+        sources: [
+          { label: "Fortune", url: "https://fortune.com/2026/09/15/sam-altman-says-openai-ipo-window-pushed-2027-but-markets-arent-the-culprit/" },
+          { label: "Fortune", url: "https://fortune.com/2026/09/12/sam-altman-openai-ipo-delay-ill-advised-moment-safety-concerns/" }
+        ]
+      },
+      {
+        title: "Shanghai AI Lab quietly ships Atria Dawn Preview, a free 744-billion-parameter agentic model",
+        body: "On September 11, Shanghai Artificial Intelligence Laboratory published Atria Dawn Preview on Hugging Face and GitHub with no accompanying blog post or press announcement — a 744-billion-parameter mixture-of-experts model built on the GLM-5.2 foundation and released free under an MIT license. A technical report followed on arXiv on September 14, credited to more than 140 authors, describing how the model was trained via what the team calls a 'Verifiable Experience Pipeline' that grounds tool use in executable, checkable environments. The report doubles as a study of the model's own development: it analyzes 769 real task records from 56 people who used Atria Dawn while building it, finding participants rated roughly a third of completed AI-assisted tasks infeasible without the model's help, while stressing that humans retained final decision authority throughout. Across 16 benchmarks spanning research, engineering and digital work, the lab reports the model is competitive with frontier agents and leads on five of them.",
+        why: "It's a useful example of two things at once: mixture-of-experts as the standard way labs now build very large models that stay cheap to run, and a rare, self-reported (not independently audited) data point on how much such a model actually sped up the humans who built it.",
+        sources: [
+          { label: "Hugging Face", url: "https://huggingface.co/internlm/Atria-Dawn-Preview" },
+          { label: "arXiv", url: "https://arxiv.org/abs/2609.15818" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good for a same-day take on Trump's Truth Social attack on Amodei and what Lehane's disclosure about lab-to-lab safety talks actually reveals.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together the whole slowdown saga this week: Amodei's essay, the White House pushback, and now the labs' own quiet coordination.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "A good fit for unpacking the politics of Trump's attack on Amodei alongside the shifting OpenAI and Anthropic IPO timelines.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "Best fit for a fast, visual explainer on what a 744-billion-parameter mixture-of-experts model like Atria Dawn Preview actually is.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Mixture of experts (MoE)",
+      definition:
+        "A model architecture that splits its parameters into many specialized sub-networks, called experts, and for each input only activates a small subset of them rather than running every parameter every time. It's why a model like Atria Dawn Preview can have 744 billion total parameters while costing far less to run per query than a dense model of the same size — the trade-off is added complexity in how the model learns to route each token to the right experts.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Open the Atria Dawn Preview model card on Hugging Face (linked above) and look for how many of its 744 billion total parameters are 'active' per token versus the total count — that gap is what makes a mixture-of-experts model cheaper to run than a dense model of the same size.",
+    learnLinks: [
+      { label: "How government pressure and political rhetoric shape AI policy → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI company valuations, funding, and IPOs actually work → The AI Industry & Business", href: "#/course/industry" },
+      { label: "How mixture-of-experts models route work between specialized sub-networks → How AI Models Actually Work", href: "#/course/models" }
+    ]
+  },
+  {
     date: "2026-09-15",
     displayDate: "Tuesday, September 15, 2026 · Edition #44",
     headline: "China's state media brands the AI-slowdown push 'self-serving' as Anthropic, OpenAI and xAI move from pledges to a real evaluator-access standard, Anthropic's threat report documents AI-run espionage, and DeepMind opens a map of all 9 billion possible human DNA mutations",
