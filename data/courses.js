@@ -1009,9 +1009,10 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "claude",
       title: "Claude (Anthropic)",
       minutes: 18,
-      updated: "Sep 9, 2026",
+      updated: "Sep 17, 2026",
       content: `
 <p><b>Claude</b> (claude.ai) is Anthropic's assistant, built on the Claude model family. As of September 1, 2026, the flagship generation is Claude Fable 5.1 and Claude Mythos 5.1 — twin models Anthropic says outperform the original Fable 5, Opus 5, and OpenAI's GPT-5.6 Sol across multiple benchmarks. Claude's reputation: the writer's and builder's AI — long documents, careful reasoning, and best-in-class coding.</p>
+<p><b>Cowork is merging into chat (announced September 16, 2026).</b> Anthropic is folding Claude Cowork — the separate workspace for larger, multi-step projects — directly into the standard Claude chat interface, so a conversation can move from a quick question into deeper agentic work without switching tabs or apps. The change collapses Claude down to two surfaces instead of three: Claude Chat, which now absorbs both Cowork and Artifacts, and Claude Code. Two new tools launched alongside the merge — Claude Docs and Claude Slides — for co-writing documents and building and presenting slide decks (exportable as PDF or PowerPoint) inside the same conversation, and Claude Design (previously limited to websites and prototypes) now works anywhere in Claude. The unified interface is rolling out to Pro and Max subscribers on web, desktop, and mobile over the coming weeks, with Free and Team tiers to follow and Enterprise admins getting at least 30 days' notice first.</p>
 <p><b>Fable 5.1 and Mythos 5.1 launched September 1, 2026.</b> The two are the same underlying model shipped at different safeguard levels: Fable 5.1 is generally available to everyone, while Mythos 5.1 is restricted to trusted-access programs, with safeguards built specifically for cybersecurity and life-sciences work. Alongside the release, Anthropic cut cache-read pricing — typical workloads run roughly 25% cheaper than on Fable 5, and highly agentic workloads (which reuse a lot of cached context) up to 45% cheaper, while base per-token pricing stays the same.</p>
 <p><b>Enterprise Frontier Safeguards launched September 1, 2026.</b> Alongside the model release, Anthropic introduced Enterprise Frontier Safeguards (EFS), which combines zero data retention with automated misuse-detection by storing monitoring activity in cloud infrastructure the customer itself controls — through AWS, Google Cloud, or Microsoft Azure — rather than on Anthropic's own servers. It was developed with more than 100 customers across financial services, healthcare, manufacturing, telecom, law, retail, and the public sector, is free to use (customers just pay their cloud provider for storage), and rolls out to customers in phases starting later this fall.</p>
 <p><b>Claudeforce launched August 26, 2026.</b> Salesforce and Anthropic announced an expanded partnership making Claude the default reasoning engine behind Salesforce's Atlas Reasoning Engine, powering Agentforce Vibes and Agentforce Coworker by default, and available inside Agent Builder. The deal also ships "Salesforce in Claude," a plugin with 37 prebuilt sales skills that let sellers and agents reason over live revenue data, automate pipeline updates, and take governed actions directly from Claude — with more integrations spanning Claude, Salesforce, and Slack planned.</p>
@@ -1024,7 +1025,8 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Huge context</b> — entire books or codebases in one conversation (hundreds of thousands of tokens; ~1M in API tiers)</li>
 <li><b>Web search, file analysis, voice</b> — grounded answers and document Q&A</li>
 <li><b>Claude Code</b> — the terminal/IDE agent that autonomously writes, tests, and refactors real codebases; the tool behind much of 2025–26's "agentic coding" wave</li>
-<li><b>Claude Cowork in Chrome</b> — as of August 2026, the Claude for Chrome sidebar runs a full Cowork session with skills, plugins, and connectors built in, and a task started in the Claude app can continue seamlessly in the browser (Max/Team now, Pro rolling out)</li>
+<li><b>Cowork, now built into chat</b> — since September 16, 2026, Claude decides on its own how much multi-step, agentic work a request needs instead of requiring a separate Cowork mode; the Claude for Chrome sidebar likewise runs full agentic sessions with skills, plugins, and connectors built in</li>
+<li><b>Claude Docs and Claude Slides</b> — co-write documents and build and present slide decks directly inside a conversation, with PDF/PowerPoint export</li>
 <li><b>Memory (unified, Aug 25 2026)</b> — Claude now shares one memory system across chat and Cowork, browsable topic by topic so you can see, edit, or delete what it remembers; sensitive subjects (health, race, religion, politics) are excluded by default unless you opt in, and identifiers like Social Security numbers are never stored. On by default for Free/Pro/Max, off by default for Team/Enterprise</li>
 </ul>
 <h3>Pricing shape</h3>
@@ -1034,13 +1036,14 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <blockquote>Try it: paste a messy 20-page document into a Claude Project and ask for a structured brief — then ask it to build an interactive summary as an Artifact. If you code at all, try Claude Code on a real repo; it's the fastest way to understand what "AI agent" means.</blockquote>`,
       keypoints: [
         "Anthropic's assistant; Claude Fable 5.1 and Mythos 5.1 (Sep 1, 2026) are the current flagship generation",
+        "Cowork merged into ordinary chat (Sep 16, 2026) — Claude now judges on its own how much agentic work a request needs, cutting Claude down to two surfaces: Claude Chat and Claude Code",
+        "New Claude Docs and Claude Slides launched alongside the merge, for co-writing documents and building/presenting decks inside a conversation",
         "Fable 5.1 is generally available; Mythos 5.1 is restricted to trusted-access programs with safeguards for cybersecurity/life-sciences work",
         "Cache-read pricing cut with the 5.1 release — up to 45% cheaper for highly agentic workloads",
         "Enterprise Frontier Safeguards (Sep 1, 2026) pairs zero data retention with misuse detection stored in the customer's own cloud account; free, rolling out this fall",
         "Claudeforce (Aug 26, 2026) makes Claude the default reasoning engine across Salesforce, with a 37-skill \"Salesforce in Claude\" plugin",
         "Signature features: Projects, Artifacts, extended thinking, massive context",
         "Claude Code defined the agentic-coding category",
-        "Claude Cowork now runs full sessions with skills/plugins in the Chrome sidebar",
         "Claude Academy (academy.claude.com) launched Aug 20, 2026 — 355 free tutorials, no account needed",
         "Memory unified across chat and Cowork (Aug 25, 2026) — browsable topic by topic, sensitive topics excluded by default",
         "Pick it for writing, analysis, coding depth; ChatGPT still wins on consumer breadth"
