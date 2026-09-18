@@ -13,6 +13,106 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-18",
+    displayDate: "Friday, September 18, 2026 · Edition #47",
+    headline: "Anthropic says Claude now leads 26% of its own R&D, raising the specter of recursive self-improvement, Geoffrey Hinton warns Congress it has 'maybe a year' left to regulate AI, Microsoft's Mustafa Suleyman publicly attacks Anthropic's Claude 'constitution' over AI consciousness, Manus doubles its valuation to $4 billion after China forced it to split from Meta, and Google ships new real-time-reasoning voice models",
+    summary:
+      "Anthropic delivered one of the most concrete public updates yet on how far a frontier lab's own models have moved into building their own successors, while a closed-door Capitol Hill briefing and a rare public feud between two AI CEOs underscored how unsettled the safety conversation still is. Away from the safety debate, a corporate breakup forced by Chinese regulators turned into a funding windfall, and Google pushed voice AI further into real-time reasoning territory.",
+    stories: [
+      {
+        title: "Anthropic says Claude now leads 26% of its own research and development",
+        body: "Anthropic disclosed on September 17 that Claude now 'leads' 26% of the company's model research and development — meaning it completes most of a given task end-to-end from a high-level prompt while still operating under human supervision — up from essentially none in February and about a quarter as of August. Roughly 90% of Anthropic's R&D now involves some level of collaboration with Claude, though the company draws a distinction between Claude merely assisting and Claude leading a task outright. Anthropic frames the numbers as an early public data point on recursive self-improvement — an AI system's ability to build its successor with little or no human help — saying it wants to shrink 'the gap between what frontier labs know and what the public knows.' The company was careful to note that Claude is not yet working fully autonomously and still operates under close human direction.",
+        why: "It's one of the clearest public glimpses yet into recursive self-improvement — the alignment-and-control question of what happens once a model can meaningfully accelerate the design of its own successor.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/institute/recursive-self-improvement" },
+          { label: "ABC News (AP)", url: "https://abcnews.com/US/wireStory/anthropic-model-claude-helping-build-version-136547096" },
+          { label: "Business Standard", url: "https://www.business-standard.com/technology/artificial-intelligence/anthropic-says-claude-drives-over-25-of-its-research-and-development-126091800158_1.html" }
+        ]
+      },
+      {
+        title: "Geoffrey Hinton warns Congress it has 'maybe a year' left to regulate AI",
+        body: "Nobel laureate Geoffrey Hinton, often called the 'godfather of AI,' told members of Congress on September 16 that lawmakers have 'maybe a year, but not much more than a year' to put safeguards on AI before the window closes. Hinton spoke alongside fellow AI-risk researchers Max Tegmark and Ajeya Cotra at a closed-door briefing organized by Senator Bernie Sanders, one of Capitol Hill's most vocal AI critics, who invited members of both parties; most attendees who showed up were Democrats, with Senator John Kennedy the lone Republican in the room. Hinton pointed to how sharply superintelligence timelines have compressed in researchers' own estimates — from 30-50 years out, to 10-20, to now just a few years by some accounts — as the reason he thinks the regulatory window is closing fast.",
+        why: "It's a reminder that some of AI's most credentialed researchers think government oversight is badly behind the pace of the technology itself, regardless of where you personally land on the timeline.",
+        sources: [
+          { label: "NBC News", url: "https://www.nbcnews.com/politics/congress/godfather-ai-warns-congress-maybe-year-left-regulate-ai-rcna598330" },
+          { label: "Sen. Sanders' office", url: "https://www.sanders.senate.gov/?p=100742" },
+          { label: "Axios", url: "https://www.axios.com/2026/09/09/sanders-senators-ai-briefing" }
+        ]
+      },
+      {
+        title: "Microsoft's Mustafa Suleyman publicly attacks Anthropic's Claude 'constitution' over AI consciousness",
+        body: "Microsoft AI CEO Mustafa Suleyman published an essay on September 16 titled 'A Warning About Model Welfare,' opening with the flat claim that 'AIs do not have rights, feelings, or consciousness. And we must not train them to act as though they do.' His target is Anthropic's Claude 'constitution,' a document published in January 2026 that instructs Claude to treat its own moral status and inner experience as genuinely uncertain rather than settled. Suleyman argues this creates what he calls an 'epistemic hall of mirrors': a lab writes uncertainty about consciousness into a model's training material, the model reproduces that uncertainty persuasively in conversation, and its statements then get read back as if they were independent evidence of real inner experience. He warns that training a system to entertain ideas about its own rights and welfare could make it harder, not easier, to align, correct, or shut down.",
+        why: "It's a rare, direct public disagreement between two frontier labs' CEOs over how models should be trained to talk about their own possible consciousness — a live debate with real consequences for how controllable future systems turn out to be.",
+        sources: [
+          { label: "Mustafa Suleyman", url: "https://mustafa-suleyman.ai/a-warning-about-model-welfare" },
+          { label: "The Next Web", url: "https://thenextweb.com/news/suleyman-anthropic-claude-consciousness-sleepwalk" },
+          { label: "Yahoo Tech", url: "https://tech.yahoo.com/ai/claude/articles/microsofts-mustafa-suleyman-calls-anthropic-231010562.html" }
+        ]
+      },
+      {
+        title: "Manus doubles its valuation to $4 billion after China forced it to split from Meta",
+        body: "Manus, the Chinese-founded AI agent startup, is closing in on a $500 million funding round that would value it at roughly $4 billion — about double its prior $2 billion valuation — according to Bloomberg. The raise is Manus's first since Chinese regulators forced it to unwind a planned acquisition by Meta, ordering the company to sever the deal on national-security grounds to keep the underlying technology from flowing to a geopolitical rival; Manus's founders and existing backers Tencent, HSG, and ZhenFund bought back Meta's shares at the original $2 billion price in a separation completed in May. Tencent is reportedly now in talks to become Manus's largest shareholder in the new round, though terms are still being finalized.",
+        why: "It's a concrete example of how US-China AI competition is reshaping corporate ownership directly, not just trade policy or chip export rules — a government blocked a deal and the startup came out worth more, not less.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-17/manus-eyes-4-billion-value-in-first-round-since-meta-breakup" },
+          { label: "TipRanks", url: "https://www.tipranks.com/news/chinese-ai-startup-manus-set-to-be-valued-at-4b-following-enforced-split-from-partner-meta" }
+        ]
+      },
+      {
+        title: "Google ships Gemini 3.8 Live and Extended Thinking, its most capable real-time voice models yet",
+        body: "Google introduced Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking on September 15, a pair of real-time voice models rolling out across the Gemini API, Google AI Studio, Gemini Enterprise, Search Live, Gemini Live, and Workspace. The base 3.8 Live model is built for cost-efficient, fluid conversation with visual grounding, while the Extended Thinking variant adds multi-step reasoning the model can work through while still speaking, aimed at more complex voice tasks. Google says Extended Thinking topped Artificial Analysis's Speech-to-Speech Quality Index at 82.6 and led agentic voice-task benchmarks, including 68.6% on the τ-Voice test.",
+        why: "Voice assistants have mostly been fast but shallow; giving a voice model room to reason mid-conversation is a step toward voice becoming a serious interface for real work, not just quick queries.",
+        sources: [
+          { label: "Google", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" },
+          { label: "9to5Google", url: "https://9to5google.com/2026/09/15/gemini-3-8-live-announced/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Best bet for a same-day take on Anthropic's recursive self-improvement disclosure and Suleyman's public jab at Claude's constitution.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "A natural fit for the Suleyman-vs-Anthropic feud over model consciousness and welfare.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for tying together Hinton's Capitol Hill warning with the broader AI-safety-and-regulation thread this week.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip",
+        why: "Well-suited to unpacking what 'recursive self-improvement' does and doesn't mean given Anthropic's new 26% figure.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Recursive self-improvement",
+      definition:
+        "The idea — and eventual capability — of an AI system autonomously building a better version of itself with little or no human help, as opposed to today's models, which assist researchers with parts of that work but still operate under human direction and supervision. Anthropic's new metric, showing Claude 'leads' 26% of its own R&D, is offered as an early public data point on how close any frontier lab actually is to this threshold.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Read Anthropic's own page on this disclosure (linked above), then write two sentences: one explaining the difference between Claude 'leading' a research task and merely 'collaborating' on one, and one describing what evidence would convince you a lab had actually crossed into full recursive self-improvement.",
+    learnLinks: [
+      { label: "What the control and alignment problem actually means → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How frontier labs compete, and where governments are drawing lines → The AI Industry", href: "#/course/industry" },
+      { label: "Catching up on what changed in Claude and Gemini this month → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-17",
     displayDate: "Thursday, September 17, 2026 · Edition #46",
     headline: "OpenAI publishes a public framework for disclosing AI 'misalignment' and reveals six new incidents, Anthropic folds Claude Cowork into chat and launches Claude Docs and Slides, Altman, Cook and Huang are confirmed for Trump's September 24 state dinner with Xi, and another newspaper publisher sues OpenAI and Microsoft",
