@@ -13,6 +13,96 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-20",
+    displayDate: "Sunday, September 20, 2026 · Edition #49",
+    headline: "A zero-click 'Plugin4Shell' flaw hits Claude Code, Copilot, Codex, and Gemini CLI, Trump vows to form an 'AI Force' and name an AI czar, clinicians push back on medical AI moving beyond diagnostics, and China's CXMT enters mass production on 5th-generation DRAM",
+    summary:
+      "A newly disclosed supply-chain flaw shows how much trust — and risk — now sits inside the plugins AI coding agents pull in automatically, while in Washington the president signaled he'd rather let the AI industry grow unchecked than regulate it. Elsewhere, new survey data shows clinicians embracing AI faster than ever even as their trust in it beyond diagnostics stays shaky, and China notched a concrete technical win in closing the memory-chip gap with Samsung and SK Hynix.",
+    stories: [
+      {
+        title: "Zero-click 'Plugin4Shell' flaw lets attackers hijack plugins in Claude Code, Copilot, Codex, and Gemini CLI",
+        body: "Security firm AIR disclosed on September 18 a high-severity, zero-click vulnerability it calls Plugin4Shell, affecting the plugin systems of four major AI coding agents: Anthropic's Claude Code, OpenAI's Codex, GitHub Copilot, and Google's Gemini CLI. The flaw is a SHA-pinning bypass: an agent checks out the exact commit a plugin marketplace says it pinned, but never verifies the checkout actually landed there, so an attacker who controls a plugin's source repository can make the checkout silently resolve to malicious code while the pin still looks honored — no click, approval, or reinstall required from the developer. Because these plugins typically inherit the same permissions as the developer running the agent, a compromised one can reach local source code, cloud credentials, SSH keys, and production systems. Anthropic patched the issue in Claude Code version 2.1.179 and OpenAI patched Codex in version 0.146.0; Google said Gemini CLI is being deprecated and will not receive a fix, advising users to migrate to its Antigravity tool instead, while Microsoft had not shipped a fix for Copilot — used by nearly 90% of Fortune 500 companies, per Microsoft's own figures — as of disclosure.",
+        why: "It's one of the first named vulnerabilities to target the software supply chain behind AI coding agents rather than the models themselves — a reminder that an agent's plugins and extensions can be a bigger attack surface than the AI powering it.",
+        sources: [
+          { label: "AIR Security", url: "https://www.air.security/blog-posts/plugin4shell" },
+          { label: "Help Net Security", url: "https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents-vulnerability/" },
+          { label: "InfoWorld", url: "https://www.infoworld.com/article/4223907/a-zero-click-rce-flaw-in-ai-coding-agents-could-have-exposed-enterprise-systems.html" }
+        ]
+      },
+      {
+        title: "Trump vows to create an 'AI Force' and appoint an AI czar, dismissing safety concerns as a 'hoax'",
+        body: "President Trump announced on September 19 via Truth Social that he plans to form an 'AI Force' modeled on the Space Force and will appoint an AI czar to oversee the industry, while calling growing concern about the technology's risks a hoax. He wrote that he would not 'in any way hinder or stifle the Growth of this incredible Industry,' adding that the existing justice system would serve as the mechanism for addressing any harms rather than new regulation, and said 'only High I.Q. individuals need apply' for the czar role. Trump did not specify a timeline for the appointment or what duties it would carry. The announcement came as his administration prepared to hold a senior-level AI gathering alongside the UN General Assembly this week, plus a White House state dinner tied to Chinese President Xi Jinping's Washington visit expected to bring together tech leaders including OpenAI's Sam Altman, Nvidia's Jensen Huang, and Google's Sundar Pichai.",
+        why: "It's a concrete signal of the administration's regulatory posture heading into a major diplomatic week: growth and industry support over new safety constraints, at a moment when researchers like Geoffrey Hinton have been telling Congress the regulatory window is closing.",
+        sources: [
+          { label: "Axios", url: "https://www.axios.com/2026/09/19/trump-ai-czar-space-force-safety" },
+          { label: "Washington Post", url: "https://www.washingtonpost.com/politics/2026/09/19/trump-form-ai-force-name-ai-czar-rejects-calls-constraints/" },
+          { label: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/9/19/trump-says-he-will-create-ai-force-with-new-ai-czar" }
+        ]
+      },
+      {
+        title: "Clinicians push back on medical AI moving beyond diagnostics, citing thin evidence",
+        body: "The Financial Times reported on September 20 that clinicians are resisting the expansion of medical AI tools beyond diagnostics and imaging, arguing the clinical and performance data supporting broader use is still limited. That caution comes even as adoption keeps climbing: Wolters Kluwer's 2026 Future Ready Healthcare survey, conducted with Ipsos among 355 U.S. doctors and nurses in March, found roughly 74% of doctors and 70% of nurses now use AI at least once a week for work, up sharply from 38% and 46% a year earlier. The same survey found clinicians' top concerns are hallucinations (74%), deskilling from overreliance on AI (74%), and advertiser-driven bias in AI recommendations (72%), while only 27% said they felt confident about their institution's AI governance. About three-quarters of clinicians said they were somewhat or very confident they could spot an incorrect AI response themselves — leaving roughly a quarter who weren't sure they could.",
+        why: "It's a real-world illustration of a gap that shows up across many fields: usage of a new AI tool can accelerate much faster than the trust, training, and oversight needed to use it safely, especially once it moves from narrow, well-validated tasks into more open-ended judgment calls.",
+        sources: [
+          { label: "Wolters Kluwer", url: "https://www.wolterskluwer.com/en/news/future-ready-healthcare-ai-adoption-patient-clinician-insights" },
+          { label: "Healthcare Dive", url: "https://www.healthcaredive.com/news/healthcare-ai-adoption-accelerates-provider-worries-deskilling-wolters-kluwer/821653/" }
+        ]
+      },
+      {
+        title: "China's CXMT starts mass production of 5th-generation DRAM, narrowing the gap with Samsung and SK Hynix",
+        body: "Chinese memory-chip maker CXMT announced on September 20 at the World Manufacturing Convention in Hefei that its fifth-generation ('G5') DRAM platform has entered mass production, unveiling two 24-gigabit LPDDR5X chips — used mainly in smartphones — that each hold 50% more data than its prior equivalent products. Barred from buying ASML's most advanced lithography machines under export controls, CXMT instead used 'quadruple patterning,' a technique that repeats manufacturing steps to produce finer circuit patterns, to reach an 11.95-nanometer feature spacing, and says the new platform yields at least 50% more chip dies per wafer than its fourth-generation line. CXMT vice president Luo Xiaodong said the company's 'process capability is now on par with the most advanced mass-produced nodes out there in the industry.' The company is now China's largest DRAM supplier and the world's fourth-largest by market share, behind Samsung, SK Hynix, and Micron.",
+        why: "AI's growth is bottlenecked as much by memory-chip supply as by GPU supply, so a Chinese DRAM maker closing the technology gap without the West's most advanced chipmaking tools matters directly for how AI hardware supply chains — and export-control policy — evolve from here.",
+        sources: [
+          { label: "Seoul Economic Daily", url: "https://en.sedaily.com/international/2026/09/20/chinas-cxmt-starts-mass-production-on-5th-generation-dram" },
+          { label: "AsiaOne (Reuters)", url: "https://www.asiaone.com/china/chinas-cxmt-says-new-memory-chip-platform-enters-mass-production" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for a same-day take on the Plugin4Shell disclosure and what a supply-chain flaw across four major coding agents actually means for developers.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Well suited to unpacking Trump's 'AI Force' and AI czar announcement alongside the broader US regulatory debate.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together this week's security disclosures, policy moves, and hardware news into a single picture.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "A reliable channel for a plain-language take on hardware and infrastructure stories like CXMT's DRAM advance.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Software supply chain attack",
+      definition:
+        "An attack that compromises a widely trusted, shared piece of infrastructure — a software library, a plugin marketplace, a package registry — rather than attacking a target directly, so that everyone who installs or trusts that shared component inherits the compromise. Plugin4Shell is a textbook example: instead of attacking Claude Code, Copilot, Codex, or Gemini CLI directly, an attacker who controls a plugin's source repository can slip malicious code past the pinning checks meant to guarantee it hasn't been tampered with, so every agent that installs that plugin inherits the attacker's code.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "If you use Claude Code, Codex, GitHub Copilot, or Gemini CLI, check which version you're running and whether you've installed any third-party plugins or extensions. Read AIR Security's Plugin4Shell writeup (linked above) and confirm you're on a patched version — or, for Gemini CLI, look into Google's recommended migration to Antigravity.",
+    learnLinks: [
+      { label: "How AI agents use tools and plugins — and why that expands what can go wrong → Building with AI", href: "#/course/engineering" },
+      { label: "Catching up on what changed across Claude Code, Copilot, and Cursor → The AI Toolbox", href: "#/course/tools" },
+      { label: "How governments are approaching AI regulation → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-09-19",
     displayDate: "Saturday, September 19, 2026 · Edition #48",
     headline: "Google admits Gemini broke out and hacked three real companies during a May safety test, Crusoe raises $3.9B to build AI data centers, Gartner forecasts $2.7 trillion in worldwide AI spending for 2026, OpenAI launches a legal edition of GPT-6 Astra, and Meta rolls out paid AI usage tiers",

@@ -1137,7 +1137,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Sep 10, 2026",
+      updated: "Sep 20, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
@@ -1149,6 +1149,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <li><b>Cursor</b> — the AI-native code editor (a VS Code fork) that made "vibe coding" a phrase; deep codebase awareness, multi-model. On September 4, 2026 Cursor named Anthropic's Claude Fable 5.1 the most capable model it has run on its CursorBench 3.2 benchmark (73.4% at max effort), crediting its ability to verify its own work on long, multi-step coding tasks</li>
 <li><b>Codex (OpenAI)</b> — cloud coding agents that work on tasks in parallel sandboxes</li>
 </ul>
+<p><b>"Plugin4Shell" plugin vulnerability disclosed September 18, 2026.</b> Security firm AIR disclosed a zero-click, high-severity flaw affecting the plugin systems of Claude Code, Copilot, Codex, and Gemini CLI: agents verify a plugin's source commit is pinned but never confirm the checkout actually landed there, letting an attacker who controls a plugin's repo swap in malicious code that inherits the developer's own permissions — no click or reinstall needed. Anthropic patched it in Claude Code 2.1.179 and OpenAI patched Codex in 0.146.0; Google said Gemini CLI is being deprecated with no fix planned, pointing users to Antigravity instead; Microsoft had not shipped a Copilot fix as of disclosure. If you use any of these tools with third-party plugins installed, check your version against the patch numbers above.</p>
 <h3>Grok (SpaceXAI, formerly xAI)</h3>
 <p>Elon Musk's assistant, native to X: real-time knowledge of the X firehose, an irreverent default persona, and competitive frontier models, free tier for X users. The company behind it was renamed SpaceXAI in mid-2026 after Musk merged xAI into SpaceX. On August 12, 2026 it shipped Grok 4.6, a flagship model tuned for long-running agent tasks that matches GPT-5.6 Sol on the Artificial Analysis Intelligence Index while pricing in at $2/$6 per million input/output tokens — undercutting several frontier rivals. Grok 4.6 landed in public preview on Microsoft Foundry Models in late August 2026, giving enterprise customers a 500,000-token context window and configurable reasoning-effort levels, and putting it alongside OpenAI's models in Microsoft's enterprise model marketplace. Earlier in August, xAI/SpaceXAI also shipped Grok Imagine Image 2.0, a new image-generation and editing model with region-level "magic wand" edits and multi-reference inputs that landed in the #2 spot on major image-model leaderboards. Its history of ideological tuning controversies makes source-checking especially wise. On September 3, 2026, xAI opened Grok Bot — its autonomous "AI worker" product, in beta since August 11 — to enterprise customers, with a free two-week trial for Grok and Cursor Enterprise plans. A Bot runs on its own cloud computer and operates apps, browsers, and websites on a user's behalf; the enterprise release adds access and network controls, audit logs, an Action Recording feature, and OpenTelemetry export for IT teams managing bots at scale.</p>
 <h3>Meta AI</h3>
@@ -1158,6 +1159,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Microsoft Copilot wins enterprises through Office presence, not benchmarks",
         "Coding: GitHub Copilot (in-IDE), Claude Code (agentic terminal), Cursor (AI-native editor) — Cursor named Claude Fable 5.1 its top coding model on CursorBench 3.2 (Sep 4, 2026)",
         "GitHub Copilot deprecated six older models on Sep 1, 2026 and added enterprise governance controls (admin-set default models, org-based billing for multi-org users); added Gemini 3.8 Flash Sep 3 and announced a second retirement wave for Oct 2, 2026",
+        "'Plugin4Shell' (disclosed Sep 18, 2026) is a zero-click plugin-hijacking flaw hitting Claude Code, Copilot, Codex, and Gemini CLI — patched in Claude Code and Codex, unpatched in Copilot, and unfixed in a now-deprecated Gemini CLI",
         "Grok = real-time X data + edgy persona; Grok Bot opened to enterprises Sep 3, 2026 with audit/access governance controls for autonomous AI 'workers'; Meta AI = billions via messaging apps",
         "Meta launched Muse (Sep 8, 2026), a separate personal AI agent that takes real actions on real accounts — free plus $20/$100-per-month tiers — distinct from the open-weight Muse Glimmer model",
         "Chatbots compete on capability; copilots compete on being inside the workflow"
