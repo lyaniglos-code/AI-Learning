@@ -13,6 +13,104 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-21",
+    displayDate: "Monday, September 21, 2026 · Edition #50",
+    headline: "Newsom orders a review of an AI 'kill switch,' Bessent floats a US-China AI safety hotline ahead of the Trump-Xi summit, China's StepFun open-sources a 600B-parameter model, and Bloomberg warns AI now drives half of US GDP growth",
+    summary:
+      "Policy moved on two fronts at once this weekend: California pushed toward mandatory safety mechanisms for frontier AI while Washington and Beijing discussed a notification channel for AI-related security incidents ahead of this week's presidential summit. Meanwhile a Chinese lab shipped another large, cheap, soon-to-be-open model, and a new economic analysis put a number on just how much of the US economy's recent growth is now riding on AI's continued acceleration.",
+    stories: [
+      {
+        title: "California Gov. Newsom orders a review of an AI 'kill switch' and stronger independent oversight",
+        body: "Governor Gavin Newsom signed an executive order on September 18 directing California to accelerate independent, third-party oversight and audits of AI safety and security risks. The order convenes a group of AI experts who must deliver recommendations within two months for strengthening the state's AI safety laws, including proposals to require frontier AI companies to have independent third parties write their safety plans, and to require an emergency shutoff — a 'kill switch' — for frontier models. California has already passed a string of AI-specific laws covering frontier-model safety, deepfakes, and companion chatbots; Newsom framed the new order as the state moving proactively rather than waiting on Washington, saying 'we're not waiting to act.'",
+        why: "California anchors most of the US AI industry, so what it requires of frontier labs often functions like de facto national policy — this order pushes toward mandatory safety mechanisms at the exact moment the federal government has signaled it won't.",
+        sources: [
+          { label: "Governor of California", url: "https://www.gov.ca.gov/2026/09/18/governor-newsom-issues-executive-order-to-accelerate-independent-oversight-and-advance-the-creation-of-an-ai-kill-switch/" },
+          { label: "CNN", url: "https://www.cnn.com/2026/09/18/politics/gavin-newsom-artificial-intelligence" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-18/newsom-pitches-ai-kill-switch-extra-oversight-in-california" }
+        ]
+      },
+      {
+        title: "Treasury Secretary Bessent proposes a US-China AI safety notification channel ahead of the Trump-Xi summit",
+        body: "After talks in New York on September 20 with Chinese Vice Premier He Lifeng, US Treasury Secretary Scott Bessent said the US had proposed a new mechanism through which Washington and Beijing would notify each other of AI-related incidents that rise to a national-security level. The proposal would sit inside a broader planned US-China AI dialogue and is intended for Presidents Trump and Xi to consider at their summit in Washington later this week. Bessent said 'moving from opaque to more transparency between the number one and the number two AI powers in the world is very important.' US Trade Representative Jamieson Greer said existing export controls on advanced AI chips were not on the agenda for these particular talks.",
+        why: "It's a concrete, if modest, step toward the kind of great-power AI risk-communication channel — an AI equivalent of a nuclear 'hotline' — that safety researchers have long argued is missing between the world's two leading AI powers.",
+        sources: [
+          { label: "CNN Business", url: "https://www.cnn.com/2026/09/20/business/us-china-trade-talks-ai-intl-hnk" },
+          { label: "NBC News", url: "https://www.nbcnews.com/world/asia/us-proposes-exchanging-ai-safety-alerts-china-bessent-says-rcna598923" }
+        ]
+      },
+      {
+        title: "China's StepFun releases Step 5 Preview, a 600B-parameter model with weights opening October 15",
+        body: "Chinese AI lab StepFun released Step 5 Preview on September 20, a sparse mixture-of-experts model with roughly 600 billion total parameters that activates only about 27 billion of them for any given token, paired with a 1-million-token context window aimed at long-running agentic work like coding, software engineering, and financial analysis. API access is live now, priced at roughly $1 per million input tokens and $2.70 per million output tokens; StepFun says it will open the model's full weights on October 15, making it freely downloadable. On the Artificial Analysis Intelligence Index, StepFun positions Step 5 Preview among the strongest currently available open-weight models.",
+        why: "It's another entry in a fast-moving pattern of Chinese labs shipping large, cheap, soon-to-be-open-weight models — a strategy that trades near-term revenue for the reach and ecosystem lock-in that comes from being the model other developers choose to build on top of.",
+        sources: [
+          { label: "Pandaily", url: "https://pandaily.com/stepfun-step-5-preview-600b-moe-1m-context" },
+          { label: "MarkTechPost", url: "https://www.marktechpost.com/2026/09/20/stepfun-launches-step-5-preview/" }
+        ]
+      },
+      {
+        title: "OpenAI confirms weeks of safety coordination with Anthropic and Google DeepMind",
+        body: "OpenAI global policy chief Chris Lehane said on September 15 that the company has been coordinating with Anthropic and Google DeepMind on AI safety matters for several weeks, following Anthropic CEO Dario Amodei's public essay urging the industry to slow frontier development — an idea Sam Altman, Demis Hassabis, and Elon Musk each publicly backed. The talks reportedly center on a shared industry standards body for frontier models, an idea under discussion in working groups since July. Lehane said the companies don't believe they need an antitrust waiver to coordinate this way, and separately endorsed a provision of the proposed FRONTIER Act that would require frontier labs to host 'independent verification organizations.'",
+        why: "Direct three-way coordination between top rival labs on safety is unusual — competitive pressure normally discourages it — and signals the industry itself sees risks it doesn't think it can fully self-police alone.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-15/openai-says-it-s-working-with-anthropic-google-on-ai-safety" },
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/" }
+        ]
+      },
+      {
+        title: "Bloomberg: AI investment now drives roughly half of US GDP growth, fueling 'earnings bubble' fears",
+        body: "A Bloomberg analysis published September 20 estimated that AI-related investment accounted for roughly half of the US's approximately 2% GDP growth over the past year, while US venture capital funding topped $400 billion in the first half of 2026 alone — with nearly all of it flowing to AI-related startups. The piece notes that trillions of dollars in stock-market value now rest on the assumption that AI capability keeps compounding at its current pace, and that even a modest slowdown could trigger what some investors are already calling an 'earnings bubble' unwind across markets priced for continued acceleration.",
+        why: "It's a reminder that AI's trajectory isn't just a technology story anymore — a meaningful share of the broader economy's recent growth, and a lot of retirement and pension money, is now implicitly betting on AI capabilities continuing to improve on schedule.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-20/ai-s-wobbly-house-of-cards-puts-markets-and-us-economy-at-risk" },
+          { label: "The Japan Times", url: "https://www.japantimes.co.jp/business/2026/09/21/ai-markets-us-economy-risk/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for a same-day take on the Newsom executive order and the Bessent-He Lifeng AI safety proposal ahead of the Trump-Xi summit.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Kevin Roose & Casey Newton · The New York Times · weekly",
+        why: "Well suited to unpacking the US-China AI diplomacy story alongside California's push toward a mandatory 'kill switch.'",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together the policy moves, the three-lab safety coordination story, and the new open-weight model release into one picture.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "A reliable channel for a plain-language breakdown of what a 600B-parameter mixture-of-experts model like Step 5 Preview actually means technically.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Mixture of Experts (MoE)",
+      definition:
+        "A neural network architecture built from many specialized sub-networks, or 'experts,' where only a small subset activates for any given input, chosen by a routing mechanism. This lets a model carry a huge total parameter count — StepFun's Step 5 Preview holds about 600 billion — while keeping the compute cost per token low, since only around 27 billion of those parameters (roughly 4.5%) actually fire for any single token. Most of today's largest frontier models, across nearly every major lab, use some version of this trick to make enormous models efficient enough to actually run.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Look up StepFun's Step 5 Preview on the Artificial Analysis leaderboard and compare its benchmark scores and pricing against a frontier model you already pay for or use daily — how big is the real capability gap, and would the price difference change which one you'd reach for?",
+    learnLinks: [
+      { label: "How mixture-of-experts models pack in huge parameter counts efficiently → How AI Models Work", href: "#/course/models" },
+      { label: "How governments are approaching AI regulation → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "Who's racing to build the labs, chips, and business models behind AI → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-09-20",
     displayDate: "Sunday, September 20, 2026 · Edition #49",
     headline: "A zero-click 'Plugin4Shell' flaw hits Claude Code, Copilot, Codex, and Gemini CLI, Trump vows to form an 'AI Force' and name an AI czar, clinicians push back on medical AI moving beyond diagnostics, and China's CXMT enters mass production on 5th-generation DRAM",
