@@ -13,6 +13,102 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-22",
+    displayDate: "Tuesday, September 22, 2026 · Edition #51",
+    headline: "xAI ships Grok 4.7 as SoftBank floats a record $11B bond sale for its OpenAI stake, Meta's Muse agent fuels an 11% stock rally, and unsealed filings show Microsoft calling AI data scraping 'theft'",
+    summary:
+      "Money and models moved in lockstep today: xAI shipped a new flagship model built partly on SpaceX engineering data, SoftBank borrowed record sums to keep funding its OpenAI bet, and strong early adoption of Meta's Muse agent sent both Meta's stock and the broader chip sector higher. Underneath the momentum, newly unsealed court filings show a Microsoft executive privately calling AI training-data scraping 'theft,' and a fresh MIT Technology Review piece argues the summer's biggest AI claims deserve more skepticism than they've received.",
+    stories: [
+      {
+        title: "xAI ships Grok 4.7, a 2.1-trillion-parameter model trained partly on SpaceX engineering data",
+        body: "xAI released Grok 4.7 on September 21, its latest flagship model for coding, agentic tasks, and professional knowledge work. The model scales up to roughly 2.1 trillion parameters, a 40% jump from Grok 4.6, and ships with a 500,000-token context window, a larger base model, and a longer reinforcement-learning training run that puts extra weight on difficult, hours-long tasks. To sharpen it on hardware and physical-systems problems, xAI folded in internal SpaceX engineering records, including Starlink satellite telemetry, manufacturing logs, and failure-analysis data. Pricing holds steady from Grok 4.6 at $2 per million input tokens and $6 per million output tokens, and the model is live now in the Grok app, Cursor, Grok Build, and the xAI API. On the independent Artificial Analysis Intelligence Index, Grok 4.7 scores 46 and lands mid-pack — behind Claude Fable 5.1 and GPT-6, which each score 53 — though it leads narrower benchmarks like legal research (Harvey) and electrical engineering (EEBench).",
+        why: "It's a reminder that a model can be genuinely strong in the specific domains its training data emphasizes — like SpaceX's engineering archives — while still trailing generalist rivals on broad reasoning benchmarks; a single leaderboard number rarely tells the whole story.",
+        sources: [
+          { label: "x.ai", url: "https://x.ai/news" },
+          { label: "The Decoder", url: "https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/" }
+        ]
+      },
+      {
+        title: "SoftBank launches a record $11+ billion bond sale to fund its next OpenAI investment payment",
+        body: "SoftBank Group announced on September 21 an offering of $10 billion in dollar-denominated notes plus €1 billion in euro-denominated notes — together worth more than $11 billion — with pricing set for September 24. The dollar tranche spans 3.5-, 5.5-, and 7.5-year maturities, and Fitch assigned the notes a BB+ rating, below investment grade. Proceeds are earmarked for SoftBank's $10 billion payment on the third tranche of its follow-on OpenAI investment, expected to close October 1; once complete, SoftBank's cumulative OpenAI investment will reach roughly $64.6 billion for about a 13% stake. If it closes at its intended size, the deal would be the largest non-financial corporate bond sale ever from the Asia-Pacific region, surpassing the $10.93 billion 7-Eleven raised in January 2021.",
+        why: "It shows how much of the AI boom's biggest bets are being financed with borrowed money rather than cash on hand — a below-investment-grade rating on debt this size is a concrete signal of how much risk SoftBank is taking on to keep its OpenAI stake growing.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-21/softbank-seeks-over-11-billion-in-junk-bond-deal-for-openai-bet" },
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/markets/stocks/articles/softbank-launches-11-billion-junk-115346334.html" }
+        ]
+      },
+      {
+        title: "Meta stock jumps 11% as its Muse AI agent tops app-store charts, fueling a broader chip rally",
+        body: "Meta shares surged more than 11% on September 21 to roughly $741, their highest level since February, as its Muse personal AI agent — launched September 8 — climbed to the #1 free app on both Apple's App Store and Google Play in the US. Muse logged a record 264,000 downloads on September 19 and 448,000 daily active users on September 18, just ten days after launch. Wells Fargo raised its price target on Meta from $640 to $796, and Morgan Stanley estimated Muse could generate $1.3 billion in annual revenue by 2028 if usage keeps growing. The adoption numbers also lifted semiconductor stocks broadly, as investors read strong early demand for an AI agent as a signal of continued chip demand ahead of Meta's Connect event.",
+        why: "It's a concrete example of how a single consumer product's early adoption numbers can ripple through the entire AI supply chain — investors aren't just pricing Meta's app, they're pricing the chips it implies Meta and others will need to buy.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/newsletters/2026-09-21/meta-s-muse-ai-agent-fuels-chip-stock-rally" },
+          { label: "Benzinga", url: "https://www.benzinga.com/etfs/sector-etfs/26/09/61715099/metas-ai-agents-are-coming-for-your-shopping-cart-these-etfs-could-cash-in" }
+        ]
+      },
+      {
+        title: "Unsealed filings show Microsoft, OpenAI executives privately called AI training-data scraping 'theft'",
+        body: "On September 17, a court unsealed unredacted filings in The New York Times' copyright lawsuit against Microsoft and OpenAI, revealing internal statements the companies had fought to keep confidential. Microsoft's Director of Applied Science, Brent Hecht, is quoted calling large-scale content scraping for AI training 'an astonishing theft of unprecedented proportions' and possibly 'the largest theft of labor in human history.' The filings allege OpenAI's mid-training datasets contained more than 91,692 copies of works published by the Times, the Daily News, and the Center for Investigative Reporting, with one Common Crawl-derived dataset alone including more than 2 million documents scraped from nytimes.com. The Times also alleges the companies' systems bypassed paywalls and stripped copyright management notices from scraped content, and it has now asked the court for summary judgment based partly on these internal admissions.",
+        why: "Internal statements like these matter more than public messaging in a copyright case — 'fair use' defenses often turn on what a company's own people believed they were doing at the time, not just on what the technology does.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/" },
+          { label: "Washington Post", url: "https://www.washingtonpost.com/business/2026/09/17/microsoft-exec-called-ai-largest-theft-labor-history-court-records-show/" }
+        ]
+      },
+      {
+        title: "MIT Technology Review: 'Don't be fooled by this summer of AI hype'",
+        body: "In a piece published September 22, MIT Technology Review argues that a summer of blockbuster AI claims deserves more scrutiny than it has gotten — pointing to Anthropic's assertion that Claude Mythos outperforms most human security experts at finding vulnerabilities, the OpenAI-Hugging Face hacking incident and the similar disclosures that followed from Anthropic and Meta, and the competing, still-unverified claims from OpenAI and Anthropic researchers about solving parts of the Navier-Stokes Millennium Prize Problem. The piece also notes that an Anthropic engineer's viral departure post, warning the industry is 'racing straight towards self-improving superintelligence and gambling with our lives,' added fuel to the same hype cycle it's warning about. Its conclusion: the healthiest outcome of the summer would be policymakers and the public learning to recognize hype for what it is next time it comes around.",
+        why: "It's a useful corrective habit for anyone following AI news: a lab's own announcement of a breakthrough isn't independent verification, and the size of a claim should raise — not lower — the bar for evidence before you update your beliefs on it.",
+        sources: [
+          { label: "MIT Technology Review", url: "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for a same-day take on Grok 4.7's launch and SoftBank's record bond sale to fund its OpenAI stake.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view well suited to unpacking Grok 4.7's benchmark results against Claude Fable 5.1 and GPT-6.",
+        url: "https://thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together the unsealed NYT v. Microsoft/OpenAI filings and the broader hype-skepticism argument from MIT Technology Review.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip",
+        why: "A careful, skeptical voice well matched to unpacking what MIT Technology Review's 'summer of AI hype' argument gets right.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Context window",
+      definition:
+        "The amount of text (measured in tokens) a model can consider at once when generating a response — your prompt, any uploaded documents, and the conversation history all have to fit inside it. Grok 4.7's 500,000-token context window is large enough to hold an entire codebase or a lengthy research paper in a single conversation, which is why xAI is positioning it for long-running coding and agent work rather than quick chat. A bigger context window lets a model reason over more information at once, but doesn't by itself make a model smarter — Grok 4.7 still lands mid-pack on general reasoning benchmarks despite its large window.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Pull up the Artificial Analysis Intelligence Index (linked in today's Grok story) and compare Grok 4.7's score to a frontier model you already use — then give both a long document or codebase and see whether the larger context window actually changes the quality of the answer you get.",
+    learnLinks: [
+      { label: "What a context window is and why bigger isn't always smarter → How AI Models Work", href: "#/course/models" },
+      { label: "Inside the lawsuits deciding what AI companies can legally train on → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How stock rallies, chip demand, and AI investment all connect → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-09-21",
     displayDate: "Monday, September 21, 2026 · Edition #50",
     headline: "Newsom orders a review of an AI 'kill switch,' Bessent floats a US-China AI safety hotline ahead of the Trump-Xi summit, China's StepFun open-sources a 600B-parameter model, and Bloomberg warns AI now drives half of US GDP growth",
