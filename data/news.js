@@ -13,6 +13,93 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-23",
+    displayDate: "Wednesday, September 23, 2026 · Edition #52",
+    headline: "Altman and Amodei brief the UN Security Council on AI risk, Meta's Muse agent triggers a bank-stock selloff, Anthropic ships a cheaper Claude Opus 5.5, and Google's Intrinsic open-sources its robotics stack",
+    summary:
+      "AI governance and AI's real-world economic bite showed up in the same 24 hours: frontier-lab CEOs briefed the UN Security Council directly for the first time, while a fast-growing AI agent spooked investors into dumping bank and brokerage stocks. Model releases kept moving too, with Anthropic shipping a cheaper flagship and Google's robotics unit giving away core infrastructure for free.",
+    stories: [
+      {
+        title: "Sam Altman and Dario Amodei brief the UN Security Council on AI risk, a first for frontier-lab CEOs",
+        body: "The UN Security Council held a high-level briefing on artificial intelligence and international security on September 23, convened by France during UN General Assembly week and chaired by French Foreign Minister Jean-Noël Barrot. Briefers included OpenAI CEO Sam Altman, Anthropic CEO Dario Amodei, Yoshua Bengio (co-chair of the UN's Independent International Scientific Panel on AI), and Hugging Face CEO Clément Delangue, alongside representatives from Chinese labs DeepSeek and Moonshot. The session came amid warnings that increasingly capable AI systems could soon begin improving themselves, slip beyond human control, and pose a threat to international security. Altman planned to urge world leaders to adopt shared benchmarks for measuring AI capabilities and assessing the safeguards companies build around them.",
+        why: "It's a marker of how far AI governance has climbed the international agenda — a body built to manage war and peace between nations is now hosting the CEOs of the companies building the technology, alongside an independent scientific panel meant to give policymakers a read on the risks that isn't coming from the labs themselves.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/09/22/altman-amodei-unga-ai-safety.html" },
+          { label: "Security Council Report", url: "https://www.securitycouncilreport.org/whatsinblue/2026/09/artificial-intelligence-high-level-briefing-2.php" }
+        ]
+      },
+      {
+        title: "Meta's Muse AI agent triggers a broad selloff in bank and brokerage stocks",
+        body: "Shares of major US banks and brokerages fell sharply on September 22-23 as investors weighed whether Meta's new Muse AI agent could erode the customer loyalty financial firms depend on. Charles Schwab dropped more than 6% and LPL Financial fell over 7%, with Raymond James and Ameriprise Financial also posting steep losses; JPMorgan Chase fell 3.4%, Wells Fargo dropped 3.9% (its steepest fall since May), Bank of America slid roughly 3%, and Citigroup lost about 2%. Muse, which launched September 8 and quickly topped US app-store charts, already handles searches, shopping, and travel bookings for users — and investors are pricing in the risk that it eventually shifts customers' cash and investments toward whichever provider offers the best return, without the inertia that has historically kept deposits and brokerage accounts in place.",
+        why: "It's a concrete illustration of what makes an 'agent' economically different from a chatbot: once software can act on your behalf — moving money, not just answering questions — it starts to threaten the business models of companies that relied on customers never bothering to switch providers.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-09-22/meta-s-muse-drags-down-stocks-that-depend-on-consumer-inertia" }
+        ]
+      },
+      {
+        title: "Anthropic ships Claude Opus 5.5, matching Fable-level performance at roughly 40% lower cost",
+        body: "Anthropic released Claude Opus 5.5 on September 22, pitching it as matching the performance of its larger Fable 5.1 model on most work while costing substantially less to run. The new API pricing is $4 per million input tokens and $20 per million output tokens — a 20% cut from Opus 5's $5/$25 — with cache-read costs down 60% to $0.20 per million tokens; Anthropic says typical workloads end up roughly 40% cheaper overall because the model also uses fewer tokens to finish tasks. A faster mode runs up to 2.5x quicker at $8/$40 per million tokens. On released benchmarks, Opus 5.5 scored 66.4% on Terminal-Bench 4.0 versus 57.9% for OpenAI's GPT-6 Astra, and 1846 Elo on GDPval-AA v2.1, an evaluation of real-world professional work across 44 occupations. It's available now through Anthropic's API and via AWS, Google Cloud, and Microsoft.",
+        why: "It's a good example of a 'distillation'-style release: rather than only chasing a bigger, pricier flagship, labs increasingly ship a smaller, cheaper model tuned to match yesterday's top performer — which is usually the better deal for most everyday work.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/" },
+          { label: "VentureBeat", url: "https://venturebeat.com/technology/anthropic-releases-claude-opus-5-5-beating-fable-5-1-on-key-agentic-benchmarks-at-60-cheaper-api-price" }
+        ]
+      },
+      {
+        title: "Google's robotics unit Intrinsic open-sources Intrinsic Core, a free ROS-compatible robotics stack",
+        body: "Google's robotics unit Intrinsic open-sourced Intrinsic Core on September 22 at ROSCon 2026 in Toronto, releasing core parts of its industrial robotics platform under the permissive Apache 2.0 license. The software is ROS-compatible and bundles the same capabilities Intrinsic uses in its own manufacturing deployments: a real-time control framework that adjusts a robot's path mid-move from sensor feedback, pose estimation built on Nvidia's FoundationPose so robots can locate parts without rigid fixtures, collision-free motion planning, grasp planning that adapts to how an object sits, plus simulation, camera calibration, and preconfigured ROS drivers.",
+        why: "It's the same open-source playbook the AI industry has used with language models, applied to physical AI — giving away foundational robotics infrastructure for free to become the standard other developers build on top of, rather than keeping it as a walled-off competitive advantage.",
+        sources: [
+          { label: "Intrinsic", url: "https://www.intrinsic.ai/blog/posts/introducing-intrinsic-core" },
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/09/22/googles-robotics-unit-intrinsic-open-sources-its-foundational-infrastructure-for-intelligent-robots/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for a same-day take on the UN Security Council briefing and Muse's bank-stock selloff.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Well suited to unpacking how an AI agent like Muse could actually disrupt banking and brokerage business models.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together the UN Security Council briefing and Anthropic's Opus 5.5 release.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "A good visual pick for seeing what Intrinsic Core's pose-estimation and grasp-planning capabilities actually look like in action.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "AI agent",
+      definition:
+        "Software built around a model that doesn't just answer questions but takes multi-step actions in the world — browsing, filling out forms, moving money — typically by looping between calling tools and observing what happens until a goal is met. Meta's Muse is a consumer example: it can already shop and book travel, and investors are now pricing in the risk that it starts handling banking and investment decisions too. The more autonomy and account access an agent gets, the more its mistakes — or its potential to quietly funnel business away from an incumbent — start to matter.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick a routine task you'd normally do yourself — comparing prices, drafting an email, booking something — and hand it to an AI agent feature you have access to (ChatGPT's Agent mode, Gemini's agentic tools, or similar). Watch exactly which steps it takes on its own versus where it stops and asks you to confirm — that boundary is exactly what investors got nervous about with Meta's Muse.",
+    learnLinks: [
+      { label: "What actually makes something an 'AI agent' → Agents and tool use", href: "#/course/engineering" },
+      { label: "Inside the push for global AI safety governance → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "Catching up on Claude's newest model → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-22",
     displayDate: "Tuesday, September 22, 2026 · Edition #51",
     headline: "xAI ships Grok 4.7 as SoftBank floats a record $11B bond sale for its OpenAI stake, Meta's Muse agent fuels an 11% stock rally, and unsealed filings show Microsoft calling AI data scraping 'theft'",
