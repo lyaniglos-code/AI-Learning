@@ -13,6 +13,100 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-24",
+    displayDate: "Thursday, September 24, 2026 · Edition #53",
+    headline: "OpenAI answers Anthropic's Opus 5.5 with GPT-6 Sol and Luna 90 minutes later, Cisco Talos discloses the first malware that lets a panel of AI models vote on its next move, and all three frontier labs gate their new cybersecurity models behind trusted-access programs",
+    summary:
+      "The AI price war moved fast enough today to be measured in minutes: OpenAI halved its API pricing less than two hours after Anthropic's own cut. On the security side, the same capability the industry is racing to sell defenders — models that can reason autonomously about vulnerabilities — showed up in the wild as CLOSEDQUORUM, malware that lets four commercial AI models vote on its next move with no human involved. A small funding round underscored the flip side: a growing market for software that keeps AI agents inside the boundaries they're supposed to stay in.",
+    stories: [
+      {
+        title: "OpenAI launches GPT-6 Sol and Luna, cutting prices in half 90 minutes after Anthropic's Opus 5.5",
+        body: "OpenAI released GPT-6 Sol and Luna on September 22, complementing its GPT-6 Astra flagship with two lower-cost models built for everyday work. Sol, aimed at complex tasks like coding, now costs $2 per million input tokens and $10 per million output tokens — half of GPT-5.6 Sol's $4/$20 — while Luna, meant for high-volume clerical work like summarizing documents or extracting information, dropped to $0.10/$0.50 from $0.20/$1.20. OpenAI says the cuts are permanent pricing, not a promotion, made possible by improvements in caching and inference, and the launch came roughly 90 minutes after Anthropic cut its own flagship pricing with Claude Opus 5.5. The new models are rolling out to ChatGPT Work and Codex for Plus, Pro, Business, and Enterprise subscribers, with Free and Go users able to reach Luna through the desktop app.",
+        why: "It's a sign the 'AI price war' between labs is now being fought in minutes rather than months — each lab is racing to make its models cheap enough that cost stops being a reason to pick a rival.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/introducing-gpt-6-sol-and-luna/" },
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/" }
+        ]
+      },
+      {
+        title: "Cisco Talos discloses CLOSEDQUORUM, the first malware that lets AI models vote on its next move",
+        body: "Cisco Talos published research on September 22 describing CLOSEDQUORUM, a Windows implant it calls the first publicly documented malware to hand tactical command-and-control decisions to a panel of commercial AI models instead of a human operator. The implant gathers information about an infected host, sends structured requests to up to four model providers — Talos names DeepSeek, Qwen, Mistral, and Google Gemini — and executes whichever action wins a vote among them. That removes the human attacker from the tactical decision loop entirely, meaning an operator doesn't need to be online or awake once the implant is running. Talos has not confirmed CLOSEDQUORUM was deployed in the wild — the sample it found shipped with placeholder credentials and a non-functional webhook — and released an open-source toolkit called CAIRN alongside the disclosure to help defenders hunt AI-directed malware.",
+        why: "It's a preview of a genuinely new attacker capability: today's AI models are good enough that malware can query several of them like an advisory committee and act on the majority opinion, without needing a human in the loop for every decision.",
+        sources: [
+          { label: "Cisco Talos", url: "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/" }
+        ]
+      },
+      {
+        title: "Google, Anthropic, and OpenAI each roll out cybersecurity-focused AI models behind gated access programs",
+        body: "Within days of each other, all three major labs shipped models built specifically for security work, and each gated the most capable versions behind a trusted-access program. Google's Gemini 3.8 Flash Cyber, released September 2, targets autonomous vulnerability discovery and is available only through its Fairwind Program, which now includes more than 650 vetted defenders — governments, healthcare providers, and telecoms. Anthropic's Claude Mythos 5.1, launched September 1, ships with safeguards built for cybersecurity and life-sciences work and is likewise restricted to trusted-access customers, while its sibling Fable 5.1 remains generally available. OpenAI disclosed that its GPT-6 Astra model meets the 'Critical' cybersecurity capability threshold under its own Preparedness Framework, and is rolling its most advanced cyber features out to a limited group of testers rather than the general public.",
+        why: "It shows how the frontier labs are handling a capability that cuts both ways — a model good enough to find and patch real vulnerabilities is also good enough to find and exploit them, so all three are choosing to gate access rather than ship it to everyone at once.",
+        sources: [
+          { label: "The Hacker News", url: "https://thehackernews.com/2026/09/google-anthropic-and-openai-unveil.html" }
+        ]
+      },
+      {
+        title: "MIT's AI-controlled flying microrobot gets 450% faster, gaining insect-like agility",
+        body: "MIT engineers published new results on their bee-sized HAMR-class flying microrobot, built around a new AI control system that lets it move with insect-like agility. The controller, a two-part scheme designed to balance performance against the microrobot's very limited onboard computing, boosted its top speed by about 450% and its acceleration by about 250% over the team's previous best results. In testing, the robot completed 10 consecutive somersaults in 11 seconds and held its course even when researchers introduced wind disturbances. The team says the eventual goal is robots small and agile enough to search through earthquake rubble and other spaces too tight or dangerous for conventional drones.",
+        why: "It's a reminder that AI progress isn't only about chatbots getting smarter — the same kind of learned control policies are what let a robot this small and lightweight fly with the precision it needs to be genuinely useful rather than just a lab demo.",
+        sources: [
+          { label: "ScienceDaily", url: "https://www.sciencedaily.com/releases/2026/09/260921081114.htm" }
+        ]
+      },
+      {
+        title: "German startup Kontext raises $4M to police what AI agents are allowed to do inside a business",
+        body: "Munich-founded security startup Kontext announced a $4 million seed round on September 24, led by 42CAP with backing from a16z CSX and HTGF. Its software sits between an AI agent and the systems it acts on, checking every action the agent requests against policy before it runs — weighing not just the agent's credentials but the specific task it was actually given. In the company's own example, an agent assigned to fix a software bug should be allowed to read the code repository, but blocked from sending that code to an outside service or touching unrelated infrastructure, even if its credentials technically permit both. Founders Jens Ernstberger and Michel Osswald built the company around the gap between what an agent can do and what it should do for a given task.",
+        why: "It's a concrete example of a problem every company handing real access to AI agents eventually runs into: broad credentials are easy to grant and hard to safely scope, so a growing slice of the AI industry is now selling the guardrails rather than the agents themselves.",
+        sources: [
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/09/24/kontext-raises-4m-to-control-what-ai-agents-are-allowed-to-do-inside-businesses/" },
+          { label: "Tech.eu", url: "https://tech.eu/2026/09/24/kontext-raises-4m-for-runtime-security-platform-for-ai-agents" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for a same-day take on the GPT-6 Sol/Luna price cuts and the CLOSEDQUORUM malware disclosure.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view well suited to unpacking today's price war and what a quorum of AI models directing malware actually implies technically.",
+        url: "https://www.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for tying together the labs' competing cybersecurity models and what CLOSEDQUORUM means for defenders.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "A good visual pick for seeing MIT's flying microrobot pull off its somersaults and sharp turns.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "AI guardrails",
+      definition:
+        "The policies, filters, and access controls layered around an AI model or agent to keep it from taking actions it shouldn't — refusing certain requests, requiring human confirmation for sensitive steps, or, as with startups like Kontext, checking every action an agent takes against what its specific task actually calls for. Guardrails matter most exactly where autonomy is highest: Cisco Talos's CLOSEDQUORUM malware is unsettling in part because it has none, letting a panel of AI models pick an attack's next move with no human check in the loop.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Pick an AI tool with agent-style features you already use (ChatGPT's Agent mode, Claude Code, Gemini's agentic tools) and give it a task that touches two different systems, like reading a document and then drafting an email about it. Notice exactly which step happens automatically and which one stops to ask for your confirmation — that's the same 'is this action allowed' boundary startups like Kontext are now building businesses around enforcing inside companies.",
+    learnLinks: [
+      { label: "What guardrails actually look like around an AI agent → Agents and tool use", href: "#/course/engineering" },
+      { label: "The security and governance side of frontier AI → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "Catching up on today's model and price changes → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-23",
     displayDate: "Wednesday, September 23, 2026 · Edition #52",
     headline: "Altman and Amodei brief the UN Security Council on AI risk, Meta's Muse agent triggers a bank-stock selloff, Anthropic ships a cheaper Claude Opus 5.5, and Google's Intrinsic open-sources its robotics stack",
