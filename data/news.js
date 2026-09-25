@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-25",
+    displayDate: "Friday, September 25, 2026 · Edition #54",
+    headline: "OpenAI, Anthropic, and Google line up a joint self-regulatory body for frontier AI, Anthropic's Claude flags a CRISPR-like enzyme system after a 21-hour autonomous research run, Amazon opens Seller Central to outside AI agents starting with Claude, and AI drone maker Tekever raises $580M",
+    summary:
+      "Today's stories sit at two ends of the same story: how much autonomy to hand an AI system, and who decides. The three biggest labs are moving to govern themselves rather than wait for government rules, while Anthropic showed what autonomy already looks like in practice — nearly a thousand Claude agent sessions searching billions of protein sequences unsupervised. Meanwhile Amazon and a European drone maker both leaned further into AI agents doing real, permissioned work.",
+    stories: [
+      {
+        title: "Google, OpenAI, and Anthropic move to launch a joint self-regulatory body for frontier AI",
+        body: "The three labs are advancing plans for an independent industry body — reported under the working names Frontier AI Standards Agency and Standards Authority for Frontier AI (SAFA) — that would set voluntary safety standards without government oversight, modeled loosely on the finance industry's FINRA. The group would support third-party pre-deployment testing of models, set rules for how labs report safety and security incidents, define what their existing voluntary safety commitments mean in practice, and establish qualifications for independent auditors. The companies have approached Sriram Krishnan, a former White House AI policy advisor who left the administration in June, and Arati Prabhakar, former director of the White House Office of Science and Technology Policy, as candidates to lead it. The three labs had earlier pushed for a public-private oversight partnership with the federal government, but that effort stalled; the current plan targets a launch in late 2026 or early 2027.",
+        why: "It's a real-time example of industry self-regulation: rather than wait for Congress or regulators to define rules for frontier models, the labs building them are trying to write the rulebook themselves first.",
+        sources: [
+          { label: "CIO", url: "https://www.cio.com/article/4226392/the-companies-racing-to-build-frontier-ai-are-now-racing-to-govern-it.html" },
+          { label: "BankInfoSecurity", url: "https://www.bankinfosecurity.com/google-openai-anthropic-plan-frontier-ai-standards-body-a-32926" }
+        ]
+      },
+      {
+        title: "Anthropic's new life-sciences lab says Claude flagged a previously unknown, CRISPR-like enzyme system",
+        body: "Anthropic announced the launch of a life-sciences research group and disclosed its first result: an autonomous Claude research campaign that searched roughly 1.9 billion protein clusters and surfaced a previously uncharacterized enzyme system it calls ART (array-associated reverse transcriptases). The campaign ran 949 separate Claude agent sessions over 21.5 hours and used 215.6 million tokens, gathering more than 200,000 reverse transcriptase enzymes, narrowing to thousands of candidates, and eventually flagging one with an unusual repeating DNA pattern resembling a CRISPR array sitting next to an atypical reverse transcriptase gene. Anthropic says it has not yet determined what ART actually does, and independent researchers have called the structural resemblance to CRISPR intriguing but unconfirmed.",
+        why: "It's a concrete look at what an 'autonomous AI agent' means in practice beyond a chatbot: hundreds of coordinated Claude sessions working unsupervised for nearly a full day, searching at a scale no human team could match, to surface a single anomaly worth a scientist's attention.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system" },
+          { label: "Tech Times", url: "https://www.techtimes.com/articles/327986/20260924/claude-finds-hidden-enzyme-system-viral-dna-crispr-pioneer-calls-it-intriguing.htm" }
+        ]
+      },
+      {
+        title: "Amazon opens Seller Central to outside AI agents, starting with Anthropic's Claude",
+        body: "At its Amazon Accelerate event, Amazon launched a US beta plugin letting third-party sellers manage inventory, pricing, listings, and analytics through Anthropic's Claude or Amazon's own Quick assistant, instead of logging into the Seller Central dashboard directly. The plugin runs on Amazon Bedrock, combining Amazon's own Nova models with Claude for reasoning and execution. Sellers grant access through a new 'Manage Agents' page, choose which categories of data an agent can read, and must approve every action before it's carried out. The beta is limited to US stores on a Professional selling plan, and Amazon is bundling a free 12-month Quick Plus subscription for primary account holders through the end of 2026.",
+        why: "It's a real-world example of the permission boundary AI agents increasingly operate inside: Amazon didn't just let an AI model read seller data, it built a specific approval step for every action, drawing a line between what an agent can see and what it's allowed to actually do.",
+        sources: [
+          { label: "About Amazon", url: "https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-plugin-amazon-quick-claude" },
+          { label: "GeekWire", url: "https://www.geekwire.com/2026/amazon-opens-its-seller-tools-to-outside-ai-agents-starting-with-anthropics-claude/" }
+        ]
+      },
+      {
+        title: "AI drone maker Tekever raises $580M Series D at a $6.4B valuation",
+        body: "Portuguese-British defense-tech company Tekever announced the first close of a $580 million Series D round, valuing the AI-powered surveillance drone maker at $6.4 billion. The round was led by UC Investments — the University of California's investment arm, making its first direct investment in Europe — and Baillie Gifford, with Merlyn Advisors joining as a new investor alongside existing backers. Tekever says its drone systems have logged more than 50,000 flight hours over Ukraine since 2022, and the company was recently selected by the UK Ministry of Defence to deliver CORVUS, a surveillance program worth up to £400 million over ten years. Tekever plans to use the new funding to expand internationally and grow its manufacturing capacity.",
+        why: "It's a reminder that a large share of the capital pouring into 'AI' right now is going toward autonomous physical systems, not just chatbots and coding assistants — investors are betting heavily on AI that senses and acts in the real world.",
+        sources: [
+          { label: "Tech.eu", url: "https://tech.eu/2026/09/23/tekever-raises-580m-series-d-at-6-4b-valuation/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/09/23/ai-drone-maker-ukraine-war-defense-tech.html" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for a same-day take on the Frontier AI Standards Agency and Amazon's new Claude-powered seller plugin.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view well suited to unpacking the 949-agent Claude research campaign and the Bedrock/Claude integration behind Amazon's seller plugin.",
+        url: "https://www.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for the governance angle on labs writing their own frontier-AI standards body instead of waiting on regulators.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip",
+        why: "A solid pick for a deeper walkthrough of what Anthropic's autonomous Claude research campaign actually did, step by step.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Multi-agent system",
+      definition:
+        "A setup where multiple AI agent instances work on parts of a larger problem — sometimes in parallel, sometimes handing off to one another — rather than a single model handling everything in one pass. Anthropic's enzyme discovery ran 949 separate Claude agent sessions over 21.5 hours to search 1.9 billion protein clusters, each session narrowing the search until one flagged the anomaly worth a scientist's attention; it's the same underlying pattern behind Amazon's new Claude-powered seller plugin coordinating with Amazon's own Nova models on Bedrock.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Ask an AI assistant to describe, step by step, how it would search a huge dataset for one unusual item — for example, 'how would you search a million customer reviews for the single most unusual complaint?' Compare the strategy it proposes (narrowing broad categories, flagging outliers, escalating only the interesting cases) to how Anthropic's 949 Claude sessions worked through 1.9 billion protein clusters, and notice why that kind of staged, agentic search scales in a way manual review never could.",
+    learnLinks: [
+      { label: "How autonomous, multi-session agent campaigns like Claude's actually work → Agents and tool use", href: "#/course/engineering" },
+      { label: "The self-regulation vs. government-oversight debate behind today's Frontier AI Standards Agency → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "Catch up on Claude's newest integrations → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-24",
     displayDate: "Thursday, September 24, 2026 · Edition #53",
     headline: "OpenAI answers Anthropic's Opus 5.5 with GPT-6 Sol and Luna 90 minutes later, Cisco Talos discloses the first malware that lets a panel of AI models vote on its next move, and all three frontier labs gate their new cybersecurity models behind trusted-access programs",
