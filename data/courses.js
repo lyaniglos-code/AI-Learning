@@ -1151,11 +1151,12 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Sep 28, 2026",
+      updated: "Sep 30, 2026",
       content: `
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
 <p>OpenAI models threaded through Windows, Office (Word, Excel, PowerPoint, Outlook, Teams), and Edge. Microsoft 365 Copilot (~$30/user/month for business) drafts documents, builds decks, analyzes spreadsheets, and summarizes meetings inside the apps your workplace already runs — which is why it leads enterprise seat counts regardless of benchmark standings.</p>
+<p><b>A wave of smaller Copilot upgrades is rolling out through September 2026,</b> alongside the bigger "super app" redesign below: a new prompt box built directly into the Copilot button in Word, Excel, and PowerPoint lets you type or dictate a request without opening the separate Copilot pane (worldwide on Windows, macOS, and web, rolling out through December); Microsoft Teams is getting a simplified, chat-centered Copilot layout with new Work IQ controls and a full-screen Tasks view; a new Copilot entry point is completing its rollout in classic Outlook by late September; and Microsoft Edge's redesigned Copilot new-tab page reaches general availability this month. None require admin action — they're small, steady changes to buttons and menus rather than a relaunch.</p>
 <p><b>Copilot rebuilt as a "super app" (announced September 25, 2026).</b> CEO Satya Nadella unveiled Microsoft's biggest Copilot overhaul yet, describing it as "a new OS for work" spanning every model, form factor, and task. The app now centers on three tabs: <b>Home</b>, which merges AI chat, Copilot Cowork, and Office so you can create and edit Word, Excel, and PowerPoint files without switching apps; <b>Code</b>, which brings GitHub Copilot's underlying technology to non-technical users starting simple AI-driven coding projects; and <b>Autopilot</b>, which lets users build custom agents that handle assignments and communicate through Teams and Outlook on their own. Microsoft will charge for the Cowork, Code, and Autopilot portions on usage-based pricing on top of the existing per-seat license. Home and Code are rolling out to companies in Microsoft's Frontier early-access program over the coming weeks, with Autopilot reaching private preview by the end of September — a direct answer to Anthropic's and OpenAI's own all-in-one assistant products.</p>
 <h3>The coding tools</h3>
 <ul>
@@ -1173,6 +1174,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <blockquote>The pattern to notice: standalone chatbots compete on capability; copilots compete on <i>presence</i> — being inside the workflow. Both are converging on agents that do the task, not just advise on it.</blockquote>`,
       keypoints: [
         "Microsoft Copilot wins enterprises through Office presence, not benchmarks",
+        "A wave of smaller Copilot upgrades rolled out through September 2026: an in-button prompt box for Word/Excel/PowerPoint, a simplified chat-centered Teams layout with Work IQ controls, a new Outlook entry point, and a redesigned Edge Copilot new-tab page",
         "Copilot rebuilt as a 'super app' (Sep 25, 2026) around three tabs — Home (chat + Cowork + Office), Code (GitHub Copilot tech for non-developers), and Autopilot (build-your-own agents in Teams/Outlook) — billed on usage on top of the per-seat license",
         "Coding: GitHub Copilot (in-IDE), Claude Code (agentic terminal), Cursor (AI-native editor) — Cursor named Claude Fable 5.1 its top coding model on CursorBench 3.2 (Sep 4, 2026)",
         "Cursor Projects (beta, Sep 10, 2026): a persistent coordinator agent delegates work to a fleet of subagents, keeps shared context across the Project's life, and can act on Slack/schedule/PR signals without a prompt — Cursor reports 6x more merged PRs for primary users",

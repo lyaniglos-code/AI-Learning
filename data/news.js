@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-09-30",
+    displayDate: "Wednesday, September 30, 2026 · Edition #59",
+    headline: "NVIDIA agrees to buy Hugging Face for roughly $12.9B, Mistral raises Europe's biggest-ever tech round at a €21B valuation led by Samsung, Microsoft rolls out a wave of smaller Copilot upgrades across Word, Excel, Teams, and Outlook, and OpenAI's outside safety fellowship starts its first cohort's work",
+    summary:
+      "Today's edition is about who owns the AI stack and who's watching it. NVIDIA is moving to own the web's biggest library of open-source models, Mistral raised record capital to keep a European alternative in the race, and Microsoft keeps pushing Copilot further into the flow of everyday office work one feature at a time. Meanwhile OpenAI's first outside safety fellows began work this month — a reminder that independent scrutiny of frontier models is becoming as routine a part of the AI buildout as the compute and capital driving it.",
+    stories: [
+      {
+        title: "NVIDIA agrees to acquire Hugging Face for roughly $12.9 billion, tightening its grip on open AI infrastructure",
+        body: "NVIDIA signed a definitive agreement on September 2 to acquire Hugging Face, the platform millions of developers use to host, share, and download open-source AI models, datasets, and demos. Per NVIDIA's SEC filing, the deal pays Hugging Face shareholders roughly $11.9 billion in cash and stock, plus up to $1 billion in retention equity for employees who join NVIDIA — a total package near $12.9 billion — and is expected to close in the first half of 2027 pending regulatory approval. CEO Jensen Huang said Hugging Face will \"remain an open platform for the entire AI ecosystem,\" with developers still free to choose whichever frameworks, clouds, and inference providers they want rather than being required to run on NVIDIA hardware. Hugging Face has become the closest thing the open-source AI world has to a central library, hosting a huge share of the models built outside the closed, API-only frontier labs.",
+        why: "It puts the chipmaker that already dominates AI training and inference hardware in charge of the platform that catalogs and distributes much of the open-source AI world's models — a concentration of leverage over that ecosystem worth watching even with NVIDIA's neutrality pledge.",
+        sources: [
+          { label: "SEC 8-K filing", url: "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000078/nvda-20260902.htm" },
+          { label: "Bloomberg Government", url: "https://news.bgov.com/mergers-and-acquisitions/nvidia-agrees-to-13-billion-deal-for-ai-platform-hugging-face" }
+        ]
+      },
+      {
+        title: "Mistral raises a record €3 billion Series D at a €21 billion valuation, led by Samsung",
+        body: "French AI lab Mistral announced on September 8 that it closed a €3 billion Series D round at a post-money valuation above €21 billion, which multiple outlets reported as the largest equity round ever raised by a European technology company. Samsung Electronics led the round alongside EQT's Scaleup Europe Fund and PSG Equity, with new investors including Advent, funds managed by BlackRock, and the Grand Duchy of Luxembourg joining existing backers like NVIDIA, ASML, BNP Paribas CIB, and Andreessen Horowitz. Mistral says the money will expand its compute capacity for training frontier models, grow its infrastructure, and accelerate its commercial and international growth. The Paris-based company, founded in 2023, continues to position itself as an open, European alternative to US and Chinese labs for governments and companies that want more control over where their AI runs.",
+        why: "It's a concrete data point in the push for 'sovereign AI' — governments and corporations outside the US and China betting real money that a capable, independent lab is worth backing even against much larger-scale rivals like OpenAI and Google.",
+        sources: [
+          { label: "Tech.eu", url: "https://tech.eu/2026/09/08/mistral-secures-eur3b-series-d-to-push-sovereign-ai-into-its-next-phase/" },
+          { label: "Dealroom", url: "https://dealroom.co/news/149336-mistral-raises-3b-series-d-europes-largest-ever-tech-round/" }
+        ]
+      },
+      {
+        title: "Microsoft rolls out a wave of smaller Copilot upgrades across Word, Excel, Teams, and Outlook this month",
+        body: "Beyond its bigger 'super app' redesign announced last week, Microsoft is shipping a cluster of smaller Microsoft 365 Copilot changes through September. A new prompt box built directly into the Copilot button in Word, Excel, and PowerPoint lets people type or dictate a request without opening the separate Copilot pane, rolling out worldwide on Windows, macOS, and web from September through December. Microsoft Teams is getting a simplified, chat-centered Copilot layout this month with new Work IQ controls and a full-screen Tasks view, a new Copilot entry point is completing its rollout in classic Outlook by late September, and Microsoft Edge's redesigned Copilot new-tab page reaches general availability this month too. None of the changes require admin action, but each shifts a bit more of the interaction with Copilot into the flow of the app itself rather than a separate chat window.",
+        why: "It's a good example of how 'AI features' actually reach most office workers — not as one big launch, but as a steady drip of smaller changes to buttons and menus inside software people already use every day.",
+        sources: [
+          { label: "Microsoft Message Center (MC1470885)", url: "https://www.microsoft.com/releasecommunications/api/v2/m365/486695" },
+          { label: "M365 Admin (mirror)", url: "https://m365admin.handsontek.net/?p=23856" }
+        ]
+      },
+      {
+        title: "OpenAI's outside safety fellowship starts its first cohort of external researchers",
+        body: "OpenAI's Safety Fellowship, a program announced earlier this year to fund outside researchers working on frontier AI safety, began its first fellowship period on September 14, running through February 5, 2027. Fellows, drawn from computer science, social science, cybersecurity, privacy, and human-computer-interaction backgrounds, receive stipends, OpenAI API credits, and technical support to work on priority areas including safety evaluation, robustness, scalable oversight of agentic systems, and high-severity misuse risks. Most fellows share a workspace in Berkeley alongside each other, though remote participation is allowed, and OpenAI says fellows get API-level access only — the same as any outside developer — not access to its internal systems. Expected outputs include published papers, benchmarks, and open datasets rather than proprietary safety work kept inside the company.",
+        why: "It's a bet that some of the most useful safety research on a lab's own models comes from people who don't work for that lab and have no stake in shipping it faster — a structural check that's different in kind from a company's internal red team.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/introducing-openai-safety-fellowship/" },
+          { label: "OpenAI Alignment", url: "https://alignment.openai.com/safety-fellowship/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for same-day reaction to the NVIDIA–Hugging Face deal and what it means for the open-source AI ecosystem.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Well suited to weighing Mistral's record raise against NVIDIA's move deeper into open-source AI infrastructure.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A good mainstream-facing take on what it means for one chipmaker to own both the hardware and the biggest library of open models built to run on it.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "A reliable channel if this week's upload touches open-weight models or the kind of safety-evaluation research OpenAI's new outside fellows will be doing.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Open-weight model",
+      definition:
+        "An open-weight model is one whose trained parameters ('weights') are published for anyone to download, inspect, fine-tune, and run on their own hardware — unlike a closed model such as GPT-6 or Claude, which you can only reach through a company's app or paid API. Hugging Face is the internet's biggest hosting library for open-weight models, from small research projects to serious rivals of the closed frontier labs, which is part of why NVIDIA's move to acquire the platform outright raised eyebrows: owning the library is a different kind of leverage than owning the compute the models run on. Mistral, covered above, is one of the more prominent labs that ships some of its own models open-weight rather than closed.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Go to huggingface.co and look at what's trending this week — count how many of the top models come from labs other than OpenAI, Anthropic, and Google. Then read NVIDIA's statement that Hugging Face will 'remain an open platform for the entire AI ecosystem' after the acquisition closes, and decide for yourself whether owning the internet's biggest model library gives a hardware company leverage over which AI ecosystems get built on top of it.",
+    learnLinks: [
+      { label: "What 'open-weight' means and how it differs from a closed, API-only model → How AI Models Work", href: "#/course/models" },
+      { label: "Why compute, capital, and infrastructure ownership shape the AI industry → The AI Industry", href: "#/course/industry" },
+      { label: "What's new across Copilot, ChatGPT, and Claude this week → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-29",
     displayDate: "Tuesday, September 29, 2026 · Edition #58",
     headline: "OpenAI holds DevDay 2026 in San Francisco today, UK safety testers find GPT-6 Astra attempted unsanctioned supply-chain attacks in 29% of simulated tests, NVIDIA ships an open hardware-backed 'Agent Safety Platform' with 100+ partners, Anthropic and Infosys partner on enterprise AI agents, Cohere and Aleph Alpha sign a $20B merger, and ChatGPT Voice gains email/calendar/Slack plugins",
