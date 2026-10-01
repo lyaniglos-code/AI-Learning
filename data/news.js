@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-01",
+    displayDate: "Thursday, October 1, 2026 · Edition #60",
+    headline: "OpenAI's DevDay unveils 'Dots,' always-on agents that keep working after a chat ends, Micron posts a record $54.2B quarter on AI memory demand, California enacts the nation's first AI-auditor licensing laws as its 2026 session closes, and Challenger Gray's August report shows AI slipping out of the top spot for US job cuts",
+    summary:
+      "Today's edition tracks four different measures of how fast the AI buildout is moving: a product event, a balance sheet, a legislature, and a monthly jobs report. OpenAI used its DevDay keynote to introduce agents meant to keep working long after you've closed the chat window, while Micron's earnings show just how much real money is flowing into the memory chips those agents run on. Meanwhile California wrapped its legislative session by requiring independent auditors to check AI safety claims rather than taking companies' word for it, and a widely watched layoffs tracker complicates the simple story that AI is now the main reason Americans are losing jobs.",
+    stories: [
+      {
+        title: "OpenAI's DevDay 2026 unveils 'Dots,' always-on agents that keep working after a chat ends",
+        body: "OpenAI held DevDay 2026 on September 29 at Fort Mason in San Francisco, announcing more than 20 updates across its models, ChatGPT, Codex, and its developer platform. The headline product is Dots: always-on AI agents, built on the GPT-6 Astra model, that keep working in the background after a conversation ends rather than waiting for your next message. OpenAI's own example is giving a Dot an ongoing responsibility — monitoring incoming bug reports, preparing a recurring budget cycle, or migrating an application off a retiring API — and letting it work through the steps on its own. Alongside Dots, OpenAI launched GPT-6.1 Sol, an updated model for agentic coding, computer use, and long-running workflows priced at roughly one-fifth of flagship GPT-6 Astra; ChatGPT Space, a shared workspace where teams and their Dots collaborate on the same documents; and a new, higher-usage ChatGPT Pro tier. CEO Sam Altman and CFO Sarah Friar also fielded questions about the company's path toward an eventual IPO during the event.",
+        why: "Dots mark a step beyond 'agent mode' inside a single chat: the interesting design question is no longer just what an AI can do when you ask it, but what it's responsible for when you're not watching — and when it should stop and ask for help instead of continuing on its own.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html" },
+          { label: "Axios", url: "https://www.axios.com/2026/09/29/openai-dev-day-2026-dots-space-sol" }
+        ]
+      },
+      {
+        title: "Micron posts a record $54.2 billion quarter as AI memory demand keeps outrunning supply",
+        body: "Micron Technology reported fiscal fourth-quarter and full-year 2026 results on September 30, posting revenue of $54.23 billion — up from $41.46 billion the prior quarter and nearly five times the $11.32 billion reported in the same quarter a year earlier — with GAAP net income of $37.70 billion, or $32.87 per diluted share, according to its SEC filing. The jump is driven by soaring demand for high-bandwidth memory (HBM), the fast memory chips packed next to AI accelerators like Nvidia's GPUs, which Micron has said remains sold out under multi-year contracts. The company said 'AI-driven demand and strong operational execution position Micron for a record fiscal 2027.' Micron shares have gained roughly 282% so far this year.",
+        why: "Chips get the headlines, but memory is just as often the actual bottleneck in building AI hardware — a GPU is only as fast as the memory feeding it data, and Micron's results are a direct read on how tight that supply still is.",
+        sources: [
+          { label: "SEC 8-K filing", url: "https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm" },
+          { label: "Parameter", url: "https://parameter.io/micron-mu-stock-wall-streets-outlook-for-sept-30-q4-earnings-report/" }
+        ]
+      },
+      {
+        title: "California enacts the nation's first AI-auditor licensing framework as its 2026 session closes",
+        body: "California Governor Gavin Newsom signed Senate Bill 813 and Assembly Bill 1405 on September 9, creating what his office calls the first state framework requiring independent, registered auditors to test AI systems' safety claims rather than relying on companies to self-certify. SB 813, authored by Senator Jerry McNerney, directs the state's Government Operations Agency to set qualification standards for independent verification organizations by 2028; AB 1405, authored by Assemblymember Rebecca Bauer-Kahan, creates a state registry of AI auditors with standards for their independence and transparency. The signings came partway through a broader end-of-session crunch: California's legislature sent roughly two dozen additional AI-related bills to Newsom's desk before adjourning, and he faced a September 30 deadline to sign or veto each one individually.",
+        why: "It's a concrete example of a different regulatory approach than requiring companies to publish their own safety testing: an independent-auditor system tries to create a layer of outside verification, similar to how financial audits work, rather than trusting a company's claims about its own product.",
+        sources: [
+          { label: "Governor Newsom's office", url: "https://www.gov.ca.gov/2026/09/09/governor-newsom-signs-first-in-the-nation-ai-safeguards-to-protect-californians/" },
+          { label: "Benton Foundation", url: "https://www.benton.org/headlines/governor-newsom-signs-first-nation-ai-safeguards" }
+        ]
+      },
+      {
+        title: "Challenger Gray's August report: AI slips out of the top spot for US job cuts, even as it stays 2026's biggest cause overall",
+        body: "Outplacement firm Challenger, Gray & Christmas reported that US employers announced 52,881 job cuts in August 2026 — down 38% from August 2025 and the lowest August total since 2022. For the first time in five months, artificial intelligence was not the leading cited reason: 'restructuring' topped the list at 16,173 cuts, while AI fell to fourth place at 3,462 cuts for the month. Still, across the first eight months of 2026, AI remains the single most-cited reason for job cuts overall, responsible for roughly 116,175 of the year's announced layoffs — about 22% of the total.",
+        why: "Monthly swings like this are a good reminder that 'AI is cited as the reason' in a layoff announcement is a company's stated justification, not a measured economic fact — the underlying trend can look very different depending on which single month you check.",
+        sources: [
+          { label: "Challenger, Gray & Christmas (PDF)", url: "https://www.challengergray.com/wp-content/uploads/2026/09/Challenger-Report-August-2026.pdf" },
+          { label: "HR Executive", url: "https://hrexecutive.com/?p=165877" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Good bet for same-day breakdowns of everything OpenAI announced at DevDay, especially Dots and the always-on agent framing.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A good mainstream-facing take on what it means for ChatGPT to ship agents designed to keep running after you've stopped paying attention.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Well suited to weighing DevDay's agent announcements against the compute and memory economics Micron's earnings just put a number on.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér",
+        why: "A reliable channel for deeper dives into what makes autonomous, long-running agents like Dots technically different from a standard chatbot.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "Always-on agent",
+      definition:
+        "An always-on agent is an AI system that keeps working on an assigned task in the background after you've stopped actively chatting with it — checking in with progress updates, taking the next step on its own, or pausing to ask for input — rather than sitting idle until your next message, the way a standard chatbot does. OpenAI's newly announced Dots are a clear example: you hand a Dot an ongoing responsibility, like monitoring a project or migrating a system, and it keeps working through that responsibility over hours or days instead of in a single back-and-forth conversation. The hard design problem isn't getting an agent to act autonomously — it's deciding exactly when it should stop and check with a human before going further.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick one task you do on a recurring basis — clearing a specific email folder, checking a dashboard, watching a webpage for a price or status change — and write out, step by step, what an 'always-on agent' would need to know to do it reliably without you present, including the exact moments it should stop and ask for your input rather than guessing. That's the actual design problem behind products like OpenAI's new Dots, not just 'can the AI do the task.'",
+    learnLinks: [
+      { label: "How agentic AI blurs the line between chat and standing, multi-step tasks → Building with AI", href: "#/course/engineering" },
+      { label: "Why compute and memory supply shape what AI companies can ship → The AI Industry", href: "#/course/industry" },
+      { label: "What's new across ChatGPT, Claude, and Gemini this week → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-09-30",
     displayDate: "Wednesday, September 30, 2026 · Edition #59",
     headline: "NVIDIA agrees to buy Hugging Face for roughly $12.9B, Mistral raises Europe's biggest-ever tech round at a €21B valuation led by Samsung, Microsoft rolls out a wave of smaller Copilot upgrades across Word, Excel, Teams, and Outlook, and OpenAI's outside safety fellowship starts its first cohort's work",
