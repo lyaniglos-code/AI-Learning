@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-06",
+    displayDate: "Tuesday, October 6, 2026 · Edition #65",
+    headline: "Trump signs an executive order creating a 'Super Intelligence Force' and renaming AI to 'SI' across the federal government, OpenAI starts testing visual ads inside ChatGPT's image generator, OpenAI ships invisible text watermarking for EU users to meet AI Act rules, and September job-cut data shows AI still 2026's top cited layoff cause even as overall cuts hit a four-year low",
+    summary:
+      "Today's edition is about labels — what governments and companies call AI, and what they're required to disclose about it. The White House renamed artificial intelligence itself at the federal level, OpenAI is now literally labeling ads inside generated images and invisibly marking AI-written text to satisfy EU transparency law, and a widely watched layoffs tracker complicates the simple story that AI is shedding jobs across the board. None of it changes what these systems can do; all of it changes how visible that is to the people dealing with them.",
+    stories: [
+      {
+        title: "Trump signs an executive order creating a 'Super Intelligence Force' and ordering federal agencies to call AI 'SI' instead",
+        body: "President Trump signed an executive order on October 4 titled 'Inaugurating the Era of Super Intelligence,' directing the federal government to replace the terms 'Artificial Intelligence' and 'AI' with 'Super Intelligence' and 'SI' in official executive branch communications, to the extent permitted by law. The same order creates a Super Intelligence Force, a task force meant to coordinate the federal government's approach to advanced AI, led by Director of National Intelligence Jay Clayton alongside FTC Chairman Andrew Ferguson, Under Secretary of Defense for Research and Engineering Emil Michael, and OPM Director Scott Kupor. The announcement followed a September 29 White House meeting and dinner with tech executives including Dario Amodei, Sam Altman, Sundar Pichai, Satya Nadella, Jensen Huang, Elon Musk, and Lisa Su, and casts the task force's mission as ensuring the US leads the world in 'Super Intelligence' while coordinating engagement with consumers, critical infrastructure providers, and AI companies.",
+        why: "A rename doesn't change what any model can actually do, but it signals how this White House wants AI talked about in government documents going forward — worth watching alongside the FTC and Senate activity elsewhere in this newsletter, since Chairman Ferguson now sits on both the task force setting the administration's tone and the agency investigating the labs it's meant to coordinate with.",
+        sources: [
+          { label: "ABC News", url: "https://abcnews.com/Politics/president-donald-trump-announces-creation-super-intelligence-force/story?id=136986122" },
+          { label: "The Washington Post", url: "https://www.washingtonpost.com/politics/2026/10/04/trump-launches-super-intelligence-force-after-calls-ai-slowdown/" }
+        ]
+      },
+      {
+        title: "OpenAI starts testing visual ads inside ChatGPT's image generator, its first ad format tied directly to generated content",
+        body: "OpenAI announced on October 5 that it will test a new visual ad format inside ChatGPT's image-generation feature, with testing starting later in October. In sample screens OpenAI released, ads from a grocery brand appear beneath the progress indicator while an image is being generated — one a carousel cycling through several product photos, another laying multiple photos out side by side — kept visually separate from the image ChatGPT is actually creating and clearly labeled as sponsored. The test is limited to the US and an initial group of advertisers, and will only show to users on the Free and Go plans, not Plus, Pro, Business, Enterprise, or Edu accounts, and never to accounts identified as belonging to users under 18. OpenAI also said it's expanding ChatGPT Ads measurement with conversion-data integrations, ten attribution partners, and brand-safety pilots with DoubleVerify and Integral Ad Science.",
+        why: "It's a new kind of ad placement — not a sponsored result in a chat reply, but a commercial message attached to the moment a generative-AI feature is doing its core job — which makes the labeling and separation rules OpenAI describes the whole test of whether 'AI-generated' and 'advertisement' stay distinguishable to users.",
+        sources: [
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/media-advertising/articles/openai-putting-visual-ads-next-184547191.html" },
+          { label: "Xenospectrum", url: "https://xenospectrum.com/en/chatgpt-image-generation-visual-ads/" }
+        ]
+      },
+      {
+        title: "OpenAI begins rolling out invisible text watermarking for ChatGPT and Codex in the EU to meet AI Act transparency rules",
+        body: "OpenAI announced on October 5 that it will start adding an invisible watermark, called textGrain, to text ChatGPT and Codex generate for users in the European Union. Rather than an attached symbol, the method works by subtly shaping the model's word choices in a pattern a detector can pick up but a reader can't see — and because the pattern lives in the words themselves, it survives being copied and pasted elsewhere. OpenAI says the watermark doesn't identify which user generated the text and that it measured no meaningful change in model performance with it switched on, and published a technical report on the method co-written with researchers at the University of Pennsylvania and Yale. The rollout responds to the EU AI Act's transparency requirements, which took effect August 2 and require AI companies to mark AI-generated content so other systems can identify it. It reaches eligible EU ChatGPT and Codex users on all plans over the coming weeks; API developers anywhere can turn it on for select models now, off by default.",
+        why: "It's a concrete answer to a question this newsletter keeps circling — how do you tell AI-written text apart from human-written text after the fact — and a direct example of a specific law (not a company's own initiative) being the reason a major lab shipped a detection capability it otherwise had no commercial incentive to build.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/" },
+          { label: "BleepingComputer", url: "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-is-adding-invisible-watermarks-to-chatgpt-and-codex-text-in-the-eu/" }
+        ]
+      },
+      {
+        title: "September job cuts hit a four-year low, even as AI stays 2026's single most-cited reason for layoffs overall",
+        body: "Outplacement firm Challenger, Gray & Christmas reported on October 1 that US employers announced 43,281 job cuts in September 2026, down 18% from August and the fewest for any September since 2022. Through the first nine months of 2026, employers have announced 573,195 job cuts total, a nearly 40% decline from the same period in 2025, while hiring plans for September were the weakest for that month since 2011. The top cited reason for September's cuts was market and economic conditions, not AI. But across the full nine months of 2026, artificial intelligence remains the single most-cited reason for planned job cuts, accounting for roughly 21% of the year's total.",
+        why: "It's a useful corrective to reading any single month's layoff headline as proof of a trend: overall US job cuts are falling to multi-year lows at the same time AI keeps topping the list of cited causes for the cuts that do happen, which means both 'layoffs are down' and 'AI is the top cause' can be true in the same report without contradicting each other.",
+        sources: [
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-10-01/us-companies-announce-fewest-job-cuts-for-a-september-since-2022" },
+          { label: "CPA Practice Advisor", url: "https://www.cpapracticeadvisor.com/2026/10/01/u-s-companies-announce-fewest-job-cuts-for-a-september-since-2022/190969/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on Trump's executive order renaming AI to 'Super Intelligence' and what the new task force is actually supposed to do.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on the politics of renaming AI 'SI' at the federal level, and what it signals about this White House's posture toward the industry.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking OpenAI's EU watermarking rollout against the AI Act rules driving it, and the broader pattern of regulation shaping product features.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on OpenAI's new ad format inside image generation and what it means for where AI products put commercial content.",
+        url: "https://sub.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Text Watermarking",
+      definition:
+        "Text watermarking is a technique for marking AI-generated text so it can be detected later, without changing how the text reads to a human. Instead of adding a visible symbol, the model is nudged to prefer certain word choices or patterns over others whenever multiple options would work equally well — a signal invisible to a reader but recoverable by a matching detector. It matters because once text is copied out of a chat into an email, essay, or article, there's otherwise no reliable way to tell it apart from human writing. OpenAI's textGrain method, in today's stories, is a live example built specifically to satisfy a legal transparency requirement rather than a feature OpenAI chose to ship on its own.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Ask any AI chatbot to write two or three short paragraphs on a topic you know well, then read them specifically looking for anything that feels like a 'tell' — a repeated sentence rhythm, an overused word, a phrasing you wouldn't naturally use. You likely won't spot anything definitive; that's the point. A human reader generally can't reliably detect AI-written text by eye, which is exactly the gap tools like textGrain and other AI-content detectors exist to close — and exactly why laws like the EU AI Act require labeling instead of trusting readers to notice on their own.",
+    learnLinks: [
+      { label: "What AI transparency and misuse rules actually require → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "What's new in ChatGPT, Claude, and Gemini this week → The AI Toolbox", href: "#/course/tools" },
+      { label: "How AI is reshaping jobs and the economy → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-10-05",
     displayDate: "Monday, October 5, 2026 · Edition #64",
     headline: "All 51 New York City Council members put OpenAI, Anthropic, Google, and Meta under oath on AI risk, Google's new Gemini 4 flagship Argon narrows the gap with rivals without taking a clear lead, California's AG subpoenas OpenAI over the Hugging Face hack, and Nvidia ships a hardware-backed 'kill switch' for rogue AI agents",
