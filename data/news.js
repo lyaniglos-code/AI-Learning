@@ -13,6 +13,85 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-07",
+    displayDate: "Wednesday, October 7, 2026 · Edition #66",
+    headline: "Mistral launches Large 4, a 1.05-trillion-parameter open-weight model, at Abu Dhabi's inaugural AI Everything summit, the same summit showcases Abu Dhabi's push to become the world's first 'AI-native' government by 2027, and Microsoft and Nvidia hold a joint hardware event today betting on AI that runs locally on the PC",
+    summary:
+      "Today's stories share a theme: AI moving out of the chat window and into infrastructure other systems build on. A new open-weight frontier model debuted at a government-backed summit instead of a lab's own keynote, that same government is quietly running AI across dozens of its own agencies, and two hardware giants are betting people want their next AI model running on the device in front of them instead of a server somewhere else.",
+    stories: [
+      {
+        title: "Mistral launches Large 4, a 1.05-trillion-parameter open-weight model, at Abu Dhabi's inaugural AI Everything summit",
+        body: "Mistral AI CEO Arthur Mensch introduced Mistral Large 4 on October 6 at the first AI Everything Abu Dhabi summit, calling it the company's largest and most capable model to date. It's a natively multimodal mixture-of-experts model with roughly 1.05 trillion total parameters, of which 49 billion are active for any given request, plus a 1.6-billion-parameter vision encoder for handling images alongside text. Mistral says it was trained on data spanning more than 160 languages, including every official EU language, and reports strong cybersecurity-specific benchmark results: 82% on the Artificial Analysis Cyber Index and 93% of challenges solved on Cybench, a 40-exercise security benchmark. A public preview is live now on Mistral Studio; open model weights are scheduled to follow at the end of October.",
+        why: "It's a concrete marker in the 'sovereign AI' push — a European lab shipping a frontier-scale open-weight model at a Gulf-government-backed summit rather than its own developer event — and a reminder that mixture-of-experts architecture lets a model have enormous total capacity while only activating a small fraction of it per request, which is what keeps a trillion-parameter model affordable enough to actually run.",
+        sources: [
+          { label: "Yahoo Finance", url: "https://finance.yahoo.com/technology/ai/articles/mistral-large-4-doesn-t-155055704.html" },
+          { label: "AI Magazine", url: "https://aimagazine.com/news/how-does-mistral-large-4-compare-to-its-competitors" }
+        ]
+      },
+      {
+        title: "Abu Dhabi showcases 100+ live government AI use cases at the same summit, aiming to be the world's first 'AI-native' government by 2027",
+        body: "Also at AI Everything Abu Dhabi, the emirate's Department of Government Enablement (DGE) detailed its progress toward becoming the world's first fully AI-native government by 2027: more than 100 AI use cases are already live across more than 40 integrated government entities, with a pipeline of over 200 more in development, underpinned by a $3.54 billion investment program. Wesam Lootah, Director General of GovDigital at DGE, said the objective is to make government services act before residents even have to ask, rather than waiting for people to file a request and navigate a process.",
+        why: "'Services that act before you ask' is agentic AI applied at the scale of an entire government rather than a single app — it's worth watching less for the headline figure than for how a government actually audits and corrects 100-plus systems acting on citizens' behalf, which is the accountability question every smaller-scale agentic product faces too.",
+        sources: [
+          { label: "Gulf News", url: "https://gulfnews.com/uae/government/abu-dhabi-to-showcase-100-live-government-ai-uses-at-global-summit-1.500685135" },
+          { label: "Abu Dhabi Media Office", url: "https://www.mediaoffice.abudhabi/en/technology/department-of-government-enablement-and-inception-partner-to-advance-abu-dhabis-ai-native-government-vision/" }
+        ]
+      },
+      {
+        title: "Microsoft and Nvidia hold a joint hardware event today, betting on AI that runs locally on the PC",
+        body: "Microsoft holds a Windows and Surface event today in San Francisco, its first major in-person Windows-focused event in more than two years, built around what the company describes as how local AI will shape the next chapter of the PC. CEO Satya Nadella, Surface chief Pavan Davuluri, and Nvidia CEO Jensen Huang are set to appear together to detail the Surface Laptop Ultra and a Surface RTX Spark Dev Box, both built around Nvidia's new RTX Spark chip, which pairs a Blackwell-generation GPU with enough onboard memory to run larger AI models directly on the device rather than over the cloud. Pricing and availability hadn't been confirmed as of this morning and are expected to be announced at the event.",
+        why: "It's a bet on local (on-device) inference over cloud inference for at least some AI workloads — running the model on the hardware in front of you instead of sending your prompt to a remote data center, which changes the tradeoffs around latency, offline use, and how much of your data ever leaves your machine.",
+        sources: [
+          { label: "Windows Central", url: "https://windowscentral.com/microsoft/windows-11/microsoft-surface-event-announced-for-october-7-heres-everything-we-know-so-far" },
+          { label: "Guru3D", url: "https://www.guru3d.com/story/microsoft-and-nvidia-confirm-october-7-rtx-spark-and-surface-hardware-event/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on Mistral Large 4's launch and what it signals about open-weight models competing at the frontier.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on Mistral Large 4's architecture and benchmark claims, and what the RTX Spark chip means for running models locally.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking Abu Dhabi's AI-native government push alongside the broader sovereign-AI story running through this week's news.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér · 2-3x weekly",
+        why: "Useful for a quick, visual breakdown of what a trillion-parameter mixture-of-experts model like Large 4 actually changes versus its predecessors.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      }
+    ],
+    term: {
+      word: "On-Device AI (Local Inference)",
+      definition:
+        "On-device AI, or local inference, means running an AI model's computations directly on the hardware in front of you — a laptop, phone, or dedicated device — instead of sending your prompt to a remote data center and waiting for a response. It typically requires a smaller model, or specialized hardware like Nvidia's new RTX Spark chip, because consumer devices have far less memory and compute than a cloud server farm. The tradeoff is speed and privacy (nothing has to leave your machine, and there's no network round-trip) against raw capability (a locally-run model is usually less powerful than the largest cloud-hosted ones). Today's Microsoft-Nvidia Surface event is a bet that enough AI workloads are worth that tradeoff to build new hardware around it.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Find a task you currently do in a cloud-based AI chatbot — summarizing a document, drafting an email, answering a quick question — and check whether your phone or laptop has any built-in, on-device AI feature that can do the same thing (many recent phones and some PCs do, often labeled as an offline or private mode). Try the same task both ways and notice the difference in speed, quality, and whether you had to be online. That gap is exactly what today's Microsoft-Nvidia hardware bet, and Mistral's open-weight release, are both trying to close from opposite directions.",
+    learnLinks: [
+      { label: "How mixture-of-experts models and model architecture actually work → How AI Models Work", href: "#/course/models" },
+      { label: "What 'sovereign AI' and open-weight models mean for the global AI race → The AI Industry", href: "#/course/industry" },
+      { label: "Where AI inference runs, and why it matters → Building with AI", href: "#/course/engineering" }
+    ]
+  },
+  {
     date: "2026-10-06",
     displayDate: "Tuesday, October 6, 2026 · Edition #65",
     headline: "Trump signs an executive order creating a 'Super Intelligence Force' and renaming AI to 'SI' across the federal government, OpenAI starts testing visual ads inside ChatGPT's image generator, OpenAI ships invisible text watermarking for EU users to meet AI Act rules, and September job-cut data shows AI still 2026's top cited layoff cause even as overall cuts hit a four-year low",
