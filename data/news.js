@@ -13,6 +13,93 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-08",
+    displayDate: "Thursday, October 8, 2026 · Edition #67",
+    headline: "Anthropic launches Claude Haiku 5.5, its cheapest and fastest small model yet, cutting average API costs by roughly 75%, Anthropic also splits its Cyber Verification Program into three access tiers for vetted security researchers, Barclays says Claude now helps 16,000 colleagues and sorts 120,000 client emails a day, and Microsoft's biggest Copilot overhaul yet — Home, Code, and Autopilot — begins rolling out this month",
+    summary:
+      "Today's stories are less about a single dramatic launch and more about AI settling into routine infrastructure. A frontier lab shipped its cheapest-ever small model, built for the bulk, everyday work that never makes a headline; that same lab split access to its riskiest cyber capabilities into tiers so vetted defenders can use them without reopening the door to misuse; a major bank put exact numbers on how many colleagues and customer emails an assistant already touches every day; and the AI product more office workers already use than any other just got its biggest rework yet. Put together, it's a snapshot of what AI looks like once the splashy launch is over and the everyday grind begins.",
+    stories: [
+      {
+        title: "Anthropic launches Claude Haiku 5.5, its cheapest and fastest small model yet",
+        body: "Anthropic released Claude Haiku 5.5 on October 7, calling it the cheapest, fastest, and most capable small model the company has shipped. It's built for high-volume, cost-sensitive work — summarizing, classifying, extracting data, customer support — and is designed to run as a subagent alongside the larger Opus 5.5 and Sonnet 5.5 models rather than handle complex agentic coding on its own. It's also the first Haiku-class model with an adjustable effort setting (Low, Medium, High, Xhigh, Max), letting a request trade speed for deeper reasoning. Anthropic says average costs are about 75% lower than Haiku 4.5 — up to 90% lower for prompts under 100,000 tokens — pricing input tokens at $0.10 per million versus Haiku 4.5's $1.00. It's available now on the Claude Platform as claude-haiku-5-5, plus Amazon Web Services, Google Cloud, and Microsoft Azure.",
+        why: "Not every model race is about raw capability — Anthropic is competing just as hard at the cheap-and-fast end, since making a 'good enough' model affordable to call constantly in the background as a subagent is often what actually decides whether an agentic system is cheap enough to run at scale.",
+        sources: [
+          { label: "Anthropic (Claude Haiku 5.5)", url: "https://www.anthropic.com/claude-haiku-5-5" },
+          { label: "VentureBeat", url: "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna" }
+        ]
+      },
+      {
+        title: "Anthropic splits its Cyber Verification Program into three access tiers for vetted security researchers",
+        body: "Anthropic announced on October 6 that it's restructuring its Cyber Verification Program (CVP) — which lets vetted security professionals bypass some of the conservative safeguards that block most cyber-related requests on its generally available models — into three tiers, merging in the older Project Glasswing along the way. Defense Access covers defensive work like incident response and vulnerability analysis and is open to companies, nonprofits, universities, and individual researchers with a vulnerability-reporting track record; Red Team Access adds authorized penetration testing for organizations, with real-time blocks still in place for anything that could cause physical harm or mass disruption; and Specialized Access, the narrowest tier, is reserved for a small set of organizations vetted jointly with the US government to test safety-critical systems like power grids. In Anthropic's own testing, Claude Opus 5.5 was blocked on every attempt with no CVP access, blocked on roughly 8% of trials under Defense Access, and ran unrestricted under Red Team Access. Anthropic says CVP partners have already surfaced more than 129,000 verified software vulnerabilities between April and July 2026.",
+        why: "It's a concrete example of how a lab handles 'dual-use' capabilities — skills like exploit development that help attackers and defenders equally — by gating access through vetting and monitoring instead of just blocking the capability outright for everyone.",
+        sources: [
+          { label: "Anthropic (Cyber Verification Program)", url: "https://www.anthropic.com/news/cyber-verification-program" }
+        ]
+      },
+      {
+        title: "Barclays says Claude now helps 16,000 colleagues and sorts 120,000 client emails a day",
+        body: "Anthropic announced on October 1 that Barclays is expanding its use of Claude across global operations, with a particular focus on security and governance. The bank's Colleague Knowledge Assistant, live since 2025 and built on Claude using a retrieval-augmented generation design, now has more than 16,000 colleagues using it to help serve Barclays UK's 20-million-plus retail customers, and has handled over a million searches. Separately, in Barclays' Global Markets division, Claude models now classify and route roughly 120,000 incoming client emails a day so operations staff see complete requests faster. Barclays also expects Claude Code to reach half its software developers by the end of 2026 and most of its engineering organization by 2027, with human oversight and governance controls applied throughout.",
+        why: "It's a rare case of a company attaching real numbers — 16,000 staff, 120,000 emails a day — to what 'AI deployed at scale inside a regulated bank' actually looks like, and the retrieval-augmented generation design behind it is the same basic technique behind any AI tool that answers from your own documents instead of guessing from training data.",
+        sources: [
+          { label: "Anthropic (Barclays scales Claude)", url: "https://www.anthropic.com/news/barclays-scales-claude" },
+          { label: "FF News", url: "https://ffnews.com/news/barclays-scales-claude-to-upgrade-operations-and-improve-client-experience-15560521" }
+        ]
+      },
+      {
+        title: "Microsoft's biggest Copilot overhaul yet — Home, Code, and Autopilot — starts rolling out this month",
+        body: "Microsoft CEO Satya Nadella announced a major Copilot redesign on September 25, describing it as the company's largest Copilot update to date and calling Copilot a 'new OS for work.' The overhaul has three main pieces: Home merges the existing Chat and Cowork experiences into one starting point and embeds Word, Excel, and PowerPoint directly inside Copilot; Code lets a user describe an app in plain language and have Copilot build and host it inside the company's own Microsoft 365 tenant, using the same underlying technology as GitHub Copilot; and Autopilot, an evolution of the 'Scout' agent Microsoft first showed at its Build conference in June, is a proactive, always-on enterprise agent that's given a role and a goal and keeps working — scheduling meetings, following up with contacts, monitoring channels — without further prompting. Home and Code begin reaching Microsoft's Frontier early-access program in the coming weeks, while Autopilot entered private preview at the end of September.",
+        why: "Autopilot is a useful line between a chatbot and an agent: a chatbot waits for your next message, while an agent like Autopilot keeps working on an assigned goal after the conversation ends — which is exactly the shift this newsletter keeps tracking across every major AI product.",
+        sources: [
+          { label: "Windows Central", url: "https://windowscentral.com/artificial-intelligence/microsoft-copilot/microsoft-just-rethought-its-entire-ai-strategy-new-copilot" },
+          { label: "TechSpot", url: "https://www.techspot.com/news/113998-microsoft-calls-copilot-biggest-update-new-os.html" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on Claude Haiku 5.5 and what a much cheaper small model means for running agents constantly in the background.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on model tiering and subagents, plus Microsoft's new always-on Autopilot agent.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking Anthropic's tiered Cyber Verification Program and the broader dual-use security debate it's trying to answer.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on AI quietly reshaping daily corporate workflows, from Barclays' customer-service assistant to Microsoft's Copilot rework.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Retrieval-Augmented Generation (RAG)",
+      definition:
+        "RAG is a technique where an AI model, before answering, first retrieves relevant passages from an external set of documents — a knowledge base, a company's internal files, a search index — and then generates its answer grounded in those retrieved passages instead of relying purely on what it memorized during training. It's why a RAG-based assistant can accurately answer questions about a specific company's policies or a customer's account, things no general-purpose model would otherwise know, and why its answers can cite exactly where the information came from. Barclays' Colleague Knowledge Assistant, in today's stories, is a live example: a RAG system built on Claude that helps 16,000-plus staff look up accurate answers for more than 20 million retail customers instead of guessing from general training data.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick a document you actually have — a lease, a syllabus, a set of meeting notes — and upload it into any AI chatbot's file or 'Projects' feature, then ask a question whose answer only exists in that document. Now ask the same chatbot the same question in a brand-new chat with no document attached, and compare the two answers. That difference — a response grounded in a specific text instead of a guess from general training — is exactly the retrieval-augmented generation technique behind Barclays' Claude-powered assistant looking up real answers for 20 million customers.",
+    learnLinks: [
+      { label: "How retrieval-augmented generation grounds AI answers in real documents → Building with AI", href: "#/course/engineering" },
+      { label: "What's new in Claude and Copilot this week → The AI Toolbox", href: "#/course/tools" },
+      { label: "How enterprises are actually deploying AI at scale → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-10-07",
     displayDate: "Wednesday, October 7, 2026 · Edition #66",
     headline: "Mistral launches Large 4, a 1.05-trillion-parameter open-weight model, at Abu Dhabi's inaugural AI Everything summit, the same summit showcases Abu Dhabi's push to become the world's first 'AI-native' government by 2027, and Microsoft and Nvidia hold a joint hardware event today betting on AI that runs locally on the PC",
