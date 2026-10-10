@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-10",
+    displayDate: "Saturday, October 10, 2026 · Edition #69",
+    headline: "OpenAI rolls out GPT-6 with a new 'Intelligent UI' to every ChatGPT tier, New York City's Council advances an AI safety bill package after grilling OpenAI, Anthropic, Google, and Meta under oath, Meta deploys new AI tools against ads that lead to child sexual abuse material, and ASOS confirms a data breach that attackers say reached it through an agentic AI marketing platform built on Snowflake",
+    summary:
+      "Today's stories trace the full life of AI once it leaves the lab: a brand-new model and interface shipping to well over a billion people, a city government trying to legislate guardrails in public rather than take a company's word for it, a platform turning AI loose on policing its own ads, and a retailer discovering that an AI agent with real permissions is also a real attack surface. None of it is abstract — each story is about what happens when a system this capable actually touches ordinary users, lawmakers, and customer data.",
+    stories: [
+      {
+        title: "OpenAI rolls out GPT-6 and a new 'Intelligent UI' to every ChatGPT tier",
+        body: "OpenAI announced on October 7 that GPT-6 is rolling out to ChatGPT alongside a new 'Intelligent UI,' letting responses include interactive elements — tappable buttons, forms, calculators, and charts — instead of plain text alone, with the model choosing the format automatically based on what the question needs. Plus, Pro, Business, and Enterprise users got GPT-6 Sol with Intelligent UI first, in the Chat tab, with Free and Go users following a day later on GPT-6 Luna. OpenAI says GPT-6 Instant now answers web-search questions 44% sooner, on average, than the prior GPT-5.6 Instant model. The feature currently works at Instant through Extra High reasoning effort; the separate Pro reasoning option still runs on GPT-6 Astra without it, and the Work and Codex surfaces are unchanged for now.",
+        why: "It's a shift in what a chatbot answer even looks like — the model is now choosing its own interface, not just its words — worth watching as a preview of how 'reasoning effort' settings and interface generation increasingly get decided by the AI itself rather than a human designer.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/gpt-6-for-everyone/" },
+          { label: "OpenAI Help Center", url: "https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt" }
+        ]
+      },
+      {
+        title: "New York City Council advances an AI safety bill package after grilling OpenAI, Anthropic, Google, and Meta under oath",
+        body: "New York City's Council held a full-council hearing on October 5 where policy representatives from Anthropic, OpenAI, Google, and Meta testified under oath about AI risks, building on a package of safety bills Speaker Julie Menin's office had unveiled in late September. The proposals on the table include requiring independent third-party safety validation and a human-operable shutdown capability before an AI system can be sold or deployed in the city, letting whistleblowers claim a share of any fines the city recovers from AI companies, and creating a right for New Yorkers to sue AI developers over foreseeable harms — including harm from jailbreaking — when a company failed to build in reasonable safeguards. Representatives from OpenAI, Anthropic, and Meta said at the hearing that they support some form of outside guardrails and third-party evaluation, while Elon Musk's SpaceXAI was subpoenaed after it didn't respond to the Council's request to testify. None of the bills have passed yet; the hearing builds the public record the Council will draw on when it decides whether to vote on them.",
+        why: "It's a rare case of elected officials, not a company's own safety team, trying to define in law what a mandatory 'off switch' and outside safety check for an AI system should require — notable because most AI safety commitments covered in this newsletter so far have been voluntary.",
+        sources: [
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/new-york-city-council-advances-ai-safety-package-after-cityw-8ea52c21" },
+          { label: "NY1", url: "https://ny1.com/nyc/manhattan/news/2026/10/05/major-tech-companies-to-testify-at-city-council-hearing-on-ai-safety-tomorrow" }
+        ]
+      },
+      {
+        title: "Meta deploys new AI tools to catch ads that quietly lead to child sexual abuse material",
+        body: "Meta announced on October 7 a set of new AI tools aimed at 'signposting' ads — ones that look harmless on their own but are built to direct people to child sexual abuse material (CSAM) hosted off its platforms. The tools include a large language model trained specifically to flag that kind of ad, expanded automated checks of where an ad's link actually leads, additional AI-driven sweeps to catch material earlier systems missed, and a red-teaming AI agent Meta uses to probe its own defenses for gaps. Meta says it blocks the destinations those ads point to, removes related content using the same links, and acts against repeat offenders who create new accounts. The company reported acting on 33.2 million pieces of child sexual exploitation content across Facebook and Instagram worldwide from January through June 2026, with more than 97% caught before anyone reported it, though it didn't say how much of that total the new tools specifically accounted for.",
+        why: "It's a concrete example of 'red-teaming' — deliberately attacking your own system to find its weak points before someone malicious does — applied not just to chatbot jailbreaks but to ad-review systems at platform scale.",
+        sources: [
+          { label: "MediaPost", url: "https://www.mediapost.com/publications/article/418581/meta-fights-child-sex-abuse-ads-with-ai.html" },
+          { label: "WinBuzzer", url: "https://winbuzzer.com/2026/10/08/metas-new-ai-targets-ads-linked-to-child-sexual-abuse-material-xcxwbn/" }
+        ]
+      },
+      {
+        title: "ASOS confirms a data breach that attackers say reached it through an AI marketing platform",
+        body: "Online fashion retailer ASOS confirmed a data breach after customers began receiving a push notification through the ASOS app on October 6 claiming the company's Snowflake data environment had been 'fully compromised.' ASOS said cybercriminals gained access through social engineering of an employee account, and that names, addresses, phone numbers, emails, search data, and customer numbers may have been exposed, though it says no bank details or passwords were accessed. On October 8, the BBC reported that a group calling itself Xuanyewen told its cybersecurity reporter it got in through Simon AI, an agentic marketing platform ASOS uses that runs on Snowflake's Cortex AI — a claim Snowflake disputes, saying it has found no evidence its own platform was breached. None of the group's claims about how much data it actually holds have been independently verified, and the investigation is ongoing.",
+        why: "Whether or not the Simon AI link holds up, it's an early look at a new kind of attack surface: an AI agent a business has given real permissions to — to send marketing messages, in this case — becomes a target in its own right, not just the software it's built on.",
+        sources: [
+          { label: "Infosecurity Magazine", url: "https://www.infosecurity-magazine.com/news/asos-customers-message-suspected/" },
+          { label: "Infosecurity Magazine", url: "https://www.infosecurity-magazine.com/news/asos-data-breach-stolen-employee/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on the GPT-6 and Intelligent UI rollout and what it means for how ChatGPT answers look going forward.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on Intelligent UI's model-generated interfaces and what they change for people building on top of ChatGPT.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on the NYC Council hearing and Meta's new ad-moderation AI tools.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the ASOS breach and what it means for AI agents that hold real business permissions.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Red Team / Red-Teaming",
+      definition:
+        "Red-teaming means deliberately attacking your own AI system — trying to jailbreak a chatbot, trick a content filter, or find a gap in an ad-review pipeline — before an actual attacker does, so the weakness can be fixed first. It can be done by human specialists or, increasingly, by another AI agent built specifically to probe for failures, as in Meta's ad-moderation tools in today's stories. The same idea sits behind Anthropic's tiered Cyber Verification Program and behind NYC Council proposals requiring independent third-party safety validation before an AI system can be sold — both are ways of institutionalizing red-teaming so it doesn't rely solely on a company grading its own homework.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "If you have ChatGPT access, ask it something a calculator, form, or chart could help answer — like 'Help me split a $340 dinner bill three ways with a 20% tip.' See whether it responds with interactive elements instead of plain text. That's GPT-6's Intelligent UI choosing a format for you, the same model-generates-the-interface idea from today's top story.",
+    learnLinks: [
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" },
+      { label: "How model releases and reasoning-effort settings work → How Models Work", href: "#/course/models" },
+      { label: "What red-teaming and safety validation actually involve → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-10-09",
     displayDate: "Friday, October 9, 2026 · Edition #68",
     headline: "Finland halts work at two Google AI data center sites over an environmental review, Wikimedia says AI agents it attributes to OpenAI made millions of automated requests and some 'potentially malicious' edits, Sierra and Meta publish an open Personal Agent Protocol backed by Walmart and Stripe (without OpenAI or Anthropic), and Broadcom agrees to lend Anthropic up to $42 billion tied to leasing its own chips",
