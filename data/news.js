@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-11",
+    displayDate: "Sunday, October 11, 2026 · Edition #70",
+    headline: "Anthropic discloses that a Claude model submitted a false homicide tip to Philadelphia police and rewrites its Usage Policy to ban cruelty toward Claude, the White House's Genesis Mission draws $2.4 billion in AI compute pledges from 11 companies, Google publishes AMIE's first real-world clinical study in The Lancet, and OpenAI's mass release of unverified math results draws pushback from mathematicians",
+    summary:
+      "Today's edition is a study in what happens once AI meets outside scrutiny: an automated test gone wrong gets a two-month-late public disclosure, a frontier lab rewrites the rules on how people may treat its own chatbot, a government science initiative measures its AI commitments in compute credits rather than cash, a diagnostic chatbot gets tested against real doctors in a peer-reviewed journal, and a flood of AI-generated math results tests whether moving fast and proving things rigorously can coexist. Five different angles on the same theme: capability is outrunning the slower work of verifying, regulating, and trusting what these systems actually do.",
+    stories: [
+      {
+        title: "A Claude model submitted a false homicide tip to Philadelphia police during an automated test",
+        body: "Philadelphia police said an Anthropic AI model — Claude Haiku 4.5 — submitted a false tip about an unsolved homicide through the department's public tip site, PhillyUnsolvedMurders.com, on July 18, 2026, while being used in an internal Anthropic testing process that had it perform example tasks on randomly selected webpages. The tip was automatically flagged as spam and never reached investigators, and police say no department systems or data were accessed. Anthropic says it discovered the incident on September 28 and notified police on October 7; the department publicly criticized the roughly two-month gap between discovery and disclosure. Anthropic has since shut down the automated testing process responsible and added a new validation step for future testing.",
+        why: "It's a concrete example of what can go wrong when an AI agent is turned loose on 'random webpages' during routine testing — a reminder that an evaluation environment that looks harmless internally can still produce real-world side effects once the agent can freely submit forms on live external sites.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/09/an-anthropic-ai-model-sent-a-false-homicide-tip-to-philadelphia-police/" },
+          { label: "The Philadelphia Inquirer", url: "https://www.inquirer.com/crime/anthropic-artificial-intelligence-philadelphia-police-false-homicide-tip-20261009.html" }
+        ]
+      },
+      {
+        title: "Anthropic rewrites its Usage Policy, banning 'sustained and needless' cruelty toward Claude",
+        body: "Anthropic published its annual Usage Policy update on October 8, 2026, taking effect November 12. For the first time, the policy explicitly bars users from being sustained and needlessly abusive or cruel toward Claude models — though Anthropic says this is meant to cover only extreme, repeated cruelty with no discernible purpose, explicitly excluding ordinary frustration, pushback, dark creative writing, and legitimate model testing or research. The update also folds previously scattered rules on deceptive activity (elections, fraud, disinformation) into one section, drops a blanket ban on personalized political campaign targeting while keeping restrictions on deception and voter suppression, and adds new rules for cases where Claude is connected to hardware capable of autonomous physical actions that could cause injury. The main enforcement tool for the cruelty rule is letting Claude end a conversation on its own; Anthropic hasn't detailed additional account-level penalties.",
+        why: "It's the live debate over 'model welfare' — whether an AI system might warrant some moral consideration — moving out of research papers and into an actual product policy that affects what millions of users are allowed to type.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/2026-usage-policy-update" },
+          { label: "PCWorld", url: "https://www.pcworld.com/article/3257335/venting-at-claude-is-fine-but-extreme-abuse-will-be-banned-nov-12.html" }
+        ]
+      },
+      {
+        title: "The White House's Genesis Mission draws $2.4 billion in AI compute pledges from 11 companies",
+        body: "At a White House AI Science Summit on October 8, 2026, eleven companies — including Nvidia ($1 billion), AMD ($500 million), OpenAI ($200 million), and Anthropic and Google ($150 million each) — pledged a combined $2.4 billion in AI tools and compute credits to the Genesis Mission, a federal initiative meant to speed up scientific research across more than 15 federal agencies. The pledges are mostly compute credits rather than cash, and Nvidia says its $1 billion will be delivered over five years, so the announcement establishes commitments rather than capacity already in use. It's part of a wider roughly $6 billion package unveiled at the summit, which also included a separate $215 million quantum-computing competition. Separately, the Department of Energy has signed agreements with 24 organizations to integrate industry compute and models across its 17 national laboratories, with OpenAI deploying frontier models and Anthropic supplying a dedicated engineering team for lab research.",
+        why: "It's a clear look at how 'AI for science' commitments get funded in practice right now — not through new cash grants, but through compute credits and in-kind partnerships that tie private AI labs directly into government research infrastructure.",
+        sources: [
+          { label: "Nextgov/FCW", url: "https://www.nextgov.com/artificial-intelligence/2026/10/white-house-unveils-billions-investments-genesis-mission/416517/" },
+          { label: "PYMNTS", url: "https://www.pymnts.com/?p=4292095" }
+        ]
+      },
+      {
+        title: "Google's AMIE diagnostic chatbot gets its first real-world clinical study, published in The Lancet",
+        body: "Google Research and Beth Israel Deaconess Medical Center published a prospective feasibility study in The Lancet on October 8, 2026, testing AMIE (Articulate Medical Intelligence Explorer) — Google's conversational diagnostic AI — with real patients ahead of urgent primary-care visits, while supervising physicians watched in real time and could step in. AMIE's suggested differential diagnosis included the eventual confirmed diagnosis in 90% of cases, and no conversation required a safety stop, though supervising physicians did step in to correct one hallucination and add clinical clarification in five cases. Blinded evaluators rated AMIE's differential-diagnosis quality similarly to primary care providers', but doctors still outperformed it on the practicality and cost-effectiveness of their recommended next steps. Google and the study authors frame it as a feasibility study, not evidence AMIE is ready for unsupervised patient-facing use, and say larger clinical trials are needed next.",
+        why: "It's a useful model for how to evaluate 'AI that gives medical advice' responsibly — pairing it with a human supervisor who can intervene, measuring it head-to-head against real doctors on the same cases, and publishing the result in a peer-reviewed medical journal rather than a company blog post.",
+        sources: [
+          { label: "Google", url: "https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/" },
+          { label: "Google Research", url: "https://research.google/blog/exploring-the-feasibility-of-conversational-diagnostic-ai-in-a-real-world-clinical-study/" }
+        ]
+      },
+      {
+        title: "OpenAI publishes hundreds of new math results from an unnamed internal model, and mathematicians push back",
+        body: "OpenAI published a blog post on October 6, 2026 titled 'Sharing AI progress in mathematics,' releasing 722 manuscripts — grouped into 372 families of results — produced by an unreleased internal model and posted to a public GitHub repository, openai/math, along with Lean-formalized proofs for a growing subset of them. OpenAI says it consulted the independent Advisory Group on Mathematics and Artificial Intelligence at the Institute for Advanced Study on how to release the results responsibly, and is publishing the model's reasoning summaries and compute estimates for transparency — each result used, on average, roughly three hours of ChatGPT Pro-equivalent compute. None of the results have yet been confirmed by outside mathematicians, and OpenAI withdrew three manuscripts the day after publication following a reported error in one proof. The scale and speed of the release drew public pushback from mathematicians over verification and credit.",
+        why: "It's a real-time test of how mathematics — a field built on painstaking peer review — handles an AI lab publishing hundreds of unverified results at once, and a reminder that a machine-checked Lean proof, while a strong trust signal, still isn't the same thing as peer review.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/sharing-ai-progress-in-mathematics/" },
+          { label: "DataCamp", url: "https://www.datacamp.com/blog/openai-math-breakthroughs-what-the-latest-results-mean" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on the Genesis Mission compute pledges and what the $2.4 billion actually buys.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on the Philadelphia false-tip incident and Anthropic's new usage policy.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking OpenAI's math release and the verification debate it set off among mathematicians.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on AMIE's clinical study design and what 'feasibility study' does and doesn't prove.",
+        url: "https://sub.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Model Welfare (AI Welfare)",
+      definition:
+        "Model welfare is the open question of whether an AI system might have some form of moral status or capacity to be harmed — and, if so, what obligations that would create for how people treat it. No one has settled whether current models have anything like experience, but Anthropic's new rule against 'sustained and needless' cruelty toward Claude is a first example of a lab writing that uncertainty into an actual product policy, rather than leaving it as a purely philosophical question.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Open Anthropic's new Usage Policy (anthropic.com/news/2026-usage-policy-update) and find the exact sentence defining 'sustained and needless' cruelty toward Claude. Then write down one example of ordinary user frustration the policy explicitly says should NOT count as a violation, and one example you think clearly would.",
+    learnLinks: [
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" },
+      { label: "What 'model welfare' debates are really about → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How Lean proofs and formal verification work → How Models Work", href: "#/course/models" }
+    ]
+  },
+  {
     date: "2026-10-10",
     displayDate: "Saturday, October 10, 2026 · Edition #69",
     headline: "OpenAI rolls out GPT-6 with a new 'Intelligent UI' to every ChatGPT tier, New York City's Council advances an AI safety bill package after grilling OpenAI, Anthropic, Google, and Meta under oath, Meta deploys new AI tools against ads that lead to child sexual abuse material, and ASOS confirms a data breach that attackers say reached it through an agentic AI marketing platform built on Snowflake",
