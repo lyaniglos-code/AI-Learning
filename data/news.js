@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-13",
+    displayDate: "Tuesday, October 13, 2026 · Edition #72",
+    headline: "Mistral opens a public preview of its 1-trillion-parameter Large 4, ChatGPT adds a virtual try-on feature to shopping, Amazon drops NDAs in data center fights after a congressional inquiry, and a new coalition opens an AI-for-drug-discovery challenge aimed at Alzheimer's",
+    summary:
+      "Today's edition is lighter on blockbuster model launches and heavier on AI meeting the real world: a major open-weight lab previews a new flagship before its weights are even out, a chatbot steps further into everyday shopping, a cloud giant trades negotiating secrecy for public trust as data center opposition grows, and a new research coalition structures an AI competition around results that have to survive contact with a real lab bench, not just a leaderboard.",
+    stories: [
+      {
+        title: "Mistral opens a public preview of Large 4, a 1-trillion-parameter model, ahead of an open-weight release",
+        body: "Mistral AI launched a public preview of Large 4, its new flagship model, on October 6, 2026, available for now only through Mistral Studio and the Mistral API rather than as open weights. Mistral describes it as a mixture-of-experts model with roughly 1 trillion total parameters and tens of billions active on any given task, plus a dedicated vision encoder, and says it was trained in the company's own European data centers. The company is calling Large 4 open-weight, but that release is planned for later in October — the preview is a hosted, API-only version in the meantime. Mistral is positioning it as a direct competitor to the latest flagship models from OpenAI and Google, though the benchmark comparisons so far are Mistral's own.",
+        why: "It's a useful reminder that 'open-weight' and 'available' aren't the same thing — a lab can let developers test a model through a hosted API for weeks before the weights that let anyone run it themselves are actually released.",
+        sources: [
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/mistral-debuts-large-4-open-weight-model-preview-cbf9e0b5" },
+          { label: "TestingCatalog", url: "https://www.testingcatalog.com/mistral-launches-large-4-preview-with-1-t-parameters" }
+        ]
+      },
+      {
+        title: "ChatGPT can now show you wearing clothes before you buy them",
+        body: "OpenAI rolled out a virtual try-on feature inside ChatGPT's shopping results on October 1, 2026, alongside a new Favorites feature for saving products into a library. Hovering over a shopping result reveals a 'Try on' button; a user uploads a selfie or full-body photo once, and ChatGPT generates an image of them wearing the item, and it works even on items from a screenshot of any store rather than only products already indexed in ChatGPT. The feature runs on a newly launched image model, ChatGPT Images 2.5, which OpenAI says produces more natural lighting and texture than its predecessor. It's live now on desktop, web, and mobile, and OpenAI cautions the generated image isn't a guarantee of fit or an exact likeness.",
+        why: "It's a concrete, mainstream example of multimodal AI moving from 'describe what's in this image' to 'generate a plausible new image of a scene that doesn't exist yet' — the same image-generation capability behind design mockups and product prototypes, pointed at everyday shopping.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/" },
+          { label: "Tom's Guide", url: "https://www.tomsguide.com/ai/chatgpt/you-can-now-virtually-try-on-clothes-with-chatgpt-before-you-buy-them-heres-how-it-works" }
+        ]
+      },
+      {
+        title: "Amazon ends NDAs in data center negotiations with local governments, pledges $1 billion to host communities",
+        body: "AWS CEO Matt Garman announced on October 2, 2026 that Amazon will stop signing NDAs with government agencies during future data center site negotiations, alongside a new $1 billion 'Built Together' community investment program. The move follows a similar commitment from Microsoft in March 2026 and came two days after Rep. Jamie Raskin sent letters to Amazon, Google, Meta, and Oracle asking about their use of NDAs with local officials during permitting talks. Amazon says the new policy applies only to future agreements, not ones already signed, and hasn't said whether it extends to contractors or other private parties involved in a project. Garman pointed to more than 100 data center moratoriums now under consideration nationwide as a sign that secrecy around these deals has become a political liability, and Amazon says it will hold open houses to engage residents going forward.",
+        why: "It's a window into the physical, local-politics side of the AI boom — the compute behind every model you use sits in a real building that needs real power, water, and tax breaks, and the fight over who gets to know the terms of that deal is becoming as consequential as the models themselves.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/11/can-the-ai-industry-persuade-data-center-opponents-by-getting-rid-of-ndas/" },
+          { label: "Gizmodo", url: "https://gizmodo.com/amazon-is-making-concessions-to-data-center-critics-and-warning-them-not-to-get-in-the-way-2000820848" }
+        ]
+      },
+      {
+        title: "A new AI challenge offers a path from a 150-million-cell brain atlas to lab-tested Alzheimer's drug targets",
+        body: "Prima Mente and the Alzheimer's Disease Data Initiative opened registration on October 8, 2026 for the Alzheimer's Translation Challenge, a free-to-enter competition asking teams to build models on a new atlas of roughly 150 million brain cells — neurons, astrocytes, and microglia — to identify promising drug targets. The competition runs in two stages: teams first train and evaluate models on the open dataset, then a shortlist of finalists gets their therapeutic hypotheses tested directly in Prima Mente's wet lab, with validation expected by summer 2027. The coalition backing the challenge includes NVIDIA and Hugging Face, among others, and organizers say Prima Mente will not claim rights to participants' models or discoveries. It follows Prima Mente winning the AD Data Initiative's $1 million Alzheimer's Insights AI Prize in an earlier, separate competition in March 2026.",
+        why: "It's a good example of AI-for-science structured around a real feedback loop instead of a benchmark score alone — a model's prediction only counts once it's tested against actual biology in a lab, which is a harder and more useful bar than most AI leaderboards offer.",
+        sources: [
+          { label: "AlphaSignal", url: "https://alphasignal.ai/news/prima-mente-opens-ai-challenge-to-find-alzheimer-s-drug-targets-in-150m-cells" },
+          { label: "Digg", url: "https://digg.com/ai/0iimo1yl" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on Mistral's Large 4 preview and what 'open-weight' means when the weights aren't out yet.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on Large 4's mixture-of-experts architecture and how it stacks up against other open-weight flagships.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking Amazon's NDA reversal and the political economy of data center build-outs.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on ChatGPT's virtual try-on feature and AI's push deeper into everyday shopping.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Mixture of Experts (MoE)",
+      definition:
+        "A mixture-of-experts model splits its parameters into many specialized sub-networks ('experts') and, for any given input, only activates a small subset of them rather than running every parameter every time. That's how Mistral's new Large 4 can have roughly 1 trillion total parameters while only a few dozen billion are active per task — it lets a model carry far more total knowledge without paying the full computational cost of a same-sized 'dense' model on every request.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "If you have a photo of clothing or an accessory you're considering buying, try asking a multimodal AI tool you have access to describe how it would look on you, or generate a mockup, and compare that to an actual try-on feature if you can access one. Notice where the generated image gets details wrong (texture, fit, proportions) — that gap is exactly what current image-generation models still struggle with.",
+    learnLinks: [
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" },
+      { label: "How mixture-of-experts and model architecture work → How Models Work", href: "#/course/models" },
+      { label: "The business and infrastructure side of AI → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-10-12",
     displayDate: "Monday, October 12, 2026 · Edition #71",
     headline: "Google quietly shrinks which Gemini models free and Plus users can pick, Common Sense Media rates ChatGPT for Teens 'Unacceptable Risk' after 4,000 test prompts, Amazon retires Fire tablets for Android-powered Alexa hardware, and a McKinsey report puts a number on how many US workers AI will push into new careers",
