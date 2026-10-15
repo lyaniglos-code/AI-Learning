@@ -13,6 +13,102 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-15",
+    displayDate: "Thursday, October 15, 2026 · Edition #73",
+    headline: "OpenAI tells investors its revenue run rate is closer to $50 billion than the $70 billion figure that had circulated, Arena's AI-evaluation business doubles its valuation to $3.1 billion, Manus's parent raises over $500 million after its Meta deal collapsed, and Novo brings Claude into early-stage drug discovery",
+    summary:
+      "Today's edition is a reminder that the AI story isn't only about new models — it's increasingly about money, and how that money gets counted. OpenAI's own disclosure to investors undercuts a widely repeated revenue figure, two very different AI startups raise large rounds for opposite reasons, and a major drugmaker starts testing whether a chatbot-style AI can actually speed up the slow, expensive work of finding new medicines.",
+    stories: [
+      {
+        title: "OpenAI tells investors its annualized revenue is near $50 billion — about $20 billion below a widely cited $70 billion figure",
+        body: "The Financial Times reported on October 8, 2026, citing people familiar with the matter, that OpenAI told investors its annualized revenue run rate was nearing $50 billion at the end of September 2026 — roughly $20 billion short of the approximately $70 billion figure that had circulated in the weeks before. Reuters separately reported the same September figure from a source familiar with the matter. Part of the gap reportedly comes down to accounting: Anthropic counts revenue resold through cloud partners in its own public figures, while OpenAI does not, after restructuring its relationship with Microsoft Azure. OpenAI has not confirmed or denied the $50 billion figure, and both companies' growth rates — OpenAI reportedly still growing 77% company-wide and 107% in enterprise — remain steep even with the lower number. News of the gap coincided with a rough day for AI-infrastructure stocks.",
+        why: "It's a good lesson in reading big AI numbers skeptically — 'annualized revenue' depends heavily on what counts as revenue in the first place, and a $20 billion swing in a widely repeated figure shows how much that accounting choice matters before comparing two companies' growth.",
+        sources: [
+          { label: "Bloomberg Tax", url: "https://news.bloombergtax.com/artificial-intelligence/openais-annualized-revenue-nears-50-billion-ft-says" },
+          { label: "Malay Mail", url: "https://www.malaymail.com/news/money/2026/10/09/ai-hype-meets-revenue-reality-openai-figures-fall-us20b-short-of-earlier-reports/238332" }
+        ]
+      },
+      {
+        title: "Arena, the startup behind the LMArena model leaderboard, raises $200 million at a $3.1 billion valuation",
+        body: "Arena — the company formerly known as LMArena, which runs the widely cited Chatbot Arena leaderboard where users vote on anonymized model responses — announced a $200 million Series B on October 8, 2026, at a $3.1 billion valuation. Lightspeed Venture Partners and Khosla Ventures led the round, with Salesforce Ventures, Andreessen Horowitz, Felicis, Dell Technologies Capital and others participating. The valuation is nearly double the $1.7 billion mark set by its $150 million Series A just nine months earlier, in January 2026. Arena says the growth is driven mainly by AI Evaluations, a paid product launched in September 2025 that sells model labs and enterprises detailed performance analytics rather than just a public leaderboard rank; the company reports its own annualized revenue crossed $100 million in June, up from $30 million in January. Arena began in 2023 as a UC Berkeley research project before spinning out as a company.",
+        why: "It shows how a whole layer of companies now makes money just by measuring other AI companies — a reminder that benchmark leaderboards, which can shape which model a developer picks, are themselves commercial products with their own incentives, not neutral scoreboards.",
+        sources: [
+          { label: "Mezha.net", url: "https://mezha.net/eng/?p=3729644" },
+          { label: "ValueAddVC", url: "https://valueaddvc.com/blog/arena-valuation-2026-3-1b-after-200m-series-b" }
+        ]
+      },
+      {
+        title: "Manus's parent company raises over $500 million in its first funding round since Meta's acquisition fell apart",
+        body: "Butterfly Effect, the Chinese company behind the AI agent Manus, announced on October 8, 2026 that it raised more than $500 million, led by Boyu Capital and IDG Capital, with existing investors Tencent, HSG and ZhenFund also participating; the company did not disclose a resulting valuation. It's the company's first raise since Meta's roughly $2 billion deal to acquire Manus, announced in December 2025, was unwound after China's state planning agency ordered the deal reversed in April 2026. Manus said in August 2026 it would resume operating independently, and has since shipped Manus 2.0, a new architecture and product line built around a new agent 'harness.' The company hasn't detailed how it plans to spend the new funding beyond continuing to hire in China and internationally.",
+        why: "It's a concrete case study in how geopolitics now shapes AI deal-making directly — a major-platform acquisition of an AI agent startup got unwound by a government, not a regulator's antitrust review, and the startup had to go raise money on its own instead.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/" }
+        ]
+      },
+      {
+        title: "Novo brings Anthropic's Claude into early drug-discovery work",
+        body: "Novo — the Danish pharmaceutical giant behind Ozempic and Wegovy — announced a collaboration with Anthropic on September 16, 2026 to apply Claude to drug-discovery problems identified by Novo's own scientists. The company says it will start by testing Claude Science, Anthropic's science-focused offering, across selected research and development workflows, while also using Anthropic's general models to support software development elsewhere in the business. Novo says the collaboration includes built-in human oversight and data-governance safeguards, and frames it as part of a push to become the 'most AI-driven healthcare company' in the world — following earlier 2026 AI partnerships with OpenAI (April) and AWS (August). Neither company has disclosed financial terms or specific drug targets the partnership will pursue.",
+        why: "It's a useful example of 'AI for science' in practice rather than as a slogan — a chatbot-style model pointed at a company's actual internal research questions, with human sign-off built into the process, rather than running unsupervised.",
+        sources: [
+          { label: "Euronews", url: "https://www.euronews.com/2026/09/16/danish-pharma-giant-novo-to-use-anthropics-claude-to-advance-ai-drug-discovery" },
+          { label: "Pharmaceutical Executive", url: "https://pharmexec.com/view/novo-drug-discovery-collaboration-anthropic" }
+        ]
+      },
+      {
+        title: "The EU's enforcement powers over major AI models have now been live for over two months",
+        body: "Since August 2, 2026, the European Commission's AI Office has held formal power to investigate and enforce the EU AI Act's rules on providers of 'general-purpose' AI models — the large foundation models behind tools like ChatGPT, Gemini, and Claude — regardless of whether the provider is based in the EU or not. The powers let the Office demand technical documentation, run its own model evaluations, require risk-mitigation measures, and, in the most severe cases, fine a provider up to the higher of €15 million or 3% of its global annual turnover, or order a model withdrawn from the EU market entirely. The underlying obligations on model providers actually took effect a year earlier, in August 2025; this milestone is what makes them enforceable rather than just on the books. The European Commission says no provider has been found in breach as of this enforcement milestone — it's a capability now in place, not an announcement of a violation.",
+        why: "It's worth understanding the difference between a law 'taking effect' and a regulator actually being able to enforce it — AI companies have had general-purpose-AI obligations on paper since 2025, but it's only since August 2026 that the EU can act on them with real investigative and financial teeth.",
+        sources: [
+          { label: "European Commission", url: "https://futurium.ec.europa.eu/ga/node/19670" },
+          { label: "Help Net Security", url: "https://helpnetsecurity.com/2026/08/04/eu-ai-act-enforcement-ai-models" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily roundup that's likely to connect the OpenAI revenue disclosure to the broader AI-infrastructure spending story.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on the funding and valuation side of the AI stack, including how leaderboard-and-evaluation companies like Arena fit into it.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the EU AI Act's enforcement regime and what it actually means for model providers in practice.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing take on the OpenAI revenue gap and what it signals about the AI industry's financial narratives.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Annualized Revenue Run Rate (ARR)",
+      definition:
+        "A company's current revenue pace multiplied out to a full year — for example, taking one strong month and multiplying by 12. It's a fast way to estimate scale without waiting for a slow year-end audit, but the number depends heavily on which deals and which month get counted, which is exactly why OpenAI's and Anthropic's revenue figures aren't directly comparable: each company draws the boundary of what counts as 'revenue' slightly differently.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Next time you see a company's AI revenue, funding round, or valuation reported in a headline, check whether the article says the figure is 'annualized,' a self-reported estimate, or an audited number — then try to trace it back to an original source (a filing, a company blog post, a direct quote) rather than trusting the headline alone.",
+    learnLinks: [
+      { label: "Who makes money (and how) in AI → The AI Industry", href: "#/course/industry" },
+      { label: "How AI models get evaluated and benchmarked → How Models Work", href: "#/course/models" },
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" }
+    ]
+  },
+  {
     date: "2026-10-13",
     displayDate: "Tuesday, October 13, 2026 · Edition #72",
     headline: "Mistral opens a public preview of its 1-trillion-parameter Large 4, ChatGPT adds a virtual try-on feature to shopping, Amazon drops NDAs in data center fights after a congressional inquiry, and a new coalition opens an AI-for-drug-discovery challenge aimed at Alzheimer's",
