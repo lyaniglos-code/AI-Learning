@@ -13,6 +13,93 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-16",
+    displayDate: "Friday, October 16, 2026 · Edition #74",
+    headline: "Google Cloud launches a 'universal' Gemini agent that takes objectives instead of instructions, Meta ships its first frontier model family in Muse Wonder, Anthropic rewrites its usage policy to bar biometric profiling and government censorship requests, and TSMC posts record revenue on AI chip demand",
+    summary:
+      "Today's edition is about AI graduating from single tools into systems other systems rely on: Google pitches one agent meant to replace a whole toolbar of enterprise software, Meta finally fields a model it's willing to call frontier-grade, Anthropic draws new lines around what its models can be used to analyze or censor, and the company making the chips under almost all of it posts numbers that show just how much the industry is still betting on more compute.",
+    stories: [
+      {
+        title: "Google Cloud launches a 'universal' Gemini agent built to take objectives, not step-by-step instructions",
+        body: "Google Cloud announced the Gemini agent on October 8, 2026 at its Gemini at Work event, pitching it as a single agent meant to handle question-answering, content creation, coding, and longer multi-step assignments from one prompt box instead of switching between separate tools. Google Cloud CEO Thomas Kurian described the shift as giving the agent 'objectives, not instructions': a user states a goal, and the agent plans the steps, pulls in skills and tools, connects to a company's internal business systems, and returns finished work. Coverage reports the agent can pick which underlying model handles a given task, including Anthropic's Claude models alongside Google's own, and that it carries enterprise controls such as per-agent identity, access limits, activity logs, and admin-set spending caps. It's currently in private preview, with industry-specific versions for financial services and legal, and government, healthcare, and retail versions reportedly coming next.",
+        why: "It's a good look at what 'agentic AI' is supposed to mean in practice for a business, not just a chatbot: an AI system meant to be handed a goal and trusted to plan and execute the steps itself, inside guardrails like spending caps and activity logs rather than a human approving each action.",
+        sources: [
+          { label: "Google Cloud Blog", url: "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/" },
+          { label: "Reworked", url: "https://www.reworked.co/collaboration-productivity/google-debuts-its-all-purpose-gemini-agent-for-work/" }
+        ]
+      },
+      {
+        title: "Meta ships Muse Wonder, the model it's calling its first frontier-grade release",
+        body: "Meta Superintelligence Labs released Muse Wonder and a larger Muse Wonder Full on October 12, 2026, which TechCrunch reported as the company's first model Meta is willing to call 'frontier' — a step up from the lighter Muse Spark it shipped earlier in the year. The models support a 1-million-token context window and accept text, image, video, and audio input, with Meta highlighting an 'active memory' feature meant to retain what a user shares over time. Muse Wonder is available through Meta's API and its Muse Code product; Muse Wonder Full is limited to Muse Code subscribers only. On Meta's own benchmark reporting the pair lands roughly in the range of Anthropic's and OpenAI's current flagship models, though outside coverage notes Claude Opus 5.5 still leads on several independent benchmarks — a reminder that a lab's own scorecard at launch isn't the same as independent verification.",
+        why: "It's a useful case study in reading a model launch skeptically: a company's own benchmark claims at release are a starting point, not a verdict, until independent evaluators test the same model themselves.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder" }
+        ]
+      },
+      {
+        title: "Anthropic updates its usage policy to bar biometric profiling and government censorship requests",
+        body: "Anthropic published an updated usage policy that takes effect November 12, 2026, adding explicit bans on using its products to analyze biometric data to infer traits like race or religious belief, and on building recognition or emotion-inference systems for uses such as interrogation. The policy also now bars using Anthropic's products to identify specific content for a government to censor, in every country where the products are available. Separately reported changes to the same policy add a section on elections — barring use of Claude to deceive voters, impersonate candidates or officials, or suppress turnout — while removing a blanket ban on personalized political messaging, and a new rule against 'sustained and needless abusive or cruel' behavior toward Claude itself, which Anthropic says targets extreme, purposeless cases rather than ordinary frustration or testing.",
+        why: "It's worth noticing that a usage policy is really a company deciding, in writing, where it will and won't let its own technology be pointed — these updates show Anthropic drawing a harder line specifically against government surveillance and censorship use cases, not just the more familiar categories like fraud or weapons.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/updating-our-usage-policy" },
+          { label: "Dealroom", url: "https://dealroom.co/news/161094-anthropic-bans-sustained-abusive-or-cruel-behavior-toward-claude-in-new/" }
+        ]
+      },
+      {
+        title: "TSMC posts record Q3 revenue, up roughly 50% year over year, on AI chip demand",
+        body: "Taiwan Semiconductor Manufacturing Company reported third-quarter 2026 revenue of about NT$1.49 trillion (roughly $46.7 billion) on October 15, 2026, up about 50% from the same quarter last year and above both the company's own July guidance range and analyst estimates. Coverage attributes the beat mainly to continued demand for AI accelerator chips, with September sales alone hitting a record NT$511.86 billion, up 54.6% year over year. TSMC's Q3 earnings call the same day was expected to bring updated fourth-quarter and full-year guidance, with analysts watching for signals on 2027 pricing and capital spending; the company had already guided to $60–64 billion in capital expenditure for 2026.",
+        why: "TSMC manufactures the chips behind nearly every frontier AI model, so its revenue is one of the more concrete, audited signals of real AI demand — separate from a lab's self-reported usage numbers or a venture valuation, this is money hyperscalers and chip designers have actually paid for fabrication capacity.",
+        sources: [
+          { label: "HeyGo Trade", url: "https://www.heygotrade.com/en/news/tsmc-q3-revenue-surges-50-on-ai-demand/" },
+          { label: "CryptoBriefing", url: "https://cryptobriefing.com/tsmc-record-profit-sixth-quarter-ai/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on Google's universal Gemini agent and what 'objectives, not instructions' means in practice.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on Muse Wonder's architecture and benchmark claims versus the current frontier field.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking what Anthropic's usage policy changes actually restrict, and why the government-censorship line matters.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on enterprise AI agents and the infrastructure spending behind them.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Agentic AI",
+      definition:
+        "An AI system designed to be given a goal — an 'objective' — and then plan and carry out the steps to reach it on its own, rather than just answering a single prompt. Google's new Gemini agent is a mainstream example: instead of telling it exactly what to click or type, you state what you want done, and it plans the sequence of actions, calls the tools and systems it needs, and returns a finished result, usually inside guardrails like spending limits and activity logs.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Next time you use an AI chatbot, try giving it an objective instead of a step-by-step instruction — for example, instead of 'summarize this article,' try 'help me decide whether this article's claims are well-supported.' Notice how the AI breaks the goal down into its own steps, and where it asks you for clarification versus guessing.",
+    learnLinks: [
+      { label: "What makes a model 'frontier' or agentic → How Models Work", href: "#/course/models" },
+      { label: "How usage policies and safety rules work → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "Who's spending on AI infrastructure, and why → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-10-15",
     displayDate: "Thursday, October 15, 2026 · Edition #73",
     headline: "OpenAI tells investors its revenue run rate is closer to $50 billion than the $70 billion figure that had circulated, Arena's AI-evaluation business doubles its valuation to $3.1 billion, Manus's parent raises over $500 million after its Meta deal collapsed, and Novo brings Claude into early-stage drug discovery",
