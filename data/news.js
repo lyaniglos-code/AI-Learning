@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-17",
+    displayDate: "Saturday, October 17, 2026 · Edition #75",
+    headline: "Credit-market fear hits CoreWeave, Oracle, and other AI-infrastructure debt as financing costs rise, OpenAI reportedly explores a $30 billion round near a $1.4 trillion valuation, South Korean police open a full-scale probe into bank breaches with early signs AI tools were used, and Congress's two leading AI safety bills both stall",
+    summary:
+      "Today's edition is about the bill for the AI boom showing up in different places at once: the debt markets financing AI data centers get nervous, a frontier lab looks for another bridge of private cash ahead of any public listing, a cluster of bank breaches raises the question of AI-assisted attacks, and lawmakers who all say they want AI safety rules still can't agree on what those rules should actually say.",
+    stories: [
+      {
+        title: "AI-infrastructure debt fears rattle CoreWeave, Oracle, and peers as credit markets reprice the buildout",
+        body: "CoreWeave's shares fell roughly 15% on October 14, 2026, then dropped another 8.3% intraday on October 15 to their lowest level since May 2025, before reversing to close up about 2.7% that same day. The selloff spread to peers: Oracle fell nearly 9-10%, and smaller AI-cloud providers Nebius and Iren each lost more than 10% over the same stretch. In the bond market, CoreWeave's 2031 and 2032 notes traded at distressed-level yields of roughly 15-16%, and the cost of insuring its debt against default — credit-default swaps — spiked above 1,000 basis points. Coverage ties the move partly to a hotter-than-expected US inflation reading that raised the odds of higher interest rates, which would increase refinancing costs for AI companies that have taken on large debt loads to build data centers. CoreWeave's CEO called the market reaction irrational, pointing to a roughly $104 billion revenue backlog, though the company's own disclosed figures show first-half operating cash flow of about $3.7 billion against roughly $14.1 billion in capital spending.",
+        why: "Most of the AI buildout — the data centers, chips, and power contracts behind the models people use every day — is financed with debt as well as equity, and debt has a price that can move independently of how well any individual AI product is doing; when credit gets more expensive, it changes how much more buildout companies can actually afford.",
+        sources: [
+          { label: "ROIC.ai", url: "https://www.roic.ai/news/coreweave-shares-plunge-to-lowest-since-may-2025-as-credit-fears-mount-10-15-2026" },
+          { label: "InvestingLive", url: "https://investinglive.com/stocks/coreweave-bonds-trade-like-distressed-debt-as-ai-spending-outpaces-balance-sheets/" }
+        ]
+      },
+      {
+        title: "OpenAI reportedly explores a $30 billion round that would value it near $1.4 trillion",
+        body: "Bloomberg reported in early October 2026, per secondary coverage, that OpenAI is in early talks to raise at least $30 billion in a new round that would value the company around $1.4 trillion — up from the $852 billion valuation set in its $122 billion round last March, when Amazon, Nvidia, and SoftBank were among the investors. The discussions are described as early-stage, with terms that could still change, and the proposed valuation reportedly doesn't include the new money being raised. The round is widely characterized as a bridge ahead of OpenAI's eventual IPO, which CEO Sam Altman has said the company isn't rushing while it works through safety and alignment questions. Separately, Reuters reported OpenAI's annualized recurring revenue was approaching $70 billion as of late September, with enterprise sales more than doubling since July — a self-reported figure, not one from an audited public filing.",
+        why: "Private valuations like this are set by what a handful of investors agree to pay for a stake, not by any public-market test; it's worth tracking the gap between a headline number like '$1.4 trillion' and what public investors actually pay once, and if, a company like OpenAI eventually files and lists shares.",
+        sources: [
+          { label: "Traded.co", url: "https://traded.co/vc/deal/openai-seeks-to-raise-30-billion-at-1-4-trillion-valuation-with-investor-support/" },
+          { label: "ProPakistani", url: "https://propakistani.pk/2026/09/30/openai-reportedly-seeks-30-billion-at-1-4-trillion-valuation/" }
+        ]
+      },
+      {
+        title: "South Korean police open a full-scale probe into a wave of bank breaches, with early signs AI tools were used",
+        body: "Starting with a disclosure from Shinhan Bank on October 1, 2026 that about 25,000 customers' data had leaked, at least seven South Korean financial institutions — including KB Kookmin, Hana, BNK Busan, Yegaram Savings Bank, Welcome, and Hyundai Capital — reported breaches within the following week, with combined exposure estimated around 66,000 individuals and 2,200 corporate records. South Korean President Lee Jae Myung said on October 6 that 'signs have emerged' suggesting AI tools were used in at least some of the attacks, though officials haven't confirmed which tools or named a culprit; one researcher pointed to an AI-based vulnerability-scanning tool as a possible factor. The exposed data includes names, phone numbers, and in some cases resident registration numbers, income, and loan limits, though no evidence so far shows stolen payment credentials. South Korea's Financial Services Commission ordered firms to inspect all externally accessible IT systems, and police assigned 28 investigators to a full-scale probe.",
+        why: "AI tools that can automatically probe software for weaknesses cut both ways: the same capability that helps a security team find and patch flaws before attackers do can also help an attacker search a target's systems faster and more cheaply than a team of humans could — this is one of the first large, officially acknowledged cases of a government saying that may be exactly what happened.",
+        sources: [
+          { label: "BleepingComputer", url: "https://bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks" },
+          { label: "The Record", url: "https://therecord.media/south-korean-bank-hacks-ai-agents" }
+        ]
+      },
+      {
+        title: "Congress's two leading AI safety bills both stall, with Anthropic at the center of the Senate holdup",
+        body: "Two competing efforts to pass a major federal AI safety law remain stuck. In the House, the bipartisan FRONTIER Act (H.R. 9925), introduced by Reps. Jay Obernolte and Lori Trahan and backed by OpenAI and Anthropic, would require large AI developers — those that have spent more than $1 billion on model development — to use third-party safety evaluators. Obernolte wants a committee vote in November, but House Energy and Commerce Chairman Brett Guthrie has said, at a Politico-hosted event, that he's wary of moving the bill quickly in a lame-duck session rather than getting it right. In the Senate, a bipartisan bill from Sens. Klobuchar, Cruz, and Thune focused on biological and nuclear catastrophic risk has reportedly stalled amid a dispute involving Anthropic and Senate Commerce Committee ranking member Maria Cantwell; Anthropic has reportedly pushed for the bill to require public disclosures about risks from AI systems while objecting to giving the Commerce Department ongoing injunction power. The White House has separately signaled it opposes additional federal AI regulation.",
+        why: "It's a good illustration of how even AI companies that publicly call for regulation don't always agree with lawmakers, or each other, on the specifics — Anthropic backing safety legislation in public while reportedly pushing back on particular provisions behind the scenes shows that 'supporting AI safety rules' can mean very different things depending on which clause is being negotiated.",
+        sources: [
+          { label: "The Record", url: "https://therecord.media/frontier-act-ai-bill-house-brett-guthrie" },
+          { label: "Punchbowl News", url: "https://punchbowl.news/article/tech/thune-anthropic/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on the CoreWeave selloff and what credit-market stress means for the broader AI-infrastructure buildout.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on how AI labs are financed, including what a bridge round ahead of an IPO actually signals.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking where Congress's competing AI safety bills actually stand, and why they keep stalling.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on the South Korean bank breaches and what 'AI-assisted' cyberattacks might mean going forward.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Credit Default Swap (CDS)",
+      definition:
+        "A financial contract that works like insurance against a company defaulting on its debt — a buyer pays an ongoing fee, and in exchange gets paid out if the borrower fails to repay. The price of that insurance (quoted in basis points) rises and falls with how risky the market thinks the debt is. When CoreWeave's CDS spread jumped above 1,000 basis points this week, it meant the market was pricing in meaningfully higher odds of default than before — a real-time signal of investor confidence that moves faster than any earnings report.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Next time you read about an AI company's valuation or funding round, check whether the money is equity (selling a stake, never repaid) or debt (borrowed money that must be repaid with interest) — then see if you can find one data point in the article showing which kind of financing was actually used.",
+    learnLinks: [
+      { label: "How AI infrastructure gets financed — debt, equity, and credit risk → The AI Industry", href: "#/course/industry" },
+      { label: "How governments are trying to regulate frontier AI → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" }
+    ]
+  },
+  {
     date: "2026-10-16",
     displayDate: "Friday, October 16, 2026 · Edition #74",
     headline: "Google Cloud launches a 'universal' Gemini agent that takes objectives instead of instructions, Meta ships its first frontier model family in Muse Wonder, Anthropic rewrites its usage policy to bar biometric profiling and government censorship requests, and TSMC posts record revenue on AI chip demand",
