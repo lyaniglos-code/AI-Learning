@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-18",
+    displayDate: "Sunday, October 18, 2026 · Edition #76",
+    headline: "An OpenAI engineer is charged after a hidden recording device was found in an executive conference room, Nvidia pledges $250 million in compute to UK AI-safety research, EverWind proposes a $10 billion AI data center paired with new wind power in Nova Scotia, and Nvidia ships open Nemotron models built to run as always-on agents",
+    summary:
+      "Today's edition pairs a reminder that AI safety starts with ordinary physical security — a hidden recording device turned up in an OpenAI conference room — with three stories about where AI's infrastructure and safety money is actually going: UK agentic-safety research, a wind-powered data center in Atlantic Canada, and a new family of efficient open models built to act as agents rather than just answer questions.",
+    stories: [
+      {
+        title: "OpenAI engineer charged after a hidden recording device was found in an executive conference room",
+        body: "Federal prosecutors charged OpenAI engineer Abdulrahman Alfozan, 35, a Saudi national, with intercepting oral communications after a device was found hidden inside a roll of toilet paper and wired to a USB port behind a TV in an executive conference room. OpenAI's security team discovered the device on September 30, roughly two days after prosecutors say it was installed, reported it to the FBI, and fired Alfozan. The company says it found no evidence the device gave him access to model weights, source code, or customer data. Prosecutors allege CCTV footage shows him near the unauthorized room multiple times, and that a chatbot account linked to his spouse was used to ask about continuously recording audio and listening in remotely. He was arrested October 9 and appeared in court October 13, with a further court date set for October 19.",
+        why: "Model weights and training data are among a frontier lab's most valuable assets, and this case is a reminder that protecting them is as much a matter of conventional physical and personnel security — who can get into a room, and what's plugged in behind the TV — as it is a matter of cybersecurity.",
+        sources: [
+          { label: "AP via Boston Globe", url: "https://www.bostonglobe.com/2026/10/13/business/employee-openai-arrested-fbi/" },
+          { label: "ABC News (AP wire)", url: "https://abcnews.go.com/Technology/wireStory/employee-arrested-after-listening-device-found-openai-conference-137239998" }
+        ]
+      },
+      {
+        title: "Nvidia pledges $250 million in compute access to UK AI-safety research",
+        body: "Nvidia announced on October 13-14 that it will provide $250 million worth of compute access — not cash — over five years, roughly $50 million a year, to support AI-safety research in the United Kingdom. The compute will be delivered through UK-based Nvidia Cloud Partners, with the infrastructure physically hosted in Britain, and is earmarked for research into agentic safety and security. The majority goes to the wider UK AI-safety research community, with a specific portion directed to the organizations BOLD and SOFAIR and to Imperial College London. Nvidia says provider selection and final commercial terms are still being worked out, and UK AI minister Kanishka Narayan welcomed the commitment.",
+        why: "This is a case study in 'agentic safety' emerging as its own research subfield — studying the specific risks of AI systems that take actions, not just generate text — and in compute itself, rather than a cash grant, becoming a currency for funding that research.",
+        sources: [
+          { label: "HPCwire/AIwire", url: "https://www.hpcwire.com/aiwire/2026/10/14/nvidia-commits-250m-to-advance-uk-agentic-safety-and-security-research/" },
+          { label: "UCL News", url: "https://www.ucl.ac.uk/news/2026/oct/nvidia-provides-sofair-lab-computing-resources-advance-ai-safety" }
+        ]
+      },
+      {
+        title: "EverWind proposes a $10 billion AI data center paired with new wind power in Nova Scotia",
+        body: "EverWind Fuels announced on October 16 a proposed C$10 billion AI data center at Point Tupper, Nova Scotia, which it says would be the largest private investment in the province's history. The company says an unnamed 'leading frontier AI developer' has signed a 20-year lease for the site, with phase one drawing 95 megawatts of power and a planned expansion to 325 megawatts by 2028. The plan splits the money roughly C$8 billion for the data center campus itself and C$2 billion for new onshore wind generation built specifically to power it. Neither EverWind nor the outlets covering the announcement have publicly named the tenant.",
+        why: "AI data centers increasingly come bundled with the power plants built to run them, which is turning the AI buildout into as much an energy-infrastructure story — new generation, new transmission, decades-long leases — as a computing one.",
+        sources: [
+          { label: "BNN Bloomberg", url: "https://www.bnnbloomberg.ca/business/company-news/2026/10/16/everwind-says-10b-ai-data-centre-proposal-largest-private-investment-in-ns-history/" },
+          { label: "CTV News Atlantic", url: "https://www.ctvnews.ca/atlantic/nova-scotia/article/everwind-says-10b-ai-data-centre-proposal-largest-private-investment-in-ns-history/" }
+        ]
+      },
+      {
+        title: "Nvidia expands its open Nemotron models with Super VL and Bolt, built for always-on agents",
+        body: "Nvidia announced on October 15 two additions to its open-weight Nemotron 3.5 model family: Super VL, a 120-billion-parameter model, and Bolt, a pair of smaller edge models. Super VL uses a mixture-of-experts design with only about 12 billion of its 120 billion parameters active per token, and Nvidia says it approaches the accuracy of the company's largest reasoning model at roughly a fifth of the size, aimed at always-on agent workloads rather than one-off chat answers. Bolt ships in two sizes: a 74-billion-parameter version meant to run locally on 24GB of hardware, available now, and a smaller 4GB-targeted version due October 23. Independent benchmarking site Artificial Analysis scored Super VL at 26.5 and Bolt at 21.4 on its Intelligence Index — lower than Nvidia's own 'up to 5x faster throughput' framing, which is a vendor claim rather than an independently verified one.",
+        why: "Mixture-of-experts architecture — where a model has far more total parameters than it actually uses to answer any single question — is the key idea behind why a 120-billion-parameter model can run as cheaply as one a fraction of its size; it's worth learning to spot 'total' versus 'active' parameters whenever a lab advertises a model's size.",
+        sources: [
+          { label: "Nvidia blog", url: "https://blogs.nvidia.com/?p=98620" },
+          { label: "HPCwire/AIwire", url: "https://www.hpcwire.com/aiwire/2026/10/15/nvidia-expands-nemotron-family-with-highest-efficiency-super-vl-and-bolt-models/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on the OpenAI conference-room device and what it signals about physical security at frontier labs.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking Nvidia's UK safety-compute pledge and the broader push into 'agentic safety' research.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér · YouTube",
+        why: "Useful for a quick, visual breakdown of what a mixture-of-experts model like Nvidia's new Nemotron Super VL is actually doing under the hood.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on AI's growing appetite for power and land, via today's Nova Scotia data-center proposal.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Mixture of Experts (MoE)",
+      definition:
+        "A model architecture that splits a network into many smaller sub-networks ('experts') and, for any given input, only activates a handful of them rather than the whole model. That's how Nvidia's new Nemotron Super VL can have 120 billion total parameters but only about 12 billion 'active' per token — it gets much of the knowledge capacity of a huge model while running, and costing, closer to a small one. Whenever a lab advertises a model's parameter count, it's worth checking whether that's the total size or the active size per token.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Find the Hugging Face model card for any mixture-of-experts model (Nvidia's Nemotron, Mistral's Mixtral, or similar) and look for two numbers: total parameters and active parameters per token. Divide the second by the first — that fraction is roughly how much of the model's 'knowledge' gets used to answer any single question, and it's a big part of why MoE models can be both large and cheap to run.",
+    learnLinks: [
+      { label: "How model size and architecture actually work → How Models Work", href: "#/course/models" },
+      { label: "How AI infrastructure gets financed and powered → The AI Industry", href: "#/course/industry" },
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" }
+    ]
+  },
+  {
     date: "2026-10-17",
     displayDate: "Saturday, October 17, 2026 · Edition #75",
     headline: "Credit-market fear hits CoreWeave, Oracle, and other AI-infrastructure debt as financing costs rise, OpenAI reportedly explores a $30 billion round near a $1.4 trillion valuation, South Korean police open a full-scale probe into bank breaches with early signs AI tools were used, and Congress's two leading AI safety bills both stall",
