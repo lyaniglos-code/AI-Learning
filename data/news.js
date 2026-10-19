@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-19",
+    displayDate: "Monday, October 19, 2026 · Edition #77",
+    headline: "Nvidia and AI stocks lose roughly $365 billion in a week on rate and financing fears, TSMC posts a sixth straight record quarter but turns cautious on 2027, Microsoft unveils its Maia 300 inference chip to cut Nvidia reliance, and Nvidia opens its networking playbook to Google and Meta at the Open Compute Summit",
+    summary:
+      "Today's edition is about the AI buildout's financial plumbing coming under strain even as the hardware itself keeps shipping: investors spooked by rising rates pulled hundreds of billions out of AI-linked stocks this week, the company that fabricates nearly every frontier chip beat estimates but hedged on next year, and two of the industry's biggest players — Microsoft and Nvidia — both moved to make their hardware less dependent on any single vendor.",
+    stories: [
+      {
+        title: "Nvidia and AI stocks lose roughly $365 billion in a week as rising rates fuel 'AI bubble' fears",
+        body: "Nvidia's share price fell about 6.6% over the five trading sessions ending October 16, closing at $214.13 and erasing roughly $365 billion in market value, as rising borrowing costs raised doubts about how much more debt-funded AI infrastructure spending the market can sustain. The stock is now around 12% below the all-time high it set on October 6, when its market capitalization peaked near $5.76 trillion. The selloff wasn't isolated to Nvidia: CNBC reported that 20 of the world's most valuable AI and semiconductor stocks lost more than $1 trillion in combined value over the same stretch, as the benchmark 10-year Treasury yield climbed toward a two-decade high near 5.3%. Coverage notes that demand for Nvidia's chips still appears strong — the growing worry is less about whether anyone wants the chips and more about how AI infrastructure companies will keep financing them. Nvidia reports its next quarterly earnings on October 20, which investors are watching closely for a read on whether the pullback reflects the underlying business or just rate-driven sentiment.",
+        why: "It's a reminder that a stock's price and a company's underlying demand are two different things — a selloff driven by rising interest rates and financing worries can hit a company hard even when the product itself is selling just fine, because so much of the AI buildout is funded with borrowed money whose cost just went up.",
+        sources: [
+          { label: "Invezz", url: "https://invezz.com/news/2026/10/19/nvidia-stock-loses-365-billion-in-a-week-could-the-ai-boom-be-running-out-of-money/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html" }
+        ]
+      },
+      {
+        title: "TSMC posts a sixth straight record quarter, but turns cautious on 2027",
+        body: "Taiwan Semiconductor Manufacturing Company reported third-quarter 2026 results on October 15 showing net income of about NT$763 billion (roughly $24.8 billion), up about 69% year over year, on revenue of NT$1.49 trillion — its sixth consecutive record quarter, according to its own SEC filing. The results beat analyst estimates, and TSMC raised its full-year 2026 revenue growth guidance to roughly 44%, up from the near-30% it had projected at the start of the year, even as gross margin slipped slightly to 66.4% while its newer 2nm manufacturing process ramps up. Despite still calling AI demand 'extremely robust,' CEO C.C. Wei struck a cautious note about 2027, pointing to macroeconomic uncertainty and rising component costs pressuring more price-sensitive customers, and said the company is 'being prudent' in its planning for next year.",
+        why: "TSMC manufactures the chips behind nearly every frontier AI model, so its own revenue and guidance are some of the more concrete, audited signals of real AI demand — separate from a lab's self-reported usage numbers or a startup's private valuation, this is money hyperscalers have actually paid for fabrication capacity.",
+        sources: [
+          { label: "SEC filing (TSMC Form 6-K)", url: "https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000726/a3q26e_withguidancexfinal.htm" },
+          { label: "BusinessDay", url: "https://www.businessday.co.za/world/international-companies/2026-10-15-tsmc-sees-record-profit-but-warns-of-2027-caution/" }
+        ]
+      },
+      {
+        title: "Microsoft unveils its third-generation AI chip, Maia 300, built to cut Nvidia reliance",
+        body: "Microsoft announced Maia 300 on October 12, its third-generation in-house AI accelerator, designed specifically for inference workloads rather than training, with large-scale deployment planned for 2027 once the current Maia 200 generation — which already powers Copilot — finishes rolling out. The chip is built on TSMC's N2P process with 288GB of HBM4 high-bandwidth memory, which Microsoft says gives it 33% more memory capacity and 2.5 times the memory bandwidth of Maia 200. Microsoft claims Maia 300 delivers 40% more tokens per megawatt of power than leading GPU-based systems, and up to seven times the token throughput of a Maia 200 rack at full 96-accelerator scale — vendor-reported figures that haven't been independently benchmarked. Nvidia and AMD continue handling Microsoft's AI training workloads; Maia 300 specifically targets the inference side, where Microsoft is trying to reduce how many Nvidia GPUs it has to buy at scale.",
+        why: "It's a useful split to know: 'training' is the expensive, one-time process of building a model, while 'inference' is running that finished model to answer each new request — hyperscalers increasingly build their own chips for the high-volume inference side first, since it's cheaper to customize for than training's more specialized demands.",
+        sources: [
+          { label: "Data Center Knowledge", url: "https://www.datacenterknowledge.com/data-center-chips/microsoft-pushes-custom-ai-chips-with-azure-maia-300" },
+          { label: "GeekWire", url: "https://www.geekwire.com/2026/microsoft-makes-biggest-bet-yet-on-its-own-silicon-unveils-new-ai-chip-to-reduce-reliance-on-nvidia/" }
+        ]
+      },
+      {
+        title: "Nvidia opens up its networking playbook at the Open Compute Summit, with Google and Meta buying in",
+        body: "At the Open Compute Project Global Summit in San Jose on October 12, Nvidia said it is extending its networking hardware to support Google's Falcon transport protocol in upcoming BlueField DPUs and ConnectX-10 SuperNICs, letting Google's and Nvidia's hardware communicate over a shared low-latency transport while applications keep using standard RDMA programming interfaces. Nvidia also said Meta is building open AI networking infrastructure on its Spectrum-X Ethernet SuperNIC and Spectrum-6 switch chips, and contributed its Vera Rubin rack and compute-tray designs to OCP through the MGX 1.2 specification so other manufacturers can build compatible hardware. Separately, Nvidia published 'Open Data Center Specifications v0.7,' covering power, cooling, and facility layout, with AMD, Google, and Meta as co-signatories, alongside an OCP Grid Resilience Specification developed with Google, Meta, and Microsoft that targets AI data centers recovering to near-maximum load within two seconds of a power-grid disruption.",
+        why: "It's a sign of how central Nvidia has become to AI infrastructure even among rivals building their own chips: by publishing open specifications instead of keeping its networking designs proprietary, Nvidia can stay the common standard other companies' hardware plugs into, even as Google and Meta diversify their compute away from Nvidia GPUs specifically.",
+        sources: [
+          { label: "SDxCentral", url: "https://www.sdxcentral.com/news/nvidia-adds-google-falcon-support-to-meet-growing-transport-diversity-demands/" },
+          { label: "Futurum Group", url: "https://futurumgroup.com/?p=96646" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast, same-day take on the Nvidia selloff and what it means heading into the company's October 20 earnings.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on Microsoft's Maia 300 and why hyperscalers build their own inference chips.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "A mainstream-facing read on whether the AI buildout is overextended, via this week's stock-market jitters.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the Open Compute Summit news and what Nvidia opening up its networking designs actually signals.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Inference",
+      definition:
+        "Running an already-trained AI model to actually answer a question or complete a task, as opposed to 'training,' the earlier, far more compute-intensive process of building the model in the first place. Inference happens every single time someone uses a chatbot or AI feature, so even though each individual request is cheap compared to training, the sheer volume adds up — which is why Microsoft built a chip, Maia 300, aimed specifically at inference rather than training.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Next time you read about an AI company's chip or data-center spending, see if the article specifies whether it's for training new models or running (inference) existing ones — the two have very different cost structures, and conflating them is a common way AI infrastructure numbers get misread.",
+    learnLinks: [
+      { label: "How models are trained versus how they run → How Models Work", href: "#/course/models" },
+      { label: "How AI infrastructure gets financed and powered → The AI Industry", href: "#/course/industry" },
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" }
+    ]
+  },
+  {
     date: "2026-10-18",
     displayDate: "Sunday, October 18, 2026 · Edition #76",
     headline: "An OpenAI engineer is charged after a hidden recording device was found in an executive conference room, Nvidia pledges $250 million in compute to UK AI-safety research, EverWind proposes a $10 billion AI data center paired with new wind power in Nova Scotia, and Nvidia ships open Nemotron models built to run as always-on agents",
