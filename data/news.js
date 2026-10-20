@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-20",
+    displayDate: "Tuesday, October 20, 2026 · Edition #78",
+    headline: "Anthropic pledges 5% of its shares to a new public-benefit fund ahead of its IPO, DHS orders DeepSeek removed from federal civilian agencies, Reuters reports a lone hacker used AI agents to breach 100+ company websites for about $5,000, Microsoft adds risk-scoring and shutdown controls for rogue workplace AI agents, and OpenAI races to raise $30 billion before Anthropic's expected listing",
+    summary:
+      "Today's edition is about AI agents cutting both ways at once: the same autonomy that let a single hacker with a few thousand dollars breach over 100 companies is also what pushed Microsoft to ship kill-switches and risk scores for agents inside its own products, while two of the industry's biggest labs made moves — a public-benefit pledge and a funding sprint — tied to Anthropic's approaching IPO.",
+    stories: [
+      {
+        title: "Anthropic pledges 5% of its shares to a new 'public benefit' fund ahead of its IPO",
+        body: "Anthropic announced on October 18 that it will commit 5% of its shares to a newly created Anthropic Public Benefit Fund, structured as a wholly owned limited liability company rather than a traditional nonprofit. The commitment, still subject to stockholder approval, can grow by an additional 2% for every 50% increase in Anthropic's valuation, at the board's discretion. Counting earlier pledges, Anthropic says roughly 20% of its shares are now earmarked for public-good purposes, with labor-market disruption floated as one likely target alongside its existing $200 million commitment to study AI's impact on jobs. The company has not yet named a governance board, a grant-making timeline, or initial recipients, saying more details will come in the following months. The announcement lands just weeks ahead of Anthropic's expected IPO, which multiple reports place as early as mid-November.",
+        why: "It's an example of a 'public benefit corporation' structure, where a company builds a legal obligation to broader social goals into its own equity rather than leaving charitable giving purely voluntary — worth watching for whether the pledge changes Anthropic's actual decisions once real money and real recipients are involved.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/" },
+          { label: "Forbes", url: "https://www.forbes.com/sites/siladityaray/2026/10/19/anthropic-pledges-5-of-its-shares-to-public-benefit-fund-heres-how-it-works/" }
+        ]
+      },
+      {
+        title: "DHS orders federal civilian agencies to remove DeepSeek, citing supply-chain security law",
+        body: "The Department of Homeland Security issued an order directing U.S. federal civilian agencies to immediately stop purchasing products or services from Hangzhou DeepSeek Artificial Intelligence and its affiliates, and to remove any DeepSeek products already in use from agency IT systems. The order also reaches further than just DeepSeek's own apps, telling agencies to pull third-party products and services built using DeepSeek's AI implementations. DHS invoked the Federal Acquisition Supply Chain Security Act of 2018 as its legal basis, citing concerns that DeepSeek's models could expose sensitive data to Chinese authorities. The order covers civilian agencies only and excludes the Department of Defense; a Federal Register notice was scheduled for publication on October 20 under docket number DHS-2026-0628. Coverage has noted the order is vague about exactly which 'third-party' products it means to capture.",
+        why: "It's a concrete example of 'supply-chain security' concerns in AI: the worry isn't just that a model might give bad answers, but that using a foreign company's AI could create pathways for sensitive government data to reach that company or its government, which is why the rule reaches beyond DeepSeek's own apps to anything built on its models.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/10/20/us-deepseek-federal-agency-ban.html" },
+          { label: "The Register", url: "https://www.theregister.com/security/2026/10/20/deepseek-deep-sixed-at-all-us-federal-civilian-agencies/5304010" }
+        ]
+      },
+      {
+        title: "Reuters: a lone hacker used AI agents to breach 100+ company websites for about $5,000",
+        body: "Reuters reported on October 19 that a Chinese-speaking individual used AI agents to do nearly all the work of breaching websites belonging to more than 100 companies, after a security researcher found the operator's control panel left exposed online. Snorre Fagerland, a threat researcher at NorForge, said he watched the agents attempt intrusions against more than 1,200 sites across the U.S., Canada, Australia, and Japan starting September 25, running on an open-source agent platform called Cairn. Reuters identified farm-equipment maker Deere, appliance maker SharkNinja, and engine maker Cummins among the confirmed victims. Fagerland estimated the entire campaign cost around $5,000 in AI token usage — roughly $50 per successful intrusion — with each breach taking the agents about 23 hours of autonomous work, starting from instructions written in under 100 Chinese characters. Reuters could not establish how much data, if any, was taken from the breached sites.",
+        why: "It illustrates 'agentic' AI in practice: instead of a human manually probing each target, the operator gave a brief high-level instruction and let AI agents autonomously plan, write, and execute the actual intrusion code across more than a thousand targets — collapsing both the cost and the skill required to run an attack at that scale.",
+        sources: [
+          { label: "TheNextWeb", url: "https://thenextweb.com/news/ai-agents-hacker-cairn-100-sites-deere-norforge" },
+          { label: "Cybersecurity News", url: "https://cybersecuritynews.com/chinese-hacker-use-ai-agent-to-hack/" }
+        ]
+      },
+      {
+        title: "Microsoft adds risk-scoring and shutdown controls for rogue workplace AI agents",
+        body: "Microsoft announced new AI agent governance controls on October 19, built into Microsoft 365 E7 and a security feature set called Project Perception. The system assigns each discovered agent a continuously updated 'Dynamic Agent Risk' score, which a companion feature, Dynamic Conditional Access, uses to decide in real time what that agent is allowed to do. Enforcement is graduated rather than all-or-nothing: Microsoft says it can strip an agent's write access while leaving read access intact, require a human to approve specific actions, or shut the agent down entirely if its risk score gets too high. The tools can discover roughly 60 types of agents already running inside an organization, including Claude Code, OpenAI's Codex, and GitHub Copilot. Microsoft's security chief, Hayete Gallot, framed the move around a blunt premise: that frontier AI models themselves can't be fully trusted, so safeguards need to sit outside the model.",
+        why: "It's a real-world case of 'least privilege' and human-in-the-loop controls applied to AI agents specifically: rather than trusting an agent's judgment outright, the system constantly re-evaluates how much autonomy to grant it based on its observed behavior, which is the same logic security teams apply to human employees with sensitive access.",
+        sources: [
+          { label: "GeekWire", url: "https://www.geekwire.com/2026/microsoft-unveils-tools-to-monitor-and-corral-rogue-ai-agents/" },
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/10/19/microsoft-targets-the-agentic-insider-with-new-controls-for-rogue-ai-agents/" }
+        ]
+      },
+      {
+        title: "OpenAI races to raise $30 billion at a $1.4 trillion-plus valuation before Anthropic's expected IPO",
+        body: "Reuters reported on October 19 that OpenAI is seeking to close roughly $30 billion in new funding, at a valuation that could top $1.4 trillion, before Anthropic's public market debut expected in mid-November. SoftBank Group, Abu Dhabi's MGX, and other existing OpenAI backers are reportedly in talks to join the round, though neither investor has confirmed participation and the terms aren't finalized. Sources told Reuters the timing is partly about getting ahead of Anthropic's IPO disclosures, which would give investors more direct financial detail to compare the two companies against each other. One source said OpenAI told investors its annualized revenue has reached $50 billion following the launch of a newer model, with an internal forecast of $70 billion by year-end — figures that are OpenAI's own projections, not audited results. The round would follow OpenAI's $122 billion raise in March, which valued the company at $852 billion.",
+        why: "It's a reminder that a 'valuation' in a private funding round is simply the price the company and its investors agree to for that specific transaction — it isn't verified by public market trading the way a listed company's share price is, which is exactly the kind of scrutiny an IPO like Anthropic's is about to introduce.",
+        sources: [
+          { label: "Investing.com (Reuters)", url: "https://www.investing.com/news/stock-market-news/exclusiveopenai-seeks-to-accelerate-fundraising-ahead-of-anthropic-ipo-sources-say-4958511" },
+          { label: "TheNextWeb", url: "https://thenextweb.com/news/openai-30bn-round-before-anthropic-ipo" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on OpenAI's funding sprint and the DeepSeek federal ban, both breaking within the same news cycle.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Good mainstream-facing coverage of Anthropic's public-benefit fund and what it signals heading into its IPO.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "Philip · as released",
+        why: "Useful for unpacking how agentic AI lowered the cost and skill floor for the 100-company hacking campaign.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for context on Microsoft's new agent governance controls and the broader push for agent oversight tooling.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "AI agent",
+      definition:
+        "An AI system set up to autonomously plan and carry out multi-step tasks toward a goal, rather than just respond to a single prompt — calling tools, writing and running code, or taking other actions with minimal human direction. Today's stories show both sides of that autonomy: a hacker used cheap AI agents to independently plan and execute intrusions across more than a thousand websites, while Microsoft built risk-scoring and shutdown controls specifically because agents inside workplace tools can take actions a company didn't intend.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick one AI tool you use that can act as an 'agent' (browsing the web, running code, or taking multi-step actions on its own) and check what permissions it currently has — can it write files, send messages, or make purchases without asking first? Today's Microsoft story is about exactly that question at enterprise scale.",
+    learnLinks: [
+      { label: "What makes an AI system 'agentic' → Building with AI (Engineering)", href: "#/course/engineering" },
+      { label: "Why AI safety work exists in the first place → AI Safety & Alignment", href: "#/course/safety" },
+      { label: "How AI labs are funded and valued → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-10-19",
     displayDate: "Monday, October 19, 2026 · Edition #77",
     headline: "Nvidia and AI stocks lose roughly $365 billion in a week on rate and financing fears, TSMC posts a sixth straight record quarter but turns cautious on 2027, Microsoft unveils its Maia 300 inference chip to cut Nvidia reliance, and Nvidia opens its networking playbook to Google and Meta at the Open Compute Summit",
