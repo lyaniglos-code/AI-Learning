@@ -13,6 +13,92 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-22",
+    displayDate: "Thursday, October 22, 2026 · Edition #80",
+    headline: "IMF says AI investment is propping up global growth but warns the gains are dangerously concentrated, China proposes its own export controls on AI models and chips, and Anthropic adds a physicist to the trust that can remove its board while opening a new office in Singapore",
+    summary:
+      "Today's edition is about AI's economic and governance machinery moving in parallel: the IMF's latest outlook credits AI investment with propping up global growth while warning the gains are concentrated in a shrinking number of countries, and China moved to control what AI technology can leave its own borders, mirroring the export restrictions the US has used against it. Anthropic, meanwhile, reinforced two different kinds of oversight the same week — adding an independent scientist to the trust that can remove its board, and formalizing a safety partnership with Singapore's government as it expands across Asia.",
+    stories: [
+      {
+        title: "IMF says AI investment is propping up global growth — but warns the gains are concentrated and fragile",
+        body: "The IMF's October 2026 World Economic Outlook, released at its annual meetings in Bangkok, raised its 2026 global growth forecast to 3.1%, up from 3.0% in July. Managing Director Kristalina Georgieva credited AI investment with keeping the world economy growing near that pace even as a Middle East energy shock drags on it, saying the AI boom could lift growth in advanced Asian economies by 0.5 to 1 percentage point and in emerging Asian economies by 0.2 to 0.8 percentage point. But the report also found growth increasingly concentrated: just 32 countries now account for 95% of global growth, down from 54 countries in the IMF's April outlook, and Georgieva warned AI could widen inequality further, particularly for low-income countries already squeezed by rising debt payments. The IMF separately flagged a reassessment of AI profitability as a key downside risk, estimating that a correction in AI-related investment could cut global GDP by as much as 0.4% by 2028.",
+        why: "It's a reminder that 'AI is driving economic growth' and 'AI is making the world more unequal' aren't competing claims — the IMF's own numbers show both can be true at once, with the gains landing disproportionately in the countries and companies already positioned to capture them.",
+        sources: [
+          { label: "Business Day (Reuters)", url: "https://www.businessday.co.za/world/americas/2026-10-13-imf-warns-of-risks-from-ai-market-correction-and-war/" },
+          { label: "Kuwait Times", url: "https://kuwaittimes.com/article/51532/business/imf-flags-risks-to-global-economy-from-ai-mideast-war-and-debt/" }
+        ]
+      },
+      {
+        title: "China proposes its own AI export controls, targeting model weights and chip clusters above set thresholds",
+        body: "China's Ministry of Commerce and Ministry of Science and Technology published a draft rule on October 16 — Announcement No. 48 — proposing to add 40 technologies to the country's export control catalogue, 23 of them related to AI, alongside items in photovoltaics and biomedicine. The AI entries cover large AI models, AI agents, computing clusters, and related information-processing technology, with model weights and source code included only once a product crosses specific performance thresholds the draft doesn't fully quantify. The proposal exempts access delivered through APIs, websites, apps, and software-as-a-service platforms, and leaves alone technology already public through open-source releases or academic papers. An export-registration requirement tied to the draft took effect the same day and applies even to shipments already underway; public comments on the full proposal are open until November 15. A commerce ministry spokesperson called the move 'necessary,' citing national security.",
+        why: "It's a sign export controls are becoming a two-way tool rather than something only the US wields against China: Beijing is now drawing its own lines around which AI capabilities can leave the country, which could complicate how open-weight Chinese models and cloud-hosted AI services reach customers abroad.",
+        sources: [
+          { label: "Anchorage Daily News (AP)", url: "https://www.adn.com/nation-world/2026/10/16/china-moves-to-curb-tech-exports-including-ai-citing-national-security-risks/" },
+          { label: "Qatar Tribune", url: "https://www.qatar-tribune.com/article/259608/business/china-moves-to-curb-tech-exports-including-ai-citing-national-security" }
+        ]
+      },
+      {
+        title: "Anthropic adds its first physicist, Christopher Stubbs, to the trust that can remove its board",
+        body: "Anthropic announced on October 21 that Christopher Stubbs, an experimental physicist and former Dean of Science at Harvard, has joined its Long-Term Benefit Trust — the independent body that can appoint a majority of the company's board and advises leadership on AI's risks and societal impacts. Stubbs was part of the team that discovered the universe's accelerating expansion in 1998, work later recognized with the Breakthrough Prize in Fundamental Physics, and he has advised the US government on national security and arms control as a member of JASON. He joins existing trustees Richard Fontaine, Ben Bernanke, and Chair Neil Buddy Shah, becoming the Trust's first physicist. The announcement coincided with Anthropic publishing its first Public Benefit Report, measuring the company's progress against five charter pillars the Trustees helped define.",
+        why: "It's a concrete look at how a 'public benefit corporation' tries to keep commercial pressure in check: the Trust's power to remove board members only matters if the people holding that power bring independent judgment, which is the case Anthropic is making by adding a scientist with no financial stake in the company.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust" }
+        ]
+      },
+      {
+        title: "Anthropic opens a Singapore office and signs an AI safety pact with the country's government",
+        body: "Anthropic announced on October 14 that it has opened its fifth Asia-Pacific office in Singapore and signed a memorandum of understanding with the country's Ministry of Digital Development and Information. The MOU covers cooperation on AI safety, security, and model evaluation — including technical exchanges on testing standards and incident response — plus research on AI adoption and its effects on the workforce. Anthropic says Singapore ranks second of 121 countries in Claude.ai usage relative to its population, at nearly six times the level its size would predict, and that more than 1,500 engineers and technical staff at GovTech Singapore already use Claude Code. Existing customers in the city-state include ride-hailing firm Grab, bank DBS, and sovereign wealth fund GIC, which is rolling Claude out across its investment and corporate teams.",
+        why: "It's an example of an AI lab building government relationships before regulation forces the issue: by offering its safety-testing expertise directly to Singapore's regulators now, Anthropic gets a seat at the table as the country writes its own AI rules, rather than reacting to rules written without it.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/singapore-office-opening" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the IMF's AI-and-growth warning and China's new draft export controls, both breaking within the same news cycle.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking China's AI export-control proposal and what it signals about AI supply chains splitting along geopolitical lines.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Good mainstream-facing take on Anthropic's governance moves and its Singapore expansion as the company's IPO approaches.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on the IMF's growth numbers and what 'AI investment' is actually buying in the real economy right now.",
+        url: "https://sub.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Export controls",
+      definition:
+        "Government rules restricting which technologies — chips, AI models, software, or technical know-how — can be sold or shared across borders, usually justified on national-security grounds. The US has used export controls for years to limit China's access to advanced AI chips; China's new draft rule flips that same tool around, letting Beijing restrict which of its own AI models, model weights, and computing clusters can leave the country.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Ask Claude or ChatGPT to explain, in plain language, why a trained model's 'weights' are sensitive enough that a government would want to license their export. Then ask it what would happen under China's new draft rule (described above) if a company were already mid-shipment of a trained model when the registration requirement took effect — use that as a test of how well it reasons through a multi-step policy question instead of just defining terms.",
+    learnLinks: [
+      { label: "Why export controls and chip policy shape the AI industry → The AI Industry", href: "#/course/industry" },
+      { label: "What a 'public benefit corporation' structure is, and why some AI labs use it → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI investment is reshaping global economic growth → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-10-21",
     displayDate: "Wednesday, October 21, 2026 · Edition #79",
     headline: "US sanctions five Chinese firms tied to the theft of Google's AI trade secrets, Anthropic quietly pitches its own federal AI safety bill, its confidential IPO filing shows deep reliance on Amazon and Google, and OpenAI's new misalignment-reporting framework reveals agents evading their own safeguards",
