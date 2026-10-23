@@ -13,6 +13,102 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-23",
+    displayDate: "Friday, October 23, 2026 · Edition #81",
+    headline: "Microsoft ties a 2,250-tenant global hack to Chinese state-linked hackers using an open-source agentic AI attack tool, Walmart opens its stores to outside AI shopping agents as Amazon blocks Meta's Muse, Meta's record revenue is swallowed by a $9.89 billion legal charge, Nvidia unveils a modular 'AI factory' design at GTC Berlin, and Anthropic's IPO reportedly slips past the midterms",
+    summary:
+      "Today's edition is about AI agents showing up on both sides of the same ledger: a Chinese state-linked hacking group used an open-source agentic AI framework to automate attacks on more than 2,250 cloud tenants, while Walmart chose to welcome outside AI shopping agents into its stores the same week Amazon shut one out. Layered on top is the money driving all of it — Meta's blowout quarter got buried under a legal settlement, Nvidia is racing to make AI data centers buildable in weeks instead of years, and Anthropic's blockbuster IPO looks set to wait until after the US votes.",
+    stories: [
+      {
+        title: "Microsoft ties a global supply-chain hack to Chinese state-linked hackers using an open-source agentic AI attack tool",
+        body: "Microsoft published research on October 21 attributing a supply-chain attack on customers of IT-management vendor ConnectWise to Storm-0940, a hacking group it assesses is aligned with the Chinese state. Microsoft says Storm-0940 used ARTEX, an openly available agentic AI penetration-testing framework that can run on top of any AI model, to automate reconnaissance and credential attacks at a rate of roughly 2,900 sign-in attempts per minute, reaching more than 2,250 Microsoft 365 tenants. In several cases, Microsoft said, less than three hours passed between a victim's first contact with the attackers and the group gaining privileged access inside its cloud environment. Targets spanned aerospace and defense, financial services, government, semiconductors, and software companies; most attempts failed, Microsoft said, but Storm-0940 did achieve persistent, high-level cloud access at some organizations. ConnectWise said on October 16 it was investigating unauthorized access to its own Cloud Backup environment and had not responded to requests for comment on Microsoft's findings.",
+        why: "It's one of the first large-scale examples of a nation-state group using an agentic AI framework to run attacks rather than directing them by hand: the tool doesn't need a human operator to understand each target's defenses, it just needs to be pointed at thousands of accounts and left running, which is exactly the kind of speed increase security researchers have been warning agentic AI would eventually hand to attackers.",
+        sources: [
+          { label: "CyberScoop", url: "https://cyberscoop.com/?p=91224" },
+          { label: "KFGO (wire)", url: "https://kfgo.com/2026/10/21/chinese-linked-hackers-compromise-connectwise-target-hundreds-in-global-attack-microsoft-says/" }
+        ]
+      },
+      {
+        title: "Walmart opens its stores to outside AI shopping agents as Amazon blocks Meta's Muse from doing the same",
+        body: "Walmart announced on October 21 a new 'Walmart Agent Gateway' that lets outside AI assistants — including OpenAI's ChatGPT, Google's Gemini, and Meta's Muse — connect directly to Walmart and Sam's Club systems to search products and complete purchases on a shopper's behalf. Within about a month, Walmart plans to launch 'Agent Profiles,' giving each AI agent its own identity inside a customer's account, separate from the person's own order history — similar, Walmart said, to adding an authorized user to a credit card. Shoppers will be able to require approval for every purchase or set a spending limit an agent can use without asking first (Walmart gave $50, $100, and $200 as examples), and can revoke an agent's access at any time; Walmart says agents see the same prices a human shopper would. The move contrasts with Amazon, which recently blocked Meta's Muse from browsing or buying on its platform, saying it had not authorized Muse to access customer accounts, scrape data, or process transactions.",
+        why: "It's a live test of how 'agentic commerce' gets built safely: Walmart is choosing to compete by welcoming outside AI agents and building guardrails — per-agent identity, spending limits, revocable permissions — around them, while Amazon is choosing to keep agents out entirely rather than build that trust layer first.",
+        sources: [
+          { label: "Axios", url: "https://www.axios.com/2026/10/21/walmart-amazon-agents-muse" },
+          { label: "KSL (AP)", url: "https://www.ksl.com/article/51639372/walmart-launches-tools-for-ai-agents-to-shop-for-customers" }
+        ]
+      },
+      {
+        title: "Meta's record quarterly revenue is swallowed by a $9.89 billion legal charge, and its stock drops",
+        body: "Meta reported third-quarter 2026 revenue of $64.6 billion on October 21, up 26% year over year and ahead of the $63.3 billion Wall Street expected. But GAAP earnings per share came in at just $3.83, far below the $6.67 analysts had forecast, almost entirely because of a $9.89 billion charge tied to Meta's roughly $18 billion settlement with US state attorneys general over teen social-media-addiction litigation, reached in August. Stripped of that one-time charge, Meta says adjusted earnings per share were around $7.40, beating Wall Street's estimate. Shares fell sharply in after-hours trading as investors weighed the legal costs alongside Meta's continued heavy AI infrastructure spending; the company's most recent full-year 2026 capital-expenditure guidance, set in July at $130 billion to $145 billion, remains the figure investors are watching for any update.",
+        why: "It's a reminder that a company's AI story and its legal story are no longer separate line items: Meta's underlying advertising business grew solidly, but a settlement rooted in concerns about teenagers' wellbeing was large enough on its own to erase most of a quarter's reported profit, at a moment when markets are already nervous about how much AI investment is costing.",
+        sources: [
+          { label: "Newsquawk", url: "https://www.newsquawk.com/headlines/meta-platforms-inc-meta-q3-2026-usd-eps-383-exp-667-revenue-646bln-exp-6331bln" },
+          { label: "247wallst", url: "https://247wallst.com/cards/meta-q3-2026-earnings-meta-01m5g1awm0ef8g90sxmwd9b4kz" }
+        ]
+      },
+      {
+        title: "Nvidia unveils a modular 'AI factory' design and says it has invested nearly $10 billion in Europe this year",
+        body: "At Nvidia's GTC Berlin keynote on October 21, CEO Jensen Huang introduced DSX POD, a reference design that lets partners build complete Vera Rubin-generation 'AI factories' inside modular, container-style units, which Nvidia says can cut onsite deployment time to roughly 14 days once a site's power and cooling are ready. Alongside DSX POD, Nvidia detailed updates to its Vera Rubin chip platform, Spectrum-X networking gear, RTX Spark desktop hardware, and a Windows-enabled DGX Station, plus Agile ONE SN, a reference humanoid robot built on its Isaac GR00T platform expected to ship next year. Huang said Nvidia has invested nearly $10 billion in Europe over the past year and announced 14 new European startup investments during the company's tour of the continent, part of a push to get European governments and companies building AI computing capacity of their own rather than relying entirely on data centers in the US and Asia.",
+        why: "It's part of a bigger pattern of infrastructure companies racing to make 'AI factories' buildable faster and in more places: a reference design that ships in standardized modules turns what used to be a bespoke, multi-year data-center construction project into something closer to an assembly-line product, which matters because compute capacity, not model research, is increasingly the bottleneck on how fast AI can scale.",
+        sources: [
+          { label: "NVIDIA Blog", url: "https://blogs.nvidia.com/blog/gtc-berlin-2026-keynote/" }
+        ]
+      },
+      {
+        title: "Anthropic's IPO reportedly slips past the US midterms, even as Q3 revenue grows 45%",
+        body: "Reuters reported this week that Anthropic's long-anticipated initial public offering, once expected to price around mid-October, is now likely to be pushed until after the November US midterm elections, though sources caution the timeline could shift again. At a pre-IPO investor meeting on October 14, an attendee told Reuters that Anthropic's third-quarter revenue grew about 45% from the prior quarter to roughly $16.8 billion — down from a 147% jump in the second quarter, a sign growth is decelerating even as the absolute numbers keep climbing. Anthropic reportedly said it was profitable on an adjusted basis in the quarter, without detailing which costs that figure excludes. The company is said to be targeting a valuation north of $2 trillion and is working to finalize a $15 billion revolving credit facility before moving ahead with the listing. Anthropic declined to comment, and no public prospectus has been filed, so the figures remain unaudited and unofficial.",
+        why: "It's a reminder to read 'growth rate' numbers in context: 45% quarter-over-quarter revenue growth sounds enormous by the standards of any ordinary company, but for Anthropic it actually represents a sharp slowdown from the prior quarter's 147% pace — the kind of deceleration that can matter more to IPO investors than the headline growth figure itself.",
+        sources: [
+          { label: "TheNextWeb", url: "https://thenextweb.com/news/anthropic-ipo-mid-october-midterms-15bn-credit-facility" },
+          { label: "InvestingLive", url: "https://investinglive.com/stocks/anthropic-q3-revenue-rises-45-to-16-8-billion-ahead-of-ipo/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the Storm-0940 agentic-AI attack and the Walmart/Amazon split on AI shopping agents, both breaking within the same news cycle.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "Good practitioner's-eye view on Nvidia's DSX POD reference design and what 'AI factory' infrastructure actually looks like in practice.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Good mainstream-facing coverage of Meta's earnings hit and Anthropic's shifting IPO timeline, both playing out in the same week.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the Storm-0940/ConnectWise attack and what agentic AI pentesting tools mean for cybersecurity going forward.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "AI factory",
+      definition:
+        "Nvidia's term for a data center purpose-built to run AI workloads at scale, as opposed to a general-purpose data center that happens to also run AI jobs. The idea is that compute becomes a manufacturing input, like electricity or steel, produced continuously by racks of specialized chips rather than provisioned ad hoc. Today's Nvidia story is a concrete example: DSX POD turns the 'factory' into literal modular units that partners can bolt together and deploy in about two weeks, instead of spending years on custom construction.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Ask Claude or ChatGPT to explain, step by step, why building an 'AI factory' is a harder engineering problem than building a normal data center — what specifically about training or running large models (power density, networking, cooling) forces the redesign. Then ask it what would have to be true for a 14-day modular deployment, like Nvidia's DSX POD, to actually work once you account for permitting, the power grid, and water or cooling access — use that as a test of how well it separates the chip-and-rack engineering problem from the surrounding infrastructure problem.",
+    learnLinks: [
+      { label: "Why AI infrastructure and chip supply shape the industry → The AI Industry", href: "#/course/industry" },
+      { label: "How AI agents get permissioned, authenticated access to real systems → Building with AI", href: "#/course/engineering" },
+      { label: "What makes an AI company's revenue and valuation numbers meaningful → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-10-22",
     displayDate: "Thursday, October 22, 2026 · Edition #80",
     headline: "IMF says AI investment is propping up global growth but warns the gains are dangerously concentrated, China proposes its own export controls on AI models and chips, and Anthropic adds a physicist to the trust that can remove its board while opening a new office in Singapore",
