@@ -13,6 +13,106 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-24",
+    displayDate: "Saturday, October 24, 2026 · Edition #82",
+    headline: "A Meta-led Wall Street selloff and CoreWeave's distressed bonds expose cracks in AI's financing boom, a GAO report finds the Pentagon's AI oversight office running on 3 of 10 staff, OpenAI brings its models to rival Google Cloud, and Anthropic pledges 5% of its shares to a new public benefit fund ahead of its IPO",
+    summary:
+      "Today's edition is about money and oversight starting to catch up with AI's buildout. A Meta-led selloff gave the Nasdaq its worst day since June, and CoreWeave's bonds are trading like distressed debt — both signs that investors are pricing in real risk on the hundreds of billions pouring into AI infrastructure. Meanwhile, a government watchdog found the Pentagon's own AI oversight office badly understaffed, OpenAI widened its distribution onto a rival's cloud platform, and Anthropic moved to lock in a slice of its future wealth for public benefit ahead of its IPO.",
+    stories: [
+      {
+        title: "A Meta-led selloff gives the Nasdaq its worst day since June as AI spending fears resurface",
+        body: "The Nasdaq Composite fell 2.6% on October 22 to close at 26,008.86 — its steepest one-day drop since June — as a batch of high-profile tech earnings reignited investor doubts about the pace of AI spending. Meta Platforms, whose record quarterly revenue a day earlier came paired with sharply higher 2026 capital-expenditure guidance, led the slide, falling nearly 7%; chipmakers and the other biggest AI spenders accounted for nearly all of the Nasdaq-100's net loss in value that session. The drop capped a rough stretch for hedge funds, whose global long-short stock-picking strategies had already logged a losing week (down about 2.9% for the week through October 15, per Goldman Sachs' prime brokerage desk) as a wave of AI-related bets unwound. Trading calmed somewhat the next day, October 23, with investors turning their attention to Alphabet's, Amazon's, and Microsoft's earnings, all due the following week, for a clearer read on whether AI spending is paying off.",
+        why: "It's a reminder that markets react to spending guidance as much as results: Meta's quarter actually beat Wall Street's revenue estimate, but investors punished the size of its future AI capital expenditure instead — the same number every other major AI spender will be judged on when they report next week.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/10/21/stock-market-today-live-updates.html" },
+          { label: "Mitrade", url: "https://www.mitrade.com/insights/shares-analysis/us-stocks/nasdaq-26000-ai-funding-credit-20261023J1439" },
+          { label: "US News (AP)", url: "https://money.usnews.com/investing/news/articles/2026-10-23/after-previous-days-slump-trading-is-quieter-among-ai-shares" }
+        ]
+      },
+      {
+        title: "CoreWeave's bonds are trading like distressed debt, and investors are asking what that means for the AI buildout",
+        body: "CoreWeave, the Nvidia-backed cloud provider that rents out GPU capacity to AI labs, has seen its corporate bonds trade at levels Wall Street usually reserves for companies in financial distress. Yields on its 2031 and 2032 notes climbed to roughly 15% to 16% through mid-October, and the cost of insuring its debt against default — its five-year credit default swap spread — hit about 1,082 basis points on October 19, a level generally read as a sign of credit distress. Bloomberg reported the turmoil is making it harder for other AI infrastructure companies to sell junk-rated bonds at all, as investors grow warier of the debt financing much of the AI data-center boom. CoreWeave's CEO has called the selloff irrational, pointing to a customer contract backlog he says more than covers the company's roughly $35.6 billion in debt and lease obligations — and at least one major bond fund manager says he's sticking with the debt, betting the stress is overdone.",
+        why: "It's worth watching credit default swaps and bond yields as an early-warning system: bondholders get paid back before stockholders and study a company's ability to cover its debts for a living, so when credit markets start pricing in real doubt — as they are now around AI infrastructure financing — it's often a leading signal, not a lagging one.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/10/19/coreweave-oracle-ai-credit-stress.html" },
+          { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2026-10-17/coreweave-woes-risk-shutting-down-ai-junk-market-credit-weekly" }
+        ]
+      },
+      {
+        title: "A government watchdog finds the Pentagon's AI oversight office running on 3 of its 10 staff slots",
+        body: "A Government Accountability Office report published October 14 and covered widely this week found that the Pentagon office created in 2022 to oversee responsible military use of AI had filled only three of its ten authorized positions as of February 2026, with defense officials telling GAO those remaining roles likely won't be filled anytime soon. The report also found that 29 of the 64 initiatives in the department's Responsible AI Strategy and Implementation Pathway remained incomplete as of April 2026, and that the Responsible AI Working Council, meant to coordinate oversight across the department, didn't meet at all between late 2024 and August 2025. GAO recommended the Pentagon's Chief Digital and AI Office write a formal charter spelling out the council's duties and meeting schedule, and fix the staffing shortfall in its Responsible AI Division. The department agreed with both recommendations, but as of October 22 had not yet acted on either one, a GAO official told NPR member station WFDD.",
+        why: "It's a concrete look at the gap between a government's stated AI principles and its capacity to enforce them: an office exists on paper to keep the Pentagon's AI use 'responsible,' but without enough staff or a functioning coordinating council, that oversight is mostly aspirational for now.",
+        sources: [
+          { label: "Military Times", url: "https://www.militarytimes.com/news/pentagon-congress/2026/10/21/pentagon-ai-oversight-office-struggles-to-keep-pace-with-departments-ambitions-gao-finds/" },
+          { label: "GAO.gov", url: "https://www.gao.gov/products/gao-27-107837" },
+          { label: "WFDD (NPR)", url: "https://www.wfdd.org/national/2026-10-23/the-pentagons-guidelines-for-responsible-ai-arent-always-followed-report-shows" }
+        ]
+      },
+      {
+        title: "OpenAI brings its models to Google Cloud — a rival's platform — in its latest push to be everywhere enterprises already are",
+        body: "OpenAI announced on October 21 that its frontier models, including its flagship GPT-6 Astra, along with Codex agent workflows, are coming to Google Cloud's Model Garden — putting OpenAI's models on a direct competitor's cloud platform. Three models are in private preview for select enterprise customers now, with broader availability expected within weeks; purchases will run through the Google Cloud Marketplace on a single invoice, and customers can apply their existing Google Cloud spending commitments toward them. Google says customer prompts and outputs stay inside that customer's own data boundary and aren't used to train Google's own models. The deal follows OpenAI's earlier expansion onto Amazon Web Services and comes after Microsoft's cloud-exclusivity arrangement with OpenAI ended, making Google now the only major hyperscaler hosting frontier models from all three leading closed-source AI labs.",
+        why: "It's a sign that distribution, not just model quality, increasingly decides how AI labs make money: OpenAI would rather sell its models everywhere IT buyers already have a budget and a vendor relationship than compete only through its own ChatGPT and API products.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/openai-models-google-cloud/" },
+          { label: "The Star (Reuters)", url: "https://www.thestar.com.my/tech/tech-news/2026/10/21/openai-to-sell-its-top-models-on-google-cloud-in-latest-enterprise-push" }
+        ]
+      },
+      {
+        title: "Anthropic pledges 5% of its shares to a new public benefit fund ahead of its IPO",
+        body: "Anthropic announced on October 18 that it will commit 5% of its shares, subject to stockholder approval, to a newly created Anthropic Public Benefit Fund — a limited liability company Anthropic will wholly own rather than a traditional charity. The company said its board can add another 2% for every 50% increase in Anthropic's valuation above an undisclosed baseline, and that combined with its existing philanthropic commitments, roughly 20% of Anthropic's shares are now set aside for public-good purposes. The fund's shares cannot be used for lobbying or political contributions in the US or abroad, and Anthropic said it will share more about the fund's governance, structure, and how grants get decided in the coming months. The announcement lands weeks ahead of Anthropic's anticipated stock market listing, and builds on an employee share-donation program the company says about half its staff already participate in.",
+        why: "It's worth watching how AI labs structure ownership before going public: locking a slice of future wealth into a mission-bound vehicle, rather than just promising to 'do good' informally, is one way a company tries to keep a public-benefit mission binding even after outside shareholders and IPO pressure arrive.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/public-benefit-fund" },
+          { label: "The Next Web", url: "https://thenextweb.com/news/anthropic-public-benefit-fund-5-percent-shares" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the Nasdaq selloff and what CoreWeave's distressed bonds mean for the AI financing story.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the GAO's findings on Pentagon AI oversight and what weak enforcement capacity means for 'responsible AI' policy generally.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Mainstream-facing take on the AI credit-stress debate and Anthropic's public benefit fund ahead of its IPO.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on OpenAI landing on Google Cloud and what multi-cloud model distribution means for enterprise buyers.",
+        url: "https://sub.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Credit default swap (CDS)",
+      definition:
+        "A credit default swap is essentially insurance against a bond issuer defaulting: the buyer pays a periodic premium, and the seller pays out if the borrower fails to repay. When CDS spreads widen sharply — as CoreWeave's did this month, reaching roughly 1,082 basis points — it means the market is pricing in real doubt about whether a borrower can pay its debts, often before that doubt shows up in the company's stock price. Watching CDS spreads and bond yields, not just the stock chart, is one way to gauge how nervous credit markets are about the debt funding AI's data-center buildout.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pick one of today's companies under financial pressure — CoreWeave, or Meta after its selloff — and ask Claude or ChatGPT to explain, in plain terms, the difference between what its stock price says about investor sentiment and what its bond yields or credit default swap spread say about its ability to pay its debts. Then ask it why those two signals can disagree, and what it would take for them to converge.",
+    learnLinks: [
+      { label: "Follow the money → The AI Industry course", href: "#/course/industry" },
+      { label: "How AI labs are governed and held accountable → AI Safety & Alignment", href: "#/course/safety" },
+      { label: "Compare the major AI assistants and copilots → AI Tools in Practice", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-10-23",
     displayDate: "Friday, October 23, 2026 · Edition #81",
     headline: "Microsoft ties a 2,250-tenant global hack to Chinese state-linked hackers using an open-source agentic AI attack tool, Walmart opens its stores to outside AI shopping agents as Amazon blocks Meta's Muse, Meta's record revenue is swallowed by a $9.89 billion legal charge, Nvidia unveils a modular 'AI factory' design at GTC Berlin, and Anthropic's IPO reportedly slips past the midterms",
