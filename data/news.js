@@ -13,6 +13,94 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-25",
+    displayDate: "Sunday, October 25, 2026 · Edition #83",
+    headline: "AI tools find — and get blamed for — critical flaws in PHP that took sites offline worldwide, Moody's flags Nvidia's booming financing guarantees as a credit-market risk, OpenAI adds PIN-locked private chats to ChatGPT, and Microsoft brings task delegation to Copilot Notebooks",
+    summary:
+      "Today's edition is about AI showing up on both sides of the same problem, and about the financial plumbing holding its buildout together. Researchers using an OpenAI model found critical flaws in PHP, the language running most of the web, before attackers did — even as Node.js patched its own high-severity bugs the same week. Moody's warned that the financial guarantees propping up Nvidia's biggest cloud customers are growing fast and barely visible on a balance sheet, while OpenAI and Microsoft both pushed updates that make their AI assistants more private and more autonomous, respectively.",
+    stories: [
+      {
+        title: "AI helps find critical PHP flaws before attackers do, in what TechCrunch called 'a very bad cybersecurity day' for the internet",
+        body: "Security researchers disclosed two critical vulnerabilities in PHP, the open-source language that still runs an estimated 70% of the world's websites, on October 21, prompting some site operators — including government agencies — to take services offline while they patched. OpenAI said one of its models helped identify the flaws and that its AI appeared to find them before any attackers did; the FBI's cyber division warned separately that the bugs could let a remote attacker execute code on an affected server and urged immediate patching. Reuters reported that government websites in multiple countries went dark during the scramble to fix the issue. The same week, maintainers of Node.js, the JavaScript runtime used across much of the modern web, shipped a single release patching four separate high-severity vulnerabilities, compounding what TechCrunch described as a very bad cybersecurity day for the internet's foundational code.",
+        why: "It's a clean real-world example of AI's dual-use problem: a model capable of scanning code for a dangerous flaw before an attacker finds it is the same kind of model that could, in different hands, be pointed at finding flaws to exploit — which is why security researchers increasingly treat 'who finds the bug first' as a race rather than a given outcome.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/21/the-internet-is-having-a-very-bad-cybersecurity-day/" },
+          { label: "Axios", url: "https://www.axios.com/2026/10/21/php-openai-ai-bug-hunting-cyberattacks" },
+          { label: "News4Jax (AP)", url: "https://www.news4jax.com/business/2026/10/21/some-websites-go-dark-as-operators-address-an-ai-detected-flaw-in-a-web-programming-language/" }
+        ]
+      },
+      {
+        title: "Moody's flags Nvidia's growing financing guarantees as a risk, as credit markets test the AI boom's plumbing",
+        body: "CNBC reported October 24 that Nvidia's expanding role as a financier of the AI buildout — backing AI model developers, data-center operators, and 'neocloud' GPU providers through equity stakes, capacity commitments, and supply deals — is facing its first serious test as credit markets grow warier of AI-linked debt. Moody's told CNBC that guarantees of this kind are now the fastest-growing category of off-balance-sheet financing arrangements among major AI infrastructure companies in 2026, a structure that lets a large financial commitment sit outside a company's headline balance sheet even though the guarantor remains on the hook if a partner can't pay. The warning lands after weeks of widening credit-default-swap spreads and falling bond prices for AI infrastructure companies, as investors scrutinize how much of the industry's spending is actually backed by durable revenue versus by one giant supplier's promises to its own customers.",
+        why: "It's worth tracking who is actually guaranteeing AI's buildout, not just who is spending on it: when the industry's biggest chipmaker is simultaneously an equity investor, a capacity guarantor, and the main supplier to the same customers, a problem at any one of its customers can ripple back to the center faster than an ordinary supplier relationship would.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/10/24/nvidias-role-as-ai-financier-faces-first-big-test-as-neoclouds-take-market-hit.html" }
+        ]
+      },
+      {
+        title: "OpenAI adds PIN-locked private chats to ChatGPT, the latest in a monthslong rebuild around GPT-6",
+        body: "OpenAI's official ChatGPT release notes show that on October 20 the company shipped 'locked chats,' which let a user keep selected conversations inside their account while hiding them from regular chat history, pinned chats, and search — unlockable only with a 4-digit PIN or the device's own authentication. It's the newest entry in a steady run of changes OpenAI has made to ChatGPT since GPT-6 began rolling out on October 7 with an interactive 'Intelligent UI' that renders buttons, calculators, and editable graphs inline instead of plain text, followed on October 16 by GPT-6 Pro's ability to split a single request across multiple agents working in parallel and by the launch of ChatGPT Slides for building and co-editing presentations inside a chat.",
+        why: "It's a sign that privacy controls are becoming as central to chatbot design as capability: as people put more sensitive material into a single ongoing conversation with an AI assistant, giving them a way to wall off specific chats — rather than only deleting history wholesale — matters for the same reason a locked folder matters on a phone.",
+        sources: [
+          { label: "OpenAI Help Center", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/openai-brings-gpt-6-and-intelligent-ui-to-chatgpt-4f0d797c" }
+        ]
+      },
+      {
+        title: "Microsoft brings task delegation and direct Office editing to Copilot Notebooks",
+        body: "Microsoft shipped a substantial update this month to Notebooks inside Microsoft 365 Copilot, letting a user spin up a notebook from a short project description, delegate simple tasks — like editing a specific Word, Excel, or PowerPoint file — directly to Copilot from inside a notebook chat, and generate interactive reports and mind-map-style visualizations from a set of uploaded documents. Microsoft said scheduled, recurring tasks such as daily briefings are coming in the following weeks, but for now task delegation and choice of underlying model remain limited to organizations enrolled in its early-access Frontier program.",
+        why: "It's part of a pattern across the major AI assistants: having built general-purpose chat, each is now racing to add a 'notebook' layer that keeps answers grounded in a bounded set of documents a person actually trusts and can hand off real work to, rather than leaving every task to open-ended conversation.",
+        sources: [
+          { label: "Neowin", url: "https://www.neowin.net/microsoft-365-copilot-notebooks-gets-new-tools-to-turn-documents-into-mind-maps-and-more/" },
+          { label: "Merill Message Center", url: "https://mc.merill.net/message/MC1420901" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the AI-discovered PHP vulnerability and what it means for AI's role on both sides of cybersecurity.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the broader dual-use debate behind AI-assisted bug hunting, following the PHP and Node.js disclosures.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on ChatGPT's locked chats and Microsoft's push to add task delegation inside Copilot Notebooks.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly",
+        why: "Good mainstream-facing take on Moody's warning about Nvidia's financing guarantees and what it means for the AI boom's plumbing.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Off-balance-sheet guarantee",
+      definition:
+        "An off-balance-sheet guarantee is a promise by one company to cover another's financial obligations if that partner can't pay, structured so the commitment doesn't appear as an ordinary liability on the guarantor's own balance sheet, even though the real financial exposure still exists. Moody's flagged this kind of guarantee as the fastest-growing form of off-balance-sheet financing among AI infrastructure companies in 2026 — worth watching because it lets a company like Nvidia extend enormous support to its customers while the headline numbers investors glance at look smaller than its true risk.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Ask Claude or ChatGPT to explain, in plain terms, how an off-balance-sheet guarantee differs from an ordinary loan or balance-sheet line item, using Nvidia's financing of its AI 'neocloud' customers as the example. Then ask it what would have to go wrong, and in what order, for one of those guarantees to actually get called — and why a credit-rating agency like Moody's watches for that chain of events more closely than an ordinary stock analyst would.",
+    learnLinks: [
+      { label: "Follow the money behind AI's buildout → The AI Industry", href: "#/course/industry" },
+      { label: "How AI tools get used for both offense and defense in security → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "Compare ChatGPT, Copilot, and the other assistants as they change → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-10-24",
     displayDate: "Saturday, October 24, 2026 · Edition #82",
     headline: "A Meta-led Wall Street selloff and CoreWeave's distressed bonds expose cracks in AI's financing boom, a GAO report finds the Pentagon's AI oversight office running on 3 of 10 staff, OpenAI brings its models to rival Google Cloud, and Anthropic pledges 5% of its shares to a new public benefit fund ahead of its IPO",
