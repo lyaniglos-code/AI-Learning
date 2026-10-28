@@ -13,6 +13,103 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-28",
+    displayDate: "Wednesday, October 28, 2026 · Edition #86",
+    headline:
+      "Anthropic files its public S-1, disclosing $16.3 billion in first-half 2026 revenue and an $80.7 billion net loss as it plans to list on the Nasdaq as 'ANT,' expands a government partnership offering a 40% discount on Claude to every level of US government, and publishes early results from six drug-development partners using Claude to design therapies",
+    summary:
+      "Today's edition is almost entirely about Anthropic, because the company put three very different kinds of disclosure out within 48 hours: a public IPO filing that finally shows its real financials, a government deal that shows where its revenue growth is coming from, and a research update that shows what its models can actually do outside a chat window. Read together, they're a rare single-company snapshot of how an AI lab's finances, its sales pipeline, and its scientific claims line up — or don't.",
+    stories: [
+      {
+        title:
+          "Anthropic files its public S-1, disclosing $16.3 billion in first-half revenue and an $80.7 billion net loss",
+        body: "Anthropic filed a registration statement on Form S-1 with the SEC on October 26, moving from the confidential draft it submitted earlier this year toward an actual public listing, and said it intends to list its Class A common stock on the Nasdaq Global Select Market under the ticker ANT, with Goldman Sachs and Morgan Stanley named as lead underwriters. The filing disclosed revenue of about $16.3 billion for the first half of 2026, up from roughly $1.16 billion in the same period a year earlier, alongside a net loss of about $80.7 billion for the same six months — a loss multiple outlets reported is driven mostly by a non-cash accounting change in the fair value of convertible notes rather than cash burned running the business. The S-1 does not yet state a share count, price range, or valuation; the company's last private funding round, in May, valued it at $965 billion, and recent reporting has pointed to IPO targets as high as $1.5–2 trillion, though Anthropic itself has disclosed no figure. The registration statement is not yet effective, so no shares can be bought or sold until the SEC completes its review.",
+        why: "An S-1's income statement is prepared under standard accounting rules that can make a company's loss look far larger (or smaller) than its actual cash position — which is why reading 'an $80 billion loss' requires asking what's driving it before treating it as a plain measure of how much money a company is losing.",
+        sources: [
+          {
+            label: "Fortune",
+            url: "https://fortune.com/2026/10/26/anthropics-s-1/"
+          },
+          {
+            label: "Yahoo Finance",
+            url: "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html"
+          },
+          {
+            label: "Anthropic",
+            url: "https://www.anthropic.com/news/s1-sec"
+          }
+        ]
+      },
+      {
+        title:
+          "Anthropic expands its GSA partnership, offering every level of US government a 40% discount on Claude",
+        body: "Anthropic announced on October 27 an expanded agreement with the US General Services Administration that extends a 40% discount to Claude Enterprise, Claude for Government, and the Claude API — for the first time applying across every purchasing path, including direct purchases now and cloud-provider purchases in the coming months. The discount, available through GSA's Multiple Award Schedule at the OneGov rate, is open not just to federal agencies but to state, local, tribal, and territorial governments, with no minimum spending commitment required. Anthropic said about 500 US federal, state, and local organizations already use Claude, that weekly active users of Claude for Government are up roughly 8x since February, and that the combined discounts could save government customers an estimated $1 billion. Claude for Government reached FedRAMP High authorization on September 30, and Anthropic is separately pursuing FedRAMP Moderate for Claude Enterprise.",
+        why: "Compliance certifications like FedRAMP, not price alone, are usually what actually unlocks large-scale government sales — a discount only matters once an agency's security office has already signed off on using the product, so this deal signals Anthropic has cleared that slower, less visible hurdle first.",
+        sources: [
+          {
+            label: "Anthropic",
+            url: "https://www.anthropic.com/news/expanding-partnership-gsa"
+          }
+        ]
+      },
+      {
+        title:
+          "Anthropic publishes early results from six drug-development partners using Claude",
+        body: "Anthropic's life-sciences team published results on October 27 from partnerships with six organizations testing whether Claude can speed up early-stage drug development — target identification, molecule design, manufacturing documentation, and clinical trial planning. At Generate Biomedicines, Claude helped redesign a genetic component for a CAR T-cell cancer therapy that ended up about 70% shorter and produced roughly ten times as many cancer-spotting receptors in lab tests. At Divergence Labs, Claude generated roughly 35,000 antibody designs for a food-allergy treatment in about a month, and three of the resulting candidates outperformed the standard medication in lab tests. At Enveda, Claude reviewed 1,061 pages of manufacturing documentation, catching every issue human reviewers found plus seven more, while cutting review time by 89%. The work described is almost entirely preclinical — meaning none of these drug candidates have yet been tested in humans — and Bristol Myers Squibb's collaboration, which uses Claude to assess clinical trial plans, is expected to expand in 2027.",
+        why: "'Preclinical' marks the gap between a promising lab result and an actual medicine: most drug candidates that later fail in human trials also looked good at this earlier stage, so a faster preclinical process mainly means more ideas get tested and discarded faster — it doesn't yet tell you how many of Claude's redesigns will hold up in an actual patient.",
+        sources: [
+          {
+            label: "Anthropic",
+            url: "https://www.anthropic.com/research/early-progress-drug-development"
+          }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Anthropic's public S-1 filing and what its first disclosed financials actually reveal about the company's growth and losses.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the IPO numbers alongside Anthropic's government and life-sciences announcements from the same week.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "AI Explained · weekly-ish",
+        why: "Useful for a grounded look at how to read AI labs' self-reported research results, like Anthropic's drug-development case studies, with appropriate skepticism.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on what Claude's drug-discovery and government-deployment work signals about where frontier labs are pointing their models next.",
+        url: "https://sub.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "S-1 registration statement",
+      definition:
+        "An S-1 is the core document a US company must file with the SEC before it can sell shares to the public — it discloses financial statements, risk factors, business details, and how the company plans to use the money raised. A company can file it confidentially first (as Anthropic did earlier in 2026) to get early SEC feedback privately, but it must eventually go public, as Anthropic's October 26 filing did, before shares can actually be offered for sale. Numbers in an S-1 are legally binding disclosures, not marketing copy, which is why they often reveal more — like Anthropic's $80.7 billion reported net loss — than a company would otherwise volunteer.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pick one of the six Claude drug-discovery case studies Anthropic published today (BigHat Biosciences, Bristol Myers Squibb, Divergence Labs, Enveda, Generate Biomedicines, or The Column Group) and ask Claude or ChatGPT to explain, in plain language, why a drug candidate that performs well in a lab assay or a mouse can still fail years later in human clinical trials — then ask what 'preclinical' results can and can't tell you about a treatment's eventual safety and effectiveness in people.",
+    learnLinks: [
+      { label: "How AI labs raise money and go public → The AI Industry", href: "#/course/industry" },
+      { label: "What counts as a credible AI research claim → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "What Claude can and can't do today → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-10-27",
     displayDate: "Tuesday, October 27, 2026 · Edition #85",
     headline:
