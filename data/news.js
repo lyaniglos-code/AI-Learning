@@ -13,6 +13,111 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-29",
+    displayDate: "Thursday, October 29, 2026 · Edition #87",
+    headline:
+      "OpenAI ships a cut-price 'computer use' model, Oracle agrees to run Google's AI chips and Cerebras systems alongside its own at Oracle AI World, Anthropic names 20 science institutions it's giving free Claude credits to, and new Harvard Business School research finds only 3% of large companies have actually connected their AI agents into a shared organizational memory",
+    summary:
+      "Today's stories all circle the same question: once a company already has an AI model, what's actually worth paying for next? OpenAI's answer is a cheaper model built for one narrow job; Oracle's answer is to run a rival's chips rather than lose cloud customers to hardware scarcity; Anthropic's answer is to fund institutions, not just individual researchers, who can turn free credits into shared tools; and new Harvard Business School research suggests most companies haven't answered it well at all — only a handful have built the connective tissue between their AI agents that actually shows up in the bottom line.",
+    stories: [
+      {
+        title:
+          "OpenAI ships GPT-6.1 Terra, a cheaper 'computer use' model priced at $1/$5 per million tokens",
+        body: "OpenAI released GPT-6.1 Terra on October 26, a mid-tier model in its GPT-6.1 family built specifically for 'computer use' tasks — filling out forms, editing video timelines, and automating repetitive desktop work — rather than open-ended reasoning. The API prices it at $1 per million input tokens and $5 per million output tokens (cached input at $0.05 per million), which OpenAI says is 50% cheaper than both GPT-5.6 Terra and GPT-6.1 Sol. OpenAI reports Terra completes computer-use tasks more than three times faster than its larger siblings GPT-6 Astra and GPT-6.1 Sol, and that its score on the Terminal-Bench 4.0 benchmark at maximum reasoning effort jumped to 50.3%, up from 21.5% for GPT-5.6 Terra. It's rolling out now inside ChatGPT Work and Codex for Plus, Pro, Enterprise, and Edu subscribers, and developers can call it directly through the API as gpt-6.1-terra.",
+        why: "Computer-use models tend to be judged less on general intelligence benchmarks and more on how cheaply and reliably they can click, type, and navigate real interfaces — which is why OpenAI built its fastest, cheapest model for this job rather than its smartest one.",
+        sources: [
+          {
+            label: "BleepingComputer",
+            url: "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-launches-gpt-61-terra-with-3x-faster-ai-agents-50-percent-lower-pricing/"
+          },
+          {
+            label: "AI Weekly",
+            url: "https://aiweekly.co/alerts/openai-ships-gpt-61-terra-at-15-per-million-half-of-sol"
+          }
+        ]
+      },
+      {
+        title:
+          "Oracle widens its OpenAI partnership and, for the first time, agrees to run Google's AI chips on its own cloud",
+        body: "At Oracle AI World in Las Vegas on October 27, Oracle said it is building ChatGPT and Codex directly into its business applications and database products, and that Oracle Cloud Infrastructure will add support for Google's custom TPU chips, OpenAI's own 'Jalapeño' inference chip, and Cerebras systems alongside its existing Nvidia and AMD hardware. According to CNBC, this marks the first time Google's custom TPUs will run on a rival hyperscaler's cloud — a break from the usual pattern of each cloud provider mainly running its own chips. OpenAI CEO Sam Altman joined Oracle co-CEO Clay Magouyrk on stage for the announcement, which is being pitched first at regulated sectors like healthcare and finance; Cerebras hardware deployment is expected to begin in the first half of 2027. Oracle shares rose roughly 4% on the news, though they remain down more than 30% for the year.",
+        why: "A cloud provider agreeing to run a rival's chips is a sign that AI compute demand has outgrown what any single company's hardware supply chain can meet on its own — even fierce competitors are now willing to share infrastructure to keep up.",
+        sources: [
+          {
+            label: "CNBC",
+            url: "https://www.cnbc.com/2026/10/27/oracle-openai-chatgpt-codex-google-tpus.html"
+          }
+        ]
+      },
+      {
+        title:
+          "Anthropic expands its AI for Science program, naming 20 partner foundations and research institutions",
+        body: "Anthropic announced on October 28 that it's expanding its AI for Science program — which has offered free Claude credits to individual researchers since May 2025 — into formal partnerships with 20 scientific funders, institutions, and research groups, including the US National Science Foundation, the Wellcome Sanger Institute, the Simons Foundation, and Johns Hopkins University. The expansion moves beyond funding one researcher at a time toward organizations that can distribute credits to many scientists and produce shared public goods like open datasets and software standards. Anthropic highlighted existing results from the program, including FlyWire, a Princeton-led project that produced the first complete wiring map of an adult fruit fly's brain, and gnomAD, a Broad Institute genetic reference drawing on DNA data from more than 800,000 people. Anthropic says the program has already supported hundreds of projects spanning biology, medicine, physics, chemistry, climate science, and mathematics.",
+        why: "Giving credits to institutions rather than individual scientists is a bet that shared infrastructure — open datasets, software, and standards other researchers can build on — compounds faster than any single funded project could on its own.",
+        sources: [
+          {
+            label: "Anthropic",
+            url: "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
+          }
+        ]
+      },
+      {
+        title:
+          "New Harvard Business School research finds only 3% of large companies have connected their AI agents into a shared 'knowledge spine'",
+        body: "Microsoft published research on October 27, conducted with Harvard Business School and the advisory firm Keystone, that surveyed 202 large US companies already using AI to see which practices actually translate into financial results. Companies with more of the measured practices — like keeping searchable records of agent activity and automatically feeding corrections back into shared context — saw notably bigger gains in operating margin and return on assets between 2022 and 2025: top-quartile companies improved operating margins by about 5.8 percentage points, versus 0.4 points for the bottom quartile. Despite that gap, only 6 of the 202 companies surveyed, or 3%, had put all four of the identified practices into place. The researchers describe a 'knowledge spine' — a shared, living system that stores the context AI agents draw on, along with corrections and lessons from their work — as what separates companies getting a durable return on AI from ones still running disconnected pilots.",
+        why: "The study shows correlation, not proof that these practices cause the margin gains — a useful reminder that a company's past financial performance and its 2026 AI maturity score could both simply reflect how well-run the company already was.",
+        sources: [
+          {
+            label: "Microsoft",
+            url: "https://www.microsoft.com/en-us/microsoft-365/blog/2026/10/27/the-ai-advantage-your-company-can-keep/"
+          }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on OpenAI's new computer-use model pricing and the Oracle AI World infrastructure deals.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on what GPT-6.1 Terra's pricing and Oracle's multi-chip cloud deal signal about where AI infrastructure economics are headed.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the Harvard Business School research on AI agent maturity alongside Anthropic's science-funding expansion.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "AI Explained · weekly-ish",
+        why: "Useful for a grounded look at how to read a correlational business-research study like the Microsoft/HBS agent-maturity paper without over-trusting its causal framing.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Computer use",
+      definition:
+        "'Computer use' is the term for AI models trained to operate a computer the way a person would — navigating pages, filling out forms, clicking buttons — by reading a screen (or a structured snapshot of it) and choosing an action, rather than sticking to text-only tasks like answering questions. Labs increasingly ship separate, cheaper models tuned specifically for this, like OpenAI's new GPT-6.1 Terra, because reliably clicking the right spot on a screen rewards speed and precision trained on different data than open-ended reasoning does — so a lab's 'smartest' flagship model isn't automatically the best choice for it.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick one repetitive task you do in a browser or desktop app this week — filling out a form, renaming a batch of files, reordering a spreadsheet — and ask Claude, ChatGPT, or another assistant whether it has an agent or 'computer use' mode that could handle it, then walk it through the task step by step to see exactly where it succeeds and where it still needs you to step in.",
+    learnLinks: [
+      { label: "How AI agents actually take actions on a computer → Building with AI", href: "#/course/engineering" },
+      { label: "How AI labs' infrastructure and chip deals work → The AI Industry", href: "#/course/industry" },
+      { label: "What Claude and ChatGPT can do for you today → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-10-28",
     displayDate: "Wednesday, October 28, 2026 · Edition #86",
     headline:
