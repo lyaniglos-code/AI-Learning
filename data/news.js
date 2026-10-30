@@ -13,6 +13,119 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-30",
+    displayDate: "Friday, October 30, 2026 · Edition #88",
+    headline:
+      "Microsoft trims its 2026 AI capex plans while Alphabet holds steady, Amazon's AWS posts its fastest growth in nearly five years, Alphabet's own profit takes a hit as AI reshapes search, and OpenAI claims three new scientific results pending outside review",
+    summary:
+      "Big Tech's Q3 earnings week wrapped up with a split picture: Microsoft and Alphabet both declined to raise their already-enormous AI spending plans even as demand keeps climbing, while Amazon's cloud arm just posted its fastest growth in years. Alphabet's own results carried a warning about AI's double edge — its profit missed estimates partly because AI answers appear to be eating into the search-ad business that funds Google in the first place. Meanwhile, OpenAI said its models helped produce three new scientific results, a reminder that a lab's own announcement and an independently verified discovery aren't yet the same thing.",
+    stories: [
+      {
+        title:
+          "Microsoft trims its 2026 AI capex guidance as Alphabet holds steady — the first sign this year neither raised its spending target",
+        body: "Microsoft and Alphabet both reported earnings on October 28, and CNBC reported on October 29 that neither company raised its AI capital-spending guidance for the year, a break from a string of quarters where both kept pushing their targets higher. Microsoft's Azure cloud revenue grew 48% year-over-year and its own quarterly capital spending roughly doubled to about $39.4 billion, yet the company trimmed its full calendar-2026 capex guidance to roughly $170 billion, down from the approximately $175 billion it had set earlier in the year; its finance chief reportedly pointed to delivery delays from third-party GPU suppliers that are pushing some planned capacity into the first half of 2027. Alphabet, for its part, left its own 2026 capex guidance unchanged at $195–205 billion even as Google Cloud revenue more than doubled and its cloud backlog reportedly grew to roughly $560 billion.",
+        why: "A company holding its spending plan flat isn't necessarily saying demand has cooled — it can just as easily mean the company is bottlenecked by what its suppliers can actually deliver, which is why it's worth asking whether a capex number reflects a company's appetite to spend or the ceiling its supply chain has put on it.",
+        sources: [
+          {
+            label: "CNBC",
+            url: "https://www.cnbc.com/2026/10/29/microsoft-google-ai-capex-estimates.html"
+          },
+          {
+            label: "Futu News",
+            url: "https://news.futunn.com/en/post/1002857631/ai-expansion-hits-snag-alphabet-googlus-and-microsoft-msftus-pause"
+          }
+        ]
+      },
+      {
+        title:
+          "Amazon posts a record operating margin as AWS grows at its fastest pace in nearly five years",
+        body: "Amazon reported third-quarter results on October 29 that beat its own guidance on every major line. Net sales rose 12% year-over-year to $201.9 billion, and operating income came in at $28.1 billion for a 13.9% operating margin — the company's highest ever. AWS, Amazon's cloud division, grew 39% year-over-year to $46.0 billion, its fastest growth in nearly five years. North America segment sales rose 6% to $112.9 billion and International sales rose 5% to $43.1 billion (8% excluding currency effects); Amazon noted that Prime Day shifting into the second quarter this year reduced reported third-quarter growth by roughly 4 percentage points versus how it would otherwise have landed.",
+        why: "Cloud providers like AWS, Azure, and Google Cloud are often called the 'picks and shovels' sellers of the AI boom — they collect rent on the computing power behind AI models no matter which lab's model ultimately wins, which is one reason AWS's growth keeps accelerating even as the fortunes of individual AI labs rise and fall.",
+        sources: [
+          {
+            label: "SEC filing (Amazon 8-K)",
+            url: "https://www.sec.gov/Archives/edgar/data/0001018724/000101872426000038/amzn-20260930xex991.htm"
+          }
+        ]
+      },
+      {
+        title:
+          "Alphabet's profit misses estimates in what analysts call the clearest sign yet that AI answers are cutting into Google's own search-ad business",
+        body: "Alphabet's October 28 third-quarter report showed Google Search and other revenue of roughly $63.4 billion, below the roughly $64.9 billion analysts expected, even as that business still grew about 12% year-over-year. Earnings per share came in at $2.12, well below the roughly $3.01 analysts expected, partly dragged down by about 55 cents per share from an $8.7 billion unrealized loss on equity investments. Alphabet shares fell sharply in after-hours trading, with reports putting the drop at roughly 8% to 10%. The miss landed alongside genuinely strong cloud numbers — Google Cloud revenue more than doubled to $30.7 billion and cloud operating income rose to $11.1 billion from $3.6 billion a year earlier — underscoring that Alphabet's AI story is pulling in two directions at once.",
+        why: "This is a case of 'revenue cannibalization': when an AI Overview or AI Mode answer satisfies a search directly on the results page, the user may never click through to an ad-supported link, which can quietly shrink the exact ad revenue that funds the search engine (and the AI feature) in the first place — a tension worth watching in any ad-supported product that adds AI answers.",
+        sources: [
+          {
+            label: "CNBC",
+            url: "https://www.cnbc.com/2026/10/29/alphabet-google-search-ai-earnings.html"
+          },
+          {
+            label: "ROIC.ai",
+            url: "https://www.roic.ai/news/alphabet-q3-misses-on-profit-as-cloud-shines-capex-cools-10-28-2026"
+          }
+        ]
+      },
+      {
+        title:
+          "OpenAI says its models helped produce three new scientific results — in math, computer science, and physics — with outside review still pending",
+        body: "OpenAI published a post on October 26 titled 'Working with academic communities to build scientific understanding,' describing three new results it says its internal AI models helped produce: a proof of the local smoothing conjecture in harmonic analysis covering every spatial dimension for the first time, a result in computational complexity theory, and a result in quantum field theory. Independent mathematician Alex Iosevich, quoted by Al Jazeera, called the harmonic-analysis result 'a historic development.' OpenAI says the physics result is still going through an independent review process by outside experts who have not yet published their assessment, and that the company is explicitly not claiming academic credit for any of the discoveries — it's instead asking outside researchers to 'shepherd' the findings through the normal channels the academic community uses to vet new work.",
+        why: "An AI lab announcing a result and the academic community independently verifying it are two different things — treating 'our model solved this problem' as settled fact before outside experts have checked the work skips the peer-review step that's supposed to catch mistakes, which is exactly why OpenAI's own post leaves the physics claim pending review rather than calling it confirmed.",
+        sources: [
+          {
+            label: "OpenAI",
+            url: "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+          },
+          {
+            label: "Al Jazeera",
+            url: "https://aljazeera.com/economy/2026/10/27/ai-makes-discoveries-in-mathematics-computer-science-physics-openai-says"
+          }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Big Tech's earnings week and what Microsoft's and Alphabet's capex decisions signal about AI spending.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on OpenAI's claimed math, computer-science, and physics results and how seriously to take them before outside review.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking the week's cluster of hyperscaler earnings — Microsoft, Alphabet, and Amazon — in one sitting.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "AI Explained · weekly-ish",
+        why: "Useful for a grounded, skeptical read on OpenAI's self-reported scientific discoveries before treating them as settled.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Revenue cannibalization",
+      definition:
+        "Revenue cannibalization is what happens when a company's own new product or feature pulls sales away from an existing product or feature instead of creating new revenue — the new thing doesn't win a new customer, it just takes a bite out of an old revenue stream. It's the worry analysts raised about Alphabet's Q3 results: if an AI Overview or AI Mode answer satisfies a search directly on the results page, a user may get what they needed without clicking an ad-supported link, which can shrink the exact revenue that paid for building the AI feature in the first place. Watching whether a company's AI investments visibly cannibalize its existing business, or instead open genuinely new revenue, is one of the clearest ways to judge whether an 'AI strategy' is actually paying off.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Run the same specific question through a plain web search and through an AI answer tool (Google's AI Overview, Gemini, or Perplexity), and notice how many of your usual follow-up clicks the AI answer replaces on its own — then think through who loses revenue when that click doesn't happen, and why that matters for how free, ad-supported tools stay free.",
+    learnLinks: [
+      { label: "How to read a company's earnings report and capex guidance → The AI Industry", href: "#/course/industry" },
+      { label: "Why an AI lab's own research claims need outside verification → AI Safety", href: "#/course/safety" },
+      { label: "What AI answer tools mean for how you search → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-10-29",
     displayDate: "Thursday, October 29, 2026 · Edition #87",
     headline:
