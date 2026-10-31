@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-10-31",
+    displayDate: "Saturday, October 31, 2026 · Edition #89",
+    headline:
+      "OpenAI cuts its funding-round valuation target from $1.4 trillion to $1.25 trillion after investor pushback, rewrites its Model Spec around five core values, Mistral ships the open weights for its 1-trillion-parameter Large 4, and Meta turns to Wall Street for up to $95 billion as its AI spending pushes free cash flow negative",
+    summary:
+      "Today's edition is about the bill for the AI boom starting to show up in the numbers. OpenAI had to lower what it's asking investors to pay for its next funding round, and Meta is selling tens of billions in stock after its own AI buildout pushed its cash flow negative for the first time since 2012 — even as Nvidia and AMD, which sell Meta the chips, offered to buy some of that stock themselves. Meanwhile Mistral pushed a trillion-parameter model's weights out the door, and OpenAI quietly rewrote the document that's supposed to govern how its models behave.",
+    stories: [
+      {
+        title:
+          "OpenAI cuts its funding-round valuation target from $1.4 trillion to $1.25 trillion after some investors balked",
+        body: "The Financial Times and Bloomberg reported on October 22 that OpenAI lowered the valuation target for its in-progress funding round after a $1.4 trillion pitch to private-wealth investors met resistance. CNBC put the round's size at up to $30 billion on a roughly $1.25 trillion pre-money valuation, with the exact total still undecided and investors reportedly given until October 30 to commit. Alongside the equity raise, OpenAI is separately negotiating a commercial deal to secure more computing capacity from the UAE. The cut follows OpenAI's $122 billion round in March, which valued the company at $852 billion including the new money.",
+        why: "A private company's 'valuation' is really just the price its own fundraising team is asking investors to pay, not a figure tested by public trading — watching that asking price get negotiated down after investors pushed back is a rare, concrete look at where private AI valuations actually meet resistance.",
+        sources: [
+          { label: "Digg", url: "https://digg.com/tech/9irienle" },
+          { label: "AI Weekly", url: "https://aiweekly.co/alerts/openai-nears-30b-uae-and-coatue-round-at-125t-valuation" }
+        ]
+      },
+      {
+        title:
+          "OpenAI rewrites its Model Spec around five core values, cutting most of its detailed style rules",
+        body: "OpenAI published version 2026.10.29 of its Model Spec on October 29, regrouping the rules that govern model behavior under five core values that secondary coverage lists as faithfulness to intent, harm minimization, honesty and transparency, human agency, and care. Most of the document's detailed writing-style rules were removed; style is now expected to adapt to the user, the culture, and the language rather than follow a fixed house style. The document also switched from calling the model 'the assistant' to calling it 'GPT,' reflecting how broadly the models are now deployed, and follows an August 18 revision that focused on how models interact with teenagers. OpenAI's own spec text is explicit that it 'describes the behavior we are working toward' and that current models 'do not yet fully reflect it.'",
+        why: "A spec like this is a company writing down, in public, what it wants its models to do — reading how that document gets revised over time (what gets added, what gets cut, what gets renamed) is one of the clearest ways to track how a lab's own thinking about AI behavior is actually changing.",
+        sources: [
+          { label: "FourWeekMBA", url: "https://fourweekmba.com/ai-openai-rebuilds-model-spec-around-5-values-cuts-11-headings/" },
+          { label: "Betanews", url: "https://betanews.com/article/openai-model-spec-five-values-style-rules/" }
+        ]
+      },
+      {
+        title:
+          "Mistral releases the open weights for Large 4, its 1-trillion-parameter flagship, after a three-week API-only preview",
+        body: "Mistral published the weights for Large 4 on Hugging Face and via its API on October 29, following an API-only public preview that began October 6. Large 4 is a mixture-of-experts model with roughly 1 trillion (1.05 trillion, by Mistral's own count) total parameters, of which only a fraction activate for any given request. TechCrunch reported the release targets gains in coding and cyber-defense work specifically. The weights ship under the Mistral Ecosystem Open-Weight License, a modified MIT license, rather than the fully permissive Apache 2.0 license Mistral used for the prior Large 3 generation.",
+        why: "'Open-weight' and 'open source' aren't the same promise: downloadable weights under a custom license can still carry restrictions an Apache- or MIT-licensed project wouldn't — which is why reading the actual license terms matters as much as whether a model's weights are downloadable at all.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/" },
+          { label: "Mistral AI", url: "https://mistral.ai/news/mistral-large-4-oss/" }
+        ]
+      },
+      {
+        title:
+          "Meta turns to Wall Street for up to $95 billion as its AI spending pushes free cash flow negative for the first time since 2012",
+        body: "Meta launched $35 billion in stock offerings on October 26 — about $22.5 billion in Class A common stock and $12.5 billion in mandatory convertible preferred shares — the first tranche of a financing plan that could reach roughly $95 billion, with a further $60 billion at-the-market program planned once new Class C shares begin trading in early 2027. Meta said Nvidia, AMD, and Broadcom have each indicated non-binding interest in buying up to a combined $5 billion of the Class A shares, with other reporting putting Nvidia's share at roughly $3 billion and AMD's at $1 billion. The offering follows Meta raising its 2026 capital-spending guidance to $135–145 billion and reporting a third-quarter free cash flow deficit of about $2.1 billion — the company's first negative free-cash-flow quarter since 2012 — while its five-year credit default swaps widened to a record level in late October.",
+        why: "Free cash flow is the cash a company actually has left after paying for its operations and its capital spending, which is a different (and often more revealing) number than accounting profit — Meta's own chip suppliers offering to help fund the stock sale that's partly covering that cash shortfall is a reminder that in this buildout, 'customer' and 'financier' are increasingly the same company.",
+        sources: [
+          { label: "Finimize", url: "https://finimize.com/content/meta-looks-to-raise-95-billion-for-ai-infrastructure" },
+          { label: "KuCoin News", url: "https://www.kucoin.com/blog/meta-ai-spending-credit-risk-825-billion-commitments" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on OpenAI's valuation cut and Meta's $95 billion stock-sale push for AI infrastructure.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on Mistral's Large 4 open-weight release and OpenAI's rewritten Model Spec.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking this week's cluster of AI financing news — OpenAI's valuation cut and Meta's stock offering — in one sitting.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "AI Explained · weekly-ish",
+        why: "Useful for a grounded look at what Mistral's open-weight license actually permits versus a fully open-source release.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Free cash flow",
+      definition:
+        "Free cash flow is the cash left over after a company pays for both its day-to-day operations and its capital spending (like building data centers), rather than an accounting figure like net income that can include non-cash items. It's a useful check on a company's AI story: Meta can report strong revenue and profit on paper while still burning more cash than it brings in, if its capital spending on chips and data centers outpaces the cash its business actually generates — which is exactly what pushed Meta's free cash flow negative in Q3 2026 for the first time since 2012, and part of why it's selling stock rather than just spending from its own balance sheet.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pick one of today's companies — OpenAI, Mistral, or Meta — and find the specific number in today's story that most surprised you (a valuation cut, a license restriction, a cash-flow figure). Write one sentence on what question that number raises that the company's own announcement doesn't answer.",
+    learnLinks: [
+      { label: "How private company valuations and funding rounds actually work → The AI Industry", href: "#/course/industry" },
+      { label: "What 'open-weight' licenses do and don't guarantee → The AI Industry", href: "#/course/industry" },
+      { label: "How AI labs write and revise the rules for model behavior → AI Safety", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-10-30",
     displayDate: "Friday, October 30, 2026 · Edition #88",
     headline:
