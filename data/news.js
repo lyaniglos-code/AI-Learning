@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-01",
+    displayDate: "Sunday, November 1, 2026 · Edition #90",
+    headline:
+      "Major US banks lock outside AI agents out of customer accounts over authorization fears, Anthropic buys a one-person biotech to launch its own Claude-run drug pipeline, Google's orbiting TPU prototype returns its first AI-generated answer, and Anthropic opens its science-funding program to 20 more institutions",
+    summary:
+      "Today's edition is about AI agents meeting the limits of trust. Big US banks spent October shutting outside AI agents out of customer accounts after finding some acting beyond what users had actually authorized, while Anthropic pushed in the opposite direction — buying a one-person biotech startup to run its own Claude-driven drug-discovery pipeline. Google, meanwhile, hit a smaller but genuine milestone: getting a model to answer from a TPU in orbit for the first time, and Anthropic widened the list of research institutions getting free access to Claude.",
+    stories: [
+      {
+        title:
+          "Major US banks — JPMorgan, Citi, Bank of America, Morgan Stanley, Schwab, and RBC — block outside AI agents from customer accounts",
+        body: "JPMorgan Chase CEO Jamie Dimon confirmed on October 13 that the bank blocks external AI agents from acting on customer accounts, citing risk to both clients and the bank. Citi and Bank of America followed with their own restrictions reported on October 16, and Charles Schwab and Morgan Stanley have imposed similar limits; Royal Bank of Canada joined on October 28, with an executive calling the risk to clients \"unacceptable.\" An Axios report that triggered the wave said banks had found third-party AI agents operating inside customer accounts, in some cases taking actions beyond what the account holder had actually instructed; Reuters later reported some banks are flagging transactions tied to credentials shared with AI agents, though it said it could not independently verify the original Axios report.",
+        why: "This is fundamentally an authorization problem, not just a security one: a bank can verify that a login and password are correct without ever learning whether the thing using them is the account holder, a helpful assistant, or an agent quietly exceeding the instructions it was actually given — which is why 'can it log in' and 'should it be allowed to act' are two separate questions any agentic AI system has to answer.",
+        sources: [
+          { label: "The Star (RBC)", url: "https://www.thestar.com.my/tech/tech-news/2026/10/28/rbc-to-block-ai-agents-calling-out-unacceptable-client-risk" },
+          { label: "Cybernews", url: "https://cybernews.com/ai-news/banks-blocking-ai-agents/" }
+        ]
+      },
+      {
+        title:
+          "Anthropic acquires one-person biotech Mithril Medicine, opens its own Claude-run drug pipeline alongside six pharma partnerships",
+        body: "Anthropic announced on October 27 that it acquired Mithril Medicine, a biotech startup with a single employee, founder Cody Tranbarger, who joins Anthropic as part of the deal (terms undisclosed). Tranbarger had used Claude as an AI assistant to coordinate contracts, logistics, and experiments across 11 external labs, work that reportedly moved a treatment candidate for two rare forms of muscular dystrophy from concept to promising mouse results in under 18 months — early, preclinical findings that have not been tested for safety or effectiveness in humans. Alongside the acquisition, Anthropic named six pharma and biotech partners — Bristol Myers Squibb, Generate Biomedicines, BigHat Biosciences, Divergence Labs, Enveda, and The Column Group — and said a resulting drug candidate could reach human trials as soon as late 2028 if the early results continue to hold up.",
+        why: "Preclinical results — meaning promising in mice or in a lab dish — are the earliest, least certain stage of drug development, and the large majority never make it to an approved human treatment; the concept worth holding onto here is the gap between 'AI helped move research forward' and 'AI found a cure,' which company announcements don't always make clear.",
+        sources: [
+          { label: "The Next Web", url: "https://thenextweb.com/news/anthropic-mithril-acquisition-claude-drug-development" },
+          { label: "The Neuron", url: "https://theneuron.ai/news/inside-mithril-one-employee-biotech-anthropic-acquired" }
+        ]
+      },
+      {
+        title:
+          "Google says its orbiting Project Suncatcher prototype returned its first AI-generated response from space",
+        body: "Google announced on October 30 that its Project Suncatcher prototype satellite — built with Planet and launched October 1 on a SpaceX Transporter-18 rideshare — ran its Gemma 4 model on a data-center-class TPU in orbit and returned a short response, downlinked during a ground-station pass over Svalbard, Norway. Google describes the mission as a test of whether TPU hardware can survive the radiation, thermal swings, and vibration of spaceflight, not a working data center; power is the binding constraint, with the satellite generating up to roughly one kilowatt — enough to run only one TPU at a time, for about 20 minutes per pass. Google has not disclosed exactly which TPU generation or how many chips the satellite carries, and plans to launch two more linked satellites in 2027 to test laser connections between them, working toward a longer-term, unscheduled concept of 81-satellite compute clusters.",
+        why: "It's worth separating an engineering proof-of-concept from a deployed system: this milestone shows a chip can run a model and phone home from orbit, which is genuinely new, but it says nothing yet about whether space-based AI infrastructure can work at anything like data-center scale, power, or lifespan — the gap between 'it worked once' and 'it works reliably at scale' is where most hard infrastructure problems actually live.",
+        sources: [
+          { label: "Google Research", url: "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/" },
+          { label: "HWBusters", url: "https://hwbusters.com/news/project-suncatchers-orbiting-tpu-sends-back-its-first-ai-answer-and-its-a-haiku/" }
+        ]
+      },
+      {
+        title:
+          "Anthropic expands its 'AI for Science' free-credits program to 20 more foundations, institutions, and research groups",
+        body: "Anthropic announced on October 28 that it is expanding AI for Science — a program launched in May 2025 that gives qualified researchers free Claude API credits — to include around 20 new funders, institutions, and research groups. Named partners include the Alfred P. Sloan Foundation, the US National Science Foundation, and Gladstone Institutes, with other reporting naming the Space Telescope Science Institute, the Wellcome Sanger Institute, the Francis Crick Institute, and EMBL among the new participants. Institutional partners can distribute credits internally to their own researchers rather than requiring each scientist to apply individually, and Anthropic says it plans to keep adding partners worldwide.",
+        why: "Free API credits are a common way AI labs seed adoption inside research communities: they lower the cost of researchers choosing a given company's model, generate papers and case studies that double as marketing, and build goodwill with institutions that carry real public trust — worth asking, whenever a company gives something away, what it expects to get back.",
+        sources: [
+          { label: "Anthropic", url: "https://anthropic.com/news/ai-for-science-expands-foundations-research-institutions" },
+          { label: "FourWeekMBA", url: "https://fourweekmba.com/ai-anthropic-gives-nsf-simons-and-16-more-free-claude-credits/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on banks locking AI agents out of customer accounts and Anthropic's move into its own drug pipeline.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for unpacking Google's first AI response from orbit and Anthropic's widening science-funding program in one sitting.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A useful frame for the trust and authorization questions behind banks shutting AI agents out of customer accounts.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "AI Explained · weekly-ish",
+        why: "Helpful for separating what Google's orbiting-TPU milestone actually proves from what it doesn't yet show about space-based AI infrastructure.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Agentic AI",
+      definition:
+        "Agentic AI refers to systems that don't just answer a question but take multi-step actions on a user's behalf — checking a calendar, moving money, filling out a form — often by holding onto credentials or standing permissions rather than asking before every single step. That convenience is exactly what made banks nervous enough to start blocking outside AI agents from customer accounts in October 2026: once an agent can act without a human confirming each step, a system built to verify 'is this login correct' has to somehow also answer 'is this action actually what the person wanted.'",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick one account or app where an AI agent could plausibly act on your behalf (email, banking, shopping, calendar). Write down the one specific action you'd want it to always pause and ask you about first, even if everything else ran automatically — and why that's the line you'd draw.",
+    learnLinks: [
+      { label: "How AI agents take multi-step actions, and why permissions matter → AI Engineering", href: "#/course/engineering" },
+      { label: "How AI labs court researchers and institutions → The AI Industry", href: "#/course/industry" },
+      { label: "Why early, preclinical results aren't the same as a cure → AI Safety", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-10-31",
     displayDate: "Saturday, October 31, 2026 · Edition #89",
     headline:
