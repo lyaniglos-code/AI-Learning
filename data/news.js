@@ -13,6 +13,108 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-02",
+    displayDate: "Monday, November 2, 2026 · Edition #91",
+    headline:
+      "A study finds AI chatbots get roughly a third of election questions wrong the day before the US midterms, Elvis Presley's rights holders sue Anthropic over 274 songs allegedly used to train Claude, the UK opens a formal antitrust probe into Meta's AI-related terms for publishers, Anthropic renames its Claude Max plans and drops Ultra's five-hour limit, and Hex raises $100 million to rebuild its platform for AI agents",
+    summary:
+      "Today's edition is about AI running into institutions built for a slower pace — courts, competition regulators, and tomorrow's ballot box. A new study found chatbots getting a third of election-related questions wrong on the eve of the US midterms, Elvis Presley's estate sued Anthropic over unlicensed training data, and the UK's competition watchdog opened a formal investigation into Meta's data terms for publishers. Meanwhile Anthropic adjusted its own product limits, and venture money kept flowing into tools built specifically for AI agents.",
+    stories: [
+      {
+        title:
+          "Study finds AI chatbots give inaccurate answers to roughly a third of election questions, a day before the US midterms",
+        body: "Forum AI tested four leading chatbots against more than 3,100 news and election-related questions and found that nearly 36% of their answers about elections contained at least one factual error, with answers failing on accuracy, bias, or source selection about 90% of the time, according to reporting by Bloomberg Law. The findings land the day before the November 3, 2026 US midterms. A separate, narrower test by the States United Democracy Center, focused on specific state election questions in Arizona, Pennsylvania, and Michigan, found error rates had dropped to zero this year — a reminder that the two studies measured very different things. A recent Pew survey found about 8% of US adults say they're using chatbots for information about the 2026 elections.",
+        why: "The wildly different headline numbers from these two studies — 36% wrong versus zero errors — aren't really a contradiction once you look at what each one tested: a broad set of open-ended news questions versus a narrow set of state-specific logistics questions, which is exactly why reading how an AI benchmark or study was designed matters as much as its result.",
+        sources: [
+          { label: "The Star (Malaysia)", url: "https://www.thestar.com.my/tech/tech-news/2026/11/02/spewing-us-election-falsehoods-ai-chatbots-face-scrutiny" },
+          { label: "Bloomberg Law", url: "https://news.bloomberglaw.com/artificial-intelligence/chatbots-struggle-with-news-accuracy-sourcing-ahead-of-midterms" }
+        ]
+      },
+      {
+        title:
+          "Elvis Presley's rights holders sue Anthropic, alleging Claude was trained on 274 of his songs without permission",
+        body: "ABG EPE IP LLC and a group of music publishers, trusts, and individuals who say they own or control rights to Elvis Presley's recorded catalog sued Anthropic in the US District Court for the Northern District of California in late October, alleging Claude models were trained on lyrics from 274 Presley-era compositions — including \"Can't Help Falling in Love,\" \"Don't Be Cruel,\" and \"All Shook Up\" — without a license. The complaint seeks up to $41.1 million in statutory copyright damages, an order barring further training on the works, and deletion of any unauthorized copies, and alleges Anthropic stripped or altered songwriter and publisher credit information. Anthropic says it disputes the allegations and intends to defend itself in court. The suit follows Anthropic's $1.5 billion settlement over training on roughly 500,000 pirated books, and pending suits from Sony Music and Warner Chappell Music.",
+        why: "This is a fair-use fight in miniature: Anthropic's defense rests on training being a transformative use of existing text, while the plaintiffs argue that a model capable of reproducing a song's structure and hooks has crossed from learning into copying — and how courts eventually draw that line will shape what every AI lab can legally train on.",
+        sources: [
+          { label: "ABC News 4", url: "https://abcnews4.com/news/nation-world/elvis-presley-rights-holders-sue-anthropic-over-alleged-use-of-274-songs-to-train-ai-claude-models-superintelligence-cant-help-falling-in-love-all-shook-up-copyright-lyrics-pirated-books-lawsuit" }
+        ]
+      },
+      {
+        title:
+          "UK's competition watchdog opens a formal investigation into Meta's data terms for publishers",
+        body: "The UK Competition and Markets Authority announced on October 30, 2026 that it opened a formal investigation into whether Meta is abusing a dominant position by imposing exploitative commercial terms on publishers and advertisers — specifically, terms that could let Meta draw on publishers' website content to build its own products, including AI features, without businesses getting a real choice. Meta had planned to roll out revised terms on November 20; the CMA says that rollout is now on hold while the investigation proceeds. A Meta spokesperson said \"there are no grounds for a competition investigation\" and that the company has already committed not to change its terms without consulting publishers and other stakeholders. The probe follows publisher groups separately filing for interim measures with the European Commission and the CMA.",
+        why: "This is a different legal lever than the copyright lawsuits AI companies usually face: \"abuse of dominance\" doesn't ask whether Meta is allowed to use publisher content at all, it asks whether Meta's market power lets it set one-sided terms publishers have no real ability to refuse — a test that applies to contract terms generally, not just AI.",
+        sources: [
+          { label: "ITV News", url: "https://www.itv.com/news/2026-10-30/competition-watchdog-to-investigate-meta-terms-for-publishers-and-businesses" },
+          { label: "Euronews", url: "https://www.euronews.com/2026/10/30/uk-probes-meta-over-exploitative-new-terms-for-media-as-global-pushback-mounts" }
+        ]
+      },
+      {
+        title:
+          "Anthropic renames its Claude Max plans and removes Ultra's five-hour usage limit for verified accounts",
+        body: "Starting October 30, 2026, Anthropic renamed its top two subscription tiers: Max 5x became simply \"Max\" (~$100/month), and Max 20x became \"Ultra\" (~$200/month). Alongside the rename, Ultra subscribers with verified accounts no longer face a rolling five-hour usage cap within a session — only the weekly limit (10x Pro) now applies — while the Max plan keeps its five-hour session limit. The change is rolling out in stages from October 30, and newer Ultra subscribers keep a temporary session limit until their accounts are verified. Mike Overell, who leads product for Claude subscriptions, said the goal is to let heavy users keep working without being blocked mid-session.",
+        why: "Every \"usage limit\" an AI product imposes is really a stand-in for a scarcer resource underneath — in this case, shared GPU capacity — so watching how a lab adjusts those limits over time is a decent proxy for how it's weighing letting power users work uninterrupted against managing demand across everyone else on the system.",
+        sources: [
+          { label: "WindowsReport", url: "https://windowsreport.com/anthropic-renames-claude-max-5x-and-20x-plans-removes-ultras-5-hour-limit/" },
+          { label: "TechRadar", url: "https://www.techradar.com/ai-platforms-assistants/claude/claude-is-limiting-usage-more-aggressively-during-peak-hours-heres-what-changed" }
+        ]
+      },
+      {
+        title:
+          "Data-analytics startup Hex raises $100 million at a $1.2 billion valuation, rebuilding its platform for AI agents",
+        body: "Hex Technologies announced a $100 million Series D on October 27, 2026, at a $1.2 billion valuation, co-led by Peak XV Partners and 137 Ventures. Alongside the raise, Hex launched Hex 4.0, which the company describes as a from-scratch rewrite of its collaborative data-analytics platform built for what it calls the era of AI agents, currently in private beta. The company says the funding will go toward engineering and product hiring and global expansion. Hex's previous round was a $70 million Series C in May 2025, bringing its total funding to roughly $172 million.",
+        why: "It's one more example of a broader pattern worth tracking: software originally built for people to click through — in this case, a data-analytics dashboard — getting rewritten specifically so AI agents can operate it directly, which changes what counts as a good interface far more than it changes what the software actually does.",
+        sources: [
+          { label: "Cooley", url: "https://www.cooley.com/news/coverage/2026/2026-10-30-hex-raises-100-million-series-d-at-1-2b-valuation" },
+          { label: "DealStreetAsia", url: "https://dealstreetasia.com/stories/peak-xv-co-anchors-hex-funding-499490" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the election-chatbot accuracy study landing the day before the US midterms.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "Good mainstream-facing coverage of the Elvis Presley copyright suit against Anthropic and the UK's antitrust probe into Meta.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Useful for unpacking both the election-accuracy study and what Hex's agent-first rebuild signals about where AI tooling investment is headed.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on Anthropic's Claude Max/Ultra plan changes and what they reveal about managing usage limits at scale.",
+        url: "https://sub.thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Fair use",
+      definition:
+        "Fair use is a legal doctrine that allows limited use of copyrighted material without the owner's permission under certain conditions, such as commentary, criticism, or transformative reuse. AI companies argue that training a model on copyrighted text, lyrics, or images is a transformative use that creates something new; rights holders — like the plaintiffs in the Elvis Presley lawsuit against Anthropic — argue that a model able to reproduce a work's structure or distinctive phrasing has gone beyond learning into straightforward copying. Courts are still actively working out where that line falls.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Ask a chatbot (ChatGPT, Claude, Gemini, or Grok) a specific factual question about how, when, and where to vote in your own state for tomorrow's election — polling hours, ID requirements, or your polling location. Then check its answer against your state election official's website and note any difference, however small.",
+    learnLinks: [
+      { label: "How models are trained on data, and why copyright keeps coming up → How AI Models Work", href: "#/course/models" },
+      { label: "Antitrust, regulation, and the bodies already shaping AI → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI agents are reshaping software built for humans → AI Engineering", href: "#/course/engineering" }
+    ]
+  },
+  {
     date: "2026-11-01",
     displayDate: "Sunday, November 1, 2026 · Edition #90",
     headline:
