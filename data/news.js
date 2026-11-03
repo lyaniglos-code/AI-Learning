@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-03",
+    displayDate: "Tuesday, November 3, 2026 · Edition #92",
+    headline:
+      "Canadian news publishers sue Anthropic in an Ontario court over Claude's training data, Moonshot AI's trillion-parameter Kimi K3.1 Pro is set to open its weights tomorrow, Anthropic's IPO roadshow could open the week of November 9, and Apple's China-only AI features built on Alibaba's Qwen edge toward a public test",
+    summary:
+      "Today's edition is about the same AI buildout running into different rulebooks depending on where it operates. A coalition of Canadian newspapers sued Anthropic over training data in an Ontario court, while Apple's AI features for China only work at all because they run on a locally approved partner model instead of Apple's own. Meanwhile the money side of the industry kept moving: Anthropic's IPO is reportedly inching toward a roadshow, and a Chinese lab pushed another trillion-parameter model a step closer to being fully open.",
+    stories: [
+      {
+        title:
+          "Canadian news publishers — Postmedia, Torstar, The Globe and Mail, and The Canadian Press — sue Anthropic over Claude's training data",
+        body: "A coalition of major Canadian news organizations filed a copyright lawsuit against Anthropic and its Canadian subsidiary in the Ontario Superior Court of Justice, reported October 19, alleging Claude was trained on their articles — reaching back to 2021 — without permission. The claim alleges Anthropic breached the news outlets' terms of service and circumvented technological protection measures meant to block large-scale scraping, and argues the company was unjustly enriched as a result. The publishers are seeking statutory damages of up to $20,000 (Canadian) per work copied, across a claimed body of work running into the hundreds of thousands of articles. The suit follows a similar copyright action the same publishers brought against OpenAI, and Anthropic's own October 26 IPO filing lists pending copyright litigation among its disclosed business risks.",
+        why: "Fair use — the US legal defense AI labs lean on for training-data lawsuits — doesn't exist in the same form in Canadian law, which relies instead on a narrower 'fair dealing' exception; the same training run can face a stronger or weaker legal challenge purely because of which country's courts end up hearing the case.",
+        sources: [
+          { label: "CTV News", url: "https://ctvnews.ca/toronto/article/news-publishers-launch-copyright-suit-against-ai-company-anthropic-in-ontario" },
+          { label: "The Globe and Mail", url: "https://theglobeandmail.com/business/article-canadian-news-publishers-sue-anthropic-for-copyright-infringement/" }
+        ]
+      },
+      {
+        title:
+          "Moonshot AI launches Kimi K3.1 Pro through its API, with full open weights due tomorrow, November 4",
+        body: "Beijing-based Moonshot AI released Kimi K3.1 Pro on October 23 through Kimi.com, Kimi Work, Kimi Code, and its API — a mixture-of-experts model in the trillion-parameter class with a 1-million-token context window, plus a faster 'Highspeed' variant the company says runs two to three times quicker. Moonshot says it will publish the model's full weights by November 4, following the pattern of its earlier Kimi K3 release, whose weights followed its hosted launch by about eleven days in July. The company's own benchmark claims, including a reported 65.7% score on Terminal-Bench, come from Moonshot itself and haven't yet been independently verified.",
+        why: "There's a real gap between a model being 'available' and a model being 'open': a hosted API launch lets anyone use a model immediately, but only publishing the actual weight files lets outside researchers download, inspect, and run it themselves — which is why Moonshot's promised November 4 date, not the October 23 launch, is the one that actually matters for open-weight access.",
+        sources: [
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/moonshot-releases-kimi-k31-pro-api-open-weights-due-nov-4-786e160c" },
+          { label: "New Kerala", url: "https://www.newkerala.com/news/a/chinas-moonshot-ai-launches-kimi-k31-pro-plans-673.htm" }
+        ]
+      },
+      {
+        title:
+          "Anthropic's IPO roadshow could open as soon as the week of November 9, aiming to price before Thanksgiving",
+        body: "Bloomberg has reported that Anthropic could begin formal marketing for its IPO as soon as the week of November 9, which would put the company on track to begin trading before the US Thanksgiving holiday — a timeline that still depends on the SEC completing its review of the public S-1 Anthropic filed on October 26. The schedule has already shifted more than once: Reuters had earlier reported marketing starting in mid-October, and the Wall Street Journal reported in September that the timeline slipped past October specifically so Anthropic could include its third-quarter results in the filing. As of late October, analysts following the filing say no roadshow date has actually been confirmed by the company.",
+        why: "A 'roadshow' is the series of investor presentations a company runs in the days before an IPO prices, where underwriters gauge demand to help set the final share price — it's the step where a private company's self-estimated value first gets tested against what public investors are actually willing to pay.",
+        sources: [
+          { label: "Bloomberg Government", url: "https://news.bgov.com/banking-law/anthropic-said-to-target-mega-ipo-before-thanksgiving-holiday" },
+          { label: "Leverage Shares", url: "https://leverageshares.com/us/insights/when-is-the-anthropic-ipo/" }
+        ]
+      },
+      {
+        title:
+          "Apple's China-only AI features, built on a licensed version of Alibaba's Qwen, edge toward a public test",
+        body: "Speaking to reporters in Shanghai on October 15, Apple executive chairman Tim Cook confirmed that Apple Intelligence features for mainland China — which run on a locally hosted, licensed version of Alibaba's Qwen model rather than Apple's own foundation models — had cleared Chinese regulatory approval, with a test version expected by late October. Baidu is reportedly also working with Apple on separate China-specific AI features for Chinese users. China's Cyberspace Administration approved the arrangement in July; without it, Apple had been barred from shipping AI features in mainland China at all, since the country requires any public-facing generative AI service to pair with a domestically approved model.",
+        why: "This is 'AI sovereignty' showing up as a concrete product requirement rather than a policy abstraction: Apple can't simply ship the same AI features it sells everywhere else into China, because Chinese law requires a locally licensed model in the loop — a rule that's quietly shaping how every global AI product gets localized market by market.",
+        sources: [
+          { label: "South China Morning Post", url: "https://www.scmp.com/tech/big-tech/article/3298424/apples-ai-partnership-alibaba-excites-chinese-ios-developers-ahead-conference" },
+          { label: "EqualOcean", url: "https://equalocean.com/news/2026101622304-apple-intelligence-china-beta-due-later-october-alibabas-qwen-integration" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the Canadian publishers' lawsuit against Anthropic and the latest on its IPO roadshow timing.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's-eye view on Moonshot's Kimi K3.1 Pro release and what its promised open weights mean for builders.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for connecting the Canadian copyright suit against Anthropic to the broader pattern of training-data litigation worldwide.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A useful mainstream-facing frame for Apple's China AI strategy and what it reveals about building AI products under different national rules.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "IPO roadshow",
+      definition:
+        "An IPO roadshow is the series of presentations a company's executives and underwriters give to prospective investors in the days before shares begin trading, aimed at gauging demand and helping set the final offer price. It happens after a company's S-1 registration statement becomes public but before trading starts — which is the stage Anthropic is reportedly approaching, with Bloomberg reporting marketing could begin as soon as the week of November 9. A roadshow matters because it's the first time a private company's self-estimated value gets tested against what real investors are actually willing to pay for it.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pick a short news article and ask a chatbot (ChatGPT, Claude, Gemini, or Grok) to summarize it in two sentences. Then compare its wording closely against the original: does it paraphrase, or does it reuse distinctive phrases and sentence structure? That distinction — summarizing versus reproducing — is exactly what's being argued over in the Canadian publishers' lawsuit against Anthropic.",
+    learnLinks: [
+      { label: "How copyright, fair use, and training data collide → How AI Models Work", href: "#/course/models" },
+      { label: "How AI company valuations, funding, and IPOs actually work → The AI Industry", href: "#/course/industry" },
+      { label: "Open-weight models, licensing, and who gets to build on what → AI Engineering", href: "#/course/engineering" }
+    ]
+  },
+  {
     date: "2026-11-02",
     displayDate: "Monday, November 2, 2026 · Edition #91",
     headline:
