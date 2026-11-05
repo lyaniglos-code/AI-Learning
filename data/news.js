@@ -13,6 +13,97 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-05",
+    displayDate: "Thursday, November 5, 2026 · Edition #94",
+    headline:
+      "OpenAI acquires developer-tools startup Pierre Computer and ships a faster Images 2.6 model, OpenAI more than quadruples its bug-bounty rewards for security researchers, and an NBC News exit poll finds 76% of midterm voters oppose data centers in their own communities",
+    summary:
+      "Today's edition pairs two OpenAI product-and-security stories with one about where AI's physical footprint collides with voters. OpenAI picked up a small developer-tools startup to strengthen Codex, shipped a faster image-generation model, and quietly made it far more lucrative to report security flaws in its products. Meanwhile, the first exit poll from Tuesday's US midterms confirms what pre-election surveys had been showing all year: a strong majority of voters, across party lines, don't want an AI data center built near them.",
+    stories: [
+      {
+        title:
+          "OpenAI acquires developer-tools startup Pierre Computer Company to strengthen Codex",
+        body: "OpenAI said on November 4 that it will acquire Pierre Computer Company, Inc., the small startup behind Code Storage, an open-source tool for versioning and storing code artifacts, for an undisclosed amount. OpenAI says the acquisition is meant to fold Pierre's storage and versioning technology directly into Codex, its coding-agent product, rather than building the same capability from scratch in-house. Existing Code Storage customers can keep using the product after the deal closes, and OpenAI says Pierre's existing open-source projects will remain open rather than being shut down or relicensed. It's one of several small developer-tooling acquisitions AI labs have made this year as they compete to make coding agents handle larger, more complex codebases.",
+        why: "An acquisition like this is less about buying a competitor than buying a missing piece: Codex needed better code-storage and versioning infrastructure, and it was faster for OpenAI to acquire a team that had already built it than to build the same thing in-house from scratch.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/openai-to-acquire-pierre/" },
+          { label: "Techmeme (Axios)", url: "https://www.techmeme.com/261104/p21" }
+        ]
+      },
+      {
+        title:
+          "OpenAI ships Images 2.6, a faster image-generation model with GIF creation and more precise editing",
+        body: "OpenAI released Images 2.6 on November 4, an update to its image-generation model that the company says makes image generation 50% faster while adding GIF creation and more precise editing controls. The new model is rolling out across ChatGPT, Codex, and OpenAI's API, and OpenAI says it's available globally today on all ChatGPT subscription tiers, not limited to paid plans. It succeeds Images 2.5, the model OpenAI introduced in October to power ChatGPT's shopping virtual try-on feature. OpenAI did not publish independent benchmark comparisons for the speed and quality claims beyond its own announcement.",
+        why: "A '50% faster' claim like this one is really an infrastructure story more than a capability story — once a lab has a working image model, most follow-on releases are about serving it more cheaply and quickly rather than teaching it fundamentally new tricks.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/introducing-images-2-6" }
+        ]
+      },
+      {
+        title:
+          "OpenAI more than quadruples its bug-bounty rewards for security researchers",
+        body: "OpenAI announced on November 2 that it is more than quadrupling the midpoint of its bug-bounty reward ranges for medium, high, and critical security findings, saying a critical vulnerability found in a core product like ChatGPT, Codex, or the API Platform will now earn researchers up to $30,000. Exceptional, highly differentiated critical findings remain eligible for a separate top tier, which OpenAI raised to as much as $172,000 with bonuses included, up from $100,000 previously. The company says it will also pay the difference, retroactively, to researchers whose bounties over the prior 30 days would have earned more under the new reward ranges. OpenAI launched its public bug bounty program in 2024 and has raised its top payouts multiple times since.",
+        why: "Bug-bounty pricing is a direct, dollar-denominated signal of how seriously a company treats a category of risk — OpenAI paying more for the same categories of bugs is the company saying, in effect, that a flaw in ChatGPT or Codex is worth more to defend against than it was a year ago.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties/" }
+        ]
+      },
+      {
+        title:
+          "NBC News exit poll: 76% of midterm voters oppose data centers in their own communities",
+        body: "An NBC News exit poll conducted after Tuesday's US midterm elections found that 76% of voters said they opposed building data centers in their own communities, continuing a trend visible in pre-election surveys — an NBC News Decision Desk poll taken in late August found 69% opposed, with majorities opposed even among self-identified Republicans. Separate NBC polling this year found voters were nearly six times more likely to say they'd vote against a candidate who supports a local data center than to say they'd vote for one. Coverage from Axios and other outlets reported through the fall that Republican strategists had grown concerned the issue was becoming a liability specifically for GOP candidates, even as the Trump administration continued pushing for faster data center buildout.",
+        why: "Training and running today's AI models requires enormous physical infrastructure — land, power, water, and cooling — and that infrastructure has to be built somewhere; this poll is a reminder that AI progress isn't only a software story, it's also a story about who lives near the buildings that make it possible and whether they want them there.",
+        sources: [
+          { label: "NBC News", url: "https://www.nbcnews.com/politics/2026-election/exit-poll-trump-midterms-voters-economy-disapproval-rcna607045" },
+          { label: "NBC News", url: "https://www.nbcnews.com/politics/2026-election/trump-data-centers-voters-key-midterm-races-rcna594914" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on OpenAI's Pierre Computer acquisition and the Images 2.6 release.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on what OpenAI's bigger bug-bounty rewards signal about AI security economics.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing look at how AI data centers became a decisive issue in this week's US midterms.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup connecting OpenAI's product moves to the wider AI industry.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "bug bounty program",
+      definition:
+        "A bug bounty program is a standing offer a company makes to pay outside security researchers for privately reporting vulnerabilities before anyone else can exploit them, with payouts usually scaled to how severe and exploitable the flaw is. OpenAI's November 2 increase — up to $30,000 for a critical bug and up to $172,000 for an exceptional one — shows how AI companies treat vulnerability research as a cost worth paying up front, since a flaw found by a researcher and reported privately is far cheaper than the same flaw found and used by an attacker. Programs like this sit alongside internal security teams, not in place of them, as one layer in a broader defense.",
+      link: "#/course/engineering"
+    },
+    tryThis:
+      "Pick one story from today's edition and trace it back to its primary source — the company's own announcement, an official filing, or (for the midterms story) the poll's own methodology — instead of stopping at a news aggregator's summary. Note what the original source states directly versus what secondary coverage added, rounded, or guessed. That single habit, checking the primary source, is the best defense against both AI hype and AI doom headlines.",
+    learnLinks: [
+      { label: "How to read AI industry news like an analyst → The AI Industry", href: "#/course/industry" },
+      { label: "Security, evals, and what 'production-ready' AI actually requires → AI Engineering", href: "#/course/engineering" },
+      { label: "What's new in ChatGPT's image tools → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-04",
     displayDate: "Wednesday, November 4, 2026 · Edition #93",
     headline:
