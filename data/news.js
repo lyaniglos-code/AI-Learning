@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-06",
+    displayDate: "Friday, November 6, 2026 · Edition #95",
+    headline:
+      "Google, Microsoft, Anthropic, and OpenAI back a new standard letting websites block all AI crawlers with one robots.txt line, Wall Street banks and Blackstone line up a $63 billion vehicle to lease Broadcom chips to Anthropic, a one-year pause on a US chip-export loophole rule is set to expire in days, and the EU's long-delayed AI Act timeline still isn't finalized",
+    summary:
+      "Today's edition is about the infrastructure and rules underneath the AI industry rather than new models. Four of the biggest AI companies agreed to simplify how any website can opt out of AI crawling entirely, while a separate, much larger deal shows how Anthropic is financing the chips it needs without that spending showing up as its own debt. Meanwhile two regulatory clocks — one American, one European — are both running out, or already have, with outcomes that are still genuinely unresolved.",
+    stories: [
+      {
+        title:
+          "Google, Microsoft, Anthropic, and OpenAI back a new standard letting any website block all AI crawlers with a single robots.txt line",
+        body: "The four companies announced on October 30 that they plan to support an upcoming addition to the Robots Exclusion Protocol — the decades-old standard behind robots.txt files — specifically built for AI crawling. Today, a publisher that wants to keep every AI company's bot off its site has to add a separate disallow rule for each one individually (OpenAI's GPTBot, Anthropic's ClaudeBot, Google-Extended, and so on), and has to remember to add the next one as new crawlers appear. The new standard aims to let a site owner block AI crawling generally with one directive instead. Reporting on the announcement says OpenAI and Microsoft plan to add support in the coming months, while Google says it won't implement its side until sometime next year; Meta has endorsed the idea without committing to a timeline of its own.",
+        why: "robots.txt has always been voluntary — a site can post a rule, but nothing forces a crawler to obey it — so this doesn't create any new enforcement power. What it does is lower the cost of opting out, which matters because a rule that's annoying to maintain is a rule more publishers skip entirely.",
+        sources: [
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/10/30/google-anthropic-and-others-to-support-new-ai-crawling-opt-out-standard/" },
+          { label: "Anthropic Support", url: "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-content-from-the-web-and-how-can-site-owners-block-the-crawler" }
+        ]
+      },
+      {
+        title:
+          "Wall Street banks and Blackstone line up a $63 billion vehicle to lease Broadcom AI chips to Anthropic",
+        body: "Bank of America, Citi, Morgan Stanley, and Blackstone announced on October 26 that they're financing a roughly $63 billion special purpose vehicle (SPV) — a separate legal entity set up just for this deal — that will buy Broadcom AI chips and networking gear and then lease that hardware to Anthropic, with deliveries expected to begin in 2027. The three banks are arranging the larger, senior ('first-lien') portion of the debt, with Blackstone committing to the smaller, riskier ('second-lien') portion, and Broadcom itself is offering lenders some form of 'residual value support' — effectively a guarantee — on the hardware's resale value if the arrangement falls through. None of the companies disclosed the individual hardware prices or what Anthropic will actually pay to lease the chips. It builds on an earlier, smaller arrangement in which Apollo and Blackstone agreed to help finance a $35 billion expansion of Anthropic's Broadcom-supplied compute capacity.",
+        why: "Financing chips through a separate entity that leases them back, instead of Anthropic simply buying the hardware outright, keeps that debt off Anthropic's own balance sheet — which matters a lot for a company that just filed to go public, since investors reading its books won't see this liability listed as Anthropic's directly, even though the company is still on the hook to pay for the hardware over time through lease payments.",
+        sources: [
+          { label: "Khaleej Times (Reuters)", url: "https://www.khaleejtimes.com/business/wall-street-banks-blackstone-line-up-63-billion-to-finance-broadcom-ai-chips-for-anthropic" },
+          { label: "AI Weekly", url: "https://aiweekly.co/alerts/broadcom-lines-up-63b-bank-and-blackstone-spv-to-lease-ai-chips-to-anthropic" }
+        ]
+      },
+      {
+        title:
+          "A one-year pause on a US chip-export loophole rule is due to expire November 10, with no public word yet on what replaces it",
+        body: "In November 2025, the US Bureau of Industry and Security (BIS) suspended enforcement of its so-called 'Affiliates Rule' for one year — a rule that would have automatically extended export restrictions to the foreign affiliates of companies already on the US entity list, which BIS paused partly over concerns it was too broad. That one-year suspension is set to lapse on November 10, 2026, just days from now, and as of the most recent reporting BIS had not publicly said whether it will let the rule snap back, extend the pause again, or replace it with something narrower. Separately, in May, BIS already moved to close a related gap by applying existing license requirements directly to overseas subsidiaries of Chinese-headquartered firms, after reporting found that gap may have let large volumes of advanced Nvidia and AMD chips reach China-linked buyers through foreign data centers.",
+        why: "Export controls on AI chips only work if they cover where the chips actually end up running, not just who originally bought them — which is why so much of this policy fight is really about foreign affiliates, offshore data centers, and leasing arrangements rather than the chip sales themselves.",
+        sources: [
+          { label: "Investing.com", url: "https://investinglive.com/stock-market-update/us-commerce-department-moves-to-block-nvidia-and-amd-chip-flows-to-chinese-overseas-units-20260531/" },
+          { label: "Tom's Hardware", url: "https://www.tomshardware.com/tech-industry/new-commerce-department-ai-export-rules-could-be-seismic-change-for-csps-and-data-center-operators-buying-american-gpus-at-scale-means-committing-to-building-american-infrastructure" }
+        ]
+      },
+      {
+        title:
+          "Where the EU's AI Act delay actually stands: a deal in principle, but still not formally finalized",
+        body: "The EU's 'Digital Omnibus on AI' — a package meant to simplify and partly delay the AI Act's rollout — has been moving through Brussels for most of 2026: European Parliament committees backed a draft position in March, the full Parliament endorsed a negotiating mandate shortly after, and Parliament and Council negotiators reached a provisional trilogue agreement in early May. The core change under that agreement would push back compliance deadlines for the Act's 'high-risk' AI systems from August 2026 to December 2027, while leaving the Act's outright bans — including a new one targeting AI 'nudifying' apps — in place or expanded. Law-firm tracking of the file as of this fall describes the formal adoption step, which both Parliament and the Council still have to complete before the delay is legally binding, as stalled rather than finished.",
+        why: "A 'provisional agreement' between negotiators isn't the same thing as a law — it's closer to a handshake deal that still has to survive a formal vote on both sides, which is exactly the gap a company trying to plan its EU compliance timeline around this delay has had to sit with for months.",
+        sources: [
+          { label: "CADE Project", url: "https://cadeproject.org/?p=152564" },
+          { label: "National Law Review", url: "https://natlawreview.com/article/eu-ai-act-update-omnibus-talks-stall-clock-still-ticking" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the new AI-crawler opt-out standard and the Broadcom-Anthropic chip financing deal.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on what SPV-financed chip leasing means for how AI labs are actually paying for compute.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for connecting the new robots.txt crawling standard to the broader fight over AI training data and consent.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for the export-control and EU AI Act deadlines both running out this month.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "special purpose vehicle (SPV)",
+      definition:
+        "A special purpose vehicle is a separate legal entity created to hold the assets and debt for one specific deal, keeping that financial exposure off the parent company's own balance sheet. The $63 billion Broadcom-Anthropic chip deal works this way: the SPV, not Anthropic itself, technically owns the chips and owes the debt used to buy them, while Anthropic pays to lease the hardware over time. It's a common structure for financing expensive, long-lived assets like data centers and chip fleets, and it's becoming one of the main ways AI labs are funding compute buildouts without that debt appearing directly on their own books.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Open any website you use often and type its address followed by '/robots.txt' (for example, wikipedia.org/robots.txt) directly into your browser. Look for lines mentioning GPTBot, ClaudeBot, Google-Extended, or CCBot — those are AI crawlers, and whether a site disallows them is that site's current, individually-maintained version of the opt-out the new standard in today's top story is trying to simplify.",
+    learnLinks: [
+      { label: "How AI company financing, SPVs, and compute deals actually work → The AI Industry", href: "#/course/industry" },
+      { label: "How training data gets collected, and how consent and opt-outs work → How AI Models Work", href: "#/course/models" },
+      { label: "Export controls, chip policy, and AI regulation around the world → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-11-05",
     displayDate: "Thursday, November 5, 2026 · Edition #94",
     headline:
