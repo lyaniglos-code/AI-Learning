@@ -13,6 +13,98 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-07",
+    displayDate: "Saturday, November 7, 2026 · Edition #96",
+    headline:
+      "OpenAI reportedly closes a funding round near $11 billion — well under its $30 billion target — Anthropic's IPO clock keeps ticking toward a mid-to-late-November Nasdaq debut with no price set, Google locks in a $4 billion Wyoming fuel-cell deal to power a new data-center campus, and Meta delays a scraping-related terms change to November 20 under publisher pressure",
+    summary:
+      "Today's edition is a check-in on four stories that have been developing over the past couple of weeks rather than one single breaking event. Money and power — literally, in Google's case — are the throughlines: how AI labs are actually being funded, how data centers are actually being powered, and how platforms are negotiating what they're allowed to do with the web's data in the meantime.",
+    stories: [
+      {
+        title:
+          "OpenAI reportedly raises about $11 billion in a new funding round, well short of its $30 billion target and at a lower valuation than it wanted",
+        body: "Bloomberg reported on November 6, citing people familiar with the matter, that OpenAI has secured roughly $11 billion in commitments for its latest funding round — less than half of the $30 billion the company had originally been seeking. The reported deal would value OpenAI at about $1.25 trillion, below the roughly $1.4 trillion valuation OpenAI and its bankers had been pushing for earlier in the process. Some of the large investors OpenAI approached reportedly showed only tepid interest. Neither OpenAI nor the investors involved have confirmed the figures publicly, and the round has not been reported as formally closed.",
+        why: "A funding round that comes in smaller and at a lower price than a company wanted is worth reading literally: even the most capitalized AI lab in the industry isn't able to simply name its price with investors right now, which says something about how stretched the market for AI-lab funding has gotten.",
+        sources: [
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/11/06/openai-reportedly-raises-11b-in-new-funding-at-1-25t-valuation" }
+        ]
+      },
+      {
+        title:
+          "Anthropic's IPO clock keeps ticking: the S-1 is public, but Wall Street still doesn't know the price or the exact date",
+        body: "Anthropic filed its public S-1 registration statement with the SEC on October 26, proposing to list Class A shares on the Nasdaq under the ticker 'ANT.' The filing shows revenue of about $16.3 billion for the first half of 2026, up sharply from roughly $1.2 billion in the same period of 2025, alongside a net loss of about $80.7 billion for the same six months. Multiple outlets covering the filing note that figure is driven mostly by non-cash accounting charges tied to the rising fair value of Anthropic's outstanding convertible notes and SAFEs as the company's valuation has climbed, not by cash actually spent running the business. As of this week, Anthropic has not set a price range, final share count, or confirmed trading date; Reuters and other outlets have reported a debut sometime in the window between the November 3 US midterm elections and Thanksgiving on November 26, but the company itself hasn't confirmed a date.",
+        why: "A company's accounting 'net loss' and its actual cash burn can be very different numbers — Anthropic's S-1 is a clean example of how a headline like 'eighty-billion-dollar loss' can mostly reflect how convertible securities are required to be marked on paper as a company's valuation rises, not money going out the door.",
+        sources: [
+          { label: "IPOScoop", url: "https://www.iposcoop.com/the-ipo-buzz-anthropic-ant-proposed-files-its-s-1/" },
+          { label: "Guru3D", url: "https://www.guru3d.com/story/anthropic-ipo-filing-shows-billion-first-half-accounting-loss/" }
+        ]
+      },
+      {
+        title:
+          "AEP signs a 20-year deal to build a $4 billion, 702-megawatt fuel-cell plant in Wyoming to power a Google data-center campus",
+        body: "American Electric Power announced on October 14 that it plans to invest about $4 billion to build a 702-megawatt fuel-cell power plant near Cheyenne, Wyoming, using Bloom Energy technology, with Google signing a 20-year power purchase agreement (PPA) to buy the plant's output. The plant will be owned mostly by AEP, with about 8% held by funds advised by Basalt Infrastructure Partners, and is meant to help power Google's roughly $17 billion 'Project Tembo' data-center campus being developed nearby with Tallgrass Integrated Logistics Solutions. Construction is planned to begin in 2026, with the plant expected to be fully operational by the end of 2028. Google has said the fuel cells will eventually be paired with carbon capture and storage, though neither company has disclosed the pricing terms of the power agreement itself.",
+        why: "Data centers now routinely need so much dedicated electricity that tech companies are financing purpose-built power plants rather than simply drawing more from the existing grid — fuel cells paired with carbon capture is one of several approaches labs and utilities are trying so AI's growing electricity demand doesn't just mean more fossil-fuel plants running longer.",
+        sources: [
+          { label: "Data Center Dynamics", url: "https://datacenterdynamics.com/en/news/google-signs-20-year-ppa-with-aep-for-702mw-wyoming-fuel-cell-project" },
+          { label: "ESG Today", url: "https://www.esgtoday.com/?p=26319" }
+        ]
+      },
+      {
+        title:
+          "Meta delays a controversial terms-of-service change that critics say would let it scrape far more of the web, pushing the effective date to November 20",
+        body: "Meta had planned to roll out new commercial terms for Facebook, Instagram, WhatsApp, and Threads business accounts on October 30 that critics — including news publishers and some lawmakers — warned would let Meta broadly scrape content from websites merely 'associated with' those business accounts. Facing pressure from the global news industry, a lawsuit from a coalition of Norwegian publishers seeking to block the terms in Oslo District Court, and public criticism from US Senator Adam Schiff, Meta pushed the effective date back to November 20. Meta says the update is actually about ad-targeting data rather than AI training, and it removed references to AI training from the terms' language last month, though critics note the terms still don't explicitly commit to honoring robots.txt opt-outs. The UK's Competition and Markets Authority confirmed the pause in its own public statement.",
+        why: "This is a different lever from the AI-crawler opt-out standard covered in a recent edition: that one is about bots crawling public web pages, while this is about what a platform's own terms of service let it do with data tied to a business's social-media presence — two separate fights over the same underlying question of what counts as fair game for data collection.",
+        sources: [
+          { label: "Nieman Lab", url: "https://www.niemanlab.org/2026/10/meta-delays-rollout-of-terms-that-would-allow-broad-scraping-of-news-sites-legal-experts-are-still-skeptical/" },
+          { label: "Editor & Publisher", url: "https://www.editorandpublisher.com/stories/meta-quietly-delays-controversial-update-that-critics-say-will-allow-website-scraping,264148" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the OpenAI funding round and where Anthropic's IPO timeline actually stands.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on what a smaller-than-expected OpenAI round signals about investor appetite for frontier-lab funding.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for the Anthropic IPO and Meta's scraping-terms fight with publishers.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for connecting Google's fuel-cell power deal to the broader story of AI's rising electricity demand.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "power purchase agreement (PPA)",
+      definition:
+        "A power purchase agreement is a long-term contract where a buyer agrees to purchase electricity from a specific power plant at agreed terms, often for 15-20 years. Google's deal with AEP for the Wyoming fuel-cell plant is one: Google doesn't own the plant, but it has committed to buying its output for two decades, which is what lets AEP justify financing and building $4 billion of new generation capacity in the first place. PPAs like this one are becoming one of the main ways AI companies lock in the electricity their data centers need without building and operating power plants themselves.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Search 'Anthropic S-1 net loss explained' and read one or two articles on it, then try to explain in a sentence or two why a company can report an $80 billion accounting loss while also being on track for one of the largest IPOs in history. The gap between that number and the company's actual cash position is the whole story.",
+    learnLinks: [
+      { label: "How AI company financing, valuations, and IPOs actually work → The AI Industry", href: "#/course/industry" },
+      { label: "How data gets collected from the web, and how consent and opt-outs work → How AI Models Work", href: "#/course/models" },
+      { label: "AI regulation, platform policy, and data-practice fights around the world → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-11-06",
     displayDate: "Friday, November 6, 2026 · Edition #95",
     headline:
