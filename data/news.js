@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-08",
+    displayDate: "Sunday, November 8, 2026 · Edition #97",
+    headline:
+      "OpenAI ships GPT-6 Cyber, its first model rated 'Critical' for offensive cyber capability, and separately launches a program letting data centers power down during grid strain, the UK's cyber agency warns an AI-powered ransomware attack on critical infrastructure is 'highly likely' by 2028, and Meta acquires multi-agent coding startup Conductor",
+    summary:
+      "Today's stories cluster around two quieter but consequential threads: how frontier labs are gating and classifying the riskiest cyber capabilities their own models now have, and how the AI buildout keeps running into limits outside the model itself — the power grid on one side, a crowded field of competing coding-agent tools on the other.",
+    stories: [
+      {
+        title:
+          "OpenAI releases GPT-6 Cyber, rating it 'Critical' — the top cyber-risk tier in its own safety framework — and restricts access to vetted partners",
+        body: "OpenAI released GPT-6 Cyber on November 5, a cybersecurity-specialized variant of its GPT-6 Astra model, and classified it as 'Critical' under its Preparedness Framework — the same top tier Astra itself reached when it launched in September, and a step up from the 'High' rating given to the prior GPT-5.6-Cyber. Access is restricted to vetted partners inside Daybreak Red, the tier of OpenAI's partner program built for authorized offensive security work like penetration testing and red-teaming. On OpenAI's own ExploitGym evaluation, the new model scored 48.5%, up from 32.1% for GPT-5.6-Cyber, and an early research run against Firefox surfaced 81 previously unknown vulnerabilities that Mozilla rated high severity. OpenAI also reported that, with deployment safety instructions applied, the model's rate of going outside its assigned test boundary dropped to effectively zero in testing, down from 5.51% for its predecessor.",
+        why: "'Critical' isn't marketing language — it's the specific trigger point in OpenAI's safety framework where a model's offensive cyber skill is judged capable enough that it can't just ship broadly; it has to live behind an application process, monitoring, and restricted access instead.",
+        sources: [
+          { label: "SiliconANGLE", url: "https://siliconangle.com/?p=853283" },
+          { label: "The Model Wire", url: "https://themodelwire.com/article/openais-gpt-6-astra-reaches-critical-cybersecurity-capability-tier-01M1MGH2HDND1VEB30AHVTW7YP" }
+        ]
+      },
+      {
+        title:
+          "UK's National Cyber Security Centre judges an AI-powered ransomware attack on critical infrastructure 'highly likely' by 2028",
+        body: "In its State of the Cyber Nation report published November 3, the UK's National Cyber Security Centre judged that an AI-powered ransomware attack on UK critical national infrastructure is 'highly likely' by 2028. NCSC chief executive Richard Horne argued AI will mainly let attackers exploit long-neglected security flaws at greater scale rather than necessarily discover novel ones, saying such vulnerabilities 'have been tolerated for far too long.' The report cites a December 2025 attack on Poland's energy grid — attributed by the UK and EU to Russia's FSB — that the NCSC says could have cut power to roughly 500,000 people had it succeeded. Alongside the report, the UK government announced new funding including £60 million for a national 'Cyber Shield' initiative and £70 million for a vulnerability research centre. The report was carried by the Associated Press and syndicated across dozens of US local outlets alongside UK and cybersecurity trade press.",
+        why: "This is a national cybersecurity agency naming AI, specifically, as a force-multiplier for attacks on physical infrastructure like power grids and hospitals — a concrete, dated example of the 'dual-use' AI risk that policy discussions usually describe only in the abstract.",
+        sources: [
+          { label: "Decrypt", url: "https://decrypt.co/382411/uk-says-ai-powered-ransomware-attack-on-critical-infrastructure-highly-likely-by-2028" },
+          { label: "Infosecurity Magazine", url: "https://infosecurity-magazine.com/news/ncsc-ai-ransomware-threat-uk-cni" }
+        ]
+      },
+      {
+        title:
+          "OpenAI launches 'Grid Protectors,' a program letting future data centers power down when the local electricity grid is under strain",
+        body: "OpenAI launched its Grid Protectors Program on November 2 — a non-binding national initiative under which future OpenAI data-center campuses would agree to cut their electricity use during periods of grid strain rather than running at full power regardless of conditions. The pilot site is OpenAI's planned 3.2-gigawatt campus in Effingham County, Georgia, where a 25-year agreement approved in August lets utility Georgia Power cut up to 1,000 megawatts of the site's demand at peak times — a flexibility level OpenAI compares to the average electricity demand of roughly 700,000 households. Terms will vary by site and are still being negotiated elsewhere; some campuses may also draw on on-site generators or batteries during a grid event. OpenAI said the move responds to local pushback over rising power bills near planned data centers, stating 'families and small businesses should not be asked to subsidize a compute campus's electricity needs.' Critics note the program is non-binding and that OpenAI's 1,000-megawatt figure hasn't been independently verified in practice.",
+        why: "This is the flip side of the power purchase agreement explained in yesterday's edition: instead of just buying guaranteed electricity, a data-center operator here is promising to use less of it, temporarily, when the grid needs that capacity somewhere else — a cheaper hedge than building new power plants, if it actually holds up under real strain.",
+        sources: [
+          { label: "Data Center Dynamics", url: "https://www.datacenterdynamics.com/en/news/openai-launches-grid-protectors-program-to-reduce-data-center-electricity-demand-when-the-us-grid-is-under-strain-openai-has-launched-a-plan-to-reduce-the-impact-of-its-data-centers-on-the-us-grid-the-non-binding-grid-protectors-program-aims-to-re/" },
+          { label: "Tom's Hardware", url: "https://tomshardware.com/tech-industry/data-centers/openai-introduces-program-to-reduce-ai-data-center-energy-demand-during-peak-hours-company-testing-grid-protectors-program-system-in-georgia" }
+        ]
+      },
+      {
+        title:
+          "Meta acquires Conductor, a startup that runs multiple AI coding agents in parallel on the same codebase",
+        body: "Meta acquired Conductor, a startup whose software lets developers hand tasks to several AI coding agents working in separate copies of a codebase at once, then review and merge the results, Axios and other outlets reported November 4. Conductor supported agents from multiple AI companies — including Anthropic, OpenAI, Cursor, and OpenCode — rather than being tied to one model provider. Financial terms weren't disclosed. The deal follows Meta's own August launch of a coding agent, Muse Code, and Axios reports Meta expects Conductor's small team to speed up how quickly it ships its own coding tools. Conductor's existing local app keeps getting updates until early 2027, when it winds down; its cloud service shuts down November 20, after which existing customer data will be deleted. The same day, OpenAI announced its own small developer-tools acquisition, a company called Pierre Computer.",
+        why: "Multi-agent coding — running several AI agents in parallel on the same codebase instead of one at a time — is turning into its own competitive category, and the fact that Meta bought a tool built to orchestrate competitors' models, not just its own, is a sign that even Meta doesn't expect one company's coding agent to simply win outright.",
+        sources: [
+          { label: "Axios", url: "https://axios.com/2026/11/04/meta-acquires-ai-coding-startup-conductor" },
+          { label: "InfoWorld", url: "https://www.infoworld.com/article/4245065/meta-acquires-conductor-as-ai-coding-shifts-toward-multi-agent-development.html" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on OpenAI's Critical-rated cyber model and its new grid-flexibility program.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on what 'Critical' cyber-capability ratings mean for how frontier models get gated and shipped.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for connecting the NCSC's infrastructure-ransomware warning to the broader AI-safety policy conversation.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for Meta's coding-agent acquisition and the broader AI-coding-tools land grab.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Preparedness Framework",
+      definition:
+        "A Preparedness Framework is a lab's internal system for tracking how capable its models are becoming in specific high-risk areas — like cybersecurity, biological weapons knowledge, or persuasion — and tying real deployment decisions to those capability levels. OpenAI's version uses tiers like 'Low,' 'Medium,' 'High,' and 'Critical'; crossing into 'Critical' for a given risk category is what triggered the restricted, application-only access for GPT-6 Cyber in today's top story. Anthropic and Google DeepMind each run their own versions of the same basic idea under different names (Anthropic's is the Responsible Scaling Policy). None of these frameworks are legally binding — they're voluntary commitments a lab makes to itself — which is exactly why outside scrutiny of how they're applied matters.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Search 'OpenAI Preparedness Framework' and find the page describing what 'Critical' means for the cyber-capability category specifically. Then write one sentence explaining, in your own words, the difference between a model that's merely good at writing code and one whose capability has crossed into a tier that changes how — and to whom — it can be shipped.",
+    learnLinks: [
+      { label: "How AI safety frameworks, capability tiers, and dual-use risk work → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "What agentic coding tools like Conductor and Claude Code actually do → Building with AI", href: "#/course/engineering" },
+      { label: "How AI companies finance data centers and strike power deals → The AI Industry", href: "#/course/industry" }
+    ]
+  },
+  {
     date: "2026-11-07",
     displayDate: "Saturday, November 7, 2026 · Edition #96",
     headline:
