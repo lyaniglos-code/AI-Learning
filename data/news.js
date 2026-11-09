@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-09",
+    displayDate: "Monday, November 9, 2026 · Edition #98",
+    headline:
+      "Anthropic's amended IPO filing shows $17 billion in Q3 revenue against $895 billion in compute commitments, SemiAnalysis's new GDPx benchmark finds the best frontier model completes just 12% of real economically valuable tasks, xAI starts watermarking Grok API text by default for EU compliance, and Shield AI buys radar maker Echodyne for $5.3 billion",
+    summary:
+      "Today's edition is about the gap between how AI companies talk about scale and what a closer look at the actual numbers shows. Anthropic's updated IPO paperwork puts real figures — and real near-term bills — behind the compute buildout everyone keeps citing, while a tough new benchmark suggests frontier models are far less capable at real economic work than the headlines about them imply. Meanwhile, a defense-AI acquisition and a quiet default-on watermarking rollout both show regulation and consolidation reshaping the industry from the edges.",
+    stories: [
+      {
+        title:
+          "Anthropic's amended IPO filing discloses $17 billion in Q3 revenue and $895.4 billion in compute purchase commitments, still with no price set",
+        body: "Anthropic filed an amendment to its S-1 registration statement with the SEC on November 2, rolling its financials forward to include the third quarter and disclosing third-quarter revenue of about $16.96 billion — up roughly twelvefold from about $1.38 billion a year earlier. The company swung from $974 million in operating income in the second quarter to a $567 million operating loss in the third, which filings attribute mainly to about $5 billion of short-term compute purchases. The amendment also details roughly $895.4 billion in total purchase commitments and lease agreements for compute and infrastructure, including named minimums of at least $44.9 billion to Microsoft, about $121.3 billion to Google, and $110.0 billion to Amazon — though only about $69.8 billion of the total is due within the next 12 months. The filing still doesn't state a share count, price range, or valuation; Anthropic intends to list Class A shares on the Nasdaq Global Select Market under the ticker ANT, with pricing reportedly expected around mid-November.",
+        why: "Compute 'commitments' aren't money a company has spent — they're contractual promises to buy capacity over years, often through the early 2030s — so a headline figure like $895 billion means something very different from $69.8 billion actually due within a year; an IPO filing is one of the only places a private AI lab has to spell out that difference under legal scrutiny.",
+        sources: [
+          { label: "Unite.AI", url: "https://www.unite.ai/anthropic-details-long-term-compute-commitments-in-amended-ipo-filing/" },
+          { label: "Digg", url: "https://digg.com/world-business/3oywdzqv" }
+        ]
+      },
+      {
+        title:
+          "SemiAnalysis launches GDPx, a tougher agentic benchmark across 11 economic domains — the best frontier model completes about 12% of its tasks",
+        body: "SemiAnalysis released GDPx on November 2, a benchmark built with 14 partner organizations covering 206 tasks across 11 professional domains — including chip design, cybersecurity, biology, finance, legal work, quantitative trading, hardware design, materials science, AI alignment, and software engineering — each with a default eight-hour time limit meant to resemble real, economically valuable work rather than tidy exam questions. The top-scoring model, reported as Claude Opus 5.5, completed only about 12% of tasks under strict binary grading. Finance and legal tasks were hard enough that every model scored zero under that strict grading, so SemiAnalysis also publishes partial-credit scores for those two domains. The firm frames GDPx as a successor to OpenAI's GDPval (released September 2025), arguing that benchmark too cleanly scoped its tasks, and says it plans to refresh GDPx every three to six months as models improve.",
+        why: "A benchmark score only means what its task design lets it mean — GDPx is a deliberate attempt to resist 'benchmark saturation,' where models ace a test because its tasks are narrow and well-specified, by using harder, messier tasks closer to what a human professional actually does in a given field.",
+        sources: [
+          { label: "SemiAnalysis", url: "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities" },
+          { label: "AI Weekly", url: "https://aiweekly.co/alerts/semianalysis-launches-gdpx-best-frontier-model-hits-12" }
+        ]
+      },
+      {
+        title:
+          "xAI starts applying invisible watermarks to Grok API text by default, aligning with EU AI Act transparency rules",
+        body: "xAI's developer documentation confirms that, starting November 7, responses from the Grok API now carry an invisible text watermark by default across every text-generation endpoint — the main api.x.ai endpoint, the Responses API, and the Chat Completions API — spanning its current model lineup including grok-4.7, grok-4.6, grok-4.5, and grok-4.3. A response's x-watermark header indicates whether that particular reply was watermarked, and team administrators can opt out on a per-model basis through the xAI Console rather than being forced to disable it account-wide. Coverage ties the move to EU AI Act transparency obligations, the same category of rule that led OpenAI to begin watermarking ChatGPT and Codex text for EU users in early October.",
+        why: "This is a concrete instance of an 'AI transparency obligation' — a legal requirement that a system disclose its own AI-generated output — moving from policy language into an actual default switch flipped inside a live API, the same pattern now playing out across multiple labs as the EU AI Act's rules take effect.",
+        sources: [
+          { label: "xAI Developer Docs", url: "https://docs.x.ai/developers/advanced-api-usage/watermarking" },
+          { label: "CryptoBriefing", url: "https://cryptobriefing.com/xai-grok-text-watermarking-api/" }
+        ]
+      },
+      {
+        title:
+          "Shield AI agrees to buy radar maker Echodyne for $5.3 billion, raising $2.5 billion at a $28.8 billion valuation to help fund it",
+        body: "Defense-AI company Shield AI announced on November 5 that it will acquire Echodyne, a maker of software-defined radar for counter-drone systems, for $5.3 billion — $4.8 billion paid at closing plus up to $500 million more contingent on Echodyne hitting performance targets. To help fund the deal, Shield AI is raising $2.5 billion: a $1 billion Series H priced at a $28.8 billion post-money valuation (roughly double the $12.7 billion valuation it carried after a round in March), another $1 billion in structured equity from Blackstone-managed funds, and $500 million in debt led by JPMorgan Chase. Both the acquisition and the new financing are scheduled to close in early 2027, with the financing contingent on the deal completing. Shield AI says Echodyne's radar technology will fold into its existing Mission Systems autonomy stack.",
+        why: "This is defense-AI consolidation in miniature: an autonomy company buying a sensor company to vertically integrate its stack, financed partly through structured private-equity debt rather than straight cash — a financing pattern that's become common across the AI-infrastructure buildout generally, not just in defense.",
+        sources: [
+          { label: "The Next Web", url: "https://thenextweb.com/news/shield-ai-echodyne-5-3b-acquisition-28-8b-valuation" },
+          { label: "AI Weekly", url: "https://aiweekly.co/alerts/shield-ai-to-buy-radar-maker-echodyne-for-53b-hits-288b" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Anthropic's amended IPO numbers and what GDPx's 12% completion rate actually says about frontier-model capability.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's view on why GDPx's harder, real-world task design matters more than the headline percentage score.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for connecting Shield AI's Echodyne acquisition to the broader pattern of AI-infrastructure consolidation and financing.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for Anthropic's IPO run-up and the wider pattern of AI products defaulting to watermarking under new regulation.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Purchase commitment",
+      definition:
+        "A purchase commitment is a company's contractual promise to buy a fixed amount of something — compute capacity, chips, power — over a period of years, not money it has already spent. Anthropic's amended IPO filing disclosed about $895.4 billion of these commitments to cloud and chip suppliers, a number that sounds like current spending but mostly represents obligations stretching out through the early 2030s; the filing itself shows only about $69.8 billion of that total falls due within the next 12 months. Treating a 'commitment' figure as if it were cash already spent is one of the most common ways AI infrastructure numbers get overstated in headlines.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Look up SemiAnalysis's GDPx leaderboard (linked in today's benchmark story) and compare the leading model's score on a domain you know something about — like software engineering or legal work — against its score on a domain like finance or recursive self-improvement. Write one sentence on what a sub-15% completion rate tells you that a 90%+ score on a traditional multiple-choice benchmark would not.",
+    learnLinks: [
+      { label: "How to read an AI company's valuation, revenue, and compute commitments without being misled by the biggest number → The AI Industry", href: "#/course/industry" },
+      { label: "Why benchmark task design matters as much as the score itself → How AI Models Work", href: "#/course/models" },
+      { label: "Keeping up with API-level changes like default watermarking → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-08",
     displayDate: "Sunday, November 8, 2026 · Edition #97",
     headline:
