@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-10",
+    displayDate: "Tuesday, November 10, 2026 · Edition #99",
+    headline:
+      "Anthropic's IPO roadshow reportedly opens amid investor doubt it can price in November, OpenAI says ChatGPT now handles roughly a fifth of Google's search volume, Meta pauses a scraping-adjacent business-terms update after a global regulatory backlash, and AI-inference startup fal raises $1.3 billion at a $16 billion valuation",
+    summary:
+      "Today's edition is about testing claims against what's actually been verified. An IPO roadshow and a self-reported usage statistic both look like hard numbers until you ask who produced them and how; a paused Meta policy and a startup's funding round show, respectively, what happens when broad data-use terms meet real scrutiny and how much money is chasing the unglamorous job of actually running AI models at scale.",
+    stories: [
+      {
+        title:
+          "Anthropic reportedly opens its IPO roadshow the week of November 9, with investors said to doubt it can still price before Thanksgiving",
+        body: "Anthropic is reported to have kicked off the investor roadshow for its IPO during the week of November 9, aiming to price before Thanksgiving and list on the Nasdaq Global Select Market under the ticker ANT, according to The Information as relayed by other outlets. The company's amended S-1 filing — the one disclosing $17 billion in Q3 revenue covered in yesterday's edition — still leaves its share count, price range, and valuation blank on the cover page, with figures near $1.5 to $2 trillion reportedly under discussion. Reuters has separately reported that some prospective investors doubt Anthropic can actually complete a roadshow and still list within November, given how little of the offering's mechanics — price, size, exact timing — had firmed up as of early this week. No party has publicly confirmed a specific pricing date.",
+        why: "A 'roadshow' is the multi-day process where a company's executives pitch the IPO directly to institutional investors before any price is set — it's where real market demand gets tested, as distinct from the valuation figures a company merely proposes in its own filing.",
+        sources: [
+          { label: "fourweekmba", url: "https://fourweekmba.com/ai-anthropic-said-to-start-ipo-roadshow-next-week-no-price-yet/" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/investors-doubt-anthropic-can-hold-november-ipo-roadshow-reu-a69a034f" }
+        ]
+      },
+      {
+        title:
+          "OpenAI says ChatGPT now handles roughly one-fifth as many search-style queries as Google — a self-reported figure well above independent estimates",
+        body: "OpenAI's consumer product lead for ChatGPT, Adam Fry, said in an interview with Alex Kantrowitz published by Big Technology on November 3 that ChatGPT now handles roughly one-fifth as many search-style queries as Google does. OpenAI counts a 'search' as any prompt that triggers a web lookup, and the company did not disclose how it estimated Google's own volume for the comparison, so the figure is a self-reported internal metric rather than an audited measurement of market share. Independent analytics firms put ChatGPT's share of search-like traffic considerably lower — seoClarity estimated about 7.5% in October 2026, and Ahrefs put it near 12% back in February 2026.",
+        why: "Treat a company's own usage claim about itself differently from an independent measurement: OpenAI's one-fifth figure counts query volume by OpenAI's own definition of a 'search,' not audited market share, and third-party trackers using their own methodology land much lower — the gap is a reminder to check how a statistic was actually produced before repeating it as fact.",
+        sources: [
+          { label: "CryptoBriefing", url: "https://cryptobriefing.com/openai-chatgpt-search-volume-google/" },
+          { label: "247wallst", url: "https://247wallst.com/investing/2026/11/04/openai-says-chatgpts-search-volume-is-now-a-fifth-of-googles/" }
+        ]
+      },
+      {
+        title:
+          "Meta indefinitely pauses a business-terms update that critics said would let it scrape websites tied to business accounts, after regulators on three continents pushed back",
+        body: "Meta said on November 5 that it is indefinitely pausing a business-terms update — covering its Commercial Terms, Product Catalog Terms, Self-Serve Ad Terms, and Ad Creative Generative AI Terms — that had been due to take effect November 20 and that critics said would have let Meta's automated crawlers scrape websites linked to business accounts for use in ads and AI products. Meta's Business Help Center notice says existing terms 'remain in effect' while the company 'continues to consult with stakeholders.' The planned update had already drawn a temporary injunction from a Norwegian court, a preliminary action in Brazil, a formal investigation opened by the UK's Competition and Markets Authority, and a letter from US Senators Adam Schiff and Marsha Blackburn asking Meta to withdraw it outright.",
+        why: "This is a live example of how broadly worded 'we may use automated tools to access your content' terms can run into both competition law and private litigation once regulators and courts actually examine what they'd permit in practice — companies routinely propose wide data-use terms and then narrow or pause them under exactly this kind of pressure.",
+        sources: [
+          { label: "MediaPost", url: "https://www.mediapost.com/publications/article/419294/meta-pauses-data-scraping-terms-following-publishe.html" },
+          { label: "fourweekmba", url: "https://fourweekmba.com/ai-meta-pauses-its-business-terms-21-days-after-scraping-outcry/" }
+        ]
+      },
+      {
+        title:
+          "AI-inference startup fal raises $1.3 billion at a $16 billion valuation, doubling its worth since April as demand to run AI models outpaces supply",
+        body: "Generative-media AI inference startup fal raised $1.3 billion in new funding led by Bessemer Venture Partners, SiliconANGLE and other outlets reported November 3, citing Bloomberg. Combined with an earlier $350 million round, fal says the two rounds together total $1.65 billion. The new round reportedly values the company at $16 billion — roughly double the $8 billion valuation it carried after that earlier round in April. Fal runs inference, meaning it serves already-trained AI image, video, and audio models at scale for other companies' products, rather than training its own foundation models from scratch; it reports annualized revenue surpassing $800 million as of September 2026, putting its new valuation just behind rival inference provider Fireworks AI's $17.5 billion valuation from this past July.",
+        why: "'Inference' is the running cost of AI, not the one-time cost of training it — every time a deployed model actually answers a prompt, generates an image, or renders a video, that's inference — and the size of fal's raise shows investors betting that serving AI output at scale, not just building bigger models, is becoming its own enormous business.",
+        sources: [
+          { label: "SiliconANGLE", url: "https://siliconangle.com/2026/11/03/generative-media-inference-startup-fal-raises-1-3b-at-a-16b-valuation/" },
+          { label: "CryptoBriefing", url: "https://cryptobriefing.com/fal-raises-1-3b-16b-valuation-ai-inference/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on what Anthropic's roadshow timeline and the investor skepticism around it actually signal about IPO demand.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's read on why AI inference — not just training bigger models — is pulling in billion-dollar rounds like fal's.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for weighing OpenAI's self-reported search-share number against independent measurements with a more skeptical eye.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for Meta's paused scraping-adjacent terms and the regulatory pressure that forced the pause.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Inference",
+      definition:
+        "Inference is what happens every time an already-trained AI model actually gets used — answering a prompt, generating an image, transcribing audio — as opposed to training, the one-time (though extremely expensive) process of building the model in the first place. Training happens once per model version; inference happens billions of times a day across every product built on top of it, which is why companies like fal that specialize purely in running other labs' models at scale can raise billions of dollars without training a single foundation model themselves.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Ask ChatGPT (or Claude) a question that requires it to search the live web for something from the last 24 hours, then run the same query on Google. Compare how each result is sourced, how confident you'd be in it, and which one you'd actually trust for a real decision — that's the practical version of the 'self-reported vs. independently measured' gap in today's OpenAI story.",
+    learnLinks: [
+      { label: "How IPOs, valuations, and funding rounds actually work in AI → The AI Industry", href: "#/course/industry" },
+      { label: "Training vs. inference — the two very different costs of running an AI model → How AI Models Work", href: "#/course/models" },
+      { label: "Keeping up with fast-moving product and policy changes at the big AI companies → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-09",
     displayDate: "Monday, November 9, 2026 · Edition #98",
     headline:
