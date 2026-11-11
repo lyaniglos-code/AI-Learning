@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-11",
+    displayDate: "Wednesday, November 11, 2026 · Edition #100",
+    headline:
+      "Investors reportedly push Anthropic's IPO valuation target down to $1.2–$1.5 trillion from $2 trillion, Anthropic agrees to pay $3.4 billion for gas turbines to power its data centers, Nvidia's board opens an investigation into CEO Jensen Huang over reported ties to a Chinese intelligence effort, and researchers find Claude Code's 'don't ask again' setting leaked real passwords and API keys onto public GitHub",
+    summary:
+      "Today's edition is about the costs that surface once growth slows down enough for people to look closely. Anthropic's IPO target keeps sliding as public-market investors reprice AI risk, and its own $3.4 billion turbine order shows just how expensive it still is to keep data centers powered at all. Meanwhile a governance scare at Nvidia and a security finding about Claude Code both point to the same lesson: the parts of the AI boom that aren't the model itself — money, electricity, and plain software hygiene — are where near-term risk tends to show up first.",
+    stories: [
+      {
+        title:
+          "Investors reportedly push Anthropic's IPO valuation target down to $1.2–$1.5 trillion, roughly a third below the $2 trillion figure once floated",
+        body: "The Wall Street Journal and Bloomberg reported this week that institutional investors evaluating Anthropic's IPO are pushing for a valuation closer to $1.5 trillion, with some discussing figures as low as $1.2 to $1.3 trillion, down from the roughly $2 trillion figure that had circulated earlier this fall. CNBC reported November 7 that Anthropic is still likely targeting a mid-November Nasdaq debut, though no final price range has been confirmed, and the company's amended S-1 filing still leaves its price range blank. The pushback follows a broader selloff in AI-linked stocks — the Nasdaq 100 lost roughly $2.5 trillion in value on November 5 alone, with Nvidia and AMD both falling sharply — that has made public-market investors warier of paying private-market prices for AI companies. Anthropic has not publicly confirmed any valuation figure.",
+        why: "A company's target valuation is just that — a target. The real test of what an IPO is worth happens during the roadshow, when actual institutional buyers decide what they're willing to pay, and investor pushback like this is that market test playing out in public before the first trade.",
+        sources: [
+          { label: "InvestingLive", url: "https://investinglive.com/stocks/wsj-anthropic-ipo-investors-push-for-lower-1-5-trillion-valuation-after-tech-selloff/" },
+          { label: "fourweekmba", url: "https://fourweekmba.com/ai-investors-discuss-1-2t-1-3t-anthropic-ipo-value-after-rout/" }
+        ]
+      },
+      {
+        title:
+          "Anthropic agrees to pay $3.4 billion for gas-fired generators to power its data centers, the AI industry's largest known single purchase of power equipment",
+        body: "The Financial Times reported November 9 that Anthropic struck a $3.4 billion deal to secure gas-fired power generation for its data centers, taking over roughly 1.7 gigawatts of Caterpillar generator orders that a San Antonio power developer, OnePWR Solutions, had originally placed in September. Anthropic isn't acquiring OnePWR itself; the $3.4 billion figure covers the generator hardware plus the engineering and construction work needed to install it. The move effectively jumps a queue: gas-turbine order backlogs now stretch into the early 2030s, so buying equipment someone else already ordered — even at a premium — is one of the few ways an AI company can get new power online within the next couple of years rather than waiting a decade. It's the largest known single power-equipment purchase by an AI company to date, ahead of xAI's roughly $2 billion mobile-turbine order earlier this year.",
+        why: "AI data centers need so much electricity, so fast, that waiting in the normal queue to build new power plants isn't fast enough — so companies are instead paying to jump existing equipment order lines, which is part of why a company that makes chatbots is now also a major buyer of industrial gas turbines.",
+        sources: [
+          { label: "The Next Web", url: "https://thenextweb.com/news/anthropic-3-4bn-gas-generators-onepwr-ft" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/anthropic-strikes-34bn-deal-for-gas-fired-data-centre-power-b1f966f4" }
+        ]
+      },
+      {
+        title:
+          "Nvidia's board opens an independent investigation into CEO Jensen Huang over reported ties to a Chinese intelligence effort",
+        body: "Nvidia's board announced November 8 that it has opened an internal investigation, overseen by independent directors and outside legal counsel, into reports that Huang had a personal relationship with an executive at Megaspeed, a Singapore-based company and major Nvidia customer, whom U.S. intelligence officials reportedly assessed was passing information to Beijing. In a message to employees, Huang acknowledged the relationship, said it had hurt his family, and said he supports the board's investigation and will cooperate fully. Nvidia's board said it currently has 'no reason to believe' that national security or company secrets were compromised, and a spokesman for China's foreign ministry called the spying allegation 'groundless.' Huang has not stepped down, and three House Republicans have invited him to a briefing on the matter scheduled for November 18.",
+        why: "Nvidia sits at the center of nearly every AI supply chain — its chips, and the export-control rules over who can buy them, are geopolitical flashpoints in their own right — so scrutiny of its CEO's personal ties to a customer with reported links to Chinese intelligence carries different stakes than an ordinary corporate scandal would almost anywhere else.",
+        sources: [
+          { label: "FOX13 News", url: "https://www.fox13news.com/news/nvidia-investigating-ceo-jensen-huang-over-reported-links-accused-chinese-spy" },
+          { label: "KUOW (NPR)", url: "https://www.kuow.org/npr-news/2026-11-08/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy" }
+        ]
+      },
+      {
+        title:
+          "Security researchers find Claude Code's 'don't ask again' option quietly saved real passwords and API keys, some of which ended up on public GitHub",
+        body: "Application-security firm Apiiro reported November 5 that when a developer tells Claude Code 'yes, and don't ask again' to approve a terminal command, the tool saves that exact command — including any password or key typed into it — in plain text to a project settings file, .claude/settings.local.json. Scanning 104,185 public copies of that file on GitHub, Apiiro found 1,122 containing at least one real secret, for 1,379 distinct exposed credentials including 379 database passwords and 23 AWS access keys; a broader count that also includes related chat-transcript and settings files put the total at 2,539 secrets across 1,994 repositories. Apiiro says Claude Code was the only one of 16 coding agents it reviewed whose documentation confirmed this default behavior. Anthropic had not published a fix or public response as of Apiiro's report.",
+        why: "'Don't ask again' is a convenience feature meant to cut down on repetitive permission prompts, but it only works safely if what gets remembered is sanitized first — here, the tool remembered the literal command a developer typed, secrets included, which is a reminder to check what any AI agent actually persists to disk before you commit that file to a shared repository.",
+        sources: [
+          { label: "Cybernews", url: "https://cybernews.com/security/ai-agents-leaking-secrets-on-github/" },
+          { label: "iTWire", url: "https://itwire.com/business-it-news/security/claude-code-approval-files-found-exposing-company-secrets-on-github-says-apirro-researchers" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Anthropic's sliding IPO valuation and its $3.4 billion bet on gas turbines to keep data centers powered.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's read on the Claude Code 'don't ask again' secrets leak and what it means for how you configure any coding agent.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for the Nvidia board's investigation into Jensen Huang and what it does or doesn't say about chip-supply-chain security.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup for weighing today's valuation, power, governance, and security stories against each other.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Secrets leak (credential leak)",
+      definition:
+        "A secrets leak happens when a password, API key, or other credential that should stay private ends up somewhere it can be read by people who shouldn't have it — most often a public code repository. It matters because a leaked credential isn't just embarrassing; it's often immediately usable by anyone who finds it, the way Apiiro's report found real database passwords and AWS keys sitting in public GitHub files that Claude Code had quietly saved. The lesson generalizes beyond any one tool: any software that remembers what you typed, including an AI agent's 'approved commands' or chat history, can end up storing a secret you never meant to persist anywhere.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "If you use a terminal-based AI coding agent (Claude Code, Copilot, Cursor, or similar), open its settings or permissions file and check whether it saved the literal text of any command you approved — including anything that looked like a password, token, or key. If you find one, treat it as compromised and rotate it, then make sure that settings file is excluded from version control in your .gitignore before you commit anything else.",
+    learnLinks: [
+      { label: "Why AI's power needs are reshaping energy markets → The AI Industry", href: "#/course/industry" },
+      { label: "Keeping up with security findings about tools like Claude Code → AI Toolbox", href: "#/course/tools" },
+      { label: "Credential hygiene, permissions, and why AI agents need guardrails → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-11-10",
     displayDate: "Tuesday, November 10, 2026 · Edition #99",
     headline:
