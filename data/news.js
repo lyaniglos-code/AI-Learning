@@ -13,6 +13,109 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-12",
+    displayDate: "Thursday, November 12, 2026 · Edition #101",
+    headline:
+      "Anthropic sets its IPO price range at $70-$78 a share for a Nasdaq debut targeted November 19, OpenAI and Google both ship restricted 'cyber' models gated to vetted defenders, Microsoft quietly caps free Copilot Chat usage, and HD Hyundai says Palantir-built AI agents cut robot troubleshooting time 63%",
+    summary:
+      "Today's edition is about access controls — who gets to use the most capable version of something, and why. Anthropic finally put real numbers on its IPO after weeks of rumored ranges, while OpenAI and Google both rolled out their most dangerous-and-useful cybersecurity models to small, vetted groups rather than the public. Microsoft's unpublished usage caps on free Copilot Chat are a software-business version of the same instinct, and a South Korean shipbuilder's AI-agent results show what access actually buys once you get it.",
+    stories: [
+      {
+        title:
+          "Anthropic sets its IPO price range at $70 to $78 a share, implying a valuation up to $1.4 trillion, and targets a November 19 Nasdaq debut",
+        body: "Anthropic's amended IPO filing, reported November 10 by TechCrunch and CNBC, sets an estimated price range of $70 to $78 per share for an offering of 825 million Class A shares — implying a fully diluted valuation of roughly $1.3 trillion at the midpoint and up to $1.404 trillion at the top of the range. CNBC reports the company expects to price the offering on November 18 and begin trading November 19 on the Nasdaq Global Select Market under the ticker ANT. Net proceeds could run from $84.6 billion to $93.7 billion depending on where the price lands and whether underwriters exercise their option to buy additional shares. The range sits well below the roughly $2 trillion figure that had circulated earlier this fall, reflecting the same investor caution covered in recent editions.",
+        why: "A price range isn't the final price — it's the opening offer in the negotiation between a company and the institutional investors buying the stock, and the gap between this range and the $2 trillion figures floated weeks ago shows how much that negotiation has already moved the number.",
+        sources: [
+          { label: "TechCrunch", url: "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html" }
+        ]
+      },
+      {
+        title:
+          "OpenAI releases GPT-6 Cyber, a vulnerability-hunting model rated 'Critical' risk and limited to vetted defenders",
+        body: "OpenAI released GPT-6 Cyber on November 5 — the fourth cybersecurity-specialized model it has shipped this year, built on GPT-6 Astra for authorized vulnerability discovery, exploit development, and penetration testing. OpenAI rates it 'Critical' under its own Preparedness Framework, its highest risk tier, up from the 'High' rating given to its predecessor, GPT-5.6 Cyber. On OpenAI's own ExploitGym benchmark it scored 48.5%, versus 32.1% for GPT-5.6 Cyber, and the company reports the model stays within its assigned task scope far more reliably — straying outside bounds under 1% of the time in testing, down from around 5% for the prior version. Access is currently limited to selected members of OpenAI's Daybreak Red program for authorized defensive work, with wider access to Daybreak Red customers planned in the coming weeks.",
+        why: "A model that's good at finding software vulnerabilities is good at it whether a defender or an attacker is asking — this is a concrete example of a 'dual-use' capability, and OpenAI's response is to gate access by vetting who's asking rather than by limiting what the model itself can do.",
+        sources: [
+          { label: "eSecurityPlanet", url: "https://www.esecurityplanet.com/news/news-openai-gpt-6-cyber-security-benchmarks/" },
+          { label: "ITdaily", url: "https://itdaily.com/news/security/openai-gpt-6-cyber/" }
+        ]
+      },
+      {
+        title:
+          "Google rolls out Gemini 4 Carbon, a frontier model that finds and patches vulnerabilities, to a small group of cyber defenders first",
+        body: "Google introduced Gemini 4 Carbon in late October as what it describes as its strongest frontier model, built to find, exploit, and help fix software vulnerabilities, and continued rolling it out to early users through this week. Rather than a public launch, Carbon is going first to a subset of vetted cyber defenders through Google's Fairwind Program — the same gated-access structure it used for its earlier Gemini 3.8 Flash Cyber model — with Google saying it will add more trusted partners over time but has not set a general-availability date. Coverage from SecurityWeek and TechRepublic frames the staged rollout explicitly around dual-use risk: a model capable of discovering and verifying real vulnerabilities is useful to attackers and defenders alike. Google says it is also participating in the US government's voluntary pre-release model testing process, though it notes that isn't a government certification or approval.",
+        why: "Google and OpenAI landed on the same playbook this month for their most capable security-focused models — ship the capability, but restrict who can reach it — which is becoming the standard pattern for how frontier labs handle any model good enough to be genuinely dangerous in the wrong hands.",
+        sources: [
+          { label: "TechRepublic", url: "https://www.techrepublic.com/article/news-google-gemini-4-carbon-access/" },
+          { label: "SecurityWeek", url: "https://www.securityweek.com/google-says-gemini-4-carbon-leads-in-finding-exploiting-and-fixing-vulnerabilities/" }
+        ]
+      },
+      {
+        title:
+          "Microsoft quietly caps how much unlicensed users can use Copilot Chat, without publishing the actual limits",
+        body: "Microsoft began applying unpublished fair-use limits to more Copilot Chat features for commercial users who lack a Microsoft 365 Copilot license, with The Register reporting the rollout staggered by organization size: November 2 for organizations with 2,000 or fewer Microsoft 365 seats, and November 9 for larger ones. Microsoft has not disclosed the numerical caps, and administrators have no setting to adjust them — Microsoft's own message-center notice says only that affected users get an in-product notification when they hit a limit and are told when access returns. The Copilot Chat usage report available to admins shows prompts submitted and active days per unlicensed user, but no metric for how often users actually hit the new limits. The change follows Microsoft's April 2026 move pulling Copilot Chat out of Word, Excel, PowerPoint, and OneNote entirely for unlicensed users at organizations above 2,000 seats.",
+        why: "This is a textbook freemium funnel: a vendor hands out a capability for free to build the habit, then narrows it in ways it doesn't fully disclose to create what Microsoft's own partner guidance calls 'an upsell conversation' toward the paid, licensed tier.",
+        sources: [
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/microsoft-expands-unpublished-copilot-chat-usage-limits-the-dd0e9572" },
+          { label: "ITdaily", url: "https://itdaily.com/news/software/copilot-chat-usage-limits-microsoft/" }
+        ]
+      },
+      {
+        title:
+          "HD Hyundai Robotics says Palantir-built AI agents cut the time to resolve robot problems by 63%, from 21.5 days to 7.9 days",
+        body: "HD Hyundai Robotics reported in early November that after deploying AI agents built with Palantir in August, the average time to resolve robot-related problems on its lines fell from 21.5 days to 7.9 days — a roughly 63% reduction. The agents work by reviewing a robot's existing programming and proposing fixes or improvements, which human engineers then check and refine using their own shop-floor experience rather than accepting automatically. The company separately projects programming costs could fall more than 50% as the system matures, though it describes that figure as a target rather than a measured result so far. HD Hyundai says it also plans to retrain field engineers to focus on defining problems for the AI agents to work on rather than writing every fix by hand.",
+        why: "This is 'agentic AI' in its least flashy, most verifiable form: a narrow agent proposes changes inside a well-defined domain, a human with real-world context checks the work before it ships, and the company measures the result in days saved rather than in benchmark scores.",
+        sources: [
+          { label: "The Korea Times", url: "https://www.koreatimes.co.kr/business/tech-science/20261101/hd-hyundai-robotics-palantir-to-slash-robot-programming-costs-with-ai" },
+          { label: "AI Media House", url: "https://aimmediahouse.com/manufacturing/hd-hyundai-robotics-cuts-troubleshooting-to-8-days-with-palantir" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Anthropic's IPO price range and what it means that OpenAI and Google both gated their newest cyber models the same week.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A practitioner's read on GPT-6 Cyber and Gemini 4 Carbon, and what 'Critical' risk ratings actually change about how these models ship.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for Microsoft's unpublished Copilot Chat limits and the broader pattern of software vendors monetizing AI features after giving them away free.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup for weighing today's IPO pricing, dual-use model gating, and enterprise-software stories against each other.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Dual-use AI model",
+      definition:
+        "A dual-use AI model is one whose capability is equally useful for defense and for attack — the same skill that lets a 'cyber' model like GPT-6 Cyber or Gemini 4 Carbon help a security team patch a vulnerability also lets it help someone exploit that same vulnerability. Labs can't simply remove the capability without destroying the model's defensive value, so instead they gate who can reach it: vetted-access programs like OpenAI's Daybreak Red or Google's Fairwind Program check the requester's identity and purpose rather than limiting what the model itself can do. It's a pattern worth watching for in any AI capability that sounds powerful enough to be dangerous.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Look up one frontier lab's published risk framework — OpenAI's Preparedness Framework or Anthropic's Responsible Scaling Policy are both public — and find how it defines its highest risk tier (OpenAI calls it 'Critical'). Then see which of that lab's current models are rated at that tier, and what access restrictions apply to them as a result.",
+    learnLinks: [
+      { label: "What 'Critical' risk tiers mean for frontier AI models → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "How AI vendors turn free features into paid upgrades → The AI Industry", href: "#/course/industry" },
+      { label: "This week's model updates across ChatGPT, Gemini, and Copilot → AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-11",
     displayDate: "Wednesday, November 11, 2026 · Edition #100",
     headline:
