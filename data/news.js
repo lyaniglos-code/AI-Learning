@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-13",
+    displayDate: "Friday, November 13, 2026 · Edition #102",
+    headline:
+      "Anthropic's IPO order book is reportedly already covered at its $70-$78 range ahead of a November 18 pricing, The Information reports OpenAI's Q3 revenue hit roughly $10 billion while Anthropic's own S-1/A shows about $17 billion for the same quarter, Anthropic hands its Agent Skills standard to the Linux Foundation's new Agentic AI Foundation, and the UK's Autumn Budget commits fresh funding to AI biosecurity and cyber defense",
+    summary:
+      "Today's edition is about separating a claim from a confirmed number. An IPO order book and a quarterly revenue figure both sound precise, but one comes from anonymous sourcing and the other from a company's own regulatory filing — worth telling apart. Meanwhile a standard changing hands and a government budget both show the less flashy work of making AI durable: shared governance for the tools builders rely on, and public money aimed at the risks AI creates rather than just its upside.",
+    stories: [
+      {
+        title:
+          "Anthropic's IPO order book is reportedly already covered at its $70-$78 range, with pricing expected November 18 and a Nasdaq debut under ticker ANT the next day",
+        body: "Anthropic's roadshow for its planned IPO formally launched November 10, confirming an offering of 825 million Class A shares at an expected price of $70 to $78 each, with underwriters holding an option on roughly 123.75 million more. CNBC reported, citing people familiar with the deal, that institutional demand had already covered the order book within that range on the roadshow's first day, with one person describing demand as stronger at this stage than it was for SpaceX's recent offering. Anthropic has applied to list on the Nasdaq Global Select Market under the ticker ANT, and multiple outlets report the company expects to price the offering on November 18 and begin trading November 19. The registration statement for the shares has not yet been declared effective by the SEC, so no shares can legally be sold until that happens.",
+        why: "A covered order book means investors have offered to buy at least as many shares as are on offer at the stated price range — it's a real signal of demand, but it's not the same as a final price, which only gets set once the roadshow ends and the deal is allocated.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/roadshow-launch" },
+          { label: "ibtimes.com.au", url: "https://www.ibtimes.com.au/anthropic-sets-ipo-price-range-78-1878308" }
+        ]
+      },
+      {
+        title:
+          "OpenAI's Q3 revenue reportedly hit about $10 billion, but Anthropic's own regulatory filing shows roughly $17 billion for the same quarter",
+        body: "The Information reported this week, citing people briefed on OpenAI's finances, that the company told investors its third-quarter revenue came in at roughly $10 billion, up about 50% from the prior quarter. OpenAI does not publicly file quarterly results, so the figure rests on that sourcing rather than a filing. Anthropic, by contrast, disclosed around $17 billion in third-quarter revenue in the amended S-1 it filed ahead of its IPO — a figure that comes from a formal SEC filing, not a leak. Separately, OpenAI co-founder Greg Brockman said the company's annualized revenue run rate grew 70% quarter-over-quarter in Q3 and that enterprise customers now make up more than half of revenue, but that run-rate figure measures a different thing than quarterly revenue and the two shouldn't be read as confirming each other.",
+        why: "An 'annualized run rate' just takes one period's revenue and multiplies it by four or twelve to project a yearly pace — it's a useful growth signal, but it's a projection, not a measurement, and conflating it with actual quarterly revenue (the kind that shows up in a filed S-1) is one of the easiest ways an AI company's numbers get overstated in coverage.",
+        sources: [
+          { label: "The Information", url: "https://www.theinformation.com/articles/openai-revenue-jumps-10-billion-third-quarter" },
+          { label: "fourweekmba", url: "https://fourweekmba.com/ai-openais-q3-said-to-reach-10b-anthropics-filed-q3-is-1-7x/" }
+        ]
+      },
+      {
+        title:
+          "Anthropic hands control of its Agent Skills standard to the Agentic AI Foundation, a new Linux Foundation body it co-founded with OpenAI and Block",
+        body: "Anthropic announced it is donating its Agent Skills standard — the name, logo, GitHub organization, and agentskills.io domain — to the Agentic AI Foundation (AAIF), a directed fund under the Linux Foundation that Anthropic co-founded with OpenAI and the fintech company Block. The AAIF, formed in December 2025, already hosts the Model Context Protocol (MCP), which Anthropic transferred there earlier; Agent Skills joins three other newly accepted projects, Open Responses, OpenEnv, and OpenSandbox, bringing the foundation's total to ten. Coverage describes the standard as staying free and open under the new home, with existing SKILL.md files usable without any immediate changes, though the foundation's longer-term governance and versioning process was still being worked out at announcement time.",
+        why: "Handing a standard to a neutral foundation, rather than keeping it under one company's control, is how competing companies agree to build on the same shared format without any one of them controlling its future — it's the same logic behind standards bodies for things like web protocols or USB, applied to the plumbing that lets AI agents call tools.",
+        sources: [
+          { label: "Linux Foundation", url: "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-Agentic-ai-foundation" },
+          { label: "TechRepublic", url: "https://www.techrepublic.com/article/news-anthropic-agent-skills-foundation-handover/" }
+        ]
+      },
+      {
+        title:
+          "The UK's Autumn Budget commits new funding to an AI biosecurity lab, a national 'cyber shield,' and the AI Security Institute",
+        body: "The UK government's Autumn Budget, delivered by Chancellor John Healey, included a package of AI-focused spending that the government frames around managing AI's risks rather than only its economic upside. It includes £120 million for the AI Security Institute, which tests frontier models for safety issues, and £165 million for a National AI Biosecurity Initiative, including a new AI Biosecurity Lab intended to screen for AI-assisted biological threats. A separate £60 million is earmarked for a National Cyber Shield that uses agentic AI to help defend critical infrastructure, including a £25 million challenge fund, alongside a new centre meant to track vulnerabilities across UK infrastructure in real time. The government's own announcement says the biosecurity work is backed by up to £200 million in model credits pledged by OpenAI and Anthropic.",
+        why: "Most AI policy coverage focuses on what a government restricts or requires; this is the other half of policy — a government choosing to spend public money specifically on the defensive side of AI risk, like screening for AI-designed bioweapons or hardening infrastructure against AI-assisted cyberattacks, rather than leaving that work entirely to private labs.",
+        sources: [
+          { label: "GOV.UK", url: "https://www.gov.uk/government/news/chancellor-unveils-britains-ambitious-plan-for-ai" },
+          { label: "ITPro", url: "https://www.itpro.com/business/policy-and-legislation/autumn-budget-2026-uk-tech-industry-welcomes-strong-ai-investment-focus" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Anthropic's reportedly covered IPO order book and the OpenAI-vs-Anthropic revenue comparison making the rounds this week.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on Agent Skills moving to the Agentic AI Foundation and what shared governance means for anyone building on the standard.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for Anthropic's IPO demand and what a UK government budget choosing to fund AI biosecurity and cyber defense says about how seriously risk is being taken.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup for weighing today's IPO, revenue, standards-governance, and UK policy stories against each other.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Annualized revenue run rate",
+      definition:
+        "An annualized run rate takes a shorter period's revenue — often a single month or quarter — and multiplies it out to project what a full year would look like at that same pace. It's a common way for fast-growing AI companies to report a bigger, more impressive-sounding number than their actual quarterly revenue, since a company that made $4 billion in a month can describe itself as being 'at a $48 billion annualized run rate.' The number isn't fake, but it's a projection built on one period holding steady, not a measurement of money the company has actually made over a year — which is why it's worth checking whether a headline figure is an annualized run rate or an actual reported period before comparing it to another company's numbers.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Find a recent AI-company headline that cites an 'annualized' or 'run-rate' revenue figure. Divide it by 4 (if it's based on a quarter) or 12 (if based on a month) to back out what that implies for the shorter period, then see if you can find that company's actual reported revenue for a real quarter to compare the two.",
+    learnLinks: [
+      { label: "Reading AI-industry revenue and valuation claims critically → The AI Industry", href: "#/course/industry" },
+      { label: "How open standards like MCP and Agent Skills let AI tools work together → Agentic AI Engineering", href: "#/course/engineering" },
+      { label: "Why governments fund AI safety and biosecurity work → AI Safety, Ethics & Policy", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-11-12",
     displayDate: "Thursday, November 12, 2026 · Edition #101",
     headline:
