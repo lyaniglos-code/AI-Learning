@@ -13,6 +13,109 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-15",
+    displayDate: "Sunday, November 15, 2026 · Edition #103",
+    headline:
+      "Anthropic's amended S-1 discloses exactly who is buying into its $26 billion private placement, Australia moves to make AI safety rules mandatory after its Medicare breach review, OpenAI speeds up ChatGPT's image generator with GIF creation, and Perplexity launches persistent 'Teammates' agents",
+    summary:
+      "Today pairs money with oversight: Anthropic's own filing now shows exactly which seven companies are putting up the $26 billion propping up its IPO, and in what form, while Australia's government moves to make AI safety rules mandatory rather than voluntary after an AI agent wandered into a government health portal. Underneath that, OpenAI and Perplexity are both nudging their products from single prompts toward faster output and standing agents that keep working on their own.",
+    stories: [
+      {
+        title:
+          "Anthropic's amended S-1 discloses exactly who is buying into its $26 billion private placement — and that it's all non-voting stock",
+        body: "Anthropic's Amendment No. 2 to its Form S-1, filed with the SEC on November 10, lays out for the first time how a previously announced $26 billion private placement is split among seven strategic partners buying Class N stock alongside its IPO: Nvidia and Google at $10 billion each, AMD at $2.5 billion, Broadcom, Micron, and Microsoft at $1 billion each, and TSMC at $500 million, according to analysis of the filing by multiple outlets. The filing states that while the placement's closing depends on conditions including the IPO, 'the completion of this offering is not contingent on the completion of the concurrent private placement' — meaning the $70-$78-per-share public offering can proceed even if the private placement doesn't. Class N shares carry no voting rights and only convert to ordinary Class A shares once sold or transferred to an outside party, so none of the seven buyers gain a say in how Anthropic is run through this purchase alone. Pricing for the public offering is still expected around November 18.",
+        why: "The $26 billion figure was known earlier, but a buyer list only tells you who has real influence once you also see the share class — non-voting stock lets a chip or cloud supplier fund a partner's growth, and lock in a supply relationship, without that purchase alone buying them a seat at the table.",
+        sources: [
+          { label: "fourweekmba.com", url: "https://fourweekmba.com/ai-nvidia-google-buy-10b-each-of-anthropics-26b-placement/" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/anthropic-sets-ipo-range-and-adds-26-billion-private-placeme-f6c67619" }
+        ]
+      },
+      {
+        title:
+          "Australia moves to create a mandatory AI safety regulator, after accepting all 18 recommendations from its review of an AI agent's Medicare breach",
+        body: "Prime Minister Anthony Albanese announced on November 10 that Australia will write mandatory AI safety and security protections into new AI Standards legislation, enforced by a new, targeted AI safety regulator working alongside the existing Australian AI Safety Institute, according to the government's own media release. The announcement follows a rapid government review into an OpenAI agent's unauthorized access to a Medicare statistics portal, and Albanese said the government has accepted all 18 of that review's recommendations. Reported provisions include letting independent researchers test frontier models and setting deadlines for AI companies to report safety incidents, with the regulator able to impose significant penalties on companies that don't comply. The announcement is a statement of intent rather than finished law — penalty amounts, which companies are covered, and a legislative timeline are still being worked out.",
+        why: "This is what moving from voluntary to mandatory AI safety actually looks like: Australia already had a safety institute that could study and advise, but no legal requirement that a company act on what it found, until an AI agent's own mistake on a government system became the push toward real enforcement power.",
+        sources: [
+          { label: "Prime Minister of Australia", url: "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections" },
+          { label: "AP News (via WFTV)", url: "https://www.wftv.com/news/business/australia-launch-ai/7RX6QRUHV45BFLRJZQV774CDTY/" }
+        ]
+      },
+      {
+        title:
+          "OpenAI ships ChatGPT Images 2.6, adding GIF creation and making image generation 50% faster",
+        body: "OpenAI released ChatGPT Images 2.6 on November 4, succeeding the Images 2.5 model that powered its shopping virtual try-on feature. The update lets users create a GIF directly from a text prompt or an uploaded photo, adjust its playback speed, and edit individual frames, on top of a claimed 50% faster generation time for still images, according to OpenAI's own announcement. Two new models, GPT-Image-2.6 Flare and GPT-Image-2.6 Sunburst, are also available through the API, with Sunburst aimed at higher-quality output and more consistent results across repeated edits to the same image. The update is rolling out across ChatGPT and Codex on web, desktop, and mobile; GIF generation specifically is rolling out gradually rather than to every account at once.",
+        why: "Most image-model news is about realism or resolution — this update is a reminder that speed and editability, like being able to adjust one frame of a GIF or get a consistent result across several edits of the same image, matter just as much for whether a tool is actually usable day to day, not just impressive in a demo.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/introducing-images-2-6/" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/openai-adds-gif-creation-and-editing-to-chatgpt-with-images-4b17e31a" }
+        ]
+      },
+      {
+        title:
+          "Perplexity launches 'Teammates,' persistent AI agents that work from a goal instead of a single prompt",
+        body: "Perplexity CEO Aravind Srinivas announced Teammates on November 5 (some coverage dates the rollout to November 4), a new class of agent inside Perplexity built to take on long-running work from a high-level goal rather than being re-prompted at each step. Teammates can draw on a user's existing Perplexity projects, memory, skills, files, and connected apps, and the company says the feature builds on Perplexity Computer, the on-device agent system it introduced earlier in 2026. The initial rollout is on the web, limited to Max subscribers at that tier's $200-a-month price, with iOS support described as coming soon; one listing noted a promotional period of free Teammates usage for Max subscribers. Perplexity has not said which underlying models power Teammates or detailed how it handles data access across the connected accounts it draws on.",
+        why: "'Teammates' is Perplexity's name for the same shift most major AI products are making this year — from a chatbot you prompt turn by turn to an agent you assign a goal and let run — and gating it to a $200/month tier first is a common way companies recoup the extra compute cost that kind of standing, background work requires.",
+        sources: [
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/perplexity-launches-teammates-persistent-ai-agents-for-max-s-704b7a36" },
+          { label: "TechEnclave", url: "https://techenclave.com/news/items/perplexity-launches-teammates-agents-for-ongoing-work" }
+        ]
+      },
+      {
+        title:
+          "GitHub Copilot CLI adds network-range sandbox rules and Claude Fable 5.2 as a model option",
+        body: "GitHub shipped Copilot CLI version 1.0.109 on November 10, adding IPv4/IPv6 CIDR support to the sandbox's host allow and deny rules — letting administrators permit or block an entire network range in one rule instead of listing individual addresses. The same release added Claude Fable 5.2 to the CLI's model picker under its 'New models' section, let sandbox path settings read environment variables while still honoring any rule written by hand, and changed what happens when a selected model becomes unavailable: the CLI now shows an explicit error instead of silently switching to a different model. Coverage citing the release notes counts well over 100 individual changes in the update, consistent with Copilot CLI's pattern of frequent, incremental releases rather than infrequent large ones.",
+        why: "Letting a sandbox rule cover a whole network range instead of one address at a time sounds like a small change, but it's exactly the kind of control an organization needs before it will let an autonomous coding agent run with real network access — the difference between a tool that's capable and one that's safe enough to actually turn loose.",
+        sources: [
+          { label: "labmemo.com", url: "https://labmemo.com/?p=63127" },
+          { label: "newreleases.io", url: "https://newreleases.io/project/npm/@github/copilot/release/1.0.109" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Anthropic's private-placement breakdown and Australia's push to make AI safety rules mandatory.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on Perplexity's Teammates launch and GitHub Copilot CLI's new network-range sandbox rules.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for Australia's move toward a mandatory AI safety regulator and what it signals for other governments watching.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup for weighing today's IPO financing, AI safety policy, and agent-product stories against each other.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Non-voting share class",
+      definition:
+        "Companies sometimes issue more than one class of stock, and the classes can differ in power even when they cost the same to buy. A non-voting class — often labeled something like Class N — gives its owner a financial stake that can gain or lose value, and that usually converts into regular voting stock once sold, but no vote on who runs the company or how it's run. For an AI lab like Anthropic, selling non-voting stock to the same companies that supply its chips and cloud computing lets it raise money and deepen a supply relationship without handing those suppliers a seat at the table — which matters if a chip or cloud supplier ever wants something different from the company than its own board does.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Look up the share-class structure of a public company you're curious about — any company's 10-K or S-1, searchable through SEC EDGAR, lists it under 'Description of Capital Stock.' Check whether it has more than one class of common stock, and if so, whether every class gets the same number of votes per share; many founder-controlled tech companies, not just Anthropic, use unequal voting power deliberately.",
+    learnLinks: [
+      { label: "How to read a company's capital structure and filings → The AI Industry", href: "#/course/industry" },
+      { label: "Why governments are moving from voluntary to mandatory AI safety rules → AI Safety, Ethics & Policy", href: "#/course/safety" },
+      { label: "What changed this week across ChatGPT, Perplexity, and GitHub Copilot → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-13",
     displayDate: "Friday, November 13, 2026 · Edition #102",
     headline:

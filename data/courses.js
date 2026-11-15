@@ -1157,8 +1157,9 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "research-tools",
       title: "NotebookLM & Perplexity: the research tools",
       minutes: 16,
-      updated: "Aug 31, 2026",
+      updated: "Nov 15, 2026",
       content: `
+<p><b>Perplexity launched Teammates (November 4-5, 2026)</b> — a new class of agent built to take on long-running work from a high-level goal rather than being re-prompted at each step, rather than answering one-off questions. Teammates can draw on a user's existing Perplexity projects, memory, skills, files, and connected apps, and build on Perplexity Computer, the on-device agent system Perplexity introduced earlier in 2026. The initial rollout is on the web, limited to Max subscribers at that tier's $200-a-month price, with iOS support described as coming soon; Perplexity hasn't said which underlying models power Teammates or detailed how it handles data access across the connected accounts it draws on.</p>
 <p>Two tools own the "help me understand and research" niche, and they approach it from opposite directions: NotebookLM starts from <i>your documents</i>; Perplexity starts from <i>the live web</i>.</p>
 <h3>NotebookLM, now "Gemini Notebook" (Google)</h3>
 <p>On July 16, 2026 Google renamed NotebookLM to <b>Gemini Notebook</b> — a rebrand, not a shutdown: existing notebooks, shared links, and the underlying product all carry over unchanged. Upload sources — PDFs, Docs, websites, YouTube videos, audio — and Gemini Notebook (running on Gemini 3) becomes an expert grounded <i>only</i> in them, with citations for every claim. It's the closest thing to "chat with my documents" done right, and a masterclass in RAG as a product. The rename shipped alongside a technical upgrade: each notebook now gets a secure cloud sandbox that can write and run code.</p>
@@ -1179,6 +1180,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Expert Intelligence (Aug 27, 2026) lets owned Google Play ebooks become sources, with ownership checks built in",
         "Audio Overviews turn documents into an interactive podcast; study aids auto-generate",
         "Perplexity: citation-first live-web answers, Deep Research, agentic browsing",
+        "Perplexity Teammates (Nov 4-5, 2026) are persistent agents that work from a high-level goal instead of a single prompt, drawing on a user's projects, memory, skills, files, and connected apps — initial rollout is web-only, limited to $200/month Max subscribers",
         "Match the tool to the question: create vs. search vs. understand-my-docs"
       ],
       resources: [
@@ -1190,8 +1192,9 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Nov 12, 2026",
+      updated: "Nov 15, 2026",
       content: `
+<p><b>GitHub Copilot CLI version 1.0.109 shipped November 10, 2026</b> — adding IPv4/IPv6 CIDR support to the sandbox's host allow and deny rules, letting administrators permit or block an entire network range in one rule instead of listing individual addresses. The same release added Claude Fable 5.2 to the CLI's model picker, let sandbox path settings read environment variables while still honoring hand-written rules, and changed what happens when a selected model becomes unavailable: the CLI now shows an explicit error instead of silently switching to a different model.</p>
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
 <h3>Microsoft Copilot</h3>
 <p><b>Microsoft began quietly capping unlicensed Copilot Chat usage starting November 2-9, 2026.</b> Commercial users without a Microsoft 365 Copilot license now hit unpublished fair-use limits on more Copilot Chat features, rolled out in stages — November 2 for organizations with 2,000 or fewer Microsoft 365 seats, November 9 for larger ones. Microsoft hasn't disclosed the numerical caps and gives administrators no setting to adjust them; affected users just get an in-product notice when they hit a limit and when access returns. It follows April 2026's move pulling Copilot Chat out of Word, Excel, PowerPoint, and OneNote entirely for unlicensed users at organizations above 2,000 seats — another step in narrowing what the free tier includes.</p>
@@ -1226,6 +1229,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
         "Cursor Projects (beta, Sep 10, 2026): a persistent coordinator agent delegates work to a fleet of subagents, keeps shared context across the Project's life, and can act on Slack/schedule/PR signals without a prompt — Cursor reports 6x more merged PRs for primary users",
         "GitHub Copilot deprecated six older models on Sep 1, 2026 and added enterprise governance controls (admin-set default models, org-based billing for multi-org users); added Gemini 3.8 Flash Sep 3 and announced a second retirement wave for Oct 2, 2026",
         "'Plugin4Shell' (disclosed Sep 18, 2026) is a zero-click plugin-hijacking flaw hitting Claude Code, Copilot, Codex, and Gemini CLI — patched in Claude Code and Codex, unpatched in Copilot, and unfixed in a now-deprecated Gemini CLI",
+        "GitHub Copilot CLI 1.0.109 (Nov 10, 2026) added CIDR-range sandbox network rules, Claude Fable 5.2 as a model option, and an explicit error (instead of a silent switch) when a chosen model is unavailable",
         "Grok = real-time X data + edgy persona; Grok Bot opened to enterprises Sep 3, 2026 with audit/access governance controls for autonomous AI 'workers'; Meta AI = billions via messaging apps",
         "Grok 4.7 (Sep 21, 2026) is a ~2.1T-parameter flagship trained partly on SpaceX engineering data — leads narrow benchmarks like legal research and electrical engineering but lands mid-pack on general reasoning versus Claude Fable 5.1 and GPT-6",
         "Grok API text carries an invisible watermark by default as of Nov 7, 2026, across all text endpoints — admins can opt out per model via the xAI Console — aligning with EU AI Act transparency rules, the same category behind OpenAI's own EU watermarking of ChatGPT/Codex text",
