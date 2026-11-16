@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-16",
+    displayDate: "Monday, November 16, 2026 · Edition #104",
+    headline:
+      "Gemini 4 Carbon leaves its cyber-defender preview for general availability with introductory pricing, Meta ships Muse Ember as a cut-rate workhorse model for AI agents, MiniMax open-sources a 4K image model under a license that excludes the US and EU, and AMD's data-center revenue nearly doubles again",
+    summary:
+      "Today's stories are about the unglamorous machinery behind the AI boom: a gated model graduating to a public price list, a cheap 'executor' model built to handle an agent's grunt work, an open-weight release whose license has more asterisks than it first appears, and a chipmaker's earnings showing just how concentrated AI demand has become. None of it is a single dramatic headline — together it's a snapshot of how fast-moving infrastructure actually ships.",
+    stories: [
+      {
+        title:
+          "Google moves Gemini 4 Carbon from a vetted cyber-defender preview to general availability, with introductory pricing through November 30",
+        body: "Google introduced Gemini 4 Carbon on October 28 as its strongest frontier model, built to find, exploit, and help patch software vulnerabilities, and initially gated it to a small group of vetted cybersecurity defenders through its Fairwind Program. On November 10, Google made Carbon generally available through the Gemini API, Google AI Studio, and Gemini for business to all paying developers and enterprises, with AI Ultra subscribers also getting it in the Gemini app, AI Mode, and Antigravity, according to Google's own announcement. Google is pricing Carbon at an introductory $2 per million input tokens and $10 per million output tokens through November 30, after which the rate rises to $4 and $20. Google's model card describes Carbon as built on the Gemini 4 Argon base model, and the company says it also took part in the US government's voluntary pre-release testing process for frontier models, while noting that isn't a formal certification.",
+        why: "Carbon's path — narrow, vetted access first, then a public price list once real-world use builds confidence — is the standard playbook labs use for any dual-use capability: a model that can reliably find and verify software vulnerabilities helps attackers just as much as defenders, so who gets to use it matters as much as what it can do.",
+        sources: [
+          { label: "Google", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/google-rolls-out-gemini-4-carbon-to-general-public-9b41bcb4" }
+        ]
+      },
+      {
+        title:
+          "Meta launches Muse Ember, its smallest and cheapest model yet, built to handle the repetitive grunt work inside AI agents",
+        body: "Meta released Muse Ember on November 9, calling it the lightest and most cost-efficient model in its Muse family so far, aimed at the high-volume, repetitive steps inside an AI agent's workflow — calling tools, routing requests, extracting information, and parsing long documents. The model supports a 1-million-token context window, handles text, images, audio, and video, and is priced at $0.10 per million input tokens and $0.50 per million output tokens, available as muse-ember-1.0 through Meta's Muse Code product and its Model API, with reports also listing availability through Google Cloud and Oracle Cloud. Meta says Ember is the first model trained using its larger Muse Wonder model, under the framing 'Muse Wonder plans, Muse Ember handles the volume,' and claims better performance-per-dollar than Anthropic's Claude Haiku 5.5 and OpenAI's GPT-6 Luna on its own evaluations — a comparison Meta ran itself rather than an independently verified test. Meta has not published a parameter count or public weights for the model.",
+        why: "Pairing a large 'planner' model with a small, cheap 'executor' model is a cost pattern spreading across the industry: most of what an agent actually does is routine tool calls and formatting rather than hard reasoning, so routing that bulk of the work to the cheapest model that can still do it reliably is what keeps running agents at scale affordable.",
+        sources: [
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/meta-releases-muse-ember-a-low-cost-model-for-agent-executio-7b564cff" },
+          { label: "The New Stack", url: "https://thenewstack.io/meta-muse-ember-launch/" }
+        ]
+      },
+      {
+        title:
+          "MiniMax open-sources H3-Image, a 4K image model whose license excludes commercial use in the US, EU, UK, and South Korea",
+        body: "MiniMax published open weights for H3-Image on November 10 — a 33.1-billion-parameter diffusion model derived from its H3 video model that handles text-to-image generation, reference-based generation from up to 16 reference images, and image editing from a single checkpoint. The company says the model is distilled down to roughly six sampling steps and can generate a 4K image in under 10 seconds, though some independent testers have reported longer times depending on settings and hardware. The weights, variational autoencoder, and prompt-expander component are published on Hugging Face, but under MiniMax's own community license, which multiple outlets report excludes commercial use in the US, EU, UK, and South Korea without obtaining a separate license. As of release, MiniMax had not published independent quality benchmarks, and the model had not yet appeared on third-party ranking sites like Artificial Analysis.",
+        why: "'Open weights' doesn't automatically mean 'use it however you want' — a published model can still carry a license that restricts who can use it commercially or where, which is exactly the fine print worth checking before treating any open-weight release as unrestricted.",
+        sources: [
+          { label: "Neurohive", url: "https://neurohive.io/en/news/minimax-h3-image-4k-image-generation/" },
+          { label: "Runtime Wire", url: "https://runtimewire.com/article/minimax-h3-image-4k-product-photos" }
+        ]
+      },
+      {
+        title:
+          "AMD's data-center revenue nearly doubles again, as AI chip demand keeps outrunning the rest of its business",
+        body: "AMD reported third-quarter 2026 results on November 3 showing total revenue of about $13.4 billion, up 45% year-over-year, driven by its data-center segment — the AI chip business — which hit a record $8.5 billion, up 97% year-over-year on EPYC CPU demand and its newer MI450 AI accelerator, according to the company's own press release. That growth came even as AMD's client-and-gaming segment fell 8% year-over-year to $3.7 billion, underscoring how concentrated the company's growth now is in AI infrastructure rather than its traditional PC and console chip business. Non-GAAP gross margin came in at 56% with diluted earnings per share of $2.09, and AMD guided fourth-quarter revenue to roughly $17 billion, plus or minus 3%. CEO Lisa Su said the company now expects data-center revenue to keep growing more than 80% in 2027.",
+        why: "Looking at which segment of a chipmaker's revenue is actually growing — not just the total — is the clearest way to see how concentrated the current AI boom's hardware spending really is: AMD's overall numbers look healthy, but nearly all of the growth is coming from one AI-specific category.",
+        sources: [
+          { label: "AMD", url: "https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/amd-reports-record-q3-as-data-center-revenue-rises-97-d2aab34a" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Gemini 4 Carbon's move to general availability and AMD's data-center earnings.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on Meta's Muse Ember pricing and the fine print in MiniMax's H3-Image license.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "video",
+        title: "Two Minute Papers — latest upload",
+        source: "Károly Zsolnai-Fehér · weekly",
+        why: "A clear, visual explainer style for how diffusion models like MiniMax's H3-Image get compressed down to a handful of sampling steps.",
+        url: "https://www.youtube.com/@TwoMinutePapers/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup for weighing today's model-pricing, open-weight-licensing, and chip-earnings stories against each other.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "Step distillation",
+      definition:
+        "Diffusion models — the kind of AI model behind most image and video generators — normally create an output by gradually removing noise from a random starting point across dozens of small steps, each one a separate pass through the model. Step distillation is a training technique that compresses that multi-step process down to a much smaller number of steps, sometimes just a handful, by training a faster model to reproduce the end result of the slower, many-step process. MiniMax's H3-Image uses this to generate a 4K image in roughly six steps instead of the dozens a typical diffusion model needs, which is most of why it can produce a high-resolution image in well under a minute instead of several times that.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "If you use an image-generation tool that exposes a step count or a 'fast'/'turbo' mode (many Stable Diffusion-based apps do), generate the same prompt once at the default setting and once at the fastest few-step setting. Compare the output quality and generation time side by side to see exactly what step distillation trades away for speed.",
+    learnLinks: [
+      { label: "How diffusion models generate images, and what distillation trades away → How AI Models Work", href: "#/course/models" },
+      { label: "Why 'open weights' doesn't always mean an open license → The AI Industry", href: "#/course/industry" },
+      { label: "What changed this week in Gemini and the AI Toolbox → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-15",
     displayDate: "Sunday, November 15, 2026 · Edition #103",
     headline:
