@@ -13,6 +13,100 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-17",
+    displayDate: "Tuesday, November 17, 2026 · Edition #105",
+    headline:
+      "Anthropic sets its IPO price range at $70-$78 a share with trading set to begin this week, Nvidia reports make-or-break fiscal Q3 earnings today, llama.cpp ships a stability-promising version 1.0, and Alibaba opens a two-week public preview of Qwen4-Max",
+    summary:
+      "Today's stories sit at two very different scales: the business side of AI hitting a milestone most software companies never reach — a public listing with audited financials for everyone to see — and the quieter infrastructure layer where a widely used open-source project just made its first-ever stability promise. Alibaba's time-boxed model preview rounds things out as a reminder that not every model release is meant to last.",
+    stories: [
+      {
+        title:
+          "Anthropic sets its IPO price range at $70-$78 a share, with trading expected to begin this week on Nasdaq under ticker ANT",
+        body: "Anthropic filed an amended S-1 and launched its IPO roadshow on November 10, 2026, according to the company's own announcements. The filing covers 825 million Class A shares — about 801.35 million sold directly by Anthropic and roughly 23.65 million sold by existing stockholders — priced in an estimated range of $70 to $78 each, with underwriters holding an option to buy up to 123.75 million additional shares. The offering also includes a separate $26 billion private placement of Class N stock sold directly to a group of strategic partners at the IPO price, per multiple reports citing the filing. At the top of its range, the offering would value Anthropic at roughly $1.3 trillion, below earlier informal estimates as high as $2 trillion. Shares are expected to begin trading on the Nasdaq Global Select Market this week under the ticker \"ANT.\"",
+        why: "Going public forces a private AI lab to disclose financial detail — real revenue, real losses, real spending plans — that it never had to share before, giving outsiders their first audited look at what running a frontier AI company actually costs.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/news/s1-sec" },
+          { label: "Anthropic", url: "https://www.anthropic.com/news/roadshow-launch" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/anthropic-sets-ipo-range-and-adds-26-billion-private-placeme-f6c67619" }
+        ]
+      },
+      {
+        title:
+          "Nvidia reports fiscal third-quarter earnings today, with Wall Street watching whether its $108 billion revenue guide holds up",
+        body: "Nvidia is scheduled to report results for its fiscal 2027 third quarter, which ended October 25, 2026, after markets close today, November 17, with a conference call at 2 p.m. Pacific time, according to the company's own investor-relations announcement. Heading into the report, Nvidia's guidance from its prior quarter called for roughly $108.0 billion in revenue, plus or minus 2%, and a non-GAAP gross margin near 74%, a figure that sits well above Wall Street's earlier consensus estimate of around $104 billion. Management has also said it expects fiscal 2028 revenue to grow roughly 70%, with chip supply remaining the main constraint through at least that year, and the outlook does not assume any data-center compute revenue from China.",
+        why: "Because Nvidia's chips are what nearly every major AI lab trains and runs its models on, its quarterly numbers work as a rough proxy for how much the whole industry is actually spending on AI compute, not just how one company is performing.",
+        sources: [
+          { label: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/nvidia-beats-estimates-with-108b-revenue-outlook-c8923551" }
+        ]
+      },
+      {
+        title:
+          "llama.cpp reaches version 1.0.0, promising API stability after years as the open-source backbone of local AI",
+        body: "The ggml-org project shipped llama.cpp v1.0.0 on November 13, 2026, its first release under a formal semantic-versioning policy, according to the project's own GitHub release notes. Under the new policy, any breaking change to the public interfaces of its two core libraries, libllama and libggml, will now require a major version bump — a stability guarantee the project has never formally offered before. The release also removes several dozen long-deprecated functions, while adding features including an FP8 key-value cache, support for Moonshot AI's Kimi-K3.1 model, and a new text-to-speech server endpoint. llama.cpp ships through GitHub, Docker, Debian, Homebrew, conda-forge, MacPorts, Winget, and an XCFramework for Apple platforms.",
+        why: "llama.cpp quietly runs underneath a huge share of local and self-hosted AI tools, so a stable 1.0 API matters less to end users and more to every app developer who builds on it and now has assurance their integration won't silently break on the next update.",
+        sources: [
+          { label: "GitHub", url: "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0" },
+          { label: "Neurohive", url: "https://neurohive.io/en/news/llama-cpp-v1-stable-release-semver/" }
+        ]
+      },
+      {
+        title:
+          "Alibaba opens a two-week public preview of Qwen4-Max, the first callable model from its next-generation Qwen4 family",
+        body: "Alibaba made Qwen4-Max-Preview available on November 11, 2026, as the first model from its next-generation Qwen4 family that developers can actually call, according to multiple reports citing Alibaba's own Qwen documentation. The preview is reachable only through Alibaba's Token Plan subscription rather than ordinary pay-as-you-go API billing, and reports describe a 1-million-token context window with support for text, image, and video input alongside tool calling and structured outputs. Qwen's documentation sets the preview window to close at midnight on November 25, 2026 (UTC+8), after which the model is expected to be retired, meaning anything built against it now will need to move to a different model before then. At launch, Alibaba had not published a benchmark table, model card, parameter count, or license for the model, and no open weights were released alongside it.",
+        why: "Labs increasingly ship an early, time-limited 'preview' model before a full release, which lets them gather real-world feedback and gauge demand without committing to long-term pricing, support, or a permanent model ID.",
+        sources: [
+          { label: "Alpha Signal", url: "https://alphasignal.ai/news/alibaba-launches-qwen4-max-with-agent-first-coding-and-1m-token-support" },
+          { label: "CometAPI", url: "https://www.cometapi.com/qwen4-max-preview-released/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Anthropic's IPO pricing and Nvidia's earnings day.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on llama.cpp's first stable release and what it means for local-AI tooling.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup for weighing Anthropic's IPO, Nvidia's numbers, and Alibaba's Qwen4 preview against each other.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "The AI Daily Brief — latest uploads",
+        source: "Nathaniel Whittemore · daily",
+        why: "Good for a same-day follow-up once Nvidia's actual fiscal Q3 numbers land after today's market close.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      }
+    ],
+    term: {
+      word: "Context window",
+      definition:
+        "A model's context window is the maximum amount of text (measured in tokens) it can hold in view at once — your prompt, any documents you've attached, and its own prior replies all have to fit inside it. Qwen4-Max-Preview's reported 1-million-token window is large enough to hold a very long document or codebase, but a bigger number isn't automatically better: a model still has to actually use everything in that window well, and some models quietly lose track of details buried in the middle of a very long input even when they technically 'fit.'",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Paste a long document (a few thousand words) into a chatbot and ask it a specific factual question about something buried in the middle of the text, not the beginning or end. If it gets that answer wrong while nailing questions about the opening or closing paragraphs, you've just seen a context window's real limits in action, not just its advertised size.",
+    learnLinks: [
+      { label: "What a context window actually is, and where it breaks down → How AI Models Work", href: "#/course/models" },
+      { label: "Why going public changes what an AI company has to disclose → The AI Industry", href: "#/course/industry" },
+      { label: "What changed this week in the AI Toolbox → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-16",
     displayDate: "Monday, November 16, 2026 · Edition #104",
     headline:
