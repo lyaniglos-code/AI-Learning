@@ -13,6 +13,101 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-18",
+    displayDate: "Wednesday, November 18, 2026 · Edition #106",
+    headline:
+      "Nvidia posts $115.8B in quarterly revenue in its first earnings report since Jensen Huang's abrupt resignation, Anthropic prices its IPO ahead of a Thursday Nasdaq debut, and Trump and Xi meet in Shenzhen with an AI 'crisis hotline' and a US list of AI 'national champions' both on the table",
+    summary:
+      "Today the AI story is mostly about money and power rather than new models: Nvidia's results show just how much compute spending has kept accelerating even through a leadership shake-up, Anthropic takes its final step toward becoming a public company, and two governments try to put guardrails and industrial policy around the same technology at the same summit.",
+    stories: [
+      {
+        title:
+          "Nvidia reports $115.8 billion in fiscal Q3 revenue, up 103% year over year, in its first results since Jensen Huang's resignation",
+        body: "Nvidia reported revenue of $115.8 billion for its fiscal 2027 third quarter, ended October 25, 2026, up 103% from a year earlier and above the company's own guidance of about $108 billion, according to its SEC-filed earnings release. Data Center revenue drove the quarter at $107.6 billion, up 110% year over year, while GAAP diluted earnings per share came in at $2.70, ahead of analyst estimates near $2.50. Nvidia guided next quarter's revenue to $130 billion, plus or minus 3%, and said that figure still excludes any data-center compute revenue from China. This was Nvidia's first earnings report since Jensen Huang resigned as CEO on November 11; CFO Colette Kress, named interim CEO by the board, led the earnings call alongside other executives.",
+        why: "A 103% year-over-year revenue jump at a company this size is one of the clearest single numbers showing that AI infrastructure spending hasn't slowed down — it's a useful check against the recurring 'AI bubble' debate, even though one quarter can't settle that argument either way.",
+        sources: [
+          { label: "SEC filing (NVIDIA 8-K)", url: "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm" },
+          { label: "StockTitan", url: "https://www.stocktitan.net/news/NVDA/nvidia-announces-financial-results-for-third-quarter-fiscal-fpx9dw5egxqa.html" },
+          { label: "GuruFocus", url: "https://www.gurufocus.com/news/9205938/nvidia-corp-reports-q3-fiscal-2027-earnings-eps-of-270-and-revenue-of-1158-billion-exceed-estimates" }
+        ]
+      },
+      {
+        title:
+          "Anthropic moves toward pricing its IPO today, with Nasdaq set to begin trading its ANT shares on Thursday",
+        body: "Anthropic's amended S-1 set an expected price range of $70 to $78 per share for its IPO, covering 825 million Class A shares — about 801.35 million sold by Anthropic and roughly 23.65 million sold by existing stockholders — alongside a separate $26 billion private placement of Class N stock sold to strategic partners at the IPO price. Nasdaq's official listing notice, issued November 11, states that Anthropic, PBC's Class A common stock is expected to begin trading on the Nasdaq Global Select Market under the ticker ANT on November 19, 2026, with pricing reported by multiple outlets to be set the day before, today. As of publication, Anthropic had not announced a final per-share price.",
+        why: "The gap between a filed 'expected range' and the actual price set the night before trading is where a company and its underwriters read real-time investor demand — watching whether a deal prices at, above, or below its range is a quick way to gauge how confident the market actually is in a listing.",
+        sources: [
+          { label: "Nasdaq Trader notice", url: "https://nasdaqtrader.com/TraderNews.aspx?id=DTN2026-28" },
+          { label: "Anthropic", url: "https://www.anthropic.com/news/s1-sec" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/anthropic-sets-ipo-range-and-adds-26-billion-private-placeme-f6c67619" }
+        ]
+      },
+      {
+        title:
+          "The Trump administration is reportedly set to name Nvidia, OpenAI, Anthropic, Microsoft, and Amazon among two dozen US AI 'national champions'",
+        body: "The Wall Street Journal reported that the Trump administration plans to designate more than two dozen US AI companies — including Nvidia, Amazon, Microsoft, OpenAI, and Anthropic — as official AI 'national champions,' with Commerce Secretary Howard Lutnick expected to unveil the program. Reports describe the designation as part of a Commerce Department effort to help sell US AI technology abroad against Chinese competition, potentially including fast-tracked export licenses and government backing for companies' international deals, though the specific benefits had not been confirmed as of this writing. Multiple outlets note the timing appears deliberately linked to the APEC leaders' summit in Shenzhen, China, running November 18-19, where President Trump is attending alongside President Xi Jinping.",
+        why: "Governments increasingly treat leading AI companies the way they've long treated strategic industries like aerospace or semiconductors — picking 'champions' to back internationally — which is a sign that AI policy is becoming inseparable from trade and foreign policy, not just domestic tech regulation.",
+        sources: [
+          { label: "The Next Web", url: "https://thenextweb.com/news/ai-national-champions-nvidia-openai-anthropic-trump" },
+          { label: "VKTR", url: "https://www.vktr.com/ai-market/us-signs-ai-supply-chain-pact-with-allies-readies-national-champions-list/" }
+        ]
+      },
+      {
+        title:
+          "Trump and Xi are expected to discuss a US-China AI 'crisis hotline' at the APEC summit in Shenzhen",
+        body: "The APEC Economic Leaders' Meeting is being held in Shenzhen on November 18-19, 2026, and reporting ahead of the summit says Presidents Trump and Xi are expected to discuss setting up a dedicated communication channel for urgent AI-related incidents — an idea the two leaders reportedly first agreed to explore in September. Coverage describes growing concern on both sides about 'rogue' AI systems and unintended escalation, with China also pushing for a broader outcome document touching AI alongside digital trade and other issues. As of this writing, no formal agreement from the meeting had been confirmed.",
+        why: "A dedicated crisis hotline is the same basic idea nuclear powers used during the Cold War — a fast, direct line meant to prevent a technical incident from spiraling into a bigger confrontation — and its application to AI signals that policymakers now see some AI failures as serious enough to warrant that kind of direct, government-to-government channel.",
+        sources: [
+          { label: "Kuwait Times", url: "https://kuwaittimes.com/article/53568/world/trump-and-xi-to-discuss-ai-crisis-hotline-at-apec-as-concerns-grow-over-rogue-models/" },
+          { label: "South China Morning Post", url: "https://www.scmp.com/opinion/comment/article/3374345/shenzhen-summit-puts-ai-trade-and-security-focus" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Nvidia's earnings and the APEC summit's AI angle.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "A broader weekly roundup for weighing Nvidia's results and Anthropic's IPO against each other.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "Accessible, credible discussion of the IPO and AI-geopolitics stories for a general audience.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "The AI Daily Brief — latest uploads",
+        source: "Nathaniel Whittemore · daily",
+        why: "Good for a same-day follow-up once Anthropic's shares actually start trading Thursday.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      }
+    ],
+    term: {
+      word: "IPO price range",
+      definition:
+        "Before a company's shares actually trade, its bankers set an 'expected price range' in the prospectus — Anthropic's was $70 to $78 — based on investor feedback gathered during the roadshow. The company and underwriters then pick one final number the night before trading starts, which can land inside, above, or below that range depending on how strong demand turns out to be. The first trade the next morning can differ from that final IPO price too, since it's set by actual buy and sell orders rather than by the company.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Look up Nvidia's past four quarterly earnings reports (a quick web search for 'Nvidia quarterly revenue history' will do) and track how its revenue has changed quarter over quarter. Seeing the actual trend line makes abstract phrases like 'AI boom' or 'AI bubble' much more concrete.",
+    learnLinks: [
+      { label: "Follow the money behind AI spending → The AI Industry", href: "#/course/industry" },
+      { label: "What going public actually discloses → The AI Industry", href: "#/course/industry" },
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" }
+    ]
+  },
+  {
     date: "2026-11-17",
     displayDate: "Tuesday, November 17, 2026 · Edition #105",
     headline:
