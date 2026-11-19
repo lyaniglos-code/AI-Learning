@@ -13,6 +13,100 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-19",
+    displayDate: "Thursday, November 19, 2026 · Edition #107",
+    headline:
+      "Anthropic prices its IPO at $83 a share — above range and the largest offering in history — and begins trading on Nasdaq today, its S-1 reveals $16.3B in first-half revenue against a mostly non-cash $80B+ net loss, Nvidia's blowout earnings get a surprisingly muted market reaction, and Meta indefinitely delays a business-terms change after a global backlash over AI-training scraping fears",
+    summary:
+      "The business side of AI dominates again today, but with a sharper edge than yesterday: Anthropic's IPO actually priced and starts trading, which means its real financial statements are now public record rather than a range in a prospectus. Nvidia's results remind us that a beat doesn't guarantee a rally, and Meta's retreat on its scraping language shows regulators and courts increasingly shaping what AI companies are allowed to do with other people's web content.",
+    stories: [
+      {
+        title:
+          "Anthropic prices its IPO at $83 a share, raising $81.3 billion in the largest IPO in history, and begins trading today on Nasdaq under ticker ANT",
+        body: "Anthropic priced its initial public offering at $83.00 per share late Wednesday, November 18, well above the $70-$78 range it had set in its amended S-1, according to the company's own announcement and multiple outlets including CNBC. The company upsized the offering to about 980 million Class A shares — roughly 956.4 million sold by Anthropic and 23.6 million by existing stockholders — raising approximately $81.3 billion and valuing the company at around $1.5 trillion on a fully diluted basis. That surpasses SpaceX's June 2026 listing to become the largest IPO on record. Shares are set to begin trading on the Nasdaq Global Select Market today, November 19, 2026, under the ticker \"ANT,\" with the offering expected to close on November 20.",
+        why: "Pricing above the marketed range is a strong signal that investor demand exceeded what the company and its bankers expected — the opposite of a weak deal, where a company prices at or below its range just to get the offering done.",
+        sources: [
+          { label: "CNBC", url: "https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html" },
+          { label: "San Francisco Chronicle", url: "https://www.sfchronicle.com/tech/article/anthropic-ipo-share-price-22538291.php" },
+          { label: "Newsweek", url: "https://www.newsweek.com/anthropic-ipo-price-expectations-markets-ahead-debut-12738498" }
+        ]
+      },
+      {
+        title:
+          "Anthropic's S-1 shows $16.3 billion in first-half 2026 revenue, up from $1.16 billion a year earlier, alongside a net loss north of $80 billion that is mostly a non-cash accounting figure",
+        body: "Anthropic's public S-1 filing, first lodged October 26, 2026, discloses revenue of about $16.286 billion for the first six months of 2026, up from roughly $1.163 billion in the same period of 2025 — a sign of extremely fast growth even by AI-industry standards. The filing also reports an operating loss of around $693 million for the period, a far smaller figure than the company's headline net loss of roughly $80.7 billion. Reporting from multiple outlets, including HackerNoon's breakdown of the filing, attributes about 90% of that enormous net-loss figure to a 'change in fair value of convertible notes, derivative liabilities, and SAFEs' — an accounting mark tied to how much Anthropic's own equity has appreciated, not cash actually spent running the business.",
+        why: "This is a good lesson in reading financial disclosures critically: a single 'net loss' headline number can combine a modest operating loss with a massive non-cash accounting swing, and conflating the two badly misrepresents how a company is actually doing.",
+        sources: [
+          { label: "PPC Land", url: "https://ppc.land/anthropic-files-for-nasdaq-ipo-with-16-3bn-in-first-half-revenue/" },
+          { label: "HackerNoon", url: "https://hackernoon.com/anthropics-s-1-shows-$163b-in-half-year-revenue-a-900percent-nrr-and-an-$807b-loss-that-mostly-isnt" }
+        ]
+      },
+      {
+        title:
+          "Nvidia's record-breaking Q3 results get a surprisingly muted market reaction, with shares up only modestly after hours despite beating every estimate",
+        body: "Nvidia reported fiscal Q3 2027 revenue of $115.8 billion, up 103% year over year and well above the roughly $109.1 billion analysts polled by LSEG had expected, with adjusted earnings per share of $2.68 versus a $2.47 estimate, according to the company's own results and coverage from StockAnalysis.com. Despite that double beat and guidance of $130 billion for the next quarter, Nvidia shares closed 0.4% lower in the regular session on results day and rose only about 2-3.6% after hours, a notably restrained move for a report this strong. CEO Colette Kress, named interim CEO after Jensen Huang's November 11 resignation, led the earnings call.",
+        why: "A 'good news, flat stock' reaction usually means the market had already priced in the good news, or that investors are more focused on a bigger worry — in this case the ongoing debate over whether all this AI spending will eventually pay off — than on any single quarter's numbers.",
+        sources: [
+          { label: "StockAnalysis.com", url: "https://stockanalysis.com/news/nvda-q3-fy2027-earnings-beat/" },
+          { label: "NVIDIA Investor Relations", url: "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx" }
+        ]
+      },
+      {
+        title:
+          "Meta indefinitely delays a business-terms update after courts in Norway and Brazil, a UK regulator, and US senators objected that it could let Meta scrape news sites for AI training",
+        body: "Meta's Business Help Center notice, issued November 5, 2026, confirms that a planned change to its business terms will not take effect on its original November 20, 2026 date and that existing terms remain in place while the company 'consults stakeholders,' with no new date given, according to reporting from MediaPost and Nieman Lab. The proposed language would have let Meta use automated tools to 'index, cache, analyze, collect, retrieve, or crawl' domains and web pages tied to business accounts; Meta says the update concerns ad and product recommendations rather than news scraping and that its crawler practices are unchanged, though it also quietly removed the word 'train' from the list of permitted uses after press scrutiny. The delay followed a temporary injunction from a Norwegian court, action from a Brazilian court, a UK Competition and Markets Authority investigation, a bipartisan letter from US senators to Mark Zuckerberg, and a welcome from the EU Commission.",
+        why: "This is a clear example of 'terms of service' functioning as a quiet AI-training pipeline — vague contractual language about how a platform can use content tied to business accounts can become the legal basis for scraping that content into training data, which is exactly why regulators and courts are starting to scrutinize the wording so closely.",
+        sources: [
+          { label: "MediaPost", url: "https://www.mediapost.com/publications/article/419294/meta-pauses-data-scraping-terms-following-publishe.html" },
+          { label: "404 Media", url: "https://404media.co/meta-generative-ai-commercial-terms-on-pause" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A same-day take on ANT's actual trading debut and Nvidia's muted reaction.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "The New York Times · weekly",
+        why: "Accessible discussion of what Anthropic's first disclosed financials actually reveal about running a frontier lab.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for weighing the IPO debut, Nvidia's earnings, and Meta's scraping-terms retreat against each other.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "The AI Daily Brief — latest uploads",
+        source: "Nathaniel Whittemore · daily",
+        why: "Useful for a same-day follow-up once ANT's first trade actually prints.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      }
+    ],
+    term: {
+      word: "non-cash charge",
+      definition:
+        "A non-cash charge is an accounting entry that reduces reported profit (or deepens a loss) without any money actually leaving the company — Anthropic's roughly $80 billion net loss is a case in point, since about 90% of it comes from marking its convertible notes, derivative liabilities, and SAFEs to their current fair value rather than from cash spent on compute, salaries, or anything else. These charges are real and required under accounting rules, but they say more about how much a company's own equity has appreciated than about its day-to-day financial health.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Pull up Anthropic's actual S-1 filing on SEC EDGAR (search 'Anthropic S-1' on sec.gov) and find the income statement. See if you can locate the line item for the 'change in fair value' of convertible notes and SAFEs, and compare it to the much smaller operating loss figure. It's a concrete way to see how one accounting choice can make a company look far less healthy than its underlying business actually is.",
+    learnLinks: [
+      { label: "Make sense of IPO filings and financial disclosures → The AI Industry", href: "#/course/industry" },
+      { label: "Why markets react the way they do to AI earnings → The AI Industry", href: "#/course/industry" },
+      { label: "New to AI? Start with AI Foundations", href: "#/course/foundations" }
+    ]
+  },
+  {
     date: "2026-11-18",
     displayDate: "Wednesday, November 18, 2026 · Edition #106",
     headline:
