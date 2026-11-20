@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-20",
+    displayDate: "Friday, November 20, 2026 · Edition #108",
+    headline:
+      "OpenAI launches GPT-6.2 Astra and Sol, Anthropic ships Claude Fable 5.2 and Mythos 5.2 under a tiered-access system, Nvidia confirms it has stopped shipping licensed H200 chips to China despite US export approval, and Cursor adds real-time voice chat with coding agents",
+    summary:
+      "Today's stories are about two different kinds of gatekeeping: who gets to use a model, and who gets to buy a chip. Two labs released new model pairs this month that split capability from access — a cheaper, broadly available tier next to a more powerful, restricted one — while Nvidia's own earnings call revealed it has quietly stopped a chip shipment Washington had actually approved, a reminder that export rules and a company's own business judgment don't always point the same way.",
+    stories: [
+      {
+        title:
+          "OpenAI releases GPT-6.2 Astra and GPT-6.2 Sol, pricing its frontier model about 20% cheaper while keeping its efficient model's price unchanged",
+        body: "OpenAI introduced GPT-6.2 Astra and GPT-6.2 Sol on November 17, according to the company's own announcement. Astra is positioned as OpenAI's frontier model for harder, more complex projects, while Sol is the efficient option for everyday work; both are reachable in ChatGPT for Plus, Pro, Enterprise, and Edu users and through the API under the model IDs gpt-6.2-astra and gpt-6.2-sol. Astra's API price is $8 per million input tokens and $40 per million output tokens, about 20% below GPT-6 Astra's pricing, while Sol keeps the same token prices as GPT-6.1 Sol. OpenAI says Astra gained 6.2 points on its internal GDPval v2 evaluation while using 22% fewer output tokens than its predecessor, and that Sol lands within half a point of Astra on Cognition's FrontierCode 2.0 benchmark at roughly a fifth of the cost. Independent coverage from Decrypt reports that Astra ties Anthropic's Claude Fable 5.2 on Epoch AI's capability index but trails it on some other benchmarks, at a lower cost per completed task.",
+        why: "Splitting a model family into a pricier 'frontier' tier and a cheaper 'efficient' tier — something Anthropic, Google, and now OpenAI all do — lets a lab sell raw capability and everyday affordability as two separate products instead of forcing every customer to pay frontier prices for routine work.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/introducing-gpt-6-2-astra-sol" },
+          { label: "Decrypt", url: "https://decrypt.co/383488/openai-gpt-6-2-astra-challenges-anthropic-price-but-not-every-benchmark" }
+        ]
+      },
+      {
+        title:
+          "Anthropic ships Claude Fable 5.2 and Mythos 5.2, using the same underlying model but gating the more capable version behind a verification program",
+        body: "Anthropic announced Claude Fable 5.2 and Claude Mythos 5.2 on November 9, according to the company's own product page. Both are built on the same underlying model, but Fable 5.2 ships with safeguards that limit or block performance on especially risky cybersecurity and biology tasks so it can be released broadly, while Mythos 5.2 — described by Anthropic as its most capable model for cybersecurity and life-sciences research — is restricted to vetted organizations that apply through its Cyber Verification Program or Life Sciences Verification Program. Mythos 5.2 is priced at $8 per million input tokens and $40 per million output tokens in standard mode, or $16/$80 in a faster mode available only through those trusted-access programs. On Anthropic's own benchmarks, Fable 5.2 scores 49.1% on FrontierCode 2.0, up from 32.4% for Fable 5.1 and above Claude Opus 5.5's 45.5%, while Mythos 5.2 reaches 89.6% on CVE rediscovery, up from 81.3% for Mythos 5.1.",
+        why: "Gating a model's full capability behind an application process is Anthropic's way of handling 'dual-use' skills — the same cybersecurity or biology knowledge that helps a vetted defender can also help an attacker — rather than either withholding the capability entirely or releasing it to everyone with no check at all.",
+        sources: [
+          { label: "Anthropic", url: "https://www.anthropic.com/claude/mythos" },
+          { label: "SD Times", url: "https://sdtimes.com/ai/anthropic-introduces-claude-fable-5-2-mythos-5-2/" }
+        ]
+      },
+      {
+        title:
+          "Nvidia confirms it has stopped shipping licensed H200 chips to China even though the US government had approved the sales",
+        body: "On its November 17 fiscal Q3 earnings call, Nvidia interim CEO Colette Kress said the company's guidance 'does not have any licensed Hopper data center products included, and we are no longer shipping licensed Hopper data center products to China,' according to Fox Business and Bloomberg Government. Kress did not explain why Nvidia stopped the shipments or whether the halt is permanent, despite the US government having already approved the licensed sales. Kress put Nvidia's Q3 licensed Hopper (H200) revenue from China at about $2.4 billion. The reporting also notes that new US rules issued November 16 bar advanced American chips from foreign data centers that serve Chinese customers remotely, and that Beijing has separately moved to restrict H200 imports as it pushes to reduce reliance on US technology.",
+        why: "Export control is really two separate gates — a government licensing a sale, and the exporting company actually choosing to ship it — and this is a case where a US company held back on a sale Washington had already cleared, showing that a chipmaker's own risk calculus can end up stricter than the law requires.",
+        sources: [
+          { label: "Fox Business", url: "https://www.foxbusiness.com/fox-news-tech/nvidia-halts-china-ai-chip-shipments-despite-us-approval" },
+          { label: "Bloomberg Government", url: "https://news.bgov.com/bloomberg-government-news/nvidia-stops-selling-ai-chips-to-china-despite-us-approval" }
+        ]
+      },
+      {
+        title:
+          "Cursor adds real-time voice chat with coding agents, built on xAI's Grok Voice",
+        body: "Cursor shipped Voice Chat with Agents on November 6, according to its own changelog. The feature lets a developer hold a real-time, two-way voice conversation with a coding agent — available in the Agents Window, inside the IDE, on the web, and in Cursor for iOS — and runs on xAI's Grok Voice technology under the hood. It's distinct from Cursor's existing dictation feature, which only converts speech to text inside the chat input rather than holding a live conversation. With Privacy Mode turned on, voice sessions run with zero data retention. Coverage from The New Stack notes that Google announced a competing Voice mode for its Antigravity coding tool on the same day.",
+        why: "Voice input isn't just a convenience layer — letting a developer talk through a problem out loud, interrupt, and get an immediate spoken response changes the back-and-forth of working with a coding agent compared to typing a prompt and waiting for text.",
+        sources: [
+          { label: "Cursor Changelog", url: "https://www.cursor.com/changelog/voice-chat" },
+          { label: "The New Stack", url: "https://thenewstack.io/cursor-antigravity-voice-agents/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the GPT-6.2 and Claude Fable/Mythos 5.2 releases landing within days of each other.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on how GPT-6.2 Astra/Sol and Claude Fable/Mythos 5.2 actually compare in practice, and what Cursor's voice feature changes about working with a coding agent.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for weighing this week's model releases against Nvidia's China chip decision in the broader context of the AI industry's direction.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for why Nvidia would hold back a chip sale the US government had already approved.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      }
+    ],
+    term: {
+      word: "Tiered model access",
+      definition:
+        "Tiered model access is when a lab releases two versions of essentially the same model under different rules: a broadly available version with built-in safeguards limiting its most sensitive capabilities, and a more powerful or unrestricted version gated behind an application, verification program, or higher price. Anthropic's Fable 5.2 (public) versus Mythos 5.2 (vetted organizations only) and OpenAI's Sol (efficient, everyday) versus Astra (frontier, pricier) are both examples, though for different reasons — one is about safety risk, the other about cost and capability.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Pick one task you do often with a chatbot — summarizing an article, drafting an email, debugging a snippet. If you have access to both a 'frontier' and an 'efficient' tier from the same company (like GPT-5.2 Sol vs. Astra, or Claude's smaller vs. larger models), run the same task on both and compare the quality difference against the cost and speed difference. That tradeoff is exactly what today's model-tiering story is about.",
+    learnLinks: [
+      { label: "Why labs split models into frontier vs. efficient tiers → How AI Models Work", href: "#/course/models" },
+      { label: "How export controls and chip supply shape the AI industry → The AI Industry", href: "#/course/industry" },
+      { label: "What changed this week across ChatGPT, Claude, and Cursor → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-19",
     displayDate: "Thursday, November 19, 2026 · Edition #107",
     headline:
