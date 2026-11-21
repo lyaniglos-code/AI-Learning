@@ -13,6 +13,108 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-21",
+    displayDate: "Saturday, November 21, 2026 · Edition #109",
+    headline:
+      "Anthropic's ANT shares swing wildly through their first trading days and chip stocks sink with them, Microsoft pitches Copilot as the 'new operating system for work' at Ignite 2026, Nvidia's board opens a search for a permanent CEO after Jensen Huang's abrupt exit, and a global Gallup study links AI companionship to higher loneliness among young people",
+    summary:
+      "Today's stories are about what happens after the headline event: Anthropic's IPO actually priced and opened two days ago, and now the market is digesting it with a volatile stock and a broader AI-stock wobble. Microsoft, meanwhile, is trying to turn 'Copilot' from a chat window into the thing you work inside all day, Nvidia is quietly getting on with replacing its only-ever CEO, and a large new study gives some real numbers to a question people have been asking anecdotally for years: are young people treating AI like a friend, and what does that correlate with?",
+    stories: [
+      {
+        title:
+          "Anthropic's ANT shares swing from a 34% opening pop to a double-digit intraday slide, and chipmakers fall alongside it, as Wall Street digests the biggest IPO on record",
+        body: "Anthropic's Class A shares began trading on the Nasdaq Global Select Market on Thursday, November 19, opening at $111.50 — about 34% above its $83 IPO price — before giving back much of that gain during the session, according to The Motley Fool. The stock fell roughly 17% from its opening price to around $93 by early afternoon before closing the day up about 17% from its IPO price, a notably volatile debut for a company now valued near $1.5 trillion. Decrypt reports that Nvidia, AMD, and Micron shares all fell the same day, even as Anthropic's listing fueled broader excitement about AI stocks, and major indices including the S&P 500 extended a multi-day losing streak that week.",
+        why: "A stock that pops at the open and then fades is a common pattern for a hyped IPO — it shows that early demand from retail and momentum buyers can run well ahead of where longer-term institutional investors are actually willing to hold the price, and it's a reminder that a single day's trading tells you very little about a company's actual value.",
+        sources: [
+          { label: "The Motley Fool", url: "https://www.fool.com/investing/2026/11/19/why-anthropic-stock-is-up-today/" },
+          { label: "Decrypt", url: "https://decrypt.co/383669/nvidia-amd-micron-ai-stocks-sink-anthropic-ipo-price" }
+        ]
+      },
+      {
+        title:
+          "Microsoft's Ignite 2026 keynote recasts Copilot as 'the new operating system for work,' with Word, Excel, and PowerPoint now built directly inside it",
+        body: "Microsoft CEO Satya Nadella opened Ignite 2026 in San Francisco on November 17 by addressing the previous week's Microsoft 365 outage before unveiling what ITPro and The Next Web both describe him calling 'the new operating system for work.' Office apps — Word, Excel, and PowerPoint — are now generally available built directly into Copilot and included in existing Copilot subscriptions, rather than living in separate apps Copilot merely connects to. Microsoft also introduced Copilot Workspaces, a shared space where employees and longer-running AI agents collaborate on projects together, as the successor to the earlier Copilot Notebooks feature, alongside Autopilot (an always-on personal agent rolling out to Microsoft's early-access Frontier customers) and an AI Transparency Initiative launched with more than 40 partner organizations.",
+        why: "Rebuilding a chat assistant into the container that your actual documents and agents live inside — rather than a sidebar next to them — is the clearest sign yet that the major AI platforms are competing less on chatbot quality and more on which company's agents get to sit closest to your real work.",
+        sources: [
+          { label: "ITPro", url: "https://www.itpro.com/software/microsoft/microsoft-wants-to-make-copilot-the-new-os-for-work-heres-how" },
+          { label: "The Next Web", url: "https://thenextweb.com/news/microsoft-office-in-copilot-nadella-ignite-agi-pilled" }
+        ]
+      },
+      {
+        title:
+          "Nvidia's board names its first-ever independent chair and opens a search for a permanent CEO, nine days after Jensen Huang's sudden resignation",
+        body: "Nvidia's board announced on November 12 that Jensen Huang had resigned as president, CEO, and a board member, effective immediately, after 33 years leading the company he co-founded, according to the company's own newsroom release and an accompanying SEC Form 8-K filing. CFO Colette Kress became interim CEO while keeping her finance role, and the board named longtime director Harvey C. Jones — on Nvidia's board since 1993 — as the company's first-ever independent Chair of the Board. Nvidia's release gave no reason for the change. Coverage from YourStory notes the board has said it will weigh both internal and external candidates for a permanent successor, with no timetable announced and no shortlist confirmed.",
+        why: "Separating 'who runs the company day to day' (an interim CEO) from 'who leads the board that oversees the CEO' (a newly created independent chair) is a standard corporate-governance move after an unplanned leadership change — it lets a company keep operating normally while giving its board more structured oversight during the search for a permanent leader.",
+        sources: [
+          { label: "NVIDIA Newsroom", url: "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" },
+          { label: "YourStory", url: "https://yourstory.com/2026/11/who-will-succeed-jensen-huang-race-to-find-permanent-chief-begins" }
+        ]
+      },
+      {
+        title:
+          "A global Gallup and Boston Children's Hospital study finds a third of young people have used AI as a companion, and that companion users report notably higher loneliness",
+        body: "Gallup and the Digital Wellness Lab at Boston Children's Hospital published 'Friendship in an Online-Offline World' on November 18, based on a survey of 15,925 people aged 15 to 22 across 16 countries conducted between late May and late August 2026, according to 404 Media and Digital Trends. A median of 33% of respondents said they had used AI as a social companion or friend, a figure that rose to about 50% among people who use AI at least daily; 93% of respondents still reported having at least one strong in-person friendship. Companion users showed about 70% higher adjusted odds of reporting higher loneliness than non-users, but Gallup describes the data as observational and says it cannot determine whether loneliness drives people toward AI companionship, the reverse, or both.",
+        why: "This is a useful case study in correlation versus causation: a strong statistical link between AI companionship and loneliness doesn't by itself tell you which caused which, or whether some third factor explains both — exactly the kind of claim worth slowing down on before drawing a conclusion.",
+        sources: [
+          { label: "404 Media", url: "https://www.404media.co/gallup-study-friendship-ai-companions/" },
+          { label: "Digital Trends", url: "https://www.digitaltrends.com/computing/a-third-of-young-people-have-turned-to-ai-for-friendship-and-the-loneliness-numbers-are-worrying/" }
+        ]
+      },
+      {
+        title:
+          "Perplexity says it has crossed a $1 billion annual revenue run-rate, up roughly fourfold in 2026, while shipping a new Monitor API",
+        body: "Perplexity co-founder Aravind Srinivas disclosed the $1 billion revenue run-rate figure at a Semafor event, as reported by the AI News newsletter Latent Space on November 16, alongside news that the company shipped a new Monitor API and said it had opened a new research lab. Latent Space's own reporting is limited on exactly what the Monitor API does or which period the fourfold growth is measured against, so those specifics remain unconfirmed beyond the headline figures. The disclosure follows a year of rapid product expansion at Perplexity, including its Comet browser and agentic Teammates feature.",
+        why: "A 'revenue run-rate' is current monthly or quarterly revenue multiplied out to an annual figure — it's a useful snapshot of momentum, but it's not the same as a company's actual trailing twelve-month revenue, and fast-growing startups often highlight it because it looks better than the real number would.",
+        sources: [
+          { label: "Latent Space (AI News)", url: "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A same-day take on Anthropic's volatile first trading days and Microsoft's Ignite 2026 keynote.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on what Copilot's 'operating system for work' pitch actually changes for people who use these tools daily.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — this week's episode",
+        source: "Kevin Roose & Casey Newton · weekly, The New York Times",
+        why: "A mainstream-facing frame for the Gallup AI-companionship findings and Nvidia's leadership transition.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for weighing the IPO aftermath, Ignite 2026, and the Nvidia succession search against each other.",
+        url: "https://www.lastweekinai.com/"
+      }
+    ],
+    term: {
+      word: "AI companion",
+      definition:
+        "An AI companion is a chatbot or assistant used primarily for emotional or social connection — conversation, validation, or a sense of relationship — rather than for a task like answering a question or drafting a document. Today's Gallup and Boston Children's Hospital study found that a third of young people surveyed worldwide had used AI this way, and that these users reported higher loneliness, though the study couldn't establish which caused which. It's a distinct use case from productivity chatbots, and one that researchers and regulators are watching closely because of how it affects especially younger or more isolated users.",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Next time you're using a chatbot, notice whether you're asking it something factual or task-based, or whether you're really looking for conversation or validation. Today's Gallup study is about exactly that distinction — try naming, for yourself, which mode you're in before you type your next message.",
+    learnLinks: [
+      { label: "What 'AI companionship' means and why researchers are studying it → AI Safety & Society", href: "#/course/safety" },
+      { label: "How IPOs, stock swings, and revenue run-rates actually work → The AI Industry", href: "#/course/industry" },
+      { label: "What Microsoft's Ignite 2026 changes mean for Copilot users → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-20",
     displayDate: "Friday, November 20, 2026 · Edition #108",
     headline:

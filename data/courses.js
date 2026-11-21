@@ -1161,8 +1161,9 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "research-tools",
       title: "NotebookLM & Perplexity: the research tools",
       minutes: 16,
-      updated: "Nov 15, 2026",
+      updated: "Nov 21, 2026",
       content: `
+<p><b>Perplexity says it has crossed a $1 billion annual revenue run-rate (disclosed November 16, 2026),</b> up roughly fourfold over the course of 2026, according to co-founder Aravind Srinivas speaking at a Semafor event. The company also shipped a new Monitor API around the same time, though public reporting on exactly what it does remains thin. A revenue run-rate projects current revenue out over a full year rather than reporting actual trailing annual revenue, so treat it as a momentum signal rather than an audited figure.</p>
 <p><b>Perplexity launched Teammates (November 4-5, 2026)</b> — a new class of agent built to take on long-running work from a high-level goal rather than being re-prompted at each step, rather than answering one-off questions. Teammates can draw on a user's existing Perplexity projects, memory, skills, files, and connected apps, and build on Perplexity Computer, the on-device agent system Perplexity introduced earlier in 2026. The initial rollout is on the web, limited to Max subscribers at that tier's $200-a-month price, with iOS support described as coming soon; Perplexity hasn't said which underlying models power Teammates or detailed how it handles data access across the connected accounts it draws on.</p>
 <p>Two tools own the "help me understand and research" niche, and they approach it from opposite directions: NotebookLM starts from <i>your documents</i>; Perplexity starts from <i>the live web</i>.</p>
 <h3>NotebookLM, now "Gemini Notebook" (Google)</h3>
@@ -1179,6 +1180,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <h3>The habit worth building</h3>
 <p>Chatbot for thinking and creating; Perplexity-style search when the answer must be current and sourced; Gemini Notebook (NotebookLM) when the truth lives in <i>your</i> documents. Knowing which tool matches which question is half of practical AI literacy.</p>`,
       keypoints: [
+        "Perplexity disclosed a $1B annual revenue run-rate (Nov 16, 2026), up roughly 4x in 2026, alongside a new Monitor API — a run-rate projects current revenue over a full year rather than reporting actual trailing revenue",
         "NotebookLM was renamed Gemini Notebook on July 16, 2026 — same product, existing notebooks and links carry over",
         "Grounded in your uploaded sources, citations always — RAG as a product",
         "Expert Intelligence (Aug 27, 2026) lets owned Google Play ebooks become sources, with ownership checks built in",
@@ -1196,8 +1198,9 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
       id: "copilots",
       title: "The copilots: AI at work and in code",
       minutes: 18,
-      updated: "Nov 20, 2026",
+      updated: "Nov 21, 2026",
       content: `
+<p><b>At Ignite 2026 (November 17), Microsoft CEO Satya Nadella called Copilot "the new operating system for work"</b> — the formal rollout of the "super app" rebuild previewed back in September. Word, Excel, and PowerPoint are now generally available built directly inside Copilot and included in existing Copilot subscriptions, rather than living in separate apps Copilot merely connects to. The earlier Copilot Notebooks feature has been superseded by <b>Copilot Workspaces</b>, a shared space where employees and longer-running AI agents collaborate on projects together, while Autopilot — the always-on personal agent — is rolling out to customers in Microsoft's early-access Frontier program. Microsoft also launched an AI Transparency Initiative with more than 40 partner organizations.</p>
 <p><b>Cursor shipped Voice Chat with Agents on November 6, 2026</b> — a real-time, two-way voice conversation with a coding agent, available in the Agents Window, inside the IDE, on the web, and in Cursor for iOS, running on xAI's Grok Voice technology under the hood. It's distinct from Cursor's existing dictation feature, which only converts speech to text in the chat input rather than holding a live conversation; with Privacy Mode on, voice sessions run with zero data retention. Google announced a competing Voice mode for its Antigravity coding tool the same day.</p>
 <p><b>GitHub Copilot CLI version 1.0.109 shipped November 10, 2026</b> — adding IPv4/IPv6 CIDR support to the sandbox's host allow and deny rules, letting administrators permit or block an entire network range in one rule instead of listing individual addresses. The same release added Claude Fable 5.2 to the CLI's model picker, let sandbox path settings read environment variables while still honoring hand-written rules, and changed what happens when a selected model becomes unavailable: the CLI now shows an explicit error instead of silently switching to a different model.</p>
 <p>"Copilot" has become the generic word for AI embedded in the software you already use. The ones that matter:</p>
@@ -1224,6 +1227,7 @@ answer  = llm(f"Context:\n{context}\n\nQuestion: {user_question}")</code></pre>
 <p><b>Muse Realtime Avatar (announced September 23, 2026).</b> Meta unveiled an audio-driven video model that takes a single photo and animates it into a lip-synced, 448×768 talking avatar at 25 frames per second, responding to speech with roughly 870 milliseconds of end-of-turn latency — fast enough to feel closer to a live video call than a slideshow of AI clips. It shares a token stream with Meta's Muse Realtime Voice model, so the same tokens that carry what the avatar says also drive its facial expressions, and it embeds Video Seal watermarking directly in its output. For now it's a research demo embedded in Meta's own Muse agent, with no public API, open weights, or release date yet.</p>
 <blockquote>The pattern to notice: standalone chatbots compete on capability; copilots compete on <i>presence</i> — being inside the workflow. Both are converging on agents that do the task, not just advise on it.</blockquote>`,
       keypoints: [
+        "At Ignite 2026 (Nov 17, 2026), Microsoft made Office in Copilot (Word/Excel/PowerPoint built directly in) generally available and renamed Copilot Notebooks to Copilot Workspaces, a shared space for people and long-running agents — the formal rollout of September's 'super app' preview",
         "Cursor's Voice Chat with Agents (Nov 6, 2026) adds real-time two-way voice conversations with a coding agent across the Agents Window, IDE, web, and iOS — built on xAI's Grok Voice, with zero data retention under Privacy Mode",
         "Unpublished fair-use limits now apply to unlicensed Copilot Chat users, staggered by org size (Nov 2-9, 2026) — Microsoft discloses no caps and gives admins no control, following April 2026's removal of Copilot Chat from Office apps for unlicensed users at larger orgs",
         "Microsoft Copilot wins enterprises through Office presence, not benchmarks",
