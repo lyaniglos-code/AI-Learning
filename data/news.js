@@ -13,6 +13,109 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-22",
+    displayDate: "Sunday, November 22, 2026 · Edition #110",
+    headline:
+      "An Anthropic researcher says he and Claude may have proved math's 167-year-old Riemann Hypothesis — still unverified — Nvidia's board rules out bringing back Jensen Huang after blockbuster earnings, the DOJ starts quietly questioning Nvidia's Hugging Face deal, and nonprofits sue five AI giants seeking to freeze frontier model development",
+    summary:
+      "Today's biggest story is still unconfirmed by design: a claimed proof of mathematics' most famous open problem, produced with Claude's help, that experts are checking line by line in a formal proof language rather than celebrating outright. Everything else is the AI industry's usual mix of money and oversight catching up with its ambitions — Nvidia reassuring markets it can run without its founder, regulators quietly circling two of Nvidia's biggest deals, and a long-shot lawsuit testing just how far a court will go to slow frontier AI down.",
+    stories: [
+      {
+        title:
+          "An Anthropic mathematician says he and Claude proved the 167-year-old Riemann Hypothesis — but the claim is still being checked, not confirmed",
+        body: "Levent Alpöge, a mathematician at Anthropic, announced Friday, November 20, that he used Claude to produce a proof of the Riemann Hypothesis — one of mathematics' most famous unsolved problems, open since 1859 — and says the same method also proves the Generalized Riemann Hypothesis for a class of functions called Dirichlet L-functions, according to Nature and Scientific American. He posted the proof's reasoning coded in Lean, a programming language that mechanically verifies each logical step rather than relying on a human reading for errors; MIT mathematician Andrew Sutherland said Friday afternoon that the Lean source compiles, with some additional checks still in progress. Mathematician Brian Conrey called it 'really the biggest thing I think that's ever happened in mathematics,' while Andrew Granville said Alpöge should have taken more time preparing a clearer write-up before announcing. Nature notes a separate, entirely human-written proof of the same hypothesis also surfaced the same day, and Anthropic itself has issued no official statement — in August, the company said an unreleased Claude version had advanced a related result while explicitly stopping short of claiming a proof.",
+        why: "Lean is a 'proof assistant' — software that checks each step of a mathematical argument the way a compiler checks code syntax, rather than trusting a human reviewer to catch every error. That's exactly why mathematicians are waiting on that mechanical verification instead of reacting to the announcement itself: a claim this large has turned out wrong before, and software-checked logic is the only way to be sure it holds up.",
+        sources: [
+          { label: "Nature", url: "https://www.nature.com/articles/d41586-026-03812-7" },
+          { label: "Scientific American", url: "https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/" }
+        ]
+      },
+      {
+        title:
+          "Nvidia's board says it has no plans to reinstate Jensen Huang as CEO, as the company posts its first earnings since his exit",
+        body: "On Nvidia's November 17 earnings call, board chair Harvey Jones said 'the Nvidia board unanimously accepted his resignation and does not intend to reinstate Jensen as CEO,' pushing back on investor calls for Huang's return, according to Al Jazeera and the South China Morning Post. Jones described Huang's November 12 resignation as voluntary, citing 'personal behaviour inconsistent with the company's code of conduct, standards, and cultural norms,' without elaborating further. The earnings themselves were strong regardless of the leadership turmoil: Nvidia reported $115.8 billion in revenue for the quarter ended October 25, up 103% year-on-year, and guided to roughly $130 billion for the current quarter. Interim CEO Colette Kress, Nvidia's CFO, is staying in both roles while the board weighs internal and external candidates for a permanent successor, with no timetable announced.",
+        why: "A board publicly ruling out reinstating a departed founder-CEO, in the same breath as record earnings, is a statement about institutional continuity — it tells investors the company's results don't depend on one person, even one who's run it since its founding, which is exactly the kind of signal markets look for after an abrupt leadership change.",
+        sources: [
+          { label: "Al Jazeera", url: "https://www.aljazeera.com/economy/2026/11/18/nvidia-shoots-down-calls-for-jensen-huangs-return-amid-strong-earnings" },
+          { label: "South China Morning Post", url: "https://www.scmp.com/tech/article/3374812/nvidia-board-says-it-has-no-plans-reinstate-jensen-huang-ceo" }
+        ]
+      },
+      {
+        title:
+          "The Justice Department is reportedly questioning Nvidia's $12.9 billion deal to buy Hugging Face, as part of a wider antitrust look at Nvidia's acquisitions",
+        body: "Officials are asking whether Nvidia's proposed purchase of Hugging Face — the open-weight model-sharing platform used by more than 18 million developers — would let Nvidia control a key distribution point for AI models and gain leverage over rivals, according to reporting summarized by Let's Data Science and Channel Insider. The inquiry is informal so far: no formal investigation has been opened, and a Justice Department spokesperson said 'government investigations aren't evidence of wrongdoing.' It comes alongside separate DOJ scrutiny of Nvidia's roughly $17-20 billion licensing deal with chip startup Groq, which one legal analyst said could make the Hugging Face review broader and slower. Nvidia announced the Hugging Face deal on September 2-3, pricing it at about $11.9 billion for shareholders plus up to $1 billion in employee retention awards, and has pledged Hugging Face will stay open — not requiring Nvidia's own compute and continuing to support rival chipmakers; the deal is expected to close in the first half of 2027 pending regulatory approval.",
+        why: "This is a good look at how merger review actually works before anything becomes official: regulators ask informal questions about market power — could the buyer use this asset to box out competitors — well before any lawsuit or formal investigation, and that quiet scrutiny alone can slow down or reshape a deal.",
+        sources: [
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/doj-reportedly-opens-inquiry-into-nvidias-hugging-face-acqui-b6f36063" },
+          { label: "Channel Insider", url: "https://www.channelinsider.com/ai/news-nvidia-hugging-face-acquisition-doj-antitrust-scrutiny/" }
+        ]
+      },
+      {
+        title:
+          "Four nonprofits sue OpenAI, Anthropic, Google, Meta, and SpaceX's AI unit, asking a California court to freeze further frontier AI development",
+        body: "Public Citizen, Heat Initiative, the Irreplaceable Education Fund, and the Alliance for Secure AI filed suit in San Francisco Superior Court on November 12, seeking an injunction barring the five companies from 'developing or deploying' more capable AI systems, according to Al Jazeera and Decrypt. The suit relies on California's Unfair Competition Law — a legal theory no court has yet tested in this context — and the plaintiffs aren't seeking monetary damages, only the injunction. As of the latest reporting, no judge has ruled and no temporary restraining order has been granted; the development freeze remains a requested remedy, not an active order. It's a separate case from a September 2026 antitrust lawsuit accusing some of the same companies of illegally agreeing to slow AI development together — this new suit argues the opposite problem, that the companies aren't being careful enough.",
+        why: "An injunction request like this is a long shot procedurally — courts are reluctant to order a company to stop developing a product absent a specific, demonstrated harm — but it's a useful marker of how seriously some advocacy groups now treat frontier AI risk: suing to freeze an entire industry's R&D, rather than targeting one product or practice, is a notably aggressive legal strategy.",
+        sources: [
+          { label: "Al Jazeera", url: "https://www.aljazeera.com/news/2026/11/12/us-nonprofits-sue-tech-giants-to-halt-ai-development" },
+          { label: "Decrypt", url: "https://decrypt.co/383270/openai-anthropic-google-ai-giants-lawsuit-development-freeze" }
+        ]
+      },
+      {
+        title:
+          "A House committee reveals the US approved nearly 879,000 AI chip export licenses to China since December, as Nvidia says it has stopped shipping H200s there",
+        body: "The House Select Committee on the Chinese Communist Party disclosed that the Commerce Department approved roughly 879,000 advanced Nvidia and AMD AI chips for export to Chinese companies between December 2025 and May 2026 — including 75,000 for Alibaba, 150,000 for Tencent, 43,000 for Baidu, and 4,000 for BYD — out of 3.4 million chips Chinese buyers had sought permission for, according to The Standard. The approvals followed a December 2025 decision by the Trump administration to allow H200 sales to China with a 25% fee on approved transactions, even as Blackwell-class chips remain banned from export there. It's unclear how many approved licenses led to actual shipments; Nvidia says it has since stopped shipping H200s to China and that approvals came with strict conditions and limited volumes, and a Commerce official told Congress in July that very few shipments against H200-class licenses had actually taken place. The disclosure has drawn bipartisan pushback in Congress, including a Senate bill that would bar advanced chip export licenses to China for 30 months.",
+        why: "Export-license approvals and actual shipments are two different numbers, and conflating them is a common way AI-chip stories get overstated — a license just grants permission to sell, not proof a sale happened, which is exactly why this story hinges on the gap between '879,000 approved' and Nvidia's claim that it has sold effectively none of that specific chip to China recently.",
+        sources: [
+          { label: "The Standard", url: "https://www.thestandard.com.hk/world/article/349075/US-signed-off-on-sales-of-nearly-900000-AI-chips-to-China-in-six-months-committee-says" },
+          { label: "Yahoo News", url: "https://www.yahoo.com/news/articles/us-lawmaker-demands-details-trumps-014014766.html" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A same-day take on the Riemann Hypothesis proof claim and what the Nvidia-Hugging Face antitrust questions mean for the deal.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on an AI model being used as a genuine research collaborator on a famous open math problem.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for weighing the Riemann claim against the week's regulatory and legal stories — antitrust scrutiny and the frontier-AI lawsuit.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "AI Explained · weekly-ish",
+        why: "Helpful for separating what a Lean-verified proof claim actually establishes from what remains unconfirmed.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Proof assistant (formal verification)",
+      definition:
+        "A proof assistant is software — Lean is the best-known example — that checks each step of a mathematical argument the way a compiler checks code syntax, refusing to accept a step unless it follows mechanically from already-accepted rules. It doesn't judge whether an argument is interesting or well-written, only whether the logic actually holds, which is why mathematicians are running today's Riemann Hypothesis claim through one before trusting the headlines about it. It's increasingly the backstop for verifying AI-generated math and code, since it catches confident-sounding errors a human reviewer might miss.",
+      link: "#/course/models"
+    },
+    tryThis:
+      "Ask any AI chatbot to solve a tricky multi-step math or logic problem, then ask it to lay out its reasoning step by step and check whether any single step actually follows from the one before it. That's the same scrutiny mathematicians are applying to today's Riemann Hypothesis claim — a confident-sounding answer isn't automatically a correct one.",
+    learnLinks: [
+      { label: "What a 'proof assistant' is and why mathematicians don't just trust an AI's answer → How Models Work", href: "#/course/models" },
+      { label: "How antitrust review of a merger actually works → The AI Industry", href: "#/course/industry" },
+      { label: "Why advocacy groups are suing AI companies over frontier development → AI Safety & Society", href: "#/course/safety" }
+    ]
+  },
+  {
     date: "2026-11-21",
     displayDate: "Saturday, November 21, 2026 · Edition #109",
     headline:
