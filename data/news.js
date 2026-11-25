@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-25",
+    displayDate: "Wednesday, November 25, 2026 · Edition #113",
+    headline:
+      "Nvidia's board reverses itself and reinstates Jensen Huang as CEO after Trump personally lobbies its members, Google DeepMind's AI agents pair generated quantum algorithms with machine-checked correctness proofs, Amazon reportedly circles a $7 billion deal for AI-infrastructure startup Decart, and OpenAI's new ChatGPT Wallet lets background agents spend money while a human still approves every charge",
+    summary:
+      "Today's biggest story is corporate governance visibly bending under political pressure: Nvidia's board publicly said it had no plans to bring Jensen Huang back, then reinstated him days later after reported White House involvement. Elsewhere, Google DeepMind shows a stricter way to trust an AI's output — pairing a generated answer with a proof a separate program can check — while Amazon's reported interest in an AI-optimization startup and OpenAI's new agent-driven wallet both point to the same theme: the infrastructure and guardrails around AI are maturing almost as fast as the models themselves.",
+    stories: [
+      {
+        title:
+          "Nvidia's board reinstates Jensen Huang as CEO, days after saying it had 'no plans' to bring him back, following reported pressure from Trump",
+        body: "Nvidia's board reinstated Jensen Huang as president, CEO, and a director on November 23, reversing a position it had publicly held just days earlier after his abrupt November 11 exit. Colette Kress, who had stepped in as interim CEO, returns to her prior role as chief financial officer. NBC News and CNBC report that President Trump personally pressed Nvidia's board, speaking 'directly and indirectly' with its members in the lead-up to the reversal. Huang's departure had followed an independent board inquiry into reports that he had been the target of a foreign intelligence effort — an allegation that remains unverified — and in a staff meeting after his return he acknowledged he had gone 'too far' with some workplace behavior. Nvidia's internal investigation is continuing, and California's attorney general says its own separate inquiry into the company will as well.",
+        why: "A board publicly ruling out a reversal and then making exactly that reversal within days, reportedly after direct pressure from the sitting president, is worth watching as a test of how independent corporate governance actually is at the company supplying most of the world's AI chips — and a reminder to treat 'the target of a foreign intelligence effort' as an unverified claim, not an established fact, until an investigation says otherwise.",
+        sources: [
+          { label: "NVIDIA News", url: "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director" },
+          { label: "NBC News", url: "https://www.nbcnews.com/tech/tech-news/nvidia-reinstates-jensen-huang-rcna610864" },
+          { label: "CNBC", url: "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-ceo-return.html" }
+        ]
+      },
+      {
+        title:
+          "Google DeepMind's AI agents write quantum algorithms and prove them correct, cutting resource needs on one benchmark by over 290x",
+        body: "A preprint posted November 6 by Google DeepMind and Google Quantum AI describes a system in which teams of AI agents propose quantum programs and must pair each one with a machine-checked proof — written in the Lean theorem prover — that it performs its intended calculation within a stated resource budget. On computing arcsine, a function used in preparing certain quantum states, the agents found programs using more than 290 times fewer resources than the published baseline. Three science simulations — fusion, photochemistry, and drug metabolism — improved by roughly 2.5x to 10.9x, and for a parallel quantum search problem the agents cut the expected number of query rounds by up to 1.41x. The paper hasn't been peer-reviewed, and its reported gains are measured against the authors' own prior published baselines rather than independently verified by outside researchers.",
+        why: "The detail worth remembering isn't the specific multiplier — it's the method: instead of asking you to trust a benchmark score, the system pairs every AI-generated answer with a formal proof a separate program checks line by line, which is a meaningfully stronger standard of 'correct' than a model simply reporting its own result.",
+        sources: [
+          { label: "The Quantum Insider", url: "https://thequantuminsider.com/2026/11/10/google-researchers-use-ai-and-mathematical-proofs-to-cut-quantum-computing-requirements/" },
+          { label: "Quantum Computing Report", url: "https://quantumcomputingreport.com/google-deepmind-and-google-quantum-ai-use-lean-4-to-discover-formally-verified-quantum-algorithms/amp/" }
+        ]
+      },
+      {
+        title:
+          "Amazon is reportedly in talks to acquire AI-infrastructure startup Decart for around $7 billion",
+        body: "Multiple outlets, citing a Wall Street Journal report, say Amazon is in talks to acquire Decart, a startup whose Optimization Stack helps companies run AI training and inference efficiently across Nvidia GPUs, Google TPUs, and Amazon's own Trainium chips, at a price of roughly $7 billion. Neither company has confirmed a deal or its terms, and at least one report puts a potential valuation below that figure. Decart also makes the Lucy and Oasis models, though analysts quoted in coverage argue its hardware-optimization software, not its models, is the likely draw for Amazon. Anthropic had reportedly explored acquiring Decart for around $6 billion over the summer before ending talks in September after conducting due diligence.",
+        why: "If Amazon is buying this for the optimization layer rather than the models, it fits a broader pattern: as cloud providers build out their own chips, owning the software that makes an AI workload portable and efficient across different hardware is becoming a strategic asset in its own right, distinct from owning a frontier model.",
+        sources: [
+          { label: "TechRepublic", url: "https://www.techrepublic.com/article/news-amazon-decart-ai-acquisition-talks/" },
+          { label: "Let's Data Science", url: "https://letsdatascience.com/news/amazon-in-talks-to-acquire-decart-for-around-7-billion-e3e3c9e2" }
+        ]
+      },
+      {
+        title:
+          "OpenAI's new ChatGPT Wallet lets background 'dots' agents make purchases, with biometric approval required on every charge",
+        body: "OpenAI introduced ChatGPT Wallet on November 13, a feature that lets its 'dots' background agents buy things on a user's behalf from inside a dots conversation, built with American Express, Mastercard, and Visa. The initial rollout is limited to US ChatGPT Pro subscribers 18 and older with an eligible card, and OpenAI says an agent can charge a selected card without the merchant or the agent itself ever seeing the underlying card number. Every purchase currently requires biometric approval — Face ID or Touch ID on a supported device — rather than running fully autonomously, and OpenAI says it isn't taking a cut of transaction fees at launch. The feature arrives about eight months after OpenAI shelved its earlier agentic-payments effort, Instant Checkout.",
+        why: "This is a concrete, deliberately limited step toward 'agentic commerce' — an AI agent actually spending money on your behalf — and the interesting design choice is where OpenAI drew the human-in-the-loop line: the agent can shop and decide what to buy, but a person still has to approve the charge biometrically before it goes through.",
+        sources: [
+          { label: "OpenAI", url: "https://openai.com/index/introducing-chatgpt-wallet/" },
+          { label: "FinTech Futures", url: "https://www.fintechfutures.com/digital-payments/openai-chatgpt-wallet-launch" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "Same-day coverage of the Nvidia/Huang reversal and what it signals about the company's governance under pressure.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — most recent episode",
+        source: "Skynet Today · weekly",
+        why: "A grounded, skepticism-forward rundown of business and policy stories like the Nvidia reversal and the Decart talks.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "YouTube · benchmark-literate release analysis",
+        why: "Good for a critical read on DeepMind's self-reported resource-reduction figures and what 'measured against our own baseline' does and doesn't prove.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — this week's roundup",
+        source: "Alex Volkov & guests · weekly",
+        why: "Technical detail on the Lean-proof quantum-algorithm work and on agentic-payments plumbing like ChatGPT Wallet.",
+        url: "https://thursdai.news/"
+      }
+    ],
+    term: {
+      word: "Formal verification",
+      definition: "A way of checking that a program does what it claims by writing a mathematical proof of its behavior, then having separate software check that proof step by step — rather than just testing the program on examples and hoping it generalizes. Google DeepMind's quantum-algorithm agents used exactly this approach today, attaching a machine-checked proof to every program they generated instead of relying on benchmark scores alone.",
+      link: "#/course/evals"
+    },
+    tryThis:
+      "Pick any AI benchmark claim you've seen this week (an 'X% faster' or 'Y points higher' figure) and try to find out how it was checked: by the company itself, by an independent lab, or some other way. Today's quantum-algorithm story shows there's an even stronger standard than independent benchmarking — a machine-checked proof — though it's still rare outside math and formal software verification.",
+    learnLinks: [
+      { label: "How we know if an AI claim is actually true → Evals", href: "#/course/evals" },
+      { label: "Agents acting and spending on your behalf → The AI Industry", href: "#/course/industry" },
+      { label: "Keep every AI tool current → The AI Toolbox course", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-24",
     displayDate: "Tuesday, November 24, 2026 · Edition #112",
     headline:
