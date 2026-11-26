@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-26",
+    displayDate: "Thursday, November 26, 2026 · Edition #114",
+    headline:
+      "Google's Isomorphic Labs raises a $5 billion Series C to push AI-designed drugs toward human trials, DeepMind's AlphaGenome 2 roughly doubles how many disease-linked DNA variants it correctly flags, the EU AI Act gets its first legally recognized technical standard, and Cursor's coding agents start provisioning databases and hosting for the apps they build",
+    summary:
+      "Today's stories are less about a single flashy model and more about AI maturing into infrastructure: a drug-discovery startup raises one of the largest rounds in AI history to actually get candidates into clinical trials, a genomics model gets meaningfully sharper at a task biologists actually need, European regulators give companies a concrete technical standard to build against instead of just a legal requirement, and a coding tool quietly removes one more step between 'the AI wrote working code' and 'a real person can use this.'",
+    stories: [
+      {
+        title:
+          "Google's Isomorphic Labs raises a $5 billion Series C — one of the largest funding rounds yet for an AI drug-discovery company",
+        body: "Isomorphic Labs, the Alphabet-owned AI drug-design company founded by Google DeepMind CEO Demis Hassabis, announced on November 17 that it closed a $5 billion Series C round co-led by Sequoia Capital and Greenoaks, with Andreessen Horowitz joining as a new investor alongside returning backers including Thrive Capital, GV, CapitalG, Abu Dhabi's MGX, Singapore's Temasek, and the UK's Sovereign AI Fund, according to the company's own announcement and reporting from FierceBiotech and CityAM. The round lands just six months after Isomorphic's $2.1 billion Series B in May, bringing its total outside funding to roughly $7.7 billion. The company hasn't disclosed a new valuation, though earlier reporting had pointed to talks around $50 billion. Isomorphic says the money will fund moving AI-designed drug candidates — built on technology descended from DeepMind's AlphaFold — out of preclinical research and into human clinical trials.",
+        why: "Drug discovery is one of the slowest, most expensive businesses there is, because most candidates fail in trials rather than in the lab — so this is a direct bet that AI can shorten that pipeline; it's also a reminder that the biggest checks in AI increasingly go to drug design and biology, not just chatbots.",
+        sources: [
+          { label: "FierceBiotech", url: "https://www.fiercebiotech.com/biotech/isomorphic-labs-raises-5b-series-c-months-after-21b-round" },
+          { label: "CityAM", url: "https://www.cityam.com/?p=2479401" }
+        ]
+      },
+      {
+        title:
+          "DeepMind's AlphaGenome 2 roughly doubles how many disease-linked DNA variants it flags correctly, by predicting effects cell-by-cell instead of as an average",
+        body: "Google DeepMind released AlphaGenome 2 on November 11, a successor to last year's AlphaGenome that predicts how a DNA variant affects a specific cell type or state rather than an average across mixed tissue samples, according to DeepMind's own blog post. The model was trained on more than 107 million individual cell profiles spanning 68 human and mouse tissues, and adds the ability to predict DNA methylation — a chemical modification that affects whether a gene switches on — alongside its earlier predictions. On the TenK10K benchmark, DeepMind reports AlphaGenome 2 identified about 30% of known causal variants, up from 16% for the original AlphaGenome, and correctly predicted the direction of a gene's response 43% of the time versus 23% before. It's available now through the AlphaGenome API for non-commercial research, with commercial access still in private preview.",
+        why: "Most disease-linked DNA differences sit in the roughly 98% of the genome that doesn't code for proteins, where it has historically been hard to tell which variants actually matter; predicting the effect for the specific cell type involved, instead of smearing it across a whole tissue sample, is the kind of resolution increase that turns a research curiosity into a tool a lab can actually use to decide which variant to study next.",
+        sources: [
+          { label: "Google DeepMind", url: "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/" },
+          { label: "TechRepublic", url: "https://www.techrepublic.com/article/news-google-deepmind-alphagenome-2-genetic-variants/" }
+        ]
+      },
+      {
+        title:
+          "The EU AI Act gets its first officially recognized technical standard, giving companies a concrete way to demonstrate compliance rather than just a legal requirement to interpret",
+        body: "The European Commission published a reference to EN 18286:2026 in the EU's Official Journal through Implementing Decision (EU) 2026/2274, making it the first harmonized standard formally recognized under the EU AI Act, according to the official EUR-Lex record and legal analyses from law firms Orrick and PwC. The standard, developed by European standards bodies CEN and CENELEC at the European Commission's request, spells out in practical terms how to build a quality management system that satisfies Article 17 of the AI Act — the requirement that providers of 'high-risk' AI systems maintain a documented, auditable process for managing risk across a product's life. Following the standard is voluntary; a company can still demonstrate compliance some other way. But doing so earns a legal 'presumption of conformity,' meaning regulators treat that specific requirement as met without the company separately having to argue its case.",
+        why: "A law that says 'manage your risk properly' is hard to check against in practice; a technical standard spelling out exactly what a compliant process looks like is what actually lets a regulator, auditor, or court assess a real system against something concrete — this is the EU AI Act moving from legal text toward an enforceable checklist, at least for this one requirement.",
+        sources: [
+          { label: "EUR-Lex (European Union)", url: "https://eur-lex.europa.eu/eli/dec_impl/2026/2274/oj" },
+          { label: "Orrick", url: "https://www.orrick.com/en/Insights/2026/10/First-Harmonised-Technical-Standard-Published-Under-the-EU-AI-Act" }
+        ]
+      },
+      {
+        title:
+          "Cursor's coding agents can now provision a database, set up sign-in, and host a finished app — not just write its code",
+        body: "Cursor shipped a feature on November 5 that lets its cloud agents build and publish a working web app end to end, according to the company's own changelog and reporting from The New Stack. Describe what you want, and Cursor's agent now provisions a PostgreSQL database if the app needs one, sets up authentication behind Cursor's own sign-in system, deploys the app to hosting Cursor manages, and hands back a shareable link, rather than stopping at code a developer then has to deploy themselves. On individual plans, a shared app is public by default; on Team and Enterprise plans, public sharing is off by default and only a team admin can turn it on. Cursor hasn't published pricing, storage limits, or available regions for the hosting or database yet.",
+        why: "This pushes 'vibe coding' one step further down the stack: the gap between 'an AI wrote code that works' and 'a real person can visit a working app at a URL' used to require a developer to separately handle hosting, a database, and login — closing that gap is what turns a coding assistant into something closer to a one-person software company.",
+        sources: [
+          { label: "Cursor Changelog", url: "https://cursor.com/changelog/build-live-apps" },
+          { label: "The New Stack", url: "https://thenewstack.io/cursor-ai-app-deployment/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on Isomorphic Labs' record round and what Cursor's new hosting feature changes for developers.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on Cursor's database-and-hosting feature and what AlphaGenome 2's cell-level predictions actually enable in practice.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for weighing a record biotech funding round and a new EU technical standard against each other as two different ways AI is becoming infrastructure.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "YouTube · benchmark-literate release analysis",
+        why: "Useful for unpacking what AlphaGenome 2's benchmark numbers do and don't tell you about real-world disease research.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Presumption of conformity",
+      definition:
+        "A legal shortcut: if a company follows an officially recognized technical standard — like the EU AI Act's new EN 18286:2026 for high-risk AI quality management — regulators treat the relevant legal requirement as satisfied without the company having to separately prove it met the underlying law. It doesn't make following the standard mandatory, and it doesn't cover every requirement in a law, just the specific one the standard was written to address; but it's what turns a vague legal duty into something a company can point to and say 'we did this, so we're compliant.'",
+      link: "#/course/safety"
+    },
+    tryThis:
+      "Pick a recent AI funding announcement — Isomorphic Labs' round today works well — and try to find the actual investor list and round size from the company's own release, not an aggregator's summary. Then check how many different numbers (valuation, total funding to date) different outside outlets report for the same event, and notice how much of that disagreement traces back to a figure the company itself never confirmed.",
+    learnLinks: [
+      { label: "How AI funding rounds and valuations actually work → The AI Industry", href: "#/course/industry" },
+      { label: "Why 'high-risk AI' rules and technical standards matter → AI Safety & Society", href: "#/course/safety" },
+      { label: "What's new in Cursor and the other coding copilots → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-25",
     displayDate: "Wednesday, November 25, 2026 · Edition #113",
     headline:
