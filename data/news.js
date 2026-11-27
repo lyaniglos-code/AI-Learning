@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-27",
+    displayDate: "Friday, November 27, 2026 · Edition #115",
+    headline:
+      "Google DeepMind's AlphaProof Code produces a machine-checked proof of security properties in Signal's cryptographic protocol, OpenAI sets December 11 to retire ChatGPT's two older voice modes in favor of Live, new US export-license rules choke off AI chip sales to Singapore, Malaysia, Thailand, and Indonesia, and Black Friday shows AI shopping agents winning traffic but not shoppers' trust",
+    summary:
+      "Today's stories split between AI proving things and AI being trusted with things: DeepMind shows a formal-verification system that can mathematically check a real, widely used piece of security software rather than just generate plausible-looking code, while a new consumer survey on the biggest shopping day of the year finds people are happy to let AI recommend a purchase but not to let it actually make one. Meanwhile, OpenAI simplifies ChatGPT's voice lineup down to one mode, and a new US export rule turns Southeast Asia's data-center boom into the latest front in the fight to keep advanced AI chips out of China.",
+    stories: [
+      {
+        title:
+          "Google DeepMind's AlphaProof Code produces a machine-checked proof that Signal's cryptographic code is secure — and catches two real bugs when researchers deliberately reintroduce them",
+        body: "Google DeepMind introduced AlphaProof Code on November 10, a multi-agent framework in which a human specifies what property of a piece of software should be true, and a group of AI agents works out the formal proof, according to the company's own blog post. Working with Signal, the team used it to formally verify security properties of the actual code implementing Signal's cryptographic protocol — not just a simplified model of its design — producing roughly 6.5 million lines of machine-checked Lean proof over about four weeks, more coverage than prior formal-verification efforts on the protocol achieved. To test whether the system could tell correct code from broken code, researchers deliberately reintroduced two real bugs that had previously been found and fixed in Signal's codebase; in both cases, AlphaProof Code produced a machine-checked proof that the altered version was no longer secure. Signal's chief technology officer described the approach as a significant expansion over earlier efforts that covered only smaller portions of the code, and DeepMind says it's open-sourcing the formal-verification artifacts from the project.",
+        why: "Most AI-assisted coding tools can only tell you code looks plausible; a proof assistant can tell you, with mathematical certainty rather than a confidence score, whether a specific property actually holds — the gap between those two is the difference between an AI that writes code and an AI whose claims about that code you can actually check.",
+        sources: [
+          { label: "Google DeepMind", url: "https://deepmind.google/blog/introducing-alphaproof-code/" },
+          { label: "HPCwire", url: "https://hpcwire.com/aiwire/2026/11/12/google-deepmind-introduces-alphaproof-code-for-verifying-complex-software-at-depth/" }
+        ]
+      },
+      {
+        title:
+          "OpenAI sets December 11 to retire ChatGPT's Advanced and Standard Voice modes, moving everyone to Live Voice",
+        body: "OpenAI's Help Center says ChatGPT's Advanced Voice and Standard Voice modes will be retired on December 11, 2026, with users notified of the change on November 10. During the transition period, people can keep using either older mode, and existing voice conversations remain in ChatGPT history and can be continued by text or voice; after December 11, voice defaults to Live for anyone still on an older mode. OpenAI says the change lets it focus development on Live rather than maintaining three separate voice systems. Live video and screen-sharing — features Live doesn't yet support — will keep running on Advanced Voice until Live gains that capability, with no timeline given for when that will happen, and custom GPTs also keep access to Advanced Voice until their own December 11 deprecation.",
+        why: "Consolidating down to one voice mode is a reminder that a feature running in production costs a company real engineering and infrastructure attention indefinitely — retiring the older modes is OpenAI trading some flexibility today for less maintenance burden later, a trade every software product eventually has to make.",
+        sources: [
+          { label: "OpenAI Help Center", url: "https://help.openai.com/en/articles/20001638" },
+          { label: "Android Authority", url: "https://androidauthority.com/openai-retiring-chatgpt-advanced-standard-voice-3733978" }
+        ]
+      },
+      {
+        title:
+          "A new US rule requires a license to ship advanced AI chips to data centers in Singapore, Malaysia, Thailand, and Indonesia, aiming to close a China back door",
+        body: "The US Commerce Department's Bureau of Industry and Security issued an interim final rule on Monday, November 16, treating Indonesia, Malaysia, Singapore, Thailand, and Brazil as destinations with an elevated risk of chip diversion, so exporting advanced AI chips to data centers in those countries now requires a US license reviewed case by case, according to reporting from Fortune and Al Jazeera. The rule targets a loophole in which Chinese firms reportedly accessed restricted US chips remotely through data centers in third countries rather than importing the hardware directly. It follows the scandal involving Megaspeed, a Singapore-based cloud firm under US criminal investigation that was also tied to Jensen Huang's brief November resignation as Nvidia's CEO. Shares of data-center and chip-supply-chain companies across Southeast Asia fell on the news, and Singapore's government said it was 'studying the details of this new measure carefully.'",
+        why: "Export controls only work as well as the routes around them are closed, and this rule is the US government admitting a prior rule had a gap — a company or country three steps removed from China can still end up as the thing that determines whether advanced AI compute actually reaches a restricted buyer.",
+        sources: [
+          { label: "Fortune", url: "https://fortune.com/2026/11/16/new-commerce-rule-nvidia-chip-singapore-malaysia-china/" },
+          { label: "Al Jazeera", url: "https://aljazeera.com/economy/2026/11/17/us-moves-to-block-chinas-remote-access-to-ai-chips-amid-nvidia-scandal" }
+        ]
+      },
+      {
+        title:
+          "Black Friday 2026 is the biggest test yet for AI shopping agents — and most shoppers still won't let one spend their money",
+        body: "Adobe's 2026 holiday forecast projects AI-referred traffic to US retail sites will climb 159% year over year on Thanksgiving, 95% on Black Friday, and 88% on Cyber Monday, according to Adobe's own September release — a sign that shoppers are increasingly starting their research with a chatbot or AI-powered search rather than a retailer's site directly. But a Salesforce consumer survey of more than 2,500 shoppers finds that trust drops sharply the closer an AI agent gets to actually spending money: about 75% of UK shoppers say they trust AI product recommendations, yet only 5% have let a personal AI agent complete a purchase on their behalf, compared with 12% in the US. Among the shoppers who have used an agent to buy something, roughly a quarter reported it purchased an item that was too expensive, and one in five had a purchase blocked outright.",
+        why: "There's a real gap between an AI being useful for research and comparison — which people are adopting fast — and an AI being trusted to actually move money on your behalf, which almost nobody has handed over yet; that gap, not the traffic numbers, is the real constraint on how big 'agentic commerce' gets in the near term.",
+        sources: [
+          { label: "Adobe", url: "https://news.adobe.com/news/2026/09/adobe-us-holiday-shopping-season-to-hit-record" },
+          { label: "Salesforce UK / PPC Land", url: "https://ppc.land/76-of-shoppers-dont-want-ai-agents-buying-for-them-salesforce-finds/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the new Southeast Asia chip-export rule and what it means for the AI-infrastructure buildout there.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on AlphaProof Code and what formally verifying real-world cryptographic software actually required.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Hard Fork — latest episode",
+        source: "Casey Newton & Kevin Roose · weekly, NYT",
+        why: "Accessible, skepticism-forward take on the Black Friday AI-shopping trust gap and OpenAI's voice-mode consolidation.",
+        url: "https://www.nytimes.com/column/hard-fork"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "YouTube · benchmark-literate release analysis",
+        why: "Useful for unpacking what a machine-checked proof actually guarantees about a system like Signal, and what it doesn't.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Agentic commerce",
+      definition:
+        "Shopping where an AI agent doesn't just recommend a product but can actually complete the purchase on a person's behalf — comparing options, choosing an item, and paying with a stored payment method, sometimes with a human approving each charge and sometimes without. Today's Salesforce and Adobe data shows the two halves of this moving at very different speeds: AI-assisted research and comparison are being adopted quickly, while actually delegating the purchase itself remains something a small minority of shoppers have tried.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Next time you're comparing a real purchase, ask an AI assistant to research and compare three options for you, including prices and trade-offs. Then ask yourself honestly whether you'd let that same assistant actually complete the purchase with your saved payment method, no further check from you — and if not, try to name exactly what information or guarantee would have to change for you to say yes. That's roughly the gap today's Salesforce survey is measuring.",
+    learnLinks: [
+      { label: "How export controls shape the global AI chip supply chain → The AI Industry", href: "#/course/industry" },
+      { label: "What formal verification and proof assistants actually check → AI Safety & Society", href: "#/course/safety" },
+      { label: "What's changing in ChatGPT's voice features → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-26",
     displayDate: "Thursday, November 26, 2026 · Edition #114",
     headline:
