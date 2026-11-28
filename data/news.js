@@ -13,6 +13,99 @@
 
 const EDITIONS = [
   {
+    date: "2026-11-28",
+    displayDate: "Saturday, November 28, 2026 · Edition #116",
+    headline:
+      "A Princeton-led study finds today's AI agents still can't produce a publishable AI research paper on their own, Microsoft discloses a financially motivated hacking group using its ARTEX agentic framework against banks, the FTC orders Delta, Walmart, Uber, and six other companies to explain how personal data shapes their prices and pay, and voters reject all but one of roughly 46 local ballot measures on AI data centers",
+    summary:
+      "Today's stories are a reality check on how far AI's reach actually extends right now: a careful study finds agents still can't do the one thing labs most want to automate next — open-ended research — while a hacking group shows a cruder but very real use of agentic AI already working against real banks. Layered on top, the FTC and tens of thousands of American voters are both independently asking the same underlying question about AI's footprint in daily life: who decides the price you pay, and who decides whether a data center gets built next door.",
+    stories: [
+      {
+        title:
+          "A Princeton-led study finds AI agents still can't produce a publishable AI research paper on their own",
+        body: "Researchers from Princeton, the UK AI Security Institute, Stanford, and other institutions published a study this week titled 'Can AI agents conduct open-ended AI research? Early evidence from two case studies.' They gave agents built on Claude Opus 4.8 and GPT-5.6 Sol six days, $3,000 in API credits, and GPU access, then tasked each with investigating an unpublished, NeurIPS-style research question and writing up the results as a paper; the original authors of those unpublished papers reviewed the AI-written versions and rated both 'Reject.' The agents handled much of the mechanical work — running experiments, writing code — but showed weak research judgment, repeatedly discarding plausible hypotheses after testing them on only small or synthetic data and locking in an approach far earlier than the study's authors say a human researcher typically would. The authors call the result preliminary, based on just two case studies, but argue it complicates claims from Anthropic and OpenAI that AI could soon conduct open-ended research with little human oversight.",
+        why: "There's a real gap between an AI that can run an experiment someone else already designed and an AI that can decide, on its own, which experiment is even worth running — this study is some of the first controlled evidence of exactly where that gap still sits, at a moment when the labs building these agents have strong incentives to claim it's already closed.",
+        sources: [
+          { label: "Decrypt", url: "https://decrypt.co/374755/researchers-tried-letting-ai-do-science-it-failed" },
+          { label: "The Decoder", url: "https://the-decoder.com/study-contradicts-anthropic-and-openai-claims-that-autonomous-ai-research-is-within-reach/" }
+        ]
+      },
+      {
+        title:
+          "Microsoft discloses a financially motivated hacking group running its open ARTEX agentic framework against banks and payment firms",
+        body: "Microsoft published research on November 6 saying a financially motivated group it tracks as Storm-3358, which it assesses operates out of Cambodia, has been running ARTEX — an openly available agentic AI penetration-testing framework — against financial-sector organizations since October 2026. Storm-3358 pairs ARTEX with conventional tooling to scan internet-facing systems for flaws like anonymous file upload and server-side request forgery, then uses stolen credentials and compromised cloud accounts to exfiltrate data, according to Microsoft's findings as reported by LetsDataScience and FourWeekMBA. The group's targets are mostly financial organizations in Southeast Asia plus a smaller number of larger institutions elsewhere, and Microsoft says it still doesn't know how Storm-3358 obtained ARTEX. It's the second major disclosure of ARTEX misuse this fall, after Microsoft tied the same framework to a Chinese state-linked group's October attack on more than 2,250 Microsoft 365 tenants.",
+        why: "Once an attack framework like this is openly available, a group doesn't need deep technical skill to use it — just intent and enough money for API credits — which is the same bar-lowering effect on offense that security researchers have been warning agentic AI would eventually have, now showing up against a new target (banks) rather than cloud tenants in general.",
+        sources: [
+          { label: "LetsDataScience", url: "https://letsdatascience.com/news/microsoft-reports-storm-3358-using-artex-against-financial-s-549e54ae" },
+          { label: "FourWeekMBA", url: "https://fourweekmba.com/ai-microsoft-crime-group-now-aims-artex-ai-at-financial-firms/" }
+        ]
+      },
+      {
+        title:
+          "The FTC orders Delta, Walmart, Uber, and six other companies to explain how personal data shapes the prices and pay they offer",
+        body: "The Federal Trade Commission voted 2-0 on October 28 to issue Section 6(b) orders to nine companies — airlines Delta, United, and JetBlue; platforms Uber, Lyft, DoorDash, and Instacart; and retailers Target and Walmart — demanding details on whether and how they use consumers' personal data, browsing behavior, or loyalty-program activity to set individualized prices, and whether they use workers' personal data, such as phone usage or how often a driver accepts past job offers, to set pay. The nine companies have 45 days to respond, and the FTC says it can go to federal court to compel compliance if they don't, according to the FTC's own release and reporting from KSAT and other outlets. The inquiry follows an August proposal that would require businesses to clearly disclose when they charge different customers different prices, rather than banning the practice outright. Delta has said it has no personalized-fare product in use, planned, or in testing; Instacart says shopper pay is based solely on job-related criteria.",
+        why: "Software has always let a company run a sale or a loyalty discount, but AI-era pricing and dispatch models can quietly compute a different number for every individual customer or driver, cheaply and at scale — this inquiry is regulators trying to find out, company by company, how much of that is actually happening already versus how much is still the same old uniform pricing tiers.",
+        sources: [
+          { label: "FTC", url: "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry" },
+          { label: "KSAT", url: "https://www.ksat.com/business/2026/10/28/ftc-orders-walmart-delta-and-others-to-share-how-they-use-personal-data-to-set-prices-and-pay/" }
+        ]
+      },
+      {
+        title:
+          "Voters reject all but one of roughly 46 local ballot measures on AI data centers in the November 3 election",
+        body: "In the November 3 general election, voters in at least 10 states decided dozens of local ballot measures on data center construction, and nearly all of them went against the industry. Stateline's reporting, tracking results through November 4 using the Data Centers on the Ballot tracker, found 44 measures restricting, pausing, capping energy use for, or requiring voter approval of data centers had passed, with two more leading in races still being counted; the results were concentrated heavily in Ohio. The single win for data-center supporters came in Harwood, North Dakota, where voters rejected a measure that would have required additional review before approving industrial development generally, not data centers specifically. Stateline also cites an NBC exit poll in which 56% of voters called AI and data centers a 'crucial or major factor' in their vote for Congress, and a UMass Amherst poll finding only 11% of Americans would support a new AI data center in their own community.",
+        why: "Every new AI capability still has to run through an actual building full of chips and cooling systems somewhere, and this is what happens once the people living next to that building get a direct vote instead of just a zoning hearing — it's concrete evidence that AI's physical footprint, not just the models themselves, has become a live local political fight.",
+        sources: [
+          { label: "Florida Phoenix (Stateline)", url: "https://floridaphoenix.com/2026/11/04/voters-across-the-country-reject-data-centers/" },
+          { label: "Route Fifty", url: "https://www.route-fifty.com/artificial-intelligence/2026/11/voters-reject-data-centers-local-ballot-initiatives/417033/" }
+        ]
+      }
+    ],
+    media: [
+      {
+        kind: "podcast",
+        title: "The AI Daily Brief — today's episode",
+        source: "Nathaniel Whittemore · ~20 min daily",
+        why: "A fast daily take on the Princeton AI-research study and what the FTC's new personalized-pricing inquiry is actually trying to find out.",
+        url: "https://www.youtube.com/@AIDailyBrief/videos"
+      },
+      {
+        kind: "podcast",
+        title: "ThursdAI — latest episode",
+        source: "Alex Volkov & co-hosts · weekly",
+        why: "A builder's-eye view on what the open-ended-research study's methodology does and doesn't show, plus the ARTEX agentic attack framework.",
+        url: "https://sub.thursdai.news/"
+      },
+      {
+        kind: "podcast",
+        title: "Last Week in AI — this week's episode",
+        source: "Andrey Kurenkov & Jeremie Harris · weekly",
+        why: "Good for weighing the data-center ballot-measure backlash and the FTC pricing probe against each other as two sides of the same public-trust problem.",
+        url: "https://www.lastweekinai.com/"
+      },
+      {
+        kind: "video",
+        title: "AI Explained — latest upload",
+        source: "YouTube · benchmark-literate release analysis",
+        why: "Useful for unpacking exactly what a two-case-study result can and can't tell you about whether AI agents can do real research.",
+        url: "https://www.youtube.com/@aiexplained-official/videos"
+      }
+    ],
+    term: {
+      word: "Personalized (surveillance) pricing",
+      definition:
+        "Setting a different price — or a different rate of pay — for different people based on data about them specifically, rather than one price for everyone. It isn't new in concept (a loyalty discount is a simple version), but AI-era pricing systems can compute and apply that difference automatically, for every customer or worker, at a scale no human pricing team could manage by hand. Today's FTC inquiry into Delta, Walmart, Uber, and six other companies is regulators trying to measure how far that's actually gone.",
+      link: "#/course/industry"
+    },
+    tryThis:
+      "Next time you check a price that might vary by shopper — a flight, a rideshare fare, a 'personalized deal' in an app — try loading the same search logged out, or on a different device or account, and compare. Most of the time you'll see the same number; AI makes personalized pricing cheap to build, but that doesn't mean every company is using it everywhere yet. That's exactly the gap the FTC's new inquiry is trying to measure, company by company.",
+    learnLinks: [
+      { label: "How AI-era pricing and personalization actually work → The AI Industry", href: "#/course/industry" },
+      { label: "What agentic AI threats look like in practice → AI Safety & Society", href: "#/course/safety" },
+      { label: "What's new in the AI tools you actually use → The AI Toolbox", href: "#/course/tools" }
+    ]
+  },
+  {
     date: "2026-11-27",
     displayDate: "Friday, November 27, 2026 · Edition #115",
     headline:
